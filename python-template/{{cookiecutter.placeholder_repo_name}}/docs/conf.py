@@ -95,7 +95,7 @@ master_doc = 'index'
 project = '{{ cookiecutter.project_name }}'
 copyright = edx_theme.COPYRIGHT  # pylint: disable=redefined-builtin
 author = edx_theme.AUTHOR
-project_title = '{{ cookiecutter.project_title }}'
+project_title = '{{ cookiecutter.project_name }}'
 documentation_title = "{project_title}".format(project_title=project_title)
 
 # The version info for the project you're documenting, acts as replacement for
