@@ -6,5 +6,4 @@
 -r travis.txt             # tox and related dependencies
 
 diff-cover                # Changeset diff test coverage
-edx-i18n-tools            # For i18n_tool dummy
 tox-battery               # Makes tox aware of requirements file changes

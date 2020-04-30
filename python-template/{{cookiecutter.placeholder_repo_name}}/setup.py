@@ -79,14 +79,9 @@ setup(
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
     zip_safe=False,
-    keywords='Django edx',
+    keywords='Python edx',
     classifiers=[
         'Development Status :: 3 - Alpha',
-        'Framework :: Django',
-        'Framework :: Django :: 1.11',
-        'Framework :: Django :: 2.0',
-        'Framework :: Django :: 2.1',
-        'Framework :: Django :: 2.2',
         'Intended Audience :: Developers',
         {%- if cookiecutter.open_source_license == "AGPL 3.0" %}
         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',

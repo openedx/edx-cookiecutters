@@ -19,8 +19,6 @@ import sys
 from subprocess import check_call
 
 import edx_theme
-from django import setup as django_setup
-from django.conf import settings
 
 
 def get_version(*file_paths):
@@ -40,9 +38,6 @@ sys.path.append(REPO_ROOT)
 
 VERSION = get_version('../{{ cookiecutter.sub_dir_name }}', '__init__.py')
 
-# Configure Django for autodoc usage
-settings.configure()
-django_setup()
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -473,8 +468,6 @@ epub_exclude_files = ['search.html']
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3.6', None),
-    'django': ('https://docs.djangoproject.com/en/1.11/', 'https://docs.djangoproject.com/en/1.11/_objects/'),
-    'model_utils': ('https://django-model-utils.readthedocs.io/en/latest/', None),
 }
 
 

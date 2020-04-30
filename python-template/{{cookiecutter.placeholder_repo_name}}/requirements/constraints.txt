@@ -8,8 +8,3 @@
 # pin when possible.  Writing an issue against the offending project and
 # linking to it here is good.
 
-# code-annotations currently restricts to Django<2.3
-Django<2.3
-
-# Version 4.0.0 dropped support for Django < 2.0.1
-django-model-utils<4.0.0
