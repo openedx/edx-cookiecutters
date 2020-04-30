@@ -34,17 +34,6 @@ htmlcov/
 
 
 
-# Translations
-*.mo
-
-# IDEs and text editors
-*~
-*.swp
-.idea/
-.project
-.pycharm_helpers/
-.pydevproject
-
 # The Silver Searcher
 .agignore
 
@@ -70,9 +59,3 @@ docs/{{ cookiecutter.sub_dir_name }}.*.rst
 # Private requirements
 requirements/private.in
 requirements/private.txt
-
-# tox environment temporary artifacts
-tests/__init__.py
-
-# Development task artifacts
-default.db
