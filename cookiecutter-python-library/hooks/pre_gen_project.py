@@ -17,6 +17,7 @@ extra_context["team_name"] = "{{cookiecutter.team_name}}"
 extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 
 extra_context["placeholder_repo_name"] = "placeholder_repo_name"
+# TODO(jinder): change this to github link once pr is merged
 cookiecutter('/Users/msingh/dev/src/cexperiments/cookdir/python-template', extra_context=extra_context, no_input=True)
 
 # moving templated cookie-cutter output to root
