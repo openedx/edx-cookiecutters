@@ -1,5 +1,4 @@
 from cookiecutter.main import cookiecutter
-import pdb
 import shutil
 import os
 
