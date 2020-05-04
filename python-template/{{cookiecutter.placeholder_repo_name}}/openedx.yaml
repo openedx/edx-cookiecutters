@@ -1,0 +1,23 @@
+# openedx.yaml
+
+---
+owner:
+    type: {{ cookiecutter.owner_type }}
+    {% if cookiecutter.owner_type == 'team' %}
+    team: {{ cookiecutter.owner_name }}
+    {% elif cookiecutter.owner_type == 'repo' %}
+    repo: {{ cookiecutter.owner_name }}
+    {% endif %}
+nick: {{ cookiecutter.repo_name }}
+tags:
+    - tools
+oeps:
+    oep-2: True
+    oep-3:
+        state: False
+        reason: TODO - Implement for this application if appropriate
+    oep-5:
+        state: False
+        reason: TODO - Implement for this application if appropriate
+    oep-30:
+        state: True
