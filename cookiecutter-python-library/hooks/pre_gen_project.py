@@ -17,8 +17,9 @@ extra_context["owner_name"] = "{{cookiecutter.owner_name}}"
 extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 
 extra_context["placeholder_repo_name"] = "placeholder_repo_name"
+directory = "python-template"
 # TODO(jinder): change this to github link once pr is merged
-cookiecutter('/Users/msingh/dev/src/cexperiments/cookdir/python-template', extra_context=extra_context, no_input=True)
+cookiecutter('git@github.com:jinder1s/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
 
 # moving templated cookie-cutter output to root
 project_root_dir = os.getcwd()
