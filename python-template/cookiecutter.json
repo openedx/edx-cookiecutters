@@ -1,6 +1,5 @@
 {
   "repo_name": "repo_name",
-  "sub_dir_name": "{{ cookiecutter.repo_name.lower()|replace(' ', '_')|replace('-', '_') }}",
   "project_name": "{{ cookiecutter.repo_name }}",
   "project_short_description": "What is this project?",
   "version": "0.1.0",
