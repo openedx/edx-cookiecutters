@@ -1,0 +1,27 @@
+language: python
+
+python:
+  - 3.5
+  - 3.6
+  - 3.7
+  - 3.8
+
+sudo: false
+
+cache: pip
+before_install:
+    - "export DISPLAY=:99.0"
+    - "sh -e /etc/init.d/xvfb start"
+install:
+    - make requirements
+    - pip install -U pip wheel codecov
+script:
+    - make validate_translations
+    - make validate
+after_success:
+    - codecov
+deploy:
+  provider: script
+  script: make travis_docker_push
+  on:
+    branch: master

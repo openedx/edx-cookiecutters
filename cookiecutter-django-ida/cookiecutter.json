@@ -1,13 +1,12 @@
 {
   "repo_name": "repo_name",
-  "sub_dir_name": "{{ cookiecutter.repo_name }}",
   "project_name": "{{ cookiecutter.repo_name }}",
   "project_short_description": "What is this project?",
   "version": "0.1.0",
-  "owner_type": ["team", "repository"],
   "author_name": "edX",
   "author_email": "you@edx.org",
+  "owner_type": ["team", "repository"],
   "owner_name": "insert_name_team_or_repository_that_owns_this",
   "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"],
-  "placeholder_repo_name": "placeholder_repo_name"
+  "port": 8000
 }
