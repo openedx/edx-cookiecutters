@@ -2,7 +2,14 @@
 edx-cookiecutters
 =================
 
-This repository holds most of the cookiecutters relavant to developers at edx(current devops cookiecutters not included).
+This repository will holds most of the cookiecutters relavant to developers at edx.
+
+Local Debugging of cookiecutters
+--------------------------------
+If you are adding something to cookiecutter and are debugging locally, please set the env variable EDX_COOKIECUTTER_ROOTDIR to root of edx-cookiecutters repository. Suggested command if you are at root of edx-cookiecutters repository:
+
+ export EDX_COOKIECUTTER_ROOTDIR=`pwd`
+
 
 Experiment
 ----------
@@ -10,8 +17,3 @@ We are currently experimenting with a layering approach to cookiecutter. The ide
 
 Example: python-template holds all the basic files necessary for a edx python repository. The template is used by django-template, cookiecutter-django-app, cookiecutter-django-ida to create the base files necessary. cookiecutter-django-ida also deletes some of the files created by python-template cause those are not necessary for its operation
 
-Local Debugging of cookiecutters
---------------------------------
-If you are adding something to cookiecutter and are debugging locally, please set the env variable EDX_COOKIECUTTER_ROOTDIR to root of edx-cookiecutters repository. Suggested command if you are at root of edx-cookiecutters repository:
-
- export EDX_COOKIECUTTER_ROOTDIR=`pwd`
