@@ -9,7 +9,7 @@ Accepted
 Context
 -------
 
-This is a new repository that isn't currently capturing changes.
+This is a new repository that isn't currently capturing changes. Additionally, we don't yet have an accepted OEP for Changelogs.
 
 Decision
 --------
