@@ -1,8 +1,10 @@
 # openedx.yaml
 
 ---
-owner: edx/core
-nick: cookiecutter-django-app
+owner:
+    type: team
+    name: archbom
+nick: edx-cookiecutters
 tags:
     - tools
 oeps:
