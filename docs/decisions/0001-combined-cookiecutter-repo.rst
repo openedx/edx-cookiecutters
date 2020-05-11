@@ -21,8 +21,6 @@ TODO
 
 Note: The ``cookiecutter-xblock `` will continue to be its own independent cookiecutter repo.
 
-^ Is this true???
-
 Consequences
 ------------
 
