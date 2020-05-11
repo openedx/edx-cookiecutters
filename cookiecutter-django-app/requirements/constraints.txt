@@ -1,0 +1,21 @@
+# Version constraints for pip-installation.
+#
+# This file doesn't install any packages. It specifies version constraints
+# that will be applied if a package is needed.
+#
+# When pinning something here, please provide an explanation of why.  Ideally,
+# link to other information that will help people in the future to remove the
+# pin when possible.  Writing an issue against the offending project and
+# linking to it here is good.
+
+# Imposed by pytest-cookies 0.4.0 to continue supporting Python 3.4
+arrow<0.14.0
+cookiecutter<=1.6.0
+
+# We want to stick with Django 2
+django<3.0
+
+# These only make sense on Mac
+pyobjc-core; sys_platform == 'darwin'
+pyobjc-framework-cocoa; sys_platform == 'darwin'
+pyobjc-framework-fsevents; sys_platform == 'darwin'

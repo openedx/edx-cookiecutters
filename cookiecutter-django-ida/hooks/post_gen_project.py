@@ -3,6 +3,15 @@ import pdb
 import shutil
 import os
 
+# cookiecutter can import a template from either github or from a location on local disk.
+# If someone is debugging this repository locally, the below block is necessary to pull in
+#   local versions of the templates
+EDX_COOKIECUTTER_ROOTDIR=os.getenv('EDX_COOKIECUTTER_ROOTDIR')
+import_template_from_github = True
+if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR, str):
+    if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
+        import_template_from_github = False
+pdb.set_trace()
 def move(src, dest):
     if os.path.isfile(dest):
         os.remove(src)
@@ -49,11 +58,12 @@ extra_context["owner_name"] = "{{cookiecutter.owner_name}}"
 extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 
 extra_context["placeholder_repo_name"] = python_placeholder_repo_name
-directory = "python-template"
-#TODO(jinder): fix this before next
-# cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory, checkout="msingh/django_app")
-cookiecutter('/Users/msingh/dev/src/cexperiments/edx-cookiecutters/python-template', extra_context=extra_context, no_input=True)
 
+if import_template_from_github:
+    directory = "python-template"
+    cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
+else:
+    cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR,'python-template'), extra_context=extra_context, no_input=True)
 
 django_placeholder_repo_name = "placeholder_repo_name_1"
 
@@ -62,9 +72,12 @@ extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
 extra_context["sub_dir_name"] = "{{cookiecutter.repo_name}}"
 extra_context["placeholder_repo_name"] = django_placeholder_repo_name
-directory = "django-template"
-# TODO(jinder): change this to github link once pr is merged
-cookiecutter('/Users/msingh/dev/src/cexperiments/edx-cookiecutters/django-template', extra_context=extra_context, no_input=True)
+
+if import_template_from_github:
+    directory = "django-template"
+    cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
+else:
+    cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR,'django-template'), extra_context=extra_context, no_input=True)
 
 project_root_dir = os.getcwd()
 python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)

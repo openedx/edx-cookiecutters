@@ -1,0 +1,18 @@
+# Requirements for test runs
+-c constraints.txt
+
+-r base.txt               # Core dependencies for the cookiecutter
+
+Django                    # For pylint import checks of the generated output
+django-model-utils        # For pylint import checks of the generated output
+edx-lint                  # edX pylint rules and plugins
+edx-sphinx-theme          # For pylint import checks of the generated output
+isort                     # to standardize order of imports
+pycodestyle               # PEP 8 compliance validation
+pydocstyle                # PEP 257 compliance validation
+pytest-cookies            # pytest extension for cookiecutter testing
+readme_renderer           # Check README.rst for PyPI compatibility
+sh                        # Used to execute flake8 in tests
+Sphinx                    # Documentation builder
+sphinx_rtd_theme          # For pylint import checks of the generated conf.py
+doc8                      # reStructuredText style checker
