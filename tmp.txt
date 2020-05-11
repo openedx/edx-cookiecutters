@@ -1,0 +1,5 @@
+cookiecutter-django-app/
+cookiecutter-django-ida/
+cookiecutter-python-library/
+django-template/
+python-template/
