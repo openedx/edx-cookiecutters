@@ -2,11 +2,8 @@ Change Log
 ==========
 
 ..
-   This file loosely adheres to the structure of http://keepachangelog.com/ ,
+   This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
-
-   This project adheres to Semantic Versioning (http://semver.org/).
-
 
 2020-05-11
 ----------

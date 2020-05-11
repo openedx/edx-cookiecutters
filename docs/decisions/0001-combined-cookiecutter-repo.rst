@@ -1,4 +1,4 @@
-2. Combined Cookiecutter Repo
+1. Combined Cookiecutter Repo
 =============================
 
 Status
