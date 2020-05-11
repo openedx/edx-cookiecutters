@@ -1,0 +1,8 @@
+# Additional requirements for development of this template
+-c constraints.txt
+
+-r pip-tools.txt          # pip-tools and its dependencies, for managing requirements files
+-r test.txt               # Dependencies for testing and quality checks
+-r travis.txt             # tox and associated dependencies
+
+tox-battery               # Makes tox aware of requirements file changes

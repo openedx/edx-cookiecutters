@@ -1,0 +1,5 @@
+# Core requirements for using this package template
+-c constraints.txt
+
+cookiecutter              # Utility to generate a package from this template
+watchdog[watchmedo]       # Used in the "watch" and "replay" make targets
