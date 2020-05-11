@@ -71,21 +71,3 @@ for f in files:
 
 os.rmdir(templates_output_dir)
 
-# # moving templated cookie-cutter output to root
-# python_template_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["placeholder_repo_name"])
-# files = os.listdir(python_template_cookiecutter_output_loc)
-# for f in files:
-#     move(os.path.join(python_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
-# # removing temp dir created by templated cookiecutter
-# os.rmdir(python_template_cookiecutter_output_loc)
-# os.rmdir(django_template_cookiecutter_output_loc)
-
-
-# # moving templated cookie-cutter output to root
-# project_root_dir = os.getcwd()
-# django_template_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["placeholder_repo_name"])
-# files = os.listdir(django_template_cookiecutter_output_loc)
-# for f in files:
-#     move(os.path.join(django_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
-# # removing temp dir created by templated cookiecutter
-# os.rmdir(django_template_cookiecutter_output_loc)

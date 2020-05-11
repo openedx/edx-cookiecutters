@@ -1,9 +1,11 @@
 [run]
 branch = True
 data_file = .coverage
-source={{cookiecutter.app_name}}
+source={{cookiecutter.repo_name}}
 omit =
-    test_settings
+    {{cookiecutter.repo_name}}/settings*
+    {{cookiecutter.repo_name}}/conf*
+    *wsgi.py
     *migrations*
     *admin.py
     *static*

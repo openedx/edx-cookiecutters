@@ -4,6 +4,9 @@ import shutil
 import os
 
 def move(src, dest):
+    if os.path.isfile(dest):
+        os.remove(src)
+        return
     if os.path.isdir(src) and os.path.isdir(dest):
         files = os.listdir(src)
         for f in files:
@@ -12,14 +15,30 @@ def move(src, dest):
     else:
         shutil.move(src, dest)
 
+def combine_templates(layer1, layer2, output_dest):
+    """
+    layer2 will overwrite files in layer1
+    """
+    move(layer2, output_dest)
+    move(layer1, output_dest)
 
-placeholder_repo_name = "placeholder_repo_name"
+def remove(path):
+    full_path = os.path.join(os.getcwd(), path)
+    if os.path.isfile(full_path):
+        os.remove(full_path)
+    elif os.path.isdir(full_path):
+        shutil.rmtree(full_path)
+    else:
+        print("{path} not in cookiecutter output".format(path=full_path))
+
+
+python_placeholder_repo_name = "placeholder_repo_name_0"
 
 
 # Use Python template to get python files
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
-extra_context["sub_dir_name"] = "{{cookiecutter.sub_dir_name}}"
+extra_context["sub_dir_name"] = "{{cookiecutter.repo_name}}"
 extra_context["project_name"] = "{{cookiecutter.project_name}}"
 extra_context["project_short_description"] = "{{cookiecutter.project_short_description}}"
 extra_context["version"] = "{{cookiecutter.version}}"
@@ -29,33 +48,40 @@ extra_context["author_email"] = "{{cookiecutter.author_email}}"
 extra_context["owner_name"] = "{{cookiecutter.owner_name}}"
 extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 
-extra_context["placeholder_repo_name"] = placeholder_repo_name
+extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 directory = "python-template"
-cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
+#TODO(jinder): fix this before next
+# cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory, checkout="msingh/django_app")
+cookiecutter('/Users/msingh/dev/src/cexperiments/edx-cookiecutters/python-template', extra_context=extra_context, no_input=True)
 
-# moving templated cookie-cutter output to root
-project_root_dir = os.getcwd()
-python_template_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["placeholder_repo_name"])
-files = os.listdir(python_template_cookiecutter_output_loc)
-for f in files:
-    move(os.path.join(python_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
-# removing temp dir created by templated cookiecutter
-os.rmdir(python_template_cookiecutter_output_loc)
+
+django_placeholder_repo_name = "placeholder_repo_name_1"
 
 # Use Django template to get common django files shared between ida and app
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
-extra_context["sub_dir_name"] = "{{cookiecutter.sub_dir_name}}"
-extra_context["placeholder_repo_name"] = placeholder_repo_name
+extra_context["sub_dir_name"] = "{{cookiecutter.repo_name}}"
+extra_context["placeholder_repo_name"] = django_placeholder_repo_name
 directory = "django-template"
 # TODO(jinder): change this to github link once pr is merged
-cookiecutter('/Users/msingh/dev/src/cexperiments/cookdir/django-template', extra_context=extra_context, no_input=True)
+cookiecutter('/Users/msingh/dev/src/cexperiments/edx-cookiecutters/django-template', extra_context=extra_context, no_input=True)
 
-# moving templated cookie-cutter output to root
 project_root_dir = os.getcwd()
-django_template_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["placeholder_repo_name"])
-files = os.listdir(django_template_cookiecutter_output_loc)
+python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)
+django_template_cookiecutter_output_loc = os.path.join(project_root_dir, django_placeholder_repo_name)
+templates_output_dir = os.path.join(project_root_dir, 'template_outputs')
+os.mkdir(templates_output_dir)
+
+combine_templates(python_template_cookiecutter_output_loc, django_template_cookiecutter_output_loc, templates_output_dir)
+
+files = os.listdir(templates_output_dir)
 for f in files:
-    move(os.path.join(django_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
-# removing temp dir created by templated cookiecutter
-os.rmdir(django_template_cookiecutter_output_loc)
+    move(os.path.join(templates_output_dir,f), os.path.join(project_root_dir, f))
+
+os.rmdir(templates_output_dir)
+
+# Removing unecessary files from python and django templates:
+remove("setup.py")
+remove("tox.ini")
+remove("MANIFEST.in")
+
