@@ -3,3 +3,4 @@
 
 cookiecutter              # Utility to generate a package from this template
 watchdog[watchmedo]       # Used in the "watch" and "replay" make targets
+edx-lint                  # To create pylintrc at end of template build
