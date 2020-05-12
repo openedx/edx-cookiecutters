@@ -1,0 +1,14 @@
+resources:
+  - deployment.yaml
+  - sa.yaml
+  - service.yaml
+  - ns.yaml
+
+configMapGenerator:
+- name: {{cookiecutter.application_name}}-cm
+  files:
+  - vault.hcl
+  - secret.env
+  - migrate.env
+
+namespace: {{cookiecutter.application_name}}

@@ -1,0 +1,48 @@
+# Add to vault
+---
+{{ "{{" }} with secret "kv/{{cookiecutter.application_name}}?version=1" {{ "}}" }}
+ALLOWED_HOSTS:
+- '*'
+BACKEND_SERVICE_EDX_OAUTH2_KEY: BouPIFbZPPxqrDDxID4TSjkJC1TLcrlJozcfiiAQ
+BACKEND_SERVICE_EDX_OAUTH2_PROVIDER_URL: https://courses.edx.org/oauth2
+BACKEND_SERVICE_EDX_OAUTH2_SECRET: '{{ "{{" }} .Data.data.BACKEND_SERVICE_EDX_OAUTH2_SECRET {{ "}}" }}'
+CACHES:
+  default:
+    BACKEND: django.core.cache.backends.memcached.MemcachedCache
+    KEY_PREFIX: {{cookiecutter.application_name}}
+    LOCATION:
+    - prod-{{cookiecutter.application_name}}.6sxrym.0001.use1.cache.amazonaws.com
+    - prod-{{cookiecutter.application_name}}.6sxrym.0002.use1.cache.amazonaws.com
+CSRF_COOKIE_SECURE: true
+DATABASES:
+  default:
+    ATOMIC_REQUESTS: false
+    CONN_MAX_AGE: 60
+    ENGINE: django.db.backends.mysql
+    HOST: prod-edx-{{cookiecutter.application_name}}-rds.edx.org
+    NAME: {{cookiecutter.application_name}}
+    OPTIONS:
+      connect_timeout: 10
+      init_command: SET sql_mode='STRICT_TRANS_TABLES'
+    PASSWORD: '{{ "{{" }} .Data.data.DATABASE_DEFAULT_PASSWORD {{ "}}" }}'
+    PORT: '3306'
+    USER: {{cookiecutter.application_name}}001
+EDX_DRF_EXTENSIONS:
+  OAUTH2_USER_INFO_URL: https://courses.edx.org/oauth2/user_info
+JWT_AUTH:
+  JWT_AUTH_COOKIE_HEADER_PAYLOAD: edx-jwt-cookie-header-payload
+  JWT_AUTH_COOKIE_SIGNATURE: edx-jwt-cookie-signature
+  JWT_AUTH_REFRESH_COOKIE: edx-jwt-refresh-cookie
+  JWT_ISSUERS:
+  - AUDIENCE: rinmybyednuaw5phlidCocDudbylbObDibJodbosgetsEbald4
+    ISSUER: https://courses.edx.org/oauth2
+    SECRET_KEY: '{{ "{{" }} .Data.data.JWT_ISSUERS_SECRET_KEY {{ "}}" }}'
+  JWT_PUBLIC_SIGNING_JWK_SET: ' {"keys": [{"kid": "lmsprod001", "e": "AQAB", "kty":
+    "RSA", "n": "6PO2gvvfPNm_sN-vRIrYAfAfvcKsrRT6HR-ZzFxPjMtI0X_3R2zWIroDqXxGcg7amqoYoTWWJn4MFdheAjCFwy3Ltwrs0AaaYIK1GDgFZu6uPmGq33K__GXyIgBMDX2k_Fl8pFubJTmNZ4r1iRSWlXbuElCkHGB-BW53DA_2DkNBE9PR7QL4L4oaEOnPPh2JWn9bJu5mu11RSi2hgYAvLHljemXMNJYc-iY8vJlwDb2boFhua1BOJpDHpZQMvXwqK4BGnIdpeebljtxqVh7_UDr4imLiKuemkUpHHu39OFSNbPyNLTn8QAfgz4zO7i57GXS3j1XZYLt61Ey6ksOf-w"}]}'
+SECRET_KEY: '{{ "{{" }} .Data.data.SECRET_KEY {{ "}}" }}'
+SOCIAL_AUTH_EDX_OAUTH2_ISSUER: https://courses.edx.org
+SOCIAL_AUTH_EDX_OAUTH2_KEY: awrOoC9OZsDGpqHlVD7ZUQV1unquJU1xFtCrdyzl
+SOCIAL_AUTH_EDX_OAUTH2_LOGOUT_URL: https://courses.edx.org/logout
+SOCIAL_AUTH_EDX_OAUTH2_SECRET: '{{ "{{" }} .Data.data.SOCIAL_AUTH_EDX_OAUTH2_SECRET {{ "}}" }}'
+SOCIAL_AUTH_EDX_OAUTH2_URL_ROOT: https://courses.edx.org
+{{ end }}

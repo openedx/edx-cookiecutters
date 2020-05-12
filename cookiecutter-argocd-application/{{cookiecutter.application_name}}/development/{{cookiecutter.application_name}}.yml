@@ -1,0 +1,28 @@
+# Add to vault
+---
+{{ "{{" }} with secret "kv/{{cookiecutter.application_name}}" {{ "}}" }}
+ALLOWED_HOSTS:
+- '*'
+BACKEND_SERVICE_EDX_OAUTH2_KEY: '{{ "{{" }} .Data.data.BACKEND_SERVICE_EDX_OAUTH2_KEY {{ "}}" }}'
+BACKEND_SERVICE_EDX_OAUTH2_PROVIDER_URL: https://courses.stage.edx.org/oauth2
+BACKEND_SERVICE_EDX_OAUTH2_SECRET: '{{ "{{" }} .Data.data.BACKEND_SERVICE_EDX_OAUTH2_SECRET {{ "}}" }}'
+DATABASES:
+  default:
+    ENGINE: django.db.backends.mysql
+    HOST: mysql.mysql
+    NAME: db
+    OPTIONS:
+      connect_timeout: 10
+    PASSWORD: '{{ "{{" }} .Data.data.DATABASE_DEFAULT_PASSWORD {{ "}}" }}'
+    PORT: '3306'
+    USER: db-user
+JWT_AUTH:
+  JWT_AUTH_COOKIE_HEADER_PAYLOAD: stage-edx-jwt-cookie-header-payload
+  JWT_AUTH_COOKIE_SIGNATURE: stage-edx-jwt-cookie-signature
+  JWT_AUTH_REFRESH_COOKIE: stage-edx-jwt-refresh-cookie
+  JWT_ISSUERS: []
+  JWT_PUBLIC_SIGNING_JWK_SET: ''
+RESULTS_DEFAULT_SIZE: 25
+RESULTS_MAX_SIZE: 250
+SECRET_KEY: '{{ "{{" }} .Data.data.SECRET_KEY {{ "}}" }}'
+{{ "{{" }} end {{ "}}" }}
