@@ -16,10 +16,7 @@ There were multiple Python cookiecutters with lots of overlap, and it was diffic
 
 Decision
 --------
-
-TODO
-
-Note: The ``cookiecutter-xblock `` will continue to be its own independent cookiecutter repo.
+Move all edx cookiecutters in to edx-cookiecutters repository.
 
 Consequences
 ------------
