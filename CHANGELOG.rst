@@ -21,3 +21,4 @@ Added
 
 * Added cookiecutter-argocd-application
     - a cookiecutter used by devops
+* Added cookiecutter-xblock
