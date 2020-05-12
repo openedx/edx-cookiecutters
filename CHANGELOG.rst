@@ -12,3 +12,12 @@ Added
 ~~~~~
 
 * Added CHANGELOG
+
+2020-05-12
+----------
+
+Added
+~~~~~
+
+* Added cookiecutter-argocd-application
+    - a cookiecutter used by devops
