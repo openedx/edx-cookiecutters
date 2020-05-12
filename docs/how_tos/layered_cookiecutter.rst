@@ -30,6 +30,8 @@ When to using this approach
     - if the number is low, layering might be overkill
 - Do the shared files change often?
     - if answer is no, layering might be overkill
+- If the suggested layering makes it hard to reason where a file would be located
+    - Rethink your layering or don't use layering and just pay the cost of having duplicated files -> duplication is a smaller sin than complicated file structure
 
 Layering only makes sense if there are many shared files and they change often.
 
