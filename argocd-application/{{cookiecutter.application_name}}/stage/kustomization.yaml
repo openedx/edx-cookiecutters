@@ -1,0 +1,26 @@
+bases:
+  - ../base/
+
+resources:
+  - autoscaling.yaml
+  - ingress.yaml
+
+# Make sure the deployment rolls when the config changes
+# If you want to rotate the secrets bump secret version for now
+configMapGenerator:
+- name: {{cookiecutter.application_name}}-cm
+  behavior: merge
+  files:
+    - {{cookiecutter.application_name}}.yml
+  literals:
+    - VAULT_ADDR="http://stage-vault.vault:8200"
+    - VAULT_ROLE="{{cookiecutter.application_name}}"
+    - NEW_RELIC_APP_NAME="stage-edx-{{cookiecutter.application_name}}"
+    - NEW_RELIC_LOG_LEVEL="info"
+    - DB_MIGRATION_USER="migrate001"
+
+images:
+- name: {{cookiecutter.application_docker_image}}
+  newTag: latest-newrelic
+
+namespace: {{cookiecutter.application_name}}

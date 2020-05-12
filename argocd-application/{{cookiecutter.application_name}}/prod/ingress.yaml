@@ -1,0 +1,26 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{cookiecutter.application_name}}
+  labels:
+    app.kubernetes.io/name: {{cookiecutter.application_name}}
+    app.kubernetes.io/instance: {{cookiecutter.application_name}}
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/ingress.class: public
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  tls:
+    - hosts:
+        - "{{cookiecutter.application_name}}.edx.org"
+      secretName: {{cookiecutter.application_name}}-tls
+  rules:
+    - host: "{{cookiecutter.application_name}}.edx.org"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{cookiecutter.application_name}}
+              servicePort: http

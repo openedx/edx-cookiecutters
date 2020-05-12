@@ -1,0 +1,3 @@
+resources:
+  - pipeline.yaml
+namespace: argocd

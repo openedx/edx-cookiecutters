@@ -1,0 +1,18 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{cookiecutter.application_name}}
+spec:
+  destination:
+    namespace: {{cookiecutter.application_name}}
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argocd/applications/{{cookiecutter.application_name}}/stage
+    repoURL: git@github.com:edx/edx-internal.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
