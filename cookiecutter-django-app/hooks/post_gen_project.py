@@ -1,7 +1,8 @@
 from cookiecutter.main import cookiecutter
-import pdb
 import shutil
 import os
+
+from edx_lint.cmd.write import write_main
 
 # cookiecutter can import a template from either github or from a location on local disk.
 # If someone is debugging this repository locally, the below block is necessary to pull in
@@ -25,13 +26,6 @@ def move(src, dest):
         os.rmdir(src)
     else:
         shutil.move(src, dest)
-
-def combine_templates(layer1, layer2, output_dest):
-    """
-    layer2 will overwrite files in layer1
-    """
-    move(layer2, output_dest)
-    move(layer1, output_dest)
 
 
 python_placeholder_repo_name = "placeholder_repo_name_0"
@@ -59,31 +53,13 @@ else:
     cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR,'python-template'), extra_context=extra_context, no_input=True)
 
 
-django_placeholder_repo_name = "placeholder_repo_name_1"
-
-# Use Django template to get common django files shared between ida and app
-extra_context = {}
-extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
-extra_context["sub_dir_name"] = "{{cookiecutter.app_name}}"
-extra_context["placeholder_repo_name"] = django_placeholder_repo_name
-
-if import_template_from_github:
-    directory = "django-template"
-    cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
-else:
-    cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR,'django-template'), extra_context=extra_context, no_input=True)
-
+# moving templated cookie-cutter output to root
 project_root_dir = os.getcwd()
-python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)
-django_template_cookiecutter_output_loc = os.path.join(project_root_dir, django_placeholder_repo_name)
-templates_output_dir = os.path.join(project_root_dir, 'template_outputs')
-os.mkdir(templates_output_dir)
-
-combine_templates(python_template_cookiecutter_output_loc, django_template_cookiecutter_output_loc, templates_output_dir)
-
-files = os.listdir(templates_output_dir)
+python_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["placeholder_repo_name"])
+files = os.listdir(python_cookiecutter_output_loc)
 for f in files:
-    move(os.path.join(templates_output_dir,f), os.path.join(project_root_dir, f))
+    shutil.move(os.path.join(python_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
 
-os.rmdir(templates_output_dir)
-
+# removing temp dir created by templated cookiecutter
+os.rmdir(python_cookiecutter_output_loc)
+write_main(['pylintrc'])

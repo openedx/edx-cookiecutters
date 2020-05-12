@@ -1,7 +1,8 @@
 from cookiecutter.main import cookiecutter
-import pdb
 import shutil
 import os
+
+from edx_lint.cmd.write import write_main
 
 # cookiecutter can import a template from either github or from a location on local disk.
 # If someone is debugging this repository locally, the below block is necessary to pull in
@@ -11,7 +12,7 @@ import_template_from_github = True
 if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR, str):
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
         import_template_from_github = False
-pdb.set_trace()
+
 def move(src, dest):
     if os.path.isfile(dest):
         os.remove(src)
@@ -65,36 +66,17 @@ if import_template_from_github:
 else:
     cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR,'python-template'), extra_context=extra_context, no_input=True)
 
-django_placeholder_repo_name = "placeholder_repo_name_1"
-
-# Use Django template to get common django files shared between ida and app
-extra_context = {}
-extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
-extra_context["sub_dir_name"] = "{{cookiecutter.repo_name}}"
-extra_context["placeholder_repo_name"] = django_placeholder_repo_name
-
-if import_template_from_github:
-    directory = "django-template"
-    cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
-else:
-    cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR,'django-template'), extra_context=extra_context, no_input=True)
-
 project_root_dir = os.getcwd()
 python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)
-django_template_cookiecutter_output_loc = os.path.join(project_root_dir, django_placeholder_repo_name)
-templates_output_dir = os.path.join(project_root_dir, 'template_outputs')
-os.mkdir(templates_output_dir)
-
-combine_templates(python_template_cookiecutter_output_loc, django_template_cookiecutter_output_loc, templates_output_dir)
-
-files = os.listdir(templates_output_dir)
+files = os.listdir(python_template_cookiecutter_output_loc)
 for f in files:
-    move(os.path.join(templates_output_dir,f), os.path.join(project_root_dir, f))
+    move(os.path.join(python_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
 
-os.rmdir(templates_output_dir)
+os.rmdir(python_template_cookiecutter_output_loc)
 
 # Removing unecessary files from python and django templates:
 remove("setup.py")
 remove("tox.ini")
 remove("MANIFEST.in")
 
+write_main(['pylintrc'])
