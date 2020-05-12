@@ -2,6 +2,8 @@ from cookiecutter.main import cookiecutter
 import shutil
 import os
 
+from edx_lint.cmd.write import write_main
+
 # cookiecutter can import a template from either github or from a location on local disk.
 # If someone is debugging this repository locally, the below block is necessary to pull in
 #   local versions of the templates
@@ -39,3 +41,6 @@ for f in files:
 
 # removing temp dir created by templated cookiecutter
 os.rmdir(python_cookiecutter_output_loc)
+
+
+write_main(['pylintrc'])

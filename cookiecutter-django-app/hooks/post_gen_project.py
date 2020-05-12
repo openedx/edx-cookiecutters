@@ -1,7 +1,8 @@
 from cookiecutter.main import cookiecutter
-import pdb
 import shutil
 import os
+
+from edx_lint.cmd.write import write_main
 
 # cookiecutter can import a template from either github or from a location on local disk.
 # If someone is debugging this repository locally, the below block is necessary to pull in
@@ -52,11 +53,13 @@ else:
     cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR,'python-template'), extra_context=extra_context, no_input=True)
 
 
+# moving templated cookie-cutter output to root
 project_root_dir = os.getcwd()
-python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)
-files = os.listdir(python_template_cookiecutter_output_loc)
+python_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["placeholder_repo_name"])
+files = os.listdir(python_cookiecutter_output_loc)
 for f in files:
-    move(os.path.join(python_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
+    shutil.move(os.path.join(python_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
 
-os.rmdir(python_template_cookiecutter_output_loc)
-
+# removing temp dir created by templated cookiecutter
+os.rmdir(python_cookiecutter_output_loc)
+write_main(['pylintrc'])

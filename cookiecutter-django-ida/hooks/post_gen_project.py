@@ -1,7 +1,8 @@
 from cookiecutter.main import cookiecutter
-import pdb
 import shutil
 import os
+
+from edx_lint.cmd.write import write_main
 
 # cookiecutter can import a template from either github or from a location on local disk.
 # If someone is debugging this repository locally, the below block is necessary to pull in
@@ -78,3 +79,4 @@ remove("setup.py")
 remove("tox.ini")
 remove("MANIFEST.in")
 
+write_main(['pylintrc'])
