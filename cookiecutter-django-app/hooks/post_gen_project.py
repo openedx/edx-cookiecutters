@@ -16,6 +16,9 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
 
 
 def move(src, dest):
+    """
+    Used to move files or folders without replacement
+    """
     if os.path.isfile(dest):
         os.remove(src)
         return
@@ -28,8 +31,8 @@ def move(src, dest):
         shutil.move(src, dest)
 
 
+# output location for python-template cookiecutter
 python_placeholder_repo_name = "placeholder_repo_name_0"
-
 
 # Use Python template to get python files
 extra_context = {}

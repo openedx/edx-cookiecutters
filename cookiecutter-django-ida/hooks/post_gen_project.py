@@ -14,6 +14,9 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
         import_template_from_github = False
 
 def move(src, dest):
+    """
+    Used to move files or folders without replacement
+    """
     if os.path.isfile(dest):
         os.remove(src)
         return
@@ -27,7 +30,7 @@ def move(src, dest):
 
 def combine_templates(layer1, layer2, output_dest):
     """
-    layer2 will overwrite files in layer1
+    Used to move all files in two layers into one folder, layer2 will overwrite files in layer1
     """
     move(layer2, output_dest)
     move(layer1, output_dest)
@@ -42,8 +45,8 @@ def remove(path):
         print("{path} not in cookiecutter output".format(path=full_path))
 
 
+# output location for django-template cookiecutter
 python_placeholder_repo_name = "placeholder_repo_name_0"
-
 
 # Use Python template to get python files
 extra_context = {}
@@ -60,6 +63,7 @@ extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 
 extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 
+#  get template from github
 if import_template_from_github:
     directory = "python-template"
     cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
@@ -69,6 +73,7 @@ else:
 project_root_dir = os.getcwd()
 python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)
 files = os.listdir(python_template_cookiecutter_output_loc)
+
 for f in files:
     move(os.path.join(python_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
 
