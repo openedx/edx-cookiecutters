@@ -24,7 +24,7 @@ Our approach relies on two categories of cookiecutters:
 
 The template-only cookiecutters are used by final-output cookiecutters to create necessary base files. 
 
-Note: The initial implementation only allows layers to use files created by a previous layer as-is, or overwrite it completely.
+Note: The implementation only allows layers to use files created by a previous layer as-is, or overwrite it completely.
 
 Examples of our layered cookiecutters would look like::
 
