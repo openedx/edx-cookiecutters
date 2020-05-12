@@ -9,22 +9,43 @@ Accepted
 Context
 -------
 
-We duplicate boilerplate files accross our multiple cookiecutters. Historically, its been difficult keeping the same files accross the multiple cookiecutters uptodate. We've decided to try layer cookiecutters. Each layer would have all the basic files that are need for that level of abstraction.
+* We duplicate boilerplate files across our multiple cookiecutters.
+* Historically, its been difficult keeping the same files across the multiple cookiecutters uptodate. 
 
-Our approach splits our cookiecutters into two categorites: template, final_use. The template cookiecutters have all the base files, but they do not result in a workable repository output. They need to be used by final_use cookiecutters. The final_use cookiecutters are meant for final output and should result in a working directory for the users.
+Decision
+--------
 
-Clarification: if a subsequent layer needs to modify a file that was created by previous layers, it will need to overwrite the file completely. Changing only segments of a file are thought to be outside the scope of this current work(though doing something like this is recommended in the future).
+We've decided to try layer cookiecutters. Each layer would have all the basic files that are need for its level of abstraction.
 
-Our first use case will be our python cookiecutters. "python-template" cookiecutter basic files that should be in each python cookiecutters. It is used by cookiecutter-{python-library, django-app, django-ida}.
+Our approach relies on two categories of cookiecutters:
+* *template-only*: These cookiecutters have the reusable base files, but they do not result in a workable repository output.
+
+* *final-output*: These cookiecutters produce the final output, resulting in a working directory.
 
 
-Possible negatives
-------------------
-This might make it difficult to know where to find a particular file since it could have been abstracted into any of the layer.
+The template-only cookiecutters are used by final-output cookiecutters to create necessary base files. 
 
+Note: The initial implementation only allows layers to use files created by a previous layer as-is, or overwrite it completely.
+
+Examples of our layered cookiecutters would look like::
+
+    [cookiecutter-python-library] <- [python-template]
+
+and::
+
+    [cookiecutter-django-app] <- [python-template]
+                              <- [django-template]
 
 Consequences
 ------------
+
+Possible negatives
+~~~~~~~~~~~~~~~~~~
+
+This might make it difficult to know where to find a particular file since it could have been abstracted into any of the layer.
+
+Note: Cookiecutter is not designed for the layered approach, so some hacking is required.
+
 
 
 TODO

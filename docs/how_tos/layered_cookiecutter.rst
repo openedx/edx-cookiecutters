@@ -2,9 +2,7 @@
 Layered Cookiecutter
 ====================
 
-In an attempt to decrease dupliciation, we are attempting a layered aproach with cookiecutters.
-
-Cookiecutter is not designed for the layered approach, so some hacking is required.
+To learn more about why we are using layered cookiecutters, see the decision 0003-layered-cookiecutter.rst.
 
 Cookiecutters using this approach
 ---------------------------------

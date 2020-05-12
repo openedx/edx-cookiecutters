@@ -4,17 +4,24 @@ edx-cookiecutters
 
 This repository will holds most of the cookiecutters relavant to developers at edx.
 
+Available cookiecutters:
+------------------------
+- cookiecutter-django-ida
+- cookiecutter-django-app
+- cookiecutter-python-library
+- cookiecutter-argocd-application
 
 Using a cookiecutter
 --------------------
-Commands:
+Commands::
 
     $ make requirements
-    $ cookiecutter <name of cookiecutter in question>
+    # Replace <COOKIECUTTER-NAME> with one of available cookiecutters
+    $ cookiecutter <COOKIECUTTER-NAME>
 
 Local Debugging of cookiecutters
 --------------------------------
-If you are adding something to cookiecutter and are debugging locally, please set the env variable EDX_COOKIECUTTER_ROOTDIR to root of edx-cookiecutters repository. Suggested command if you are at root of edx-cookiecutters repository:
+If you are adding something to cookiecutter and are debugging locally, please set the env variable EDX_COOKIECUTTER_ROOTDIR to root of edx-cookiecutters repository. Suggested command if you are at root of edx-cookiecutters repository::
 
     $ export EDX_COOKIECUTTER_ROOTDIR=`pwd`
 
