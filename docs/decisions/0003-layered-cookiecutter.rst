@@ -22,19 +22,16 @@ Our approach relies on two categories of cookiecutters:
 
 * *final-output*: These cookiecutters produce the final output, resulting in a working directory.
 
-
 The template-only cookiecutters are used by final-output cookiecutters to create necessary base files. 
 
 Note: The initial implementation only allows layers to use files created by a previous layer as-is, or overwrite it completely.
 
 Examples of our layered cookiecutters would look like::
 
-    [cookiecutter-python-library] <- [python-template]
-
-and::
-
-    [cookiecutter-django-app] <- [python-template]
-                              <- [django-template]
+    cookiecutter-python-library---|
+    cookiecutter-django-app-------|
+    cookiecutter-django-ida-------|
+                          python-template
 
 Consequences
 ------------

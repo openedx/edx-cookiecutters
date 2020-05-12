@@ -23,9 +23,16 @@ For example: for cookiecutter-django-app(CDA), the CDA specific files/folders ar
 
 Look at cookiecutter-django-app/hooks/post_gen_project.py for example of top to bottom layering and for functions to do the moves correctly.
 
+When to using this approach
+---------------------------
+
+- How many files are shared between multiple cookiecutters?
+    - if the number is low, layering might be overkill
+- Do the shared files change often?
+    - if answer is no, layering might be overkill
+
+Layering only makes sense if there are many shared files and they change often.
 
 What was tried during experimentation
 -------------------------------------
 Initially, we tried to layer from bottom up by doing most of the layering in pre_gen_project.py file. This failed cause cookiecutter folder creation does allow overlaying a folder from higher layer. If a folder {{ cookiecutter.name }} already exists from a previous layer, the cookiecutter errors out. This cookiecutter behavior resulted in us moving the layering to post_gen_project.py, which results in top-to-bottom approach to layering.
-
-

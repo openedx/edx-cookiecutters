@@ -13,28 +13,6 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
         import_template_from_github = False
 
-def move(src, dest):
-    """
-    Used to move files or folders without replacement
-    """
-    if os.path.isfile(dest):
-        os.remove(src)
-        return
-    if os.path.isdir(src) and os.path.isdir(dest):
-        files = os.listdir(src)
-        for f in files:
-            move(os.path.join(src,f), os.path.join(dest,f))
-        os.rmdir(src)
-    else:
-        shutil.move(src, dest)
-
-def combine_templates(layer1, layer2, output_dest):
-    """
-    Used to move all files in two layers into one folder, layer2 will overwrite files in layer1
-    """
-    move(layer2, output_dest)
-    move(layer1, output_dest)
-
 def remove(path):
     full_path = os.path.join(os.getcwd(), path)
     if os.path.isfile(full_path):
@@ -43,7 +21,6 @@ def remove(path):
         shutil.rmtree(full_path)
     else:
         print("{path} not in cookiecutter output".format(path=full_path))
-
 
 # output location for django-template cookiecutter
 python_placeholder_repo_name = "placeholder_repo_name_0"
