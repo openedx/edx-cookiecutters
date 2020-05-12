@@ -7,16 +7,16 @@ This repository will holds most of the cookiecutters relavant to developers at e
 
 Using a cookiecutter
 --------------------
-run:
+Commands:
 
-make requirements
-cookiecutter <name of cookiecutter in question>
+    $ make requirements
+    $ cookiecutter <name of cookiecutter in question>
 
 Local Debugging of cookiecutters
 --------------------------------
 If you are adding something to cookiecutter and are debugging locally, please set the env variable EDX_COOKIECUTTER_ROOTDIR to root of edx-cookiecutters repository. Suggested command if you are at root of edx-cookiecutters repository:
 
- export EDX_COOKIECUTTER_ROOTDIR=`pwd`
+    $ export EDX_COOKIECUTTER_ROOTDIR=`pwd`
 
  Without this environment variable, the cookiecutter will pull templates from github, which will not have your local changes on them.
 
