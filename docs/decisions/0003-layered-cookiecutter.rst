@@ -39,7 +39,9 @@ Consequences
 Possible negatives
 ~~~~~~~~~~~~~~~~~~
 
-This might make it difficult to know where to find a particular file since it could have been abstracted into any of the layer.
+This might make it difficult to know where to find a particular file since it could have been abstracted into any of the layer. 
+
+To offset this, its recommened that there be only one template layer at most. If there are multiple layers, they should be distinct enough for someone to reason where a file should be.
 
 Note: Cookiecutter is not designed for the layered approach, so some hacking is required.
 
