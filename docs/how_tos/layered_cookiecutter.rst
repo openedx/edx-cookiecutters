@@ -21,7 +21,6 @@ Emphasis: the layers are placed in high to low order, so the topmost(the most sp
 
 For example: for cookiecutter-django-app(CDA), the CDA specific files/folders are created first, then files from django-template, and then finally files from python-template.
 
-Look at cookiecutter-django-app/hooks/post_gen_project.py for example of top to bottom layering and for functions to do the moves correctly.
 
 When to using this approach
 ---------------------------
