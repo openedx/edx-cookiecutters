@@ -2,14 +2,18 @@
 edx-cookiecutters
 =================
 
-This repository will holds most of the cookiecutters relavant to developers at edx.
+This repository will holds most of the edx's public python cookiecutters relavant to developers at edx.
 
 Available cookiecutters:
 ------------------------
 - cookiecutter-django-ida
+    - intended for new edX independently deployable apps (IDAs)
 - cookiecutter-django-app
+    - for creating reusable Django packages (installable apps)
 - cookiecutter-python-library
+    - for creating a python package that follows edx standards
 - cookiecutter-xblock
+    - for createing a XBlock repository as well as a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
 
 Using a cookiecutter
 --------------------
