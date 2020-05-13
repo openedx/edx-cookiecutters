@@ -22,10 +22,11 @@ def remove(path):
     else:
         print("{path} not in cookiecutter output".format(path=full_path))
 
+# Use Python template to get python files
+
 # output location for python-template cookiecutter
 python_placeholder_repo_name = "placeholder_repo_name_0"
 
-# Use Python template to get python files
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
 extra_context["sub_dir_name"] = "{{cookiecutter.repo_name}}"

@@ -13,8 +13,6 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
         import_template_from_github = False
 
-
-
 def move(src, dest):
     """
     Used to move files or folders without replacement
@@ -30,10 +28,7 @@ def move(src, dest):
     else:
         shutil.move(src, dest)
 
-
-
 # Use Python template to get python files
-
 
 # output location for python-template cookiecutter
 python_placeholder_repo_name = "placeholder_repo_name_0"

@@ -13,7 +13,7 @@ Cookiecutters using this approach
 Design
 ------
 
-Our approach relies on two categories of cookiecutters:
+Our approach creates two categories of cookiecutters:
 * *template-only*: These cookiecutters have the reusable base files, but they do not result in a workable repository output.
 
 * *final-output*: These cookiecutters produce the final output, resulting in a working directory.
@@ -36,7 +36,7 @@ For the layered approach, we use the post_gen_project.py file to add the bottom 
 
 Emphasis: the layers are placed in high to low order, so the top-most (the most specific) layer is placed first. Each subsequent layer adds files without replace, so if a file already exists, it is not replaced by file from bottom layer. 
 
-For example: for cookiecutter-django-ida (CDI), the CDI specific files/folders are created first, files from python-template are created second. Python-template creates some files that are unnecessary for CDI. These files are deleted by futher lines ini post_gen_project.py.
+For example: for cookiecutter-django-ida (CDI), the CDI specific files/folders are created first, files from python-template are created second. Python-template creates some files that are unnecessary for CDI. These files are deleted by futher lines in post_gen_project.py.
 
 Note: In order to add clarity over flexibility, we only allows layers to use files created by a previous layer as-is, or overwrite it completely. Partial file overrides is not permitted.
 
