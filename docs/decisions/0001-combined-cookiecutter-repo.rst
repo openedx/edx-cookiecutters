@@ -17,7 +17,7 @@ There were multiple Python cookiecutters with lots of overlap, and it was diffic
 Decision
 --------
 
-Move the edx's public python cookiecutters into edx-cookiecutters repository. This repository might one day be a place for all of edx's cookiecutters, but this decision is only relavant to our python cookiecutters.
+Move the edx's public python cookiecutters into edx-cookiecutters repository. This repository might one day be a place for all of edx's cookiecutters, but this decision is only relevant to our python cookiecutters.
 
 Consequences
 ------------
