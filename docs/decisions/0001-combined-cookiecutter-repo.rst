@@ -9,10 +9,12 @@ Accepted
 Context
 -------
 
-There were multiple Python cookiecutters with lots of overlap, and it was difficult to keep even one always up to date.
+There were multiple Python cookiecutter repositories with lots of overlap, and it was difficult to keep even one always up to date.
 
+Some examples:
 * cookiecutter-django-app
 * cookiecutter-django-ida
+* cookiecutter-xblock
 
 Decision
 --------
@@ -31,3 +33,4 @@ Archived cookiecutters:
 
 * https://github.com/edx/cookiecutter-django-app
 * https://github.com/edx/cookiecutter-django-ida
+* https://github.com/edx/cookiecutter-xblock

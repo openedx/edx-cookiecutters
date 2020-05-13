@@ -1,3 +1,8 @@
+"""
+Post-generation cookiecutter hook.
+
+* See docs/decisions/0003-layered-cookiecutter.rst
+"""
 from cookiecutter.main import cookiecutter
 import shutil
 import os
