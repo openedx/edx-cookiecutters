@@ -22,7 +22,7 @@ def remove(path):
     else:
         print("{path} not in cookiecutter output".format(path=full_path))
 
-# output location for django-template cookiecutter
+# output location for python-template cookiecutter
 python_placeholder_repo_name = "placeholder_repo_name_0"
 
 # Use Python template to get python files

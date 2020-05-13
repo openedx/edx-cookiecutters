@@ -10,19 +10,37 @@ Cookiecutters using this approach
 - cookiecutter-django-ida
 - cookiecutter-python-library
 
+Design
+------
+
+Our approach relies on two categories of cookiecutters:
+* *template-only*: These cookiecutters have the reusable base files, but they do not result in a workable repository output.
+
+* *final-output*: These cookiecutters produce the final output, resulting in a working directory.
+
+The template-only cookiecutters are used by final-output cookiecutters to create necessary base files. 
+
+Examples of our layered cookiecutters would look like::
+
+    cookiecutter-python-library---|
+    cookiecutter-django-app-------|
+    cookiecutter-django-ida-------|
+                          python-template
+
 How it works
 ------------
 
 Cookiecutter allows you to define {pre, post}_gen_project.py files that run at beginning of the folder creation and at end of folder creation. 
 
-For the layered approach, we use the post_gen_project.py file to add the bottom layers to the output folder. The script creates each layer in folder(s) called: placeholder_repo_name_#(num based on how many templates are created) and then moves all resulting files to the correct location. 
+For the layered approach, we use the post_gen_project.py file to add the bottom layers to the output folder. The script creates each layer in folder(s) called: placeholder_repo_name_# (num based on how many templates are created) and then moves all resulting files to the correct location. 
 
-Emphasis: the layers are placed in high to low order, so the topmost(the most specific) layer is placed first. Each subsequent layer adds files without replace, so if the file already exists, it is not replaced by file from bottom layer. 
+Emphasis: the layers are placed in high to low order, so the top-most (the most specific) layer is placed first. Each subsequent layer adds files without replace, so if a file already exists, it is not replaced by file from bottom layer. 
 
-For example: for cookiecutter-django-app(CDA), the CDA specific files/folders are created first, then files from django-template, and then finally files from python-template.
+For example: for cookiecutter-django-ida (CDI), the CDI specific files/folders are created first, files from python-template are created second. Python-template creates some files that are unnecessary for CDI. These files are deleted by futher lines ini post_gen_project.py.
 
+Note: In order to add clarity over flexibility, we only allows layers to use files created by a previous layer as-is, or overwrite it completely. Partial file overrides is not permitted.
 
-When to using this approach
+When to use this approach
 ---------------------------
 
 - How many files are shared between multiple cookiecutters?

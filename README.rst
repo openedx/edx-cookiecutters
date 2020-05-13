@@ -9,7 +9,7 @@ Available cookiecutters:
 - cookiecutter-django-ida
 - cookiecutter-django-app
 - cookiecutter-python-library
-- cookiecutter-argocd-application
+- cookiecutter-xblock
 
 Using a cookiecutter
 --------------------
@@ -21,9 +21,9 @@ Commands::
 
 Local Debugging of cookiecutters
 --------------------------------
-If you are adding something to cookiecutter and are debugging locally, please set the env variable EDX_COOKIECUTTER_ROOTDIR to root of edx-cookiecutters repository. Suggested command if you are at root of edx-cookiecutters repository::
+To debug locally, set the env variable EDX_COOKIECUTTER_ROOTDIR to the root of the edx-cookiecutters repository. For example, from inside /edx-cookiecutters, use::
 
-    $ export EDX_COOKIECUTTER_ROOTDIR=`pwd`
+    $ export EDX_COOKIECUTTER_ROOTDIR="/edx-cookiecutters"
 
  Without this environment variable, the cookiecutter will pull templates from github, which will not have your local changes on them.
 

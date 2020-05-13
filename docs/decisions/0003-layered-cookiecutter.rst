@@ -10,28 +10,17 @@ Context
 -------
 
 * We duplicate boilerplate files across our multiple cookiecutters.
-* Historically, its been difficult keeping the same files across the multiple cookiecutters uptodate. 
+* Historically, it's been difficult keeping the same files across the multiple cookiecutters up-to-date. 
 
 Decision
 --------
 
-We've decided to try layer cookiecutters. Each layer would have all the basic files that are need for its level of abstraction.
+We've decided to try layering cookiecutters. Each layer would have all the basic files that are needed for its level of abstraction.
 
-Our approach relies on two categories of cookiecutters:
-* *template-only*: These cookiecutters have the reusable base files, but they do not result in a workable repository output.
+Note: In order to add clarity over flexibility, we will only allows layers to use files created by a previous layer as-is, or overwrite it completely.  Partial file overrides is not permitted.
 
-* *final-output*: These cookiecutters produce the final output, resulting in a working directory.
+To learn more about the layering approach, see the docs/how_tos/layered_cookicutter.rst.
 
-The template-only cookiecutters are used by final-output cookiecutters to create necessary base files. 
-
-Note: The implementation only allows layers to use files created by a previous layer as-is, or overwrite it completely.
-
-Examples of our layered cookiecutters would look like::
-
-    cookiecutter-python-library---|
-    cookiecutter-django-app-------|
-    cookiecutter-django-ida-------|
-                          python-template
 
 Consequences
 ------------
@@ -39,15 +28,12 @@ Consequences
 Possible negatives
 ~~~~~~~~~~~~~~~~~~
 
-This might make it difficult to know where to find a particular file since it could have been abstracted into any of the layer. 
+This might make it difficult to know where to find a particular file since it could have been abstracted into any of the layers. 
 
-To offset this, its recommened that there be only one template layer at most. If there are multiple layers, they should be distinct enough for someone to reason where a file should be.
+To offset this, it's recommended that there be only one template layer at most. If there are multiple layers, they should be distinct enough for someone to reason where a file should be.
 
 Note: Cookiecutter is not designed for the layered approach, so some hacking is required.
 
-
-
-TODO
 
 References
 ----------
