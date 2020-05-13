@@ -2,7 +2,7 @@
 edx-cookiecutters
 =================
 
-This repository will holds most of the edx's public python cookiecutters relavant to developers at edx.
+This repository will holds most of the edx's public python cookiecutters.
 
 Available cookiecutters:
 ------------------------
