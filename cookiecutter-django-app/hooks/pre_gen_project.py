@@ -1,5 +1,9 @@
-"""Pre-generation cookiecutter hook for validation of the app_name parameter."""
+"""
+Pre-generation cookiecutter hook.
 
+* Validates the app_name parameter.
+* See docs/decisions/0003-layered-cookiecutter.rst
+"""
 import logging
 import re
 import sys

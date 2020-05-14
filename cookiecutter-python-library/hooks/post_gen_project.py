@@ -1,3 +1,8 @@
+"""
+Post-generation cookiecutter hook.
+
+* See docs/decisions/0003-layered-cookiecutter.rst
+"""
 from cookiecutter.main import cookiecutter
 import shutil
 import os
@@ -36,6 +41,7 @@ else:
 project_root_dir = os.getcwd()
 python_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["placeholder_repo_name"])
 files = os.listdir(python_cookiecutter_output_loc)
+
 for f in files:
     shutil.move(os.path.join(python_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
 

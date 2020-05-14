@@ -1,3 +1,8 @@
+"""
+Post-generation cookiecutter hook.
+
+* See docs/decisions/0003-layered-cookiecutter.rst
+"""
 from cookiecutter.main import cookiecutter
 import shutil
 import os
@@ -13,25 +18,6 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
         import_template_from_github = False
 
-def move(src, dest):
-    if os.path.isfile(dest):
-        os.remove(src)
-        return
-    if os.path.isdir(src) and os.path.isdir(dest):
-        files = os.listdir(src)
-        for f in files:
-            move(os.path.join(src,f), os.path.join(dest,f))
-        os.rmdir(src)
-    else:
-        shutil.move(src, dest)
-
-def combine_templates(layer1, layer2, output_dest):
-    """
-    layer2 will overwrite files in layer1
-    """
-    move(layer2, output_dest)
-    move(layer1, output_dest)
-
 def remove(path):
     full_path = os.path.join(os.getcwd(), path)
     if os.path.isfile(full_path):
@@ -41,11 +27,11 @@ def remove(path):
     else:
         print("{path} not in cookiecutter output".format(path=full_path))
 
+# Use Python template to get python files
 
+# output location for python-template cookiecutter
 python_placeholder_repo_name = "placeholder_repo_name_0"
 
-
-# Use Python template to get python files
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
 extra_context["sub_dir_name"] = "{{cookiecutter.repo_name}}"
@@ -60,6 +46,7 @@ extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 
 extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 
+#  get template from github
 if import_template_from_github:
     directory = "python-template"
     cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
@@ -69,6 +56,7 @@ else:
 project_root_dir = os.getcwd()
 python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)
 files = os.listdir(python_template_cookiecutter_output_loc)
+
 for f in files:
     move(os.path.join(python_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
 

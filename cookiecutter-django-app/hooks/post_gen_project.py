@@ -1,3 +1,8 @@
+"""
+Post-generation cookiecutter hook.
+
+* See docs/decisions/0003-layered-cookiecutter.rst
+"""
 from cookiecutter.main import cookiecutter
 import shutil
 import os
@@ -13,9 +18,10 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
         import_template_from_github = False
 
-
-
 def move(src, dest):
+    """
+    Used to move files or folders without replacement
+    """
     if os.path.isfile(dest):
         os.remove(src)
         return
@@ -27,11 +33,11 @@ def move(src, dest):
     else:
         shutil.move(src, dest)
 
+# Use Python template to get python files
 
+# output location for python-template cookiecutter
 python_placeholder_repo_name = "placeholder_repo_name_0"
 
-
-# Use Python template to get python files
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
 extra_context["sub_dir_name"] = "{{cookiecutter.app_name}}"
