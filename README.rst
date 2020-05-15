@@ -62,6 +62,11 @@ otherwise noted.
 Please see ``LICENSE.txt`` for details.
 
 
+Reporting Security Issues
+-------------------------
+
+Please do not report security issues in public. Please email security@edx.org.
+
 Getting Help
 ------------
 
@@ -76,19 +81,5 @@ For more information about these options, see the `Getting Help`_ page.
 .. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
 .. _community Slack team: http://openedx.slack.com/
 .. _Getting Help: https://openedx.org/getting-help
-
-
-Reporting Security Issues
--------------------------
-
-Please do not report security issues in public. Please email security@edx.org.
-
-Getting Help
-------------
-
-Have a question about this repository, or about Open edX in general?  Please
-refer to this `list of resources`_ if you need any assistance.
-
-.. _list of resources: https://open.edx.org/getting-help
 .. _`file an issue`: https://github.com/edx/edx-cookiecutters/issues
 .. _`tox`: https://tox.readthedocs.io/en/latest/
