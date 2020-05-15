@@ -51,9 +51,12 @@ Now, get Cookiecutter_. Trust me, it's awesome::
 
     $ pip install cookiecutter
 
+You also need to instll edx-lint for::
+    $ pip install edx-lint
+
 Now run it against this repo::
 
-    $ cookiecutter https://github.com/edx/cookiecutter-django-app.git
+    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory cookiecutter-django-app
 
 You'll be prompted for some questions, answer them, then it will create a directory that is your new package.
 

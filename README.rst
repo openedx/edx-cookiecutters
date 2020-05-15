@@ -31,7 +31,7 @@ Commands::
     $ make requirements  # from inside edx-cookiecutter repo
     # move to location where you want to create a new repo
     # Replace <COOKIECUTTER-NAME> with one of available cookiecutters
-    $ cookiecutter https://github.com/edx/edx-cookiecutters <COOKIECUTTER-NAME>
+    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory <COOKIECUTTER-NAME>
 
 
 Local Debugging of cookiecutters

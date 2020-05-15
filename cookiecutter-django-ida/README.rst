@@ -41,7 +41,7 @@ cookiecutter has the ability to pull templates directly from git, so there is no
 .. code-block:: bash
 
     $ cd <workspace>
-    $ cookiecutter https://github.com/edx/cookiecutter-django-ida.git
+    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory cookiecutter-django-ida
 
 You will be prompted for a few basic details (described below). These will be used to create the new project.
 
