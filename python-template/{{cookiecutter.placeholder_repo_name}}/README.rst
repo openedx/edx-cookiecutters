@@ -53,11 +53,17 @@ Please do not report security issues in public. Please email security@edx.org.
 Getting Help
 ------------
 
-Have a question about this repository, or about the Open edX project in general?
-Please refer to this `list of resources`_ if you need any assistance.
+If you're having trouble, we have discussion forums at
+https://discuss.openedx.org where you can connect with others in the community.
 
-.. _list of resources: https://open.edx.org/getting-help
+Our real-time conversations are on Slack. You can request a `Slack
+invitation`_, then join our `community Slack team`_.
 
+For more information about these options, see the `Getting Help`_ page.
+
+.. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
+.. _community Slack team: http://openedx.slack.com/
+.. _Getting Help: https://openedx.org/getting-help
 
 .. |pypi-badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.repo_name }}.svg
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
