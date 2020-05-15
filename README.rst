@@ -16,6 +16,13 @@ Available cookiecutters
 - cookiecutter-xblock
     - for createing a XBlock repository as well as a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
 
+Cookiecutters using layered apporach
+------------------------------------
+
+- cookiecutter-python-library
+- cookiecutter-django-app
+- cookiecutter-django-ida
+
 Using a cookiecutter
 --------------------
 
@@ -40,3 +47,31 @@ Decisions
 ---------
 
 See docs/decisions/0003-layered-cookiecutter.rst for details on layering cookiecutters to share boilerplate files.
+
+Contributing
+------------
+Contributions are very welcome. Tests can be run with `tox`_, please ensure
+the coverage at least stays the same before you submit a pull request.
+
+License
+-------
+
+The code in this repository is licensed under the Apache Software License 2.0 unless
+otherwise noted.
+
+Please see ``LICENSE.txt`` for details.
+
+Reporting Security Issues
+-------------------------
+
+Please do not report security issues in public. Please email security@edx.org.
+
+Getting Help
+------------
+
+Have a question about this repository, or about Open edX in general?  Please
+refer to this `list of resources`_ if you need any assistance.
+
+.. _list of resources: https://open.edx.org/getting-help
+.. _`file an issue`: https://github.com/edx/edx-cookiecutters/issues
+.. _`tox`: https://tox.readthedocs.io/en/latest/
