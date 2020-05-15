@@ -20,10 +20,13 @@ Using a cookiecutter
 --------------------
 
 Commands::
-
-    $ make requirements
+    $ make requirements  # from inside edx-cookiecutter repo
+    # move to location where you want to create a new repo
     # Replace <COOKIECUTTER-NAME> with one of available cookiecutters
-    $ cookiecutter <COOKIECUTTER-NAME>
+    $ cookiecutter https://github.com/edx/edx-cookiecutters <COOKIECUTTER-NAME>
+
+
+If you run into problems and you are not making any local changes to edx-cookiecutters repo, make sure the environment variable EDX_COOKIECUTTER_ROOTDIR is not set.
 
 Local Debugging of cookiecutters
 --------------------------------
