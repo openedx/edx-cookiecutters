@@ -18,6 +18,22 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
         import_template_from_github = False
 
+def move(src, dest):
+    """
+    Used to move files or folders without replacement
+    """
+    if os.path.isfile(dest):
+        os.remove(src)
+        return
+    if os.path.isdir(src) and os.path.isdir(dest):
+        files = os.listdir(src)
+        for f in files:
+            move(os.path.join(src,f), os.path.join(dest,f))
+        os.rmdir(src)
+    else:
+        shutil.move(src, dest)
+
+
 # Using the template to create things
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
@@ -43,7 +59,7 @@ python_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["p
 files = os.listdir(python_cookiecutter_output_loc)
 
 for f in files:
-    shutil.move(os.path.join(python_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
+    move(os.path.join(python_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
 
 # removing temp dir created by templated cookiecutter
 os.rmdir(python_cookiecutter_output_loc)
