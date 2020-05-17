@@ -4,7 +4,6 @@ import pytest
 import sh
 
 from .helpers import bake_in_temp_dir
-import pdb
 
 common = {
     "app_name": "cookie_lover",
