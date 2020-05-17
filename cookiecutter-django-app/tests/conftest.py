@@ -26,23 +26,19 @@ configurations = [
     ),
 ]
 
+@pytest.fixture
+def custom_template(cookies_session):
+    template = cookies_session._default_template + "/cookiecutter-django-app"
+    return template
 
-@pytest.fixture(params=configurations, scope="session")
-def options_baked(cookies_session, request):
+@pytest.fixture(params=configurations)
+def options_baked(cookies_session, request, custom_template):
     """
     Bake a cookie cutter, parameterized by configurations.
 
     Provides the configuration dict, and changes into the directory with the
     baked result.
     """
-    with bake_in_temp_dir(cookies_session, extra_context=request.param):
+    with bake_in_temp_dir(cookies_session, extra_context=request.param, template=custom_template):
         yield request.param
 
-
-@pytest.fixture(scope="session")
-def options_upgraded(options_baked):  # pylint: disable=redefined-outer-name
-    """
-    Bake the cookie cutter, and run make upgrade.
-    """
-    sh.make('upgrade')  # first run make upgrade to populate requirements/test.txt
-    yield options_baked

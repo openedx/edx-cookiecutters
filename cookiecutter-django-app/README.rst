@@ -52,6 +52,7 @@ Now, get Cookiecutter_. Trust me, it's awesome::
     $ pip install cookiecutter
 
 You also need to instll edx-lint for::
+
     $ pip install edx-lint
 
 Now run it against this repo::

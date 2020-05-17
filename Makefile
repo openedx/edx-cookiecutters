@@ -37,13 +37,11 @@ replay: watch ## replay last cookiecutter run and watch for changes
 
 requirements: ## install development environment requirements
 	pip install -qr requirements/pip-tools.txt
-	pip-sync requirements/dev.txt requirements/private.*
+	pip install -r requirements/dev.txt
 
 test: ## run tests on every supported Python version
 	tox
 
 validate: ## run tests and quality checks
 	tox -e quality,py35,py38
-
-watch: bake ## generate project using defaults and watch for changes
-	watchmedo shell-command -p '*.*' -c 'make bake -e BAKE_OPTIONS=$(BAKE_OPTIONS)' -W -R -D \{{cookiecutter.repo_name}}/
+	

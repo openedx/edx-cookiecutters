@@ -35,14 +35,14 @@ logging.config.dictConfig(LOGGING_CONFIG)
     ('AGPL 3.0', 'GNU AFFERO GENERAL PUBLIC LICENSE'),
     ('Apache Software License 2.0', 'Apache'),
 ])
-def test_bake_selecting_license(cookies, license_name, target_string):
+def test_bake_selecting_license(cookies, license_name, target_string, custom_template):
     """Test to check if LICENSE.txt gets the correct license selected."""
-    with bake_in_temp_dir(cookies, extra_context={'open_source_license': license_name}):
+    with bake_in_temp_dir(cookies, extra_context={'open_source_license': license_name}, template=custom_template):
         assert target_string in Path("LICENSE.txt").read_text()
         assert license_name in Path("setup.py").read_text()
 
 
-def test_readme(options_baked):
+def test_readme(options_baked, custom_template):
     """The generated README.rst file should pass some sanity checks and validate as a PyPI long description."""
     readme_file = Path('README.rst')
     readme_lines = [x.strip() for x in readme_file.open()]
@@ -101,7 +101,7 @@ def test_setup_py(options_baked):
     assert "    author='edX'," in setup_text
 
 
-def test_quality(options_upgraded):
+def test_quality(options_baked):
     """Run quality tests on the given generated output."""
     for dirpath, _dirnames, filenames in os.walk("."):
         for filename in filenames:
@@ -126,22 +126,22 @@ def test_quality(options_upgraded):
         pytest.fail(str(exc))
 
 
-def test_pii_annotations(options_upgraded):
-    """
-    Test that the pii_check make target works correctly.
-    """
-    try:
-        sh.make('pii_check')
-    except sh.ErrorReturnCode as exc:
-        # uncovered models are expected IFF we generated any models via the cookiecutter.
-        expected_uncovered_models = 0
-        if 'models' in options_upgraded:
-            # count the number of (unannotated) models the cookiecutter should generate.
-            expected_uncovered_models = len(options_upgraded['models'].split(','))
-        expected_message = 'Coverage found {} uncovered models:'.format(expected_uncovered_models)
-        if expected_message not in str(exc.stdout):
-            # First, print the stdout/stderr attrs, otherwise sh will truncate the output
-            # guaranteeing that all we see is useless tox setup.
-            print(exc.stdout)
-            print(exc.stderr)
-            pytest.fail(str(exc))
+# def test_pii_annotations(options_baked):
+#     """
+#     Test that the pii_check make target works correctly.
+#     """
+#     try:
+#         sh.make('pii_check')
+#     except sh.ErrorReturnCode as exc:
+#         # uncovered models are expected IFF we generated any models via the cookiecutter.
+#         expected_uncovered_models = 0
+#         if 'models' in options_baked:
+#             # count the number of (unannotated) models the cookiecutter should generate.
+#             expected_uncovered_models = len(options_baked['models'].split(','))
+#         expected_message = 'Coverage found {} uncovered models:'.format(expected_uncovered_models)
+#         if expected_message not in str(exc.stdout):
+#             # First, print the stdout/stderr attrs, otherwise sh will truncate the output
+#             # guaranteeing that all we see is useless tox setup.
+#             print(exc.stdout)
+#             print(exc.stderr)
+#             pytest.fail(str(exc))

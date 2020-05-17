@@ -18,6 +18,22 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
         import_template_from_github = False
 
+
+def move(src, dest):
+    """
+    Used to move files or folders without replacement
+    """
+    if os.path.isfile(dest):
+        os.remove(src)
+        return
+    if os.path.isdir(src) and os.path.isdir(dest):
+        files = os.listdir(src)
+        for f in files:
+            move(os.path.join(src,f), os.path.join(dest,f))
+        os.rmdir(src)
+    else:
+        shutil.move(src, dest)
+
 def remove(path):
     full_path = os.path.join(os.getcwd(), path)
     if os.path.isfile(full_path):
