@@ -7,18 +7,14 @@
 
 language: python
 
-python:
-  - 3.5
-  - 3.8
-
 matrix:
   include:
     - python: 3.5
-      env: TOXENV=quality
-    - python: 3.5
-      env: TOXENV=docs
-    - python: 3.5
-      env: TOXENV=pii_check
+      env: TOXENV=py35
+    - python: 3.8
+      env: TOXENV=py38
+#    - python: 3.5
+#      env: TOXENV=quality
 
 cache:
   - pip
