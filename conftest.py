@@ -1,10 +1,7 @@
-import pytest
-import pdb
-import os
+"""
+File configures pytest for this repo
+"""
 
-import sys
-sys.path.append(os.path.join(os.getcwd(),"cookiecutter-django-app"))
-sys.path.append(os.path.join(os.getcwd(),"cookiecutter-django-ida"))
 
 def pytest_ignore_collect(path, config):
     """
