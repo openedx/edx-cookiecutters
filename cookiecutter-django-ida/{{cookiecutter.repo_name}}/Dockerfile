@@ -3,8 +3,6 @@ MAINTAINER devops@edx.org
 
 
 # Packages installed:
-# git; Used to pull in particular requirements from github rather than pypi,
-# and to check the sha of the code checkout.
 
 # language-pack-en locales; ubuntu locale support so that system utilities have a consistent
 # language and time zone.
@@ -19,9 +17,16 @@ MAINTAINER devops@edx.org
 # MySQL-python for performance gains.
 
 # If you add a package here please include a comment above describing what it is used for
-RUN apt-get update && apt-get upgrade -qy && apt-get install language-pack-en locales git python3.5 python3-pip libmysqlclient-dev libssl-dev python3-dev -qy && \
-pip3 install --upgrade pip setuptools && \
-rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -qy install --no-install-recommends \
+ language-pack-en \
+ locales \
+ python3.5 \
+ python3-pip \
+ libmysqlclient-dev \
+ libssl-dev \
+ python3-dev && \
+ pip3 install --upgrade pip setuptools && \
+ rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /usr/bin/pip3 /usr/bin/pip
 RUN ln -s /usr/bin/python3 /usr/bin/python
