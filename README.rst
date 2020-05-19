@@ -45,8 +45,7 @@ To debug locally, set the env variable EDX_COOKIECUTTER_ROOTDIR to the root of t
 
     $ export EDX_COOKIECUTTER_ROOTDIR="/edx-cookiecutters"
 
-
- Without this environment variable, the cookiecutter will pull templates from github, which will not have your local changes on them.
+Without this environment variable, the cookiecutter will pull templates from github, which will not have your local changes on them.
 
 Decisions
 ---------
