@@ -15,6 +15,7 @@ oeps:
     oep-5:
         state: False
         reason: Doesn't require any services to be started
+    oep-18: True
     oep-30:
         applicable: False
 openedx-release:
