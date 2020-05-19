@@ -1,5 +1,5 @@
-cookiecutter-python-library  |Travis|_
-==================================
+cookiecutter-python-library
+===========================
 
 A cookiecutter_ template for edX python projects. For django related cookiecutters, see cookiecutters-django-{ida, app} located in edx-cookiecutters.
 

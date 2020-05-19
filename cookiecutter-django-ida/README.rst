@@ -1,5 +1,5 @@
-cookiecutter-django-ida  |Travis|_
-==================================
+cookiecutter-django-ida
+=======================
 
 A cookiecutter_ template for edX Django projects.
 
