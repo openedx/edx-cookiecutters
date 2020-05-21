@@ -1,0 +1,7 @@
+# Patch in the config to talk to the forwarder
+- op: replace
+  path: /spec/template/spec/containers/0/args
+  value:
+    - source /vault-api-secrets/secrets/secret.env && exec gunicorn
+          --workers=2 --name {{cookiecutter.application_name}} -c /edx/app/{{cookiecutter.application_name}}/{{cookiecutter.application_name}}/docker_gunicorn_configuration.py
+          --log-file - --max-requests=1000 {{cookiecutter.application_name}}.wsgi:application

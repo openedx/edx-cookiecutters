@@ -1,0 +1,169 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{cookiecutter.application_name}}
+  labels:
+    app.kubernetes.io/name: {{cookiecutter.application_name}}
+    app.kubernetes.io/instance: {{cookiecutter.application_name}}
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{cookiecutter.application_name}}
+      app.kubernetes.io/instance: {{cookiecutter.application_name}}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{cookiecutter.application_name}}
+        app.kubernetes.io/instance: {{cookiecutter.application_name}}
+    spec:
+      revisionHistoryLimit: 0
+
+      serviceAccountName: {{cookiecutter.application_name}}
+
+      # Creates volumes with the application secrets
+      volumes:
+        - name: vault-auth-secrets
+          emptyDir:
+            medium: Memory
+        - name: vault-api-secrets
+          emptyDir:
+            medium: Memory
+        - name: vault-migrate-secrets
+          emptyDir:
+            medium: Memory
+        - name: {{cookiecutter.application_name}}-cm
+          configMap:
+            name: {{cookiecutter.application_name}}-cm
+
+      initContainers:
+        - name: vault-authenticator
+          image: edxops/vault-kubernetes-authenticator:latest
+          imagePullPolicy: IfNotPresent
+          env:
+          - name: VAULT_ADDR
+            valueFrom:
+              configMapKeyRef:
+                name: {{cookiecutter.application_name}}-cm
+                key: VAULT_ADDR
+          - name: VAULT_ROLE
+            valueFrom:
+              configMapKeyRef:
+                name: {{cookiecutter.application_name}}-cm
+                key: VAULT_ROLE
+          - name: TOKEN_DEST_PATH
+            value: /vault-auth-secrets/secrets/.vault-token
+          - name: ACCESSOR_DEST_PATH
+            value: /vault-auth-secrets/secrets/.vault-accessor
+          volumeMounts:
+          - name: vault-auth-secrets
+            mountPath: /vault-auth-secrets/secrets
+
+
+        # Init container to retrieve secrets from vault using the vault token
+        # and render them using template(s)
+        - name: secret-render
+          image: hashicorp/consul-template:0.20.0-light
+          imagePullPolicy: IfNotPresent
+          env:
+          - name: VAULT_ADDR
+            valueFrom:
+              configMapKeyRef:
+                name: {{cookiecutter.application_name}}-cm
+                key: VAULT_ADDR
+          volumeMounts:
+          - name: vault-auth-secrets
+            mountPath: /vault-auth-secrets/secrets
+          - name: vault-api-secrets
+            mountPath: /vault-api-secrets/secrets
+          - name: vault-migrate-secrets
+            mountPath: /vault-migrate-secrets/secrets
+          - name: {{cookiecutter.application_name}}-cm
+            mountPath: /{{cookiecutter.application_name}}-cm
+          command:
+          - /bin/sh
+          - -c
+          - |
+            set -xe
+            /bin/consul-template -config /{{cookiecutter.application_name}}-cm/vault.hcl -template "/{{cookiecutter.application_name}}-cm/{{cookiecutter.application_name}}.yml:/vault-api-secrets/secrets/{{cookiecutter.application_name}}.yml" -once
+            /bin/consul-template -config /{{cookiecutter.application_name}}-cm/vault.hcl -template "/{{cookiecutter.application_name}}-cm/secret.env:/vault-api-secrets/secrets/secret.env" -once
+            /bin/consul-template -config /{{cookiecutter.application_name}}-cm/vault.hcl -template "/{{cookiecutter.application_name}}-cm/migrate.env:/vault-migrate-secrets/secrets/migrate.env" -once
+        - name: {{cookiecutter.application_name}}-migrations
+          image: {{cookiecutter.application_docker_image}}:latest
+          command: [ "/bin/bash",  "-c", "--"]
+          args: [ "source /vault-migrate-secrets/secrets/migrate.env && exec python3 manage.py migrate" ]
+          volumeMounts:
+            - name: vault-migrate-secrets
+              mountPath: /vault-migrate-secrets/secrets
+              readOnly: true
+            - name: vault-api-secrets
+              mountPath: /vault-api-secrets/secrets
+              readOnly: true
+          env:
+            - name: {{cookiecutter.application_name.upper() }}_CFG
+              value: /vault-api-secrets/secrets/{{cookiecutter.application_name}}.yml
+            - name: DB_MIGRATION_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: {{cookiecutter.application_name}}-cm
+                  key: DB_MIGRATION_USER
+                  optional: true
+            - name: DB_MIGRATION_PASS
+              value: Secret value filled in from secrets.env
+          resources:
+            limits:
+              cpu: 100m
+              memory: 512Mi
+            requests:
+              cpu: 25m
+              memory: 512Mi
+
+      containers:
+        - name: {{cookiecutter.application_name}}
+          image: "{{cookiecutter.application_docker_image}}:latest"
+          imagePullPolicy: IfNotPresent
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "source /vault-api-secrets/secrets/secret.env && exec newrelic-admin run-program gunicorn --workers=2 --name {{cookiecutter.application_name}} -c /edx/app/{{cookiecutter.application_name}}/{{cookiecutter.application_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.application_name}}.wsgi:application" ]
+          ports:
+            - name: http
+              containerPort: {{cookiecutter.application_port}}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            timeoutSeconds: 3
+            initialDelaySeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            timeoutSeconds: 3
+            initialDelaySeconds: 3
+          env:
+            - name: {{cookiecutter.application_name.upper() }}_CFG
+              value: /vault-api-secrets/secrets/{{cookiecutter.application_name}}.yml
+            - name: NEW_RELIC_APP_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{cookiecutter.application_name}}-cm
+                  key: NEW_RELIC_APP_NAME
+            - name: NEW_RELIC_LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{cookiecutter.application_name}}-cm
+                  key: NEW_RELIC_LOG_LEVEL
+            - name: NEW_RELIC_LICENSE_KEY
+              value: Secret value filled in from secrets.env
+          # Expose application secret contents as a volume in /edx/etc
+          volumeMounts:
+            - name: vault-api-secrets
+              mountPath: /vault-api-secrets/secrets
+              readOnly: true
+          resources:
+              limits:
+                cpu: 100m
+                memory: 512Mi
+              requests:
+                cpu: 25m
+                memory: 512Mi

@@ -1,0 +1,5 @@
+{
+  "application_name": "edx-ida",
+  "application_port": "8000",
+  "application_docker_image": "openedx/{{cookiecutter.application_name}}"
+}
