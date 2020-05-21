@@ -34,6 +34,7 @@ def move(src, dest):
     else:
         shutil.move(src, dest)
 
+
 def remove(path):
     """
     function to remove either a file or a whole directory
@@ -45,6 +46,7 @@ def remove(path):
         shutil.rmtree(full_path)
     else:
         print("{path} not in cookiecutter output".format(path=full_path))
+
 
 # Use Python template to get python files
 
@@ -68,13 +70,15 @@ extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 #  get template from github
 if import_template_from_github:
     directory = "python-template"
-    cookiecutter('git@github.com:edx/edx-cookiecutters.git',
+    cookiecutter(
+        'git@github.com:edx/edx-cookiecutters.git',
         extra_context=extra_context,
         no_input=True,
         directory=directory
         )
 else:
-    cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR, 'python-template'),
+    cookiecutter(
+        os.path.join(EDX_COOKIECUTTER_ROOTDIR, 'python-template'),
         extra_context=extra_context,
         no_input=True
         )

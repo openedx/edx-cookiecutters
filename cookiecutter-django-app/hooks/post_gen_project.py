@@ -19,6 +19,7 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
         import_template_from_github = False
 
+
 def move(src, dest):
     """
     Used to move files or folders without replacement
@@ -33,6 +34,7 @@ def move(src, dest):
         os.rmdir(src)
     else:
         shutil.move(src, dest)
+
 
 # Use Python template to get python files
 
@@ -55,13 +57,15 @@ extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 
 if import_template_from_github:
     directory = "python-template"
-    cookiecutter('git@github.com:edx/edx-cookiecutters.git',
+    cookiecutter(
+        'git@github.com:edx/edx-cookiecutters.git',
         extra_context=extra_context,
         no_input=True,
         directory=directory
         )
 else:
-    cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR, 'python-template'),
+    cookiecutter(
+        os.path.join(EDX_COOKIECUTTER_ROOTDIR, 'python-template'),
         extra_context=extra_context,
         no_input=True
         )
