@@ -16,6 +16,7 @@ oeps:
     oep-5:
         state: False
         reason: TODO - Implement for this application if appropriate
+    oep-18: True
     oep-30:
         state: True
 openedx-release:
