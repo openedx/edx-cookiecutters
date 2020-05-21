@@ -79,7 +79,7 @@ def fixture_custom_template(cookies_session, scope="module"):
     return template
 
 
-@pytest.fixture(params=configurations, name='options_baked', scope="module")
+@pytest.fixture(params=configurations, name='options_baked')
 def fixture_options_baked(cookies_session, request, custom_template):
     """
     Bake a cookie cutter, parameterized by configurations.
