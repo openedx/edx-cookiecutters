@@ -5,13 +5,11 @@ Tests of the project generation output.
 import logging
 import logging.config
 import os
-import re
-from pathlib import Path
 from contextlib import contextmanager
+from pathlib import Path
 
 import pytest
 import sh
-
 
 LOGGING_CONFIG = {
     'version': 1,
@@ -61,8 +59,6 @@ def bake_in_temp_dir(cookies, *args, **kwargs):
         yield
 
 
-
-
 common = {
     "app_name": "cookie_lover",
     "repo_name": "cookie_repo",
@@ -79,8 +75,9 @@ configurations = [
 
 @pytest.fixture(name='custom_template')
 def fixture_custom_template(cookies_session):
-    template = cookies_session._default_template + "/cookiecutter-django-app"
+    template = cookies_session._default_template + "/cookiecutter-django-app"  # pylint: disable=protected-access
     return template
+
 
 @pytest.fixture(params=configurations, name='options_baked')
 def fixture_options_baked(cookies_session, request, custom_template):
@@ -119,10 +116,12 @@ def test_readme(options_baked, custom_template):
     except sh.ErrorReturnCode as exc:
         pytest.fail(str(exc))
 
+
 def test_travis(options_baked):
     """The generated .travis.yml file should pass a sanity check."""
     travis_text = Path(".travis.yml").read_text()
     assert 'pip install -r requirements/travis.txt' in travis_text
+
 
 def test_quality(options_baked):
     """Run quality tests on the given generated output."""

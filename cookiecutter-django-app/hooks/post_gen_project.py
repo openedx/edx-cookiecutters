@@ -3,12 +3,11 @@ Post-generation cookiecutter hook.
 
 * See docs/decisions/0003-layered-cookiecutter.rst
 """
-import shutil
 import os
+import shutil
 
-from edx_lint.cmd.write import write_main
 from cookiecutter.main import cookiecutter
-
+from edx_lint.cmd.write import write_main
 
 # cookiecutter can import a template from either github or from a location on local disk.
 # If someone is debugging this repository locally, the below block is necessary to pull in
@@ -22,7 +21,7 @@ if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR,
 
 def move(src, dest):
     """
-    Used to move files or folders without replacement
+    Use to move files or folders without replacement.
     """
     if os.path.isfile(dest):
         os.remove(src)

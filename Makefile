@@ -1,19 +1,10 @@
-.PHONY: bake help quality replay requirements test upgrade validate watch
+.PHONY: help quality requirements test upgrade validate
 
 BAKE_OPTIONS=--no-input
 
 help: ## display this help message
 	@echo "Please use \`make <target>' where <target> is one of"
 	@awk -F ':.*?## ' '/^[a-zA-Z]/ && NF==2 {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
-
-bake.django_app: ## generate project using defaults
-	cookiecutter $(BAKE_OPTIONS) cookiecutter-django-app --overwrite-if-exists
-
-bake.django_ida: ## generate project using defaults
-	cookiecutter $(BAKE_OPTIONS) cookiecutter-django-ida --overwrite-if-exists
-
-bake.python_library: ## generate project using defaults
-	cookiecutter $(BAKE_OPTIONS) cookiecutter-python-library --overwrite-if-exists
 
 # Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
 PIP_COMPILE = pip-compile --rebuild --upgrade $(PIP_COMPILE_OPTS)
@@ -29,11 +20,13 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
 
 quality: ## check coding style with pycodestyle and pylint
-	tox -e quality
-
-replay: BAKE_OPTIONS=--replay
-replay: watch ## replay last cookiecutter run and watch for changes
-	;
+	pylint */hooks/pre_gen_project.py */hooks/post_gen_project.py
+	pycodestyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
+	pydocstyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
+	pylint --generated-members=sh.* */tests
+	pycodestyle */tests
+	pydocstyle tests
+	isort --check-only --diff --recursive */hooks */tests
 
 requirements: ## install development environment requirements
 	pip install -qr requirements/pip-tools.txt
