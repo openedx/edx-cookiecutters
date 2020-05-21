@@ -47,18 +47,19 @@ You will be prompted for a few basic details (described below). These will be us
     :widths: 25 75
     :header-rows: 1
 
-    * - Variable
-      - Description
-    * - project_name
-      - Full name of the project. (e.g., E-Commerce Service)
     * - repo_name
       - Short (Python-friendly) name of the project. This should also be the name of the repository (e.g., ecommerce, credentials).
-    * - repo_port
-      - Port number for the project. Should be in the form `18***` with the 3 digits being any that aren't currently in use by other services.
+    * - project_name
+      - Full name of the project. (e.g., E-Commerce Service)
+    * - project_short_description
     * - author_name
-      - The author of the documentation. Leave this as the default ("edX") unless you have a good reason to change it.
-    * - description
-      - A short description of the project, used to initialize the documentation.
+    * - author_email
+    * - owner_type
+      - two options: team or repo. Is a team directly owning it, or is this cookiecutter output only used by one repository?
+    * - owner_name
+      - the name of either the team or repository that is owning this
+    * - port
+      - Port number for the project. Should be in the form `18***` with the 3 digits being any that aren't currently in use by other services.
 
 After the new folder is created, you will need to:
 
