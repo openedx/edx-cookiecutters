@@ -3,7 +3,7 @@
 ---
 owner:
     type: team
-    team: arch-bom
+    team: edx/arch-bom
 nick: edx-cookiecutters
 tags:
     - tools
