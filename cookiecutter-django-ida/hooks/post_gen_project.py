@@ -3,16 +3,16 @@ Post-generation cookiecutter hook.
 
 * See docs/decisions/0003-layered-cookiecutter.rst
 """
-from cookiecutter.main import cookiecutter
 import shutil
 import os
 
 from edx_lint.cmd.write import write_main
+from cookiecutter.main import cookiecutter
 
 # cookiecutter can import a template from either github or from a location on local disk.
 # If someone is debugging this repository locally, the below block is necessary to pull in
 #   local versions of the templates
-EDX_COOKIECUTTER_ROOTDIR=os.getenv('EDX_COOKIECUTTER_ROOTDIR')
+EDX_COOKIECUTTER_ROOTDIR = os.getenv('EDX_COOKIECUTTER_ROOTDIR')
 import_template_from_github = True
 if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR, str):
     if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
@@ -27,14 +27,17 @@ def move(src, dest):
         os.remove(src)
         return
     if os.path.isdir(src) and os.path.isdir(dest):
-        files = os.listdir(src)
-        for f in files:
-            move(os.path.join(src,f), os.path.join(dest,f))
+        dir_contents = os.listdir(src)
+        for content in dir_contents:
+            move(os.path.join(src, content), os.path.join(dest, content))
         os.rmdir(src)
     else:
         shutil.move(src, dest)
 
 def remove(path):
+    """
+    function to remove either a file or a whole directory
+    """
     full_path = os.path.join(os.getcwd(), path)
     if os.path.isfile(full_path):
         os.remove(full_path)
@@ -65,16 +68,23 @@ extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 #  get template from github
 if import_template_from_github:
     directory = "python-template"
-    cookiecutter('git@github.com:edx/edx-cookiecutters.git', extra_context=extra_context, no_input=True, directory=directory)
+    cookiecutter('git@github.com:edx/edx-cookiecutters.git',
+        extra_context=extra_context,
+        no_input=True,
+        directory=directory
+        )
 else:
-    cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR,'python-template'), extra_context=extra_context, no_input=True)
+    cookiecutter(os.path.join(EDX_COOKIECUTTER_ROOTDIR, 'python-template'),
+        extra_context=extra_context,
+        no_input=True
+        )
 
 project_root_dir = os.getcwd()
 python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)
 files = os.listdir(python_template_cookiecutter_output_loc)
 
 for f in files:
-    move(os.path.join(python_template_cookiecutter_output_loc,f), os.path.join(project_root_dir, f))
+    move(os.path.join(python_template_cookiecutter_output_loc, f), os.path.join(project_root_dir, f))
 
 os.rmdir(python_template_cookiecutter_output_loc)
 
