@@ -74,12 +74,12 @@ configurations = [
 
 
 @pytest.fixture(name='custom_template')
-def fixture_custom_template(cookies_session):
+def fixture_custom_template(cookies_session, scope="module"):
     template = cookies_session._default_template + "/cookiecutter-django-app"  # pylint: disable=protected-access
     return template
 
 
-@pytest.fixture(params=configurations, name='options_baked')
+@pytest.fixture(params=configurations, name='options_baked', scope="module")
 def fixture_options_baked(cookies_session, request, custom_template):
     """
     Bake a cookie cutter, parameterized by configurations.
