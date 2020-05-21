@@ -16,12 +16,16 @@ Available cookiecutters
 - cookiecutter-xblock
     - for createing a XBlock repository as well as a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
 
+
 Cookiecutters using layered apporach
 ------------------------------------
 
 - cookiecutter-python-library
 - cookiecutter-django-app
 - cookiecutter-django-ida
+
+If you are updating above cookiecutters, please see docs/decisions/0003-layered-cookiecutter.rst and docs/how_tos/modifying_layered_cookiecutter.rst
+
 
 Using a cookiecutter
 --------------------
@@ -41,7 +45,7 @@ To debug locally, set the env variable EDX_COOKIECUTTER_ROOTDIR to the root of t
 
     $ export EDX_COOKIECUTTER_ROOTDIR="/edx-cookiecutters"
 
- Without this environment variable, the cookiecutter will pull templates from github, which will not have your local changes on them.
+Without this environment variable, the cookiecutter will pull templates from github, which will not have your local changes on them.
 
 Decisions
 ---------

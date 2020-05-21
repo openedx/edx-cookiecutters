@@ -6,12 +6,11 @@ import logging
 import logging.config
 import os
 import re
-from pathlib import Path
 from contextlib import contextmanager
+from pathlib import Path
 
 import pytest
 import sh
-
 
 LOGGING_CONFIG = {
     'version': 1,
@@ -61,8 +60,6 @@ def bake_in_temp_dir(cookies, *args, **kwargs):
         yield
 
 
-
-
 common = {
     "app_name": "cookie_lover",
     "repo_name": "cookie_repo",
@@ -85,12 +82,13 @@ configurations = [
 ]
 
 
-@pytest.fixture(name='custom_template')
+@pytest.fixture(name='custom_template', scope="module")
 def fixture_custom_template(cookies_session):
-    template = cookies_session._default_template + "/cookiecutter-django-app"
+    template = cookies_session._default_template + "/cookiecutter-django-app"  # pylint: disable=protected-access
     return template
 
-@pytest.fixture(params=configurations, name='options_baked')
+
+@pytest.fixture(params=configurations, name='options_baked', scope="module")
 def fixture_options_baked(cookies_session, request, custom_template):
     """
     Bake a cookie cutter, parameterized by configurations.
@@ -198,24 +196,3 @@ def test_quality(options_baked):
         sh.doc8("docs", ignore_path="docs/_build")
     except sh.ErrorReturnCode as exc:
         pytest.fail(str(exc))
-
-
-# def test_pii_annotations(options_baked):
-#     """
-#     Test that the pii_check make target works correctly.
-#     """
-#     try:
-#         sh.make('pii_check')
-#     except sh.ErrorReturnCode as exc:
-#         # uncovered models are expected IFF we generated any models via the cookiecutter.
-#         expected_uncovered_models = 0
-#         if 'models' in options_baked:
-#             # count the number of (unannotated) models the cookiecutter should generate.
-#             expected_uncovered_models = len(options_baked['models'].split(','))
-#         expected_message = 'Coverage found {} uncovered models:'.format(expected_uncovered_models)
-#         if expected_message not in str(exc.stdout):
-#             # First, print the stdout/stderr attrs, otherwise sh will truncate the output
-#             # guaranteeing that all we see is useless tox setup.
-#             print(exc.stdout)
-#             print(exc.stderr)
-#             pytest.fail(str(exc))
