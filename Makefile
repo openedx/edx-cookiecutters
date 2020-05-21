@@ -23,7 +23,6 @@ quality: ## check coding style with pycodestyle and pylint
 	pylint */hooks/pre_gen_project.py */hooks/post_gen_project.py
 	pycodestyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
 	pydocstyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
-	pylint --generated-members=sh.* */tests
 	pycodestyle */tests
 	pydocstyle tests
 	isort --check-only --diff --recursive */hooks */tests
