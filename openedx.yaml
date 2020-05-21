@@ -3,7 +3,7 @@
 ---
 owner:
     type: team
-    name: archbom
+    team: arch-bom
 nick: edx-cookiecutters
 tags:
     - tools
@@ -17,8 +17,3 @@ oeps:
         reason: Doesn't require any services to be started
     oep-30:
         applicable: False
-openedx-release:
-    # The openedx-release key is described in OEP-10:
-    #   https://open-edx-proposals.readthedocs.io/en/latest/oep-0010-proc-openedx-releases.html
-    # The FAQ might also be helpful: https://openedx.atlassian.net/wiki/spaces/COMM/pages/1331268879/Open+edX+Release+FAQ
-    ref: master
