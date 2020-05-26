@@ -1,5 +1,0 @@
-django-statici18n==1.8.0
-edx-i18n-tools==0.4.8
-xblock-utils==1.2.0
-Mako==1.0.7
-transifex-client==0.13.4

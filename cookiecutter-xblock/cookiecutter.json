@@ -1,7 +1,13 @@
 {
-    "project_desc": "My First XBlock",
-    "package_name": "myxblock",
-    "repo_name": "{{cookiecutter.package_name}}-xblock",
-    "tag_name": "myxblock",
-    "class_name": "MyXBlock"
+  "project_desc": "My First XBlock",
+  "package_name": "myxblock",
+  "repo_name": "{{cookiecutter.package_name}}-xblock",
+  "tag_name": "myxblock",
+  "version": "0.1.0",
+  "class_name": "MyXBlock",
+  "author_name": "edX",
+  "author_email": "you@edx.org",
+  "owner_type": ["team", "repository"],
+  "owner_name": "insert_name_team_or_repository_that_owns_this",
+  "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"]
 }
