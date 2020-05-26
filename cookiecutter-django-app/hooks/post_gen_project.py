@@ -51,6 +51,7 @@ extra_context["author_name"] = "{{cookiecutter.author_name}}"
 extra_context["author_email"] = "{{cookiecutter.author_email}}"
 extra_context["owner_name"] = "{{cookiecutter.owner_name}}"
 extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
+extra_context["supports_django"] = "yes"
 
 extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 
