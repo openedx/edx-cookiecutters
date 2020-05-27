@@ -119,7 +119,7 @@ def test_readme(options_baked, custom_template):
     readme_file = Path('README.rst')
     readme_lines = [x.strip() for x in readme_file.open()]
     assert "cookie_repo" == readme_lines[0]
-    assert 'The full documentation is at https://cookie_repo.readthedocs.org.' in readme_lines
+    assert ':target: https://pypi.python.org/pypi/cookie_repo/' in readme_lines
     try:
         sh.python("setup.py", 'check', restructuredtext=True, strict=True)
     except sh.ErrorReturnCode as exc:
