@@ -49,9 +49,7 @@ def is_requirement(line):
     """
     return line and not line.startswith(('-r', '#', '-e', 'git+', '-c'))
 
-{%- if cookiecutter.setup_py_loading_pkg_data == "yes" %}
-
-
+{% if cookiecutter.setup_py_loading_pkg_data == "yes" %}
 def package_data(pkg, roots):
     """Generic function to find package_data.
 
@@ -66,8 +64,8 @@ def package_data(pkg, roots):
                 data.append(os.path.relpath(os.path.join(dirname, fname), pkg))
 
     return {pkg: data}
-{%- endif %}
 
+{% endif %}
 VERSION = get_version('{{ cookiecutter.sub_dir_name }}', '__init__.py')
 
 if sys.argv[-1] == 'tag':
