@@ -100,7 +100,7 @@ setup(
     keywords='Python edx',
     classifiers=[
         'Development Status :: 3 - Alpha',
-        {%- if cookiecutter.supports_django == "yes" %}
+        {%- if cookiecutter.requires_django == "yes" %}
         'Framework :: Django',
         'Framework :: Django :: 1.11',
         'Framework :: Django :: 2.0',
