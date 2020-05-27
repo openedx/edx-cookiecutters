@@ -39,6 +39,7 @@ def move(src, dest):
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
 extra_context["project_name"] = "{{cookiecutter.repo_name}}"
+extra_context["sub_dir_name"] = "{{cookiecutter.package_name}}"
 extra_context["project_short_description"] = "{{cookiecutter.project_desc}}"
 extra_context["version"] = "{{cookiecutter.version}}"
 extra_context["owner_type"] = "{{cookiecutter.owner_name}}"
