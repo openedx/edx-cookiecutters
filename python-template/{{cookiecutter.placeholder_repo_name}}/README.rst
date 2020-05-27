@@ -21,7 +21,7 @@ to understand the code in more detail.
 Documentation
 -------------
 
-The full documentation is at https://{{ cookiecutter.repo_name }}.readthedocs.org.
+(TODO: `Set up documentation <https://openedx.atlassian.net/wiki/spaces/DOC/pages/21627535/Publish+Documentation+on+Read+the+Docs>`_)
 
 License
 -------
