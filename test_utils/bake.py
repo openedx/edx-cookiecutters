@@ -1,8 +1,6 @@
-"""Helper functions for our tests."""
-
 import os
+import re
 from contextlib import contextmanager
-
 
 @contextmanager
 def inside_dir(dirpath):
