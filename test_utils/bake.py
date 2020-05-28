@@ -2,6 +2,9 @@ import os
 import re
 from contextlib import contextmanager
 
+import unittest
+
+
 @contextmanager
 def inside_dir(dirpath):
     """
