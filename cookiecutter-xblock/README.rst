@@ -6,7 +6,8 @@ To create a new XBlock using this cookiecutter template, first make sure you hav
 
 Then run::
 
-        $ cookiecutter https://github.com/edx/cookiecutter-xblock.git
+    $ cd <workspace>
+    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory cookiecutter-python-library
 
 Enter the short name and primary class name of your new XBlock when prompted.
 

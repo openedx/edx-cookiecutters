@@ -9,5 +9,8 @@
   "author_email": "you@edx.org",
   "owner_name": "insert_name_team_or_repository_that_owns_this",
   "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"],
+  "setup_py_keyword_args": "None",
+  "setup_py_loading_pkg_data": ["no", "yes"],
+  "requires_django": ["no", "yes"],
   "placeholder_repo_name": "placeholder_repo_name"
 }

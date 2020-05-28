@@ -49,7 +49,23 @@ def is_requirement(line):
     """
     return line and not line.startswith(('-r', '#', '-e', 'git+', '-c'))
 
+{% if cookiecutter.setup_py_loading_pkg_data == "yes" %}
+def package_data(pkg, roots):
+    """Generic function to find package_data.
 
+    All of the files under each of the `roots` will be declared as package
+    data for package `pkg`.
+
+    """
+    data = []
+    for root in roots:
+        for dirname, _, files in os.walk(os.path.join(pkg, root)):
+            for fname in files:
+                data.append(os.path.relpath(os.path.join(dirname, fname), pkg))
+
+    return {pkg: data}
+
+{% endif %}
 VERSION = get_version('{{ cookiecutter.sub_dir_name }}', '__init__.py')
 
 if sys.argv[-1] == 'tag':
@@ -82,6 +98,13 @@ setup(
     keywords='Python edx',
     classifiers=[
         'Development Status :: 3 - Alpha',
+        {%- if cookiecutter.requires_django == "yes" %}
+        'Framework :: Django',
+        'Framework :: Django :: 1.11',
+        'Framework :: Django :: 2.0',
+        'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
+        {%- endif %}
         'Intended Audience :: Developers',
         {%- if cookiecutter.open_source_license == "AGPL 3.0" %}
         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
@@ -95,4 +118,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.8',
     ],
+{%- if cookiecutter.setup_py_keyword_args != "None" %}
+    {{ cookiecutter.setup_py_keyword_args }}
+{%- endif %}
 )
