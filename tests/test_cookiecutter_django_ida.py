@@ -92,6 +92,15 @@ def test_travis(options_baked):
     assert 'pip install -r requirements/travis.txt' in travis_text
 
 
+def test_upgrade(options_baked):
+    """Make sure the upgrade target works"""
+    try:
+        # Sanity check the generated Makefile
+        sh.make('upgrade')
+    except sh.ErrorReturnCode as exc:
+        pytest.fail(str(exc))
+
+
 def test_quality(options_baked):
     """Run quality tests on the given generated output."""
     for dirpath, _dirnames, filenames in os.walk("."):
