@@ -4,5 +4,5 @@
   "author_name": "{{cookiecutter.repo_owner}}",
   "description": "What is this project?",
   "version": "0.1.0",
-  "port": "8080"
+  "port": "2002"
 }
