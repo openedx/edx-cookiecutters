@@ -1,0 +1,64 @@
+{
+  "name": "@edx/frontend-template-application",
+  "version": "0.1.0",
+  "description": "Frontend application template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edx/frontend-template-application.git"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie 11"
+  ],
+  "scripts": {
+    "build": "fedx-scripts webpack",
+    "i18n_extract": "BABEL_ENV=i18n fedx-scripts babel src --quiet > /dev/null",
+    "is-es5": "es-check es5 ./dist/*.js",
+    "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
+    "snapshot": "fedx-scripts jest --updateSnapshot",
+    "start": "fedx-scripts webpack-dev-server --progress",
+    "test": "fedx-scripts jest --coverage --passWithNoTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "author": "edX",
+  "license": "AGPL-3.0",
+  "homepage": "https://github.com/edx/frontend-template-application#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/edx/frontend-template-application/issues"
+  },
+  "dependencies": {
+    "@edx/frontend-component-footer": "10.0.9",
+    "@edx/frontend-component-header": "2.0.5",
+    "@edx/frontend-platform": "1.3.6",
+    "@edx/paragon": "7.2.1",
+    "@fortawesome/fontawesome-svg-core": "1.2.28",
+    "@fortawesome/free-brands-svg-icons": "5.11.2",
+    "@fortawesome/free-regular-svg-icons": "5.11.2",
+    "@fortawesome/free-solid-svg-icons": "5.11.2",
+    "@fortawesome/react-fontawesome": "0.1.9",
+    "babel-polyfill": "6.26.0",
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-redux": "7.1.3",
+    "react-router": "5.1.2",
+    "react-router-dom": "5.1.2",
+    "redux": "4.0.5"
+  },
+  "devDependencies": {
+    "@edx/frontend-build": "3.0.0",
+    "codecov": "3.6.5",
+    "es-check": "5.1.0",
+    "glob": "7.1.6",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "reactifex": "1.1.1"
+  }
+}
