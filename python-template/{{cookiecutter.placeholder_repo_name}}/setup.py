@@ -13,7 +13,11 @@ from setuptools import setup
 
 def get_version(*file_paths):
     """
-    Extract the version string from the file at the given relative path fragments.
+    Extract the version string from the file.
+
+    Input:
+     - file_paths: relative path fragments to file with
+                   version string
     """
     filename = os.path.join(os.path.dirname(__file__), *file_paths)
     version_file = open(filename).read()
@@ -45,7 +49,8 @@ def is_requirement(line):
     Return True if the requirement line is a package requirement.
 
     Returns:
-        bool: True if the line is not blank, a comment, a URL, or an included file
+        bool: True if the line is not blank, a comment, a URL, or
+              an included file
     """
     return line and not line.startswith(('-r', '#', '-e', 'git+', '-c'))
 

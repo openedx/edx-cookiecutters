@@ -30,7 +30,7 @@ logging.config.dictConfig(LOGGING_CONFIG)
 
 
 common = {
-    "app_name": "cookie_lover",
+    "library_name": "cookie_lover",
     "repo_name": "cookie_repo",
 }
 

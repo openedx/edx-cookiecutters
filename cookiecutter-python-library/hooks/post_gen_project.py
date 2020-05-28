@@ -38,6 +38,7 @@ def move(src, dest):
 # Using the template to create things
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
+extra_context["sub_dir_name"] = "{{cookiecutter.library_name}}"
 extra_context["project_name"] = "{{cookiecutter.project_name}}"
 extra_context["project_short_description"] = "{{cookiecutter.project_short_description}}"
 extra_context["version"] = "{{cookiecutter.version}}"
