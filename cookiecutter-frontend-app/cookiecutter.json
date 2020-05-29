@@ -1,0 +1,8 @@
+{
+  "repo_owner": "edx",
+  "repo_name": "frontend-app-template",
+  "author_name": "{{cookiecutter.repo_owner}}",
+  "description": "What is this project?",
+  "version": "0.1.0",
+  "port": "8080"
+}

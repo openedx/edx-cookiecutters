@@ -1,10 +1,10 @@
 {
-  "name": "@edx/frontend-template-application",
-  "version": "0.1.0",
-  "description": "Frontend application template",
+  "name": "@{{cookiecutter.repo_owner}}/{{cookiecutter.repo_name}}",
+  "version": "{{cookiecutter.version}}",
+  "description": "{{cookiecutter.description}}",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edx/frontend-template-application.git"
+    "url": "git+https://github.com/{{cookiecutter.repo_owner}}/{{cookiecutter.repo_name}}.git"
   },
   "browserslist": [
     "last 2 versions",
@@ -24,14 +24,14 @@
       "pre-commit": "npm run lint"
     }
   },
-  "author": "edX",
+  "author": "{{cookiecutter.author_name}}",
   "license": "AGPL-3.0",
-  "homepage": "https://github.com/edx/frontend-template-application#readme",
+  "homepage": "https://github.com/{{cookiecutter.repo_owner}}/{{cookiecutter.repo_name}}#readme",
   "publishConfig": {
     "access": "public"
   },
   "bugs": {
-    "url": "https://github.com/edx/frontend-template-application/issues"
+    "url": "https://github.com/{{cookiecutter.repo_owner}}/{{cookiecutter.repo_name}}/issues"
   },
   "dependencies": {
     "@edx/frontend-component-footer": "10.0.9",
