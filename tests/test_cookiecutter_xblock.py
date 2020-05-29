@@ -11,6 +11,7 @@ from pathlib import Path
 
 import pytest
 import sh
+
 from test_utils.bake import bake_in_temp_dir
 
 LOGGING_CONFIG = {
@@ -26,7 +27,6 @@ LOGGING_CONFIG = {
     }
 }
 logging.config.dictConfig(LOGGING_CONFIG)
-
 
 
 common = {
