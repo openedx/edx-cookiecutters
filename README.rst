@@ -33,19 +33,9 @@ Using a cookiecutter
 Commands::
 
     $ make requirements  # from inside edx-cookiecutter repo
-    # move to location where you want to create a new repo
     # Replace <COOKIECUTTER-NAME> with one of available cookiecutters
-    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory <COOKIECUTTER-NAME>
-
-
-Local Debugging of cookiecutters
---------------------------------
-
-To debug locally, set the env variable EDX_COOKIECUTTER_ROOTDIR to the root of the edx-cookiecutters repository. For example, from inside /edx-cookiecutters, use::
-
-    $ export EDX_COOKIECUTTER_ROOTDIR="/edx-cookiecutters"
-
-Without this environment variable, the cookiecutter will pull templates from github, which will not have your local changes on them.
+    # Replace <OUTPUT-DIRECTORY> with the base directory; your new directory will go inside.
+    $ cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
 
 Decisions
 ---------
