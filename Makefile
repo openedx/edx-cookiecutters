@@ -23,9 +23,9 @@ quality: ## check coding style with pycodestyle and pylint
 	pylint */hooks/pre_gen_project.py */hooks/post_gen_project.py
 	pycodestyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
 	pydocstyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
-	pycodestyle */tests
+	pycodestyle tests
 	pydocstyle tests
-	isort --check-only --diff --recursive */hooks */tests
+	isort --check-only --diff --recursive */hooks tests
 
 requirements: ## install development environment requirements
 	pip install -qr requirements/pip-tools.txt

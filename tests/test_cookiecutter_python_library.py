@@ -12,6 +12,8 @@ from pathlib import Path
 import pytest
 import sh
 
+from test_utils.bake import bake_in_temp_dir
+
 LOGGING_CONFIG = {
     'version': 1,
     'incremental': True,
@@ -27,41 +29,8 @@ LOGGING_CONFIG = {
 logging.config.dictConfig(LOGGING_CONFIG)
 
 
-@contextmanager
-def inside_dir(dirpath):
-    """
-    Change into a directory and change back at the end of the with-statement.
-
-    Args:
-        dirpath (str): the path of the directory to change into.
-
-    """
-    old_path = os.getcwd()
-    try:
-        os.chdir(dirpath)
-        yield
-    finally:
-        os.chdir(old_path)
-
-
-@contextmanager
-def bake_in_temp_dir(cookies, *args, **kwargs):
-    """
-    Bake a cookiecutter, and switch into the resulting directory.
-
-    Args:
-        cookies (pytest_cookies.Cookies): the cookie to be baked.
-
-    """
-    result = cookies.bake(*args, **kwargs)
-    if result.exception:
-        raise result.exception
-    with inside_dir(str(result.project)):
-        yield
-
-
 common = {
-    "app_name": "cookie_lover",
+    "library_name": "cookie_lover",
     "repo_name": "cookie_repo",
 }
 
@@ -70,21 +39,13 @@ configurations = [
         {
             **common,
         },
-        id="no models"
-    ),
-    pytest.param(
-        {
-            **common,
-            "models": "ChocolateChip,Zimsterne",
-        },
-        id="two models"
-    ),
+    )
 ]
 
 
 @pytest.fixture(name='custom_template', scope="module")
 def fixture_custom_template(cookies_session):
-    template = cookies_session._default_template + "/cookiecutter-django-app"  # pylint: disable=protected-access
+    template = cookies_session._default_template + "/cookiecutter-python-library"  # pylint: disable=protected-access
     return template
 
 
@@ -126,38 +87,10 @@ def test_readme(options_baked, custom_template):
         pytest.fail(str(exc))
 
 
-def test_models(options_baked):
-    """The generated models.py file should pass a sanity check."""
-    if "models" not in options_baked:
-        pytest.skip("No models to check")
-    model_txt = Path("cookie_lover/models.py").read_text()
-    for model_name in options_baked.get("models").split(","):
-        pattern = r'^class {}\(TimeStampedModel\):$'.format(model_name)
-        assert re.search(pattern, model_txt, re.MULTILINE)
-
-
-def test_urls(options_baked):
-    """The urls.py file should be present."""
-    urls_file_txt = Path("cookie_lover/urls.py").read_text()
-    basic_url = "url(r'', TemplateView.as_view(template_name=\"cookie_lover/base.html\"))"
-    assert basic_url in urls_file_txt
-
-
 def test_travis(options_baked):
     """The generated .travis.yml file should pass a sanity check."""
     travis_text = Path(".travis.yml").read_text()
     assert 'pip install -r requirements/travis.txt' in travis_text
-
-
-def test_app_config(options_baked):
-    """The generated Django AppConfig should look correct."""
-    init_text = Path("cookie_lover/__init__.py").read_text()
-    pattern = r"^default_app_config = 'cookie_lover.apps.CookieLoverConfig'  #"
-    assert re.search(pattern, init_text, re.MULTILINE)
-
-    apps_text = Path("cookie_lover/apps.py").read_text()
-    pattern = r'^class CookieLoverConfig\(AppConfig\):$'
-    assert re.search(pattern, apps_text, re.MULTILINE)
 
 
 def test_manifest(options_baked):
@@ -171,6 +104,15 @@ def test_setup_py(options_baked):
     setup_text = Path("setup.py").read_text()
     assert "VERSION = get_version('cookie_lover', '__init__.py')" in setup_text
     assert "    author='edX'," in setup_text
+
+
+def test_upgrade(options_baked):
+    """Make sure the upgrade target works"""
+    try:
+        # Sanity check the generated Makefile
+        sh.make('upgrade')
+    except sh.ErrorReturnCode as exc:
+        pytest.fail(str(exc))
 
 
 def test_quality(options_baked):

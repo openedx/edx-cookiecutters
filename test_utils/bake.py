@@ -1,7 +1,8 @@
-"""Helper functions for our tests."""
-
 import os
+import re
 from contextlib import contextmanager
+
+import unittest
 
 
 @contextmanager

@@ -23,7 +23,11 @@ import edx_theme
 
 def get_version(*file_paths):
     """
-    Extract the version string from the file at the given relative path fragments.
+    Extract the version string from the file.
+
+    Input:
+     - file_paths: relative path fragments to file with
+                   version string
     """
     filename = os.path.join(os.path.dirname(__file__), *file_paths)
     version_file = io.open(filename).read()
@@ -185,8 +189,9 @@ html_theme_path = [edx_theme.get_html_theme_path()]
 #
 # html_logo = None
 
-# The name of an image file (relative to this directory) to use as a favicon of
-# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# The name of an image file (relative to this directory) to use as a favicon
+# of the docs.  This file should be a Windows icon file (.ico) being 16x16
+# or 32x32
 # pixels large.
 #
 # html_favicon = None

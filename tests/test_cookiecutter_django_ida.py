@@ -11,6 +11,8 @@ from pathlib import Path
 import pytest
 import sh
 
+from test_utils.bake import bake_in_temp_dir
+
 LOGGING_CONFIG = {
     'version': 1,
     'incremental': True,
@@ -24,39 +26,6 @@ LOGGING_CONFIG = {
     }
 }
 logging.config.dictConfig(LOGGING_CONFIG)
-
-
-@contextmanager
-def inside_dir(dirpath):
-    """
-    Change into a directory and change back at the end of the with-statement.
-
-    Args:
-        dirpath (str): the path of the directory to change into.
-
-    """
-    old_path = os.getcwd()
-    try:
-        os.chdir(dirpath)
-        yield
-    finally:
-        os.chdir(old_path)
-
-
-@contextmanager
-def bake_in_temp_dir(cookies, *args, **kwargs):
-    """
-    Bake a cookiecutter, and switch into the resulting directory.
-
-    Args:
-        cookies (pytest_cookies.Cookies): the cookie to be baked.
-
-    """
-    result = cookies.bake(*args, **kwargs)
-    if result.exception:
-        raise result.exception
-    with inside_dir(str(result.project)):
-        yield
 
 
 common = {
@@ -121,6 +90,15 @@ def test_travis(options_baked):
     """The generated .travis.yml file should pass a sanity check."""
     travis_text = Path(".travis.yml").read_text()
     assert 'pip install -r requirements/travis.txt' in travis_text
+
+
+def test_upgrade(options_baked):
+    """Make sure the upgrade target works"""
+    try:
+        # Sanity check the generated Makefile
+        sh.make('upgrade')
+    except sh.ErrorReturnCode as exc:
+        pytest.fail(str(exc))
 
 
 def test_quality(options_baked):
