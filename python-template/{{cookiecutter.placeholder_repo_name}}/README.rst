@@ -62,7 +62,7 @@ invitation`_, then join our `community Slack team`_.
 For more information about these options, see the `Getting Help`_ page.
 
 .. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
-.. _community Slack team: http://openedx.slack.com/
+.. _community Slack team: https://openedx.slack.com/
 .. _Getting Help: https://openedx.org/getting-help
 
 .. |pypi-badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.repo_name }}.svg
@@ -73,12 +73,12 @@ For more information about these options, see the `Getting Help`_ page.
     :target: https://travis-ci.org/edx/{{ cookiecutter.repo_name }}
     :alt: Travis
 
-.. |codecov-badge| image:: http://codecov.io/github/edx/{{ cookiecutter.repo_name }}/coverage.svg?branch=master
-    :target: http://codecov.io/github/edx/{{ cookiecutter.repo_name }}?branch=master
+.. |codecov-badge| image:: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}/coverage.svg?branch=master
+    :target: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}?branch=master
     :alt: Codecov
 
 .. |doc-badge| image:: https://readthedocs.org/projects/{{ cookiecutter.repo_name }}/badge/?version=latest
-    :target: http://{{ cookiecutter.repo_name }}.readthedocs.io/en/latest/
+    :target: https://{{ cookiecutter.repo_name }}.readthedocs.io/en/latest/
     :alt: Documentation
 
 .. |pyversions-badge| image:: https://img.shields.io/pypi/pyversions/{{ cookiecutter.repo_name }}.svg

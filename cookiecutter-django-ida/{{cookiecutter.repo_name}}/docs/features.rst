@@ -2,7 +2,7 @@ Feature Toggling
 ================
 All new features/functionality should be released behind a feature gate. This allows us to easily disable features
 in the event that an issue is discovered in production. This project uses the
-`Waffle <http://waffle.readthedocs.org/en/latest/>`_ library for feature gating.
+`Waffle <https://waffle.readthedocs.org/en/latest/>`_ library for feature gating.
 
 Waffle supports three types of feature gates (listed below). We typically use flags and switches since samples are
 random, and not ideal for our needs.
@@ -19,7 +19,7 @@ random, and not ideal for our needs.
 
 
 For information on creating or updating features, refer to the
-`Waffle documentation <http://waffle.readthedocs.org/en/latest/>`_.
+`Waffle documentation <https://waffle.readthedocs.org/en/latest/>`_.
 
 Permanent Feature Rollout
 -------------------------

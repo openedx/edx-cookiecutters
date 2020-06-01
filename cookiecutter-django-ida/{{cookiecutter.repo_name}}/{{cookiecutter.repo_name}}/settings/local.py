@@ -31,7 +31,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # END EMAIL CONFIGURATION
 
 # TOOLBAR CONFIGURATION
-# See: http://django-debug-toolbar.readthedocs.org/en/latest/installation.html
+# See: https://django-debug-toolbar.readthedocs.org/en/latest/installation.html
 if os.environ.get('ENABLE_DJANGO_TOOLBAR', False):
     INSTALLED_APPS += (
         'debug_toolbar',
