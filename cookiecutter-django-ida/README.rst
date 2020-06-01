@@ -3,7 +3,7 @@ cookiecutter-django-ida
 
 A cookiecutter_ template for edX Django projects.
 
-.. _cookiecutter: http://cookiecutter.readthedocs.org/en/latest/index.html
+.. _cookiecutter: https://cookiecutter.readthedocs.org/en/latest/index.html
 
 **This template produces a Python 3.5 project.**
 
@@ -22,7 +22,7 @@ The necessary configuration is also in place to support:
 * Pylint/Pycodestyle validation
 * Travis CI
 
-.. _Sphinx: http://sphinx-doc.org/
+.. _Sphinx: https://sphinx-doc.org/
 
 Usage
 -----

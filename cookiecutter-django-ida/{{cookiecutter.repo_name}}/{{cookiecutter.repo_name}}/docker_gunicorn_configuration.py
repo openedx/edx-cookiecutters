@@ -1,5 +1,5 @@
 """
-gunicorn configuration file: http://docs.gunicorn.org/en/develop/configure.html
+gunicorn configuration file: https://docs.gunicorn.org/en/develop/configure.html
 """
 import multiprocessing  # pylint: disable=unused-import
 

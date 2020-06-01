@@ -83,7 +83,7 @@ invitation`_, then join our `community Slack team`_.
 For more information about these options, see the `Getting Help`_ page.
 
 .. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
-.. _community Slack team: http://openedx.slack.com/
+.. _community Slack team: https://openedx.slack.com/
 .. _Getting Help: https://openedx.org/getting-help
 .. _`file an issue`: https://github.com/edx/edx-cookiecutters/issues
 .. _`tox`: https://tox.readthedocs.io/en/latest/

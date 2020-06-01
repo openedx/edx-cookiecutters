@@ -18,7 +18,7 @@ Localization (l10n) is adapting a program to local language and cultural habits.
 
 Use the locale directory to provide internationalized strings for your XBlock project.
 For more information on how to enable translations, visit the
-`Open edX XBlock tutorial on Internationalization <http://edx.readthedocs.org/projects/xblock-tutorial/en/latest/edx_platform/edx_lms.html>`_.
+`Open edX XBlock tutorial on Internationalization <https://edx.readthedocs.org/projects/xblock-tutorial/en/latest/edx_platform/edx_lms.html>`_.
 
 This cookiecutter template uses `django-statici18n <https://django-statici18n.readthedocs.io/en/latest/>`_
 to provide translations to static javascript using ``gettext``.

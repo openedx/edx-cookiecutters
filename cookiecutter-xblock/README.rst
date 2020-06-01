@@ -19,4 +19,4 @@ Your XBlock should now be available at http://localhost:8000
 
 As a next step, you can pick up the XBlock tutorial at the `Customizing Your XBlock`_ section.
 
-.. _Customizing Your XBlock: http://edx.readthedocs.io/projects/xblock-tutorial/en/latest/customize/index.html
+.. _Customizing Your XBlock: https://edx.readthedocs.io/projects/xblock-tutorial/en/latest/customize/index.html

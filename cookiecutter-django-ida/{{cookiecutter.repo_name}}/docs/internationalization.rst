@@ -8,7 +8,7 @@ this choice.
 
 Follow the `internationalization coding guidelines`_ in the edX Developer's Guide when developing new features.
 
-.. _internationalization coding guidelines: http://edx.readthedocs.org/projects/edx-developer-guide/en/latest/internationalization/i18n.html
+.. _internationalization coding guidelines: https://edx.readthedocs.org/projects/edx-developer-guide/en/latest/internationalization/i18n.html
 
 Updating Translations
 ~~~~~~~~~~~~~~~~~~~~~
@@ -22,7 +22,7 @@ Pushing source translation files to Transifex requires access to the edx-platfor
 Team if you will be pushing translation files. You should also `configure the Transifex client`_ if you have not done so
 already.
 
-.. _configure the Transifex client: http://docs.transifex.com/client/config/
+.. _configure the Transifex client: https://docs.transifex.com/client/config/
 
 The `make` targets listed below can be used to push or pull translations.
 

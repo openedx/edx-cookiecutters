@@ -3,7 +3,7 @@ cookiecutter-python-library
 
 A cookiecutter_ template for edX python projects. For django related cookiecutters, see cookiecutters-django-{ida, app} located in edx-cookiecutters.
 
-.. _cookiecutter: http://cookiecutter.readthedocs.org/en/latest/index.html
+.. _cookiecutter: https://cookiecutter.readthedocs.org/en/latest/index.html
 
 **This template produces a Python 3.5 project.**
 
