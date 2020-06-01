@@ -21,6 +21,7 @@ Available cookiecutters
 
 Using a cookiecutter
 --------------------
+These instructions assume you have cloned this repository and are currently in its head dir.
 
 Commands::
 
