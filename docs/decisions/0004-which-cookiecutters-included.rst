@@ -16,28 +16,18 @@ Context
 
 * The name of this repository suggests all public edx cookiecutters will be in this repository.
 
+* We want to make it easier to find a cookiecutter and create a new project. This would encourage community contribution.
 
-Possible Decision 1
--------------------
 
-edx-cookiecutter should be the location for all public edx cookiecutters.
+Decision
+--------
 
-Possible Decision 2
--------------------
+edx-cookiecutter should be the central point for public edx cookiecutters. Most Open edx public cookiecutters should be placed in this repository.
 
-edx-cookiecutter should be the location for only Open edx public python cookiecutters. 
-And this repository should be renamed????
-
-Other cookiecutters should either be placed in its own repository or combined based on _______(language, subject matter, frontend, backend, ???).
+If there is a complelling case why a cookiecutter should be elsewhere, a link to it should be added the edx-cookiecutter/README.rst.
 
 
 Consequences
 ------------
 
-TODO: fill this out once decision has been made
-
-
-Rejected Alternatives
----------------------
-
-TODO: fill this out once decision has been made
+All edx cookiecutters should be moved to this repository.
