@@ -4,6 +4,8 @@ edx-cookiecutters
 
 This repository holds most of the Open edx public python cookiecutters.
 
+If you are modifying and debugging cookiecutters on a local device, please see "Local Debugging of the layered cookiecutters" section below.
+
 Available cookiecutters
 ------------------------
 
@@ -17,35 +19,34 @@ Available cookiecutters
     - for createing a XBlock repository as well as a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
 
 
+Using a cookiecutter
+--------------------
+These instructions assume you have cloned this repository and are currently in its head dir.
+
+Commands::
+
+    $ make requirements  # from inside edx-cookiecutter repo
+    # Replace <OUTPUT-DIRECTORY> with the base directory; your new directory will go inside.
+    $ cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
+
 Cookiecutters using layered apporach
 ------------------------------------
 
 - cookiecutter-python-library
 - cookiecutter-django-app
 - cookiecutter-django-ida
+- cookiecutter-xblock
 
 If you are updating above cookiecutters, please see docs/decisions/0003-layered-cookiecutter.rst and docs/how_tos/modifying_layered_cookiecutter.rst
 
-
-Using a cookiecutter
---------------------
-
-Commands::
-
-    $ make requirements  # from inside edx-cookiecutter repo
-    # move to location where you want to create a new repo
-    # Replace <COOKIECUTTER-NAME> with one of available cookiecutters
-    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory <COOKIECUTTER-NAME>
-
-
-Local Debugging of cookiecutters
---------------------------------
+Local Debugging of the layered cookiecutters
+--------------------------------------------
 
 To debug locally, set the env variable EDX_COOKIECUTTER_ROOTDIR to the root of the edx-cookiecutters repository. For example, from inside /edx-cookiecutters, use::
 
     $ export EDX_COOKIECUTTER_ROOTDIR="/edx-cookiecutters"
 
-Without this environment variable, the cookiecutter will pull templates from github, which will not have your local changes on them.
+Without this environment variable, the layered cookiecutters will pull templates from github, which will not have your local changes on them.
 
 Decisions
 ---------
