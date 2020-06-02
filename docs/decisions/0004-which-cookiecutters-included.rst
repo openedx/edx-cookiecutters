@@ -16,7 +16,7 @@ Context
 
 * The name of this repository suggests all public edx cookiecutters will be in this repository.
 
-* We want to make it easier to find a cookiecutter and create a new project. This would encourage community contribution.
+* We want to make it easier to find a cookiecutter and create a new project. This would encourage community contributions.
 
 
 Decision
@@ -31,3 +31,11 @@ Consequences
 ------------
 
 All edx cookiecutters should be moved to this repository.
+
+Rejected Alternatives
+---------------------
+
+Seperate Repos for frontend and backend cookiecutters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Rejected because of the very real possiblity of creating a cookiecutter that deals with both frontend and backend.
