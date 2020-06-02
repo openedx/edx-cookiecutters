@@ -12,11 +12,7 @@ from edx_lint.cmd.write import write_main
 # cookiecutter can import a template from either github or from a location on local disk.
 # If someone is debugging this repository locally, the below block is necessary to pull in
 #   local versions of the templates
-EDX_COOKIECUTTER_ROOTDIR = os.getenv('EDX_COOKIECUTTER_ROOTDIR')
-import_template_from_github = True
-if EDX_COOKIECUTTER_ROOTDIR is not None and isinstance(EDX_COOKIECUTTER_ROOTDIR, str):
-    if len(EDX_COOKIECUTTER_ROOTDIR) > 0:
-        import_template_from_github = False
+EDX_COOKIECUTTER_ROOTDIR = os.getenv('EDX_COOKIECUTTER_ROOTDIR') or 'https://github.com/edx/edx-cookiecutters.git'
 
 
 def move(src, dest):
@@ -67,21 +63,12 @@ extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 
 extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 
-#  get template from github
-if import_template_from_github:
-    directory = "python-template"
-    cookiecutter(
-        'git@github.com:edx/edx-cookiecutters.git',
-        extra_context=extra_context,
-        no_input=True,
-        directory=directory
-        )
-else:
-    cookiecutter(
-        os.path.join(EDX_COOKIECUTTER_ROOTDIR, 'python-template'),
-        extra_context=extra_context,
-        no_input=True
-        )
+cookiecutter(
+    EDX_COOKIECUTTER_ROOTDIR,
+    extra_context=extra_context,
+    no_input=True,
+    directory='python-template',
+)
 
 project_root_dir = os.getcwd()
 python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)

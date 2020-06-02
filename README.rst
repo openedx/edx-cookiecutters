@@ -42,11 +42,17 @@ If you are updating above cookiecutters, please see docs/decisions/0003-layered-
 Local Debugging of the layered cookiecutters
 --------------------------------------------
 
-To debug locally, set the env variable EDX_COOKIECUTTER_ROOTDIR to the root of the edx-cookiecutters repository. For example, from inside /edx-cookiecutters, use::
+To ensure that the layered cookiecutters pull from your local code,
+instead of Github, run cookiecutter like::
 
-    $ export EDX_COOKIECUTTER_ROOTDIR="/edx-cookiecutters"
+    $ make cookiecutter-<TEMPLATE-NAME>
 
-Without this environment variable, the layered cookiecutters will pull templates from github, which will not have your local changes on them.
+eg::
+
+    $ make cookiecutter-django-app
+    $ make cookiecutter-django-ida
+    $ make cookiecutter-python-library
+    $ make cookiecutter-xblock
 
 Decisions
 ---------
