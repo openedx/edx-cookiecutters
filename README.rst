@@ -2,7 +2,7 @@
 edx-cookiecutters
 =================
 
-This repository holds most of the Open edx public python cookiecutters.
+This repository holds most of the Open edx public cookiecutters.
 
 If you are modifying and debugging cookiecutters on a local device, please see "Local Debugging of the layered cookiecutters" section below.
 
