@@ -14,12 +14,12 @@ TODO: Give context on what lead to the creation of this repo. What project is th
 Decision
 --------
 
-TODO:
+TODO
 
 Consequences
 ------------
 
-TODO:
+TODO
 
 Rejected Alternatives
 ---------------------
