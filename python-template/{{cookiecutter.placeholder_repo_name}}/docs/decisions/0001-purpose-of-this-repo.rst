@@ -15,12 +15,12 @@ TODO: Give context on what lead to the creation of this repo.
 Decision
 --------
 
-TODO
+TODO: Clearly state how the context above led you to creating this repo.
 
 Consequences
 ------------
 
-TODO
+TODO: As a result of this repo's creation, what other things will change.
 
 Rejected Alternatives
 ---------------------
