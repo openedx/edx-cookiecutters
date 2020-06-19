@@ -88,8 +88,8 @@ source_suffix = '.rst'
 #
 # source_encoding = 'utf-8-sig'
 
-# The master toctree document.
-master_doc = 'index'
+# The top level toctree document.
+top_level_doc = 'index'
 
 # General information about the project.
 project = '{{ cookiecutter.project_name }}'
@@ -306,7 +306,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_target = '{project}.tex'.format(project=project)
 latex_documents = [
-    (master_doc, latex_target, documentation_title,
+    (top_level_doc, latex_target, documentation_title,
      author, 'manual'),
 ]
 
@@ -348,7 +348,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, project_title, documentation_title,
+    (top_level_doc, project_title, documentation_title,
      [author], 1)
 ]
 
@@ -363,7 +363,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, project_title, documentation_title,
+    (top_level_doc, project_title, documentation_title,
      author, project_title, '{{ cookiecutter.project_short_description }}',
      'Miscellaneous'),
 ]
