@@ -11,7 +11,7 @@ PIP_COMPILE = pip-compile --rebuild --upgrade $(PIP_COMPILE_OPTS)
 
 TEMPLATES=$(wildcard cookiecutter-*)
 .PHONY: $(TEMPLATES)
-$(TEMPLATES): ## Create a new repo from the template
+$(TEMPLATES): requirements ## Create a new repo from the template
 	test -e var/ || mkdir var
 	EDX_COOKIECUTTER_ROOTDIR=$(PWD) cookiecutter $(PWD) --directory $(@) --output-dir var
 
