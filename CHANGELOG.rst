@@ -5,7 +5,17 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2020-06-2
+2020-07-09
+----------
+
+Fixed
+~~~~~
+
+* Added csrf.urls to IDA cookiecutter so that CSRF works
+
+(some intervening changes not captured)
+
+2020-06-02
 ----------
 
 * Adding decision to make this repo the place for all edx cookiecutters.
