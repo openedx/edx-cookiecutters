@@ -1,0 +1,2 @@
+# Python libraries to install that are local to the edx-cookiecutter repo
+-e .
