@@ -66,7 +66,7 @@ setup(
     url="https://github.com/edx/edx-repo-health",
     include_package_data=True,
     install_requires=load_requirements("requirements/base.in"),
-    packages=["utils"],
+    packages=["utils_edx_cookiecutters"],
     python_requires=">=3.5",
     license="Apache Software License 2.0",
     zip_safe=False,
