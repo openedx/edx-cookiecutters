@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-TODO
+Package used to create new repositories relating to Open edX
 """
 import os
 import re
@@ -59,14 +59,14 @@ README = open(os.path.join(os.path.dirname(__file__), "README.rst")).read()
 setup(
     name="edx-cookiecutters",
     version=VERSION,
-    description="""blah blah blah""",
+    description="""Contains cookiecutter templates for common Open edX projects""",
     long_description=README,
     author="edX",
     author_email="oscm@edx.org",
     url="https://github.com/edx/edx-repo-health",
     include_package_data=True,
     install_requires=load_requirements("requirements/base.in"),
-    packages=["utils"],
+    packages=["utils_edx_cookiecutters"],
     python_requires=">=3.5",
     license="Apache Software License 2.0",
     zip_safe=False,
