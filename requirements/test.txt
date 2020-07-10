@@ -58,7 +58,7 @@ sh==1.13.1                # via -r requirements/test.in
 six==1.15.0               # via -r requirements/base.txt, astroid, bleach, cookiecutter, doc8, edx-lint, edx-sphinx-theme, packaging, pathlib2, python-dateutil, readme-renderer, stevedore
 snowballstemmer==2.0.0    # via pydocstyle, sphinx
 sphinx-rtd-theme==0.5.0   # via -r requirements/test.in
-sphinx==3.1.1             # via -r requirements/test.in, edx-sphinx-theme, sphinx-rtd-theme
+sphinx==3.1.2             # via -r requirements/test.in, edx-sphinx-theme, sphinx-rtd-theme
 sphinxcontrib-applehelp==1.0.2  # via sphinx
 sphinxcontrib-devhelp==1.0.2  # via sphinx
 sphinxcontrib-htmlhelp==1.0.3  # via sphinx
