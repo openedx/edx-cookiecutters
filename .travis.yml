@@ -26,4 +26,4 @@ install:
   - pip install -r requirements/travis.txt
 
 script:
-  - tox
+  - tox -v
