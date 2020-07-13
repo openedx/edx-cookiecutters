@@ -24,15 +24,15 @@ REQ_FILES = \
 
 upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
 upgrade: ## update the pip requirements files to use the latest releases satisfying our constraints
-# 	pip install -qr requirements/pip-tools.txt
-# 	@ export REBUILD='--rebuild'; \
-# 	for f in $(REQ_FILES); do \
-# 		echo ; \
-# 		echo "== $$f ===============================" ; \
-# 		echo "pip-compile -v --no-emit-trusted-host --no-index $$REBUILD --upgrade -o $$f.txt $$f.in"; \
-# 		pip-compile -v --no-emit-trusted-host --no-index $$REBUILD --upgrade -o $$f.txt $$f.in || exit 1; \
-# 		export REBUILD=''; \
-# 	done
+	pip install -qr requirements/pip-tools.txt
+	@ export REBUILD='--rebuild'; \
+	for f in $(REQ_FILES); do \
+		echo ; \
+		echo "== $$f ===============================" ; \
+		echo "pip-compile -v --no-emit-trusted-host --no-index $$REBUILD --upgrade -o $$f.txt $$f.in"; \
+		pip-compile -v --no-emit-trusted-host --no-index $$REBUILD --upgrade -o $$f.txt $$f.in || exit 1; \
+		export REBUILD=''; \
+	done
 	scripts/post-pip-compile.sh $(REQ_FILES:=.txt)
 
 quality: ## check coding style with pycodestyle and pylint
