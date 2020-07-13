@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
--e .  # via -r requirements/base.txt
+-e .
 alabaster==0.7.12         # via sphinx
 arrow==0.13.2             # via -c requirements/constraints.txt, -r requirements/base.txt, jinja2-time, pytest-cookies
 astroid==2.3.3            # via -r requirements/base.txt, pylint, pylint-celery
