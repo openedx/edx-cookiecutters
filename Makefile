@@ -14,7 +14,7 @@ $(TEMPLATES): ## Create a new repo from the template
 	EDX_COOKIECUTTER_ROOTDIR=$(PWD) cookiecutter $(PWD) --directory $(@) --output-dir var
 
 # Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile --rebuild --upgrade --no-emit-trusted-host --no-emit-index-url $(PIP_COMPILE_OPTS)
+PIP_COMPILE = pip-compile --rebuild --upgrade --no-emit-trusted-host $(PIP_COMPILE_OPTS)
 
 
 upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
