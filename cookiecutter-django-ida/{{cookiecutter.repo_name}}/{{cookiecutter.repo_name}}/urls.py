@@ -34,6 +34,7 @@ urlpatterns = [
     # Use the same auth views for all logins, including those originating from the browseable API.
     url(r'^api-auth/', include(oauth2_urlpatterns)),
     url(r'^auto_auth/$', core_views.AutoAuth.as_view(), name='auto_auth'),
+    url(r'', include('csrf.urls')),  # Include csrf urls from edx-drf-extensions
     url(r'^health/$', core_views.health, name='health'),
 ]
 
