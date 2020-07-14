@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-07-015
+----------
+
+Changed
+~~~~~~~
+
+* Changed how oauth2_urlpatterns is imported in the urls.py file
+
 2020-07-09
 ----------
 
