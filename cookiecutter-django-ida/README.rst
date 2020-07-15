@@ -28,7 +28,7 @@ Usage
 -----
 
 
-To create project using this cookiecutter, follow instructions found in edx-cookiecutter's `readme`_.
+To create a project using this cookiecutter, follow the instructions found in edx-cookiecutter's `readme`_.
 
 .. _readme: https://github.com/edx/edx-cookiecutters/blob/master/README.rst
 

@@ -2,12 +2,10 @@ This is a cookiecutter template for new XBlocks.
 
 It enables creation of the XBlock repository as well as a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
 
-To create a new XBlock using this cookiecutter template, first make sure you have cookiecutter installed.
+To create a new XBlock using this cookiecutter template, follow the instructions found in edx-cookiecutter's `readme`_.
 
-Then run::
+.. _readme: https://github.com/edx/edx-cookiecutters/blob/master/README.rst
 
-    $ cd <workspace>
-    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory cookiecutter-python-library
 
 Enter the short name and primary class name of your new XBlock when prompted.
 
