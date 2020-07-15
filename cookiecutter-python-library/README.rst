@@ -12,21 +12,9 @@ This cookiecutter template is intended for new edX python libraries.
 Usage
 -----
 
-As with any new project, you will need to create a virtual environment. Once this is set up, install cookiecutter and edx-lint:
+To create a project using this cookiecutter, follow the instructions found in edx-cookiecutter's `readme`_.
 
-.. code-block:: bash
-
-    $ pip install cookiecutter
-    $ pip install edx-lint
-
-cookiecutter has the ability to pull templates directly from git, so there is no need to clone this repo. To access the template, provide the repo path as an argument:
-
-.. code-block:: bash
-
-    $ cd <workspace>
-    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory cookiecutter-python-library
-
-You will be prompted for a few basic details (described below). These will be used to create the new project.
+.. _readme: https://github.com/edx/edx-cookiecutters/blob/master/README.rst
 
 After the new folder is created, you will need to:
 

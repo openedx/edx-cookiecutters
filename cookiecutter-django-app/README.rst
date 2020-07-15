@@ -8,16 +8,10 @@ A cookiecutter_ template for creating reusable Django packages (installable apps
 If you're creating a standalone Django service, you should probably use
 `cookiecutter-django-ida`_ instead.
 
-**Why?** Creating reusable Django packages has always been annoying. There are no defined/maintained
-best practices (especially for ``setup.py``), so you end up cutting and pasting hacky, poorly understood,
-often legacy code from one project to the other. This template, inspired by `cookiecutter-djangopackage`_,
-is designed to allow Django developers the ability to break free from cargo-cult configuration and follow
-a common pattern dictated by the experts and maintained here.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _cookiecutter-django-ida: https://github.com/edx/cookiecutter-django-ida
-.. _cookiecutter-pypackage: https://github.com/audreyr/cookiecutter-pypackage
-.. _cookiecutter-djangopackage: https://github.com/pydanny/cookiecutter-djangopackage
+.. _cookiecutter-django-ida: https://github.com/edx/edx-cookiecutters/cookiecutter-django-ida
+
 
 Features
 --------
@@ -47,49 +41,12 @@ badge, a travis-ci badge and a link to documentation on readthedocs.org. You
 don't need to have these accounts set up before using Cookiecutter or
 cookiecutter-django-app.
 
-Now, get Cookiecutter_. Trust me, it's awesome::
 
-    $ pip install cookiecutter
+To create a project using this cookiecutter, follow the instructions found in edx-cookiecutter's `readme`_.
 
-You also need to instll edx-lint for::
+.. _readme: https://github.com/edx/edx-cookiecutters/blob/master/README.rst
 
-    $ pip install edx-lint
-
-Now run it against this repo::
-
-    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory cookiecutter-django-app
-
-You'll be prompted for some questions, answer them, then it will create a directory that is your new package.
-
-Let's pretend you want to create a reusable Django app called "Blogging-for-Humans", with an app that can be placed
-in ``INSTALLED_APPS`` as "blogging_for_humans". Rather than have to copy/paste from other people's projects and
-then fight enthusiasm-destroying app layout issues like `setup.py` configuration and creating test
-harnesses, you get Cookiecutter_ to do all the work.
-
-**Warning**: After this point, change 'John Doe', 'jdoe@edx.org', etc. to your own information.
-
-It prompts you for information that it uses to create the app, with defaults in square brackets. Answer them::
-
-    Cloning into 'cookiecutter-django-app'...
-    remote: Counting objects: 49, done.
-    remote: Compressing objects: 100% (33/33), done.
-    remote: Total 49 (delta 6), reused 48 (delta 5)
-    Unpacking objects: 100% (49/49), done.
-    full_name [Your full name here]: John Doe
-    email [you@example.com]: jdoe@edx.org
-    repo_name [blogging_for_humans]:
-    app_name [blogging_for_humans]:
-    project_name [dj-package]: Blogging-for-Humans
-    project_short_description [Your project description goes here]: A sample Django package
-    models [Comma-separated list of models]: Scoop, Flavor
-    config_class_name [BloggingForHumansConfig]:
-    version [0.1.0]:
-    owner [edx/platform-team]:
-    Select open_source_license:
-    1 - AGPL
-    2 - Apache Software License 2.0
-    3 - Not open source
-    Choose from 1, 2, 3 [1]:
+After the new folder is created, you will need to:
 
 Enter the project and take a look around::
 
