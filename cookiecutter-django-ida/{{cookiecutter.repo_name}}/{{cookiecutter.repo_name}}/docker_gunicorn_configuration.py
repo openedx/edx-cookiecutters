@@ -3,7 +3,6 @@ gunicorn configuration file: https://docs.gunicorn.org/en/develop/configure.html
 """
 import multiprocessing  # pylint: disable=unused-import
 
-
 preload_app = True
 timeout = 300
 bind = "0.0.0.0:{{cookiecutter.port}}"
@@ -47,6 +46,7 @@ def close_all_caches():
 
 def post_fork(server, worker):  # pylint: disable=unused-argument
     close_all_caches()
+
 
 def when_ready(server):  # pylint: disable=unused-argument
     """When running in debug mode, run Django's `check` to better match what `manage.py runserver` does"""
