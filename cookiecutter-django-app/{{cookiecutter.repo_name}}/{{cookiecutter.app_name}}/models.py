@@ -3,12 +3,10 @@ Database models for {{cookiecutter.app_name}}.
 """
 {%- if cookiecutter.models != "Comma-separated list of models" %}
 # from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from model_utils.models import TimeStampedModel
 {%- for model in cookiecutter.models.replace(' ', '').split(',') %}
 
 
-@python_2_unicode_compatible
 class {{ model.strip() }}(TimeStampedModel):
     """
     TODO: replace with a brief description of the model.
