@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-TODO
+Package used to create new repositories relating to Open edX
 """
 import os
 import re
