@@ -5,7 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2020-07-015
+2020-07-28
+----------
+
+Fixed
+~~~~~~~
+
+* Include ``JWT_AUTH_COOKIE`` in the base ``JWT_AUTH`` settings dict.
+
+2020-07-15
 ----------
 
 Changed
