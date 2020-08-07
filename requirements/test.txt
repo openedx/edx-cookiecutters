@@ -17,7 +17,7 @@ click-log==0.3.2          # via -r requirements/base.txt, edx-lint
 click==7.1.2              # via -r requirements/base.txt, click-log, cookiecutter, edx-lint
 cookiecutter==1.7.2       # via -c requirements/constraints.txt, -r requirements/base.txt, pytest-cookies
 django-model-utils==4.0.0  # via -r requirements/test.in
-django==2.2.14            # via -c requirements/constraints.txt, -r requirements/test.in, django-model-utils
+django==2.2.15            # via -c requirements/constraints.txt, -r requirements/test.in, django-model-utils
 doc8==0.8.1               # via -r requirements/test.in
 docutils==0.16            # via doc8, readme-renderer, restructuredtext-lint, sphinx
 edx-lint==1.5.0           # via -r requirements/base.txt, -r requirements/test.in
