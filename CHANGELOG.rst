@@ -5,6 +5,17 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-08-07
+----------
+
+Fixed
+~~~~~
+
+- Tweaks to the READMEs to separate using cookiecutters from updating
+  cookiecutters; clarify the use of a virtualenv for running cookiecutters;
+  correct the way we talk about Slack and getting help; minor formatting
+  improvements.
+
 2020-08-03
 ----------
 
