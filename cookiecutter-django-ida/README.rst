@@ -100,7 +100,15 @@ Reporting Security Issues
 
 Please do not report security issues in public. Please email security@edx.org.
 
-Get Help
---------
+Getting Help
+------------
 
-Ask questions and discuss this project on `Slack <https://openedx.slack.com/messages/general/>`_ or in the `edx-code Google Group <https://groups.google.com/forum/#!forum/edx-code>`_.
+If you're having trouble, we have discussion forums at https://discuss.openedx.org where you can connect with others in the community.
+
+Our real-time conversations are on Slack. You can request a `Slack invitation`_, then join our `community Slack workspace`_.
+
+For more information about these options, see the `Getting Help`_ page.
+
+.. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
+.. _community Slack workspace: https://openedx.slack.com/
+.. _Getting Help: https://openedx.org/getting-help
