@@ -63,7 +63,7 @@ sh==1.13.1                # via -r requirements/test.txt
 six==1.15.0               # via -r requirements/pip-tools.txt, -r requirements/test.txt, -r requirements/travis.txt, astroid, bleach, cookiecutter, doc8, edx-lint, edx-sphinx-theme, packaging, pathlib2, pip-tools, python-dateutil, readme-renderer, stevedore, tox, virtualenv
 snowballstemmer==2.0.0    # via -r requirements/test.txt, pydocstyle, sphinx
 sphinx-rtd-theme==0.5.0   # via -r requirements/test.txt
-sphinx==3.1.2             # via -r requirements/test.txt, edx-sphinx-theme, sphinx-rtd-theme
+sphinx==3.2.0             # via -r requirements/test.txt, edx-sphinx-theme, sphinx-rtd-theme
 sphinxcontrib-applehelp==1.0.2  # via -r requirements/test.txt, sphinx
 sphinxcontrib-devhelp==1.0.2  # via -r requirements/test.txt, sphinx
 sphinxcontrib-htmlhelp==1.0.3  # via -r requirements/test.txt, sphinx
