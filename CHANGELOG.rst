@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-08-14
+----------
+
+Changed
+~~~~~~~
+
+* Ignores /healthcheck endpoint in monitoring for IDAs
+
 2020-08-07
 ----------
 
