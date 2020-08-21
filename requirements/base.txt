@@ -12,7 +12,7 @@ chardet==3.0.4            # via binaryornot, requests
 click-log==0.3.2          # via edx-lint
 click==7.1.2              # via click-log, cookiecutter, edx-lint
 cookiecutter==1.7.2       # via -c requirements/constraints.txt, -r requirements/base.in
-edx-lint==1.5.0           # via -r requirements/base.in
+edx-lint==1.5.2           # via -r requirements/base.in
 idna==2.10                # via requests
 isort==4.3.21             # via pylint
 jinja2-time==0.2.0        # via cookiecutter
