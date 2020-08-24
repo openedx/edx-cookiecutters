@@ -1,20 +1,14 @@
-# openedx.yaml
-
----
-owner:
-    type: team
-    team: edx/arch-bom
 nick: edx-cookiecutters
 tags:
     - tools
 oeps:
-    oep-2: True
+    oep-2: true
     oep-3:
-        state: False
+        state: false
         reason: Has no asynchronous tasks
     oep-5:
-        state: False
+        state: false
         reason: Doesn't require any services to be started
-    oep-18: True
+    oep-18: true
     oep-30:
-        applicable: False
+        applicable: false
