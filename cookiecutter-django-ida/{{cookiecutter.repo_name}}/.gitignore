@@ -75,6 +75,9 @@ private.py
 # JetBrains
 .idea
 
+# Emacs
+*~
+
 # OS X
 .DS_Store
 

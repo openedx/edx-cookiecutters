@@ -40,6 +40,7 @@ After the new folder is created, you will need to:
 3. ``make upgrade``
 4. ``make docker_build``
 5. ``docker-compose up``
+6. ``./provision-{project_name}.sh``
 
 **Note** This cookiecutter repo currently has some issues with repos that use a hyphen in their name. If this is the case, some pieces of the repo will need to be changed from ``new-repo-name`` to ``new_repo_name``, particularly the Python pieces.
 

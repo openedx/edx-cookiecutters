@@ -5,6 +5,21 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-08-26
+----------
+
+Changed
+~~~~~~~
+
+* Configure devstack Django settings to have a good JWT_AUTH and a DATABASES that point at the mysql container.
+* Install mysqlclient
+* The app container should accept stdin.
+* Use the python dev server as the app container's command, since it can hot-reload.
+* Rename containers in a more standard way.
+* Clean pycrypto crap before requirements are built.
+* Add devstack-themed make targets.
+* Ignore emacs backup files.
+
 2020-08-14
 ----------
 
