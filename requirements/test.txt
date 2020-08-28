@@ -39,7 +39,7 @@ pluggy==0.13.1            # via pytest
 poyo==0.5.0               # via -r requirements/base.txt, cookiecutter
 py==1.9.0                 # via pytest
 pycodestyle==2.6.0        # via -r requirements/test.in
-pydocstyle==5.0.2         # via -r requirements/test.in
+pydocstyle==5.1.0         # via -r requirements/test.in
 pygments==2.6.1           # via doc8, readme-renderer, sphinx
 pylint-celery==0.3        # via -r requirements/base.txt, edx-lint
 pylint-django==2.0.11     # via -r requirements/base.txt, edx-lint

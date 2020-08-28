@@ -44,7 +44,7 @@ pluggy==0.13.1            # via -r requirements/test.txt, -r requirements/travis
 poyo==0.5.0               # via -r requirements/test.txt, cookiecutter
 py==1.9.0                 # via -r requirements/test.txt, -r requirements/travis.txt, pytest, tox
 pycodestyle==2.6.0        # via -r requirements/test.txt
-pydocstyle==5.0.2         # via -r requirements/test.txt
+pydocstyle==5.1.0         # via -r requirements/test.txt
 pygments==2.6.1           # via -r requirements/test.txt, doc8, readme-renderer, sphinx
 pylint-celery==0.3        # via -r requirements/test.txt, edx-lint
 pylint-django==2.0.11     # via -r requirements/test.txt, edx-lint
