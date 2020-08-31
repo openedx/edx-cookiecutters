@@ -12,6 +12,7 @@ Context
 Devstack is the centralized set of docker images, make files, and bootstrap scripts used to set up an environment that engineers can run locally to develop edX services in a consistent manner from engineer to engineer.
 
 The following pain points have been identified in our current development environment:
+
 - Operational concerns like schema migrations, data seeding, and configuration are opaque and not consistent between applications.
 - The centralized and unversioned nature of the devstack means that changes made by one team can cause unintended  knock-on effects for other teams
 - The operations required to setup devstack take a long time even when someone knows exactly what to do.  Longer if there is trial and error involved for engineers who are new to interacting with the stack.
