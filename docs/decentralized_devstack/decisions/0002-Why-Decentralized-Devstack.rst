@@ -46,15 +46,6 @@ Rejected Alternative
 Improve Current Devstack: TODO: give quick summary of why this was rejected
 
 
-
-
-
-
-
-
-
-
-
 Sources
 -------
 
