@@ -1,5 +1,5 @@
-0002-Why-Decentralized-Devstack
-===============================
+Why Decentralized Devstack
+==========================
 
 Status
 ------
