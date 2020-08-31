@@ -34,7 +34,7 @@ Technical Vision for a development environment
 - Starts up quickly and uses few enough resources that developers can run it with common development tools (e.g. an IDE) on the lowest-common-denominator development laptop.
 - Engineers can efficiently change many different services without having to spend a lot of time learning about each one
 
-  - this will be done by standardizing interface for start up and common interactions(like tailing the logs).
+  + this will be done by standardizing interface for start up and common interactions(like tailing the logs).
 
 - Schema consistent with production
 - No manual data entry required for standard, reasonably production-like, configurations
