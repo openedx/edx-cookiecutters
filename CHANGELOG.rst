@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-09-09
+----------
+
+Changed
+~~~~~~~
+
+* Fix the ``DATABASES`` settings in ``devstack.py`` of the django-ida cookiecutter.
+
 2020-08-26
 ----------
 
