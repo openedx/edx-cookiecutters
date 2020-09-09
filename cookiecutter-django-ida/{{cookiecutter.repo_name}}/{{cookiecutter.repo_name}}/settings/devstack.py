@@ -6,7 +6,7 @@ DATABASES = {
         'NAME': os.environ.get('DB_NAME', '{{cookiecutter.project_name}}'),
         'USER': os.environ.get('DB_USER', 'root'),
         'PASSWORD': os.environ.get('DB_PASSWORD', ''),
-        'HOST': os.environ.get('DB_HOST', '{{cookiecutter.project_name.db'),
+        'HOST': os.environ.get('DB_HOST', '{{cookiecutter.project_name}}.db'),
         'PORT': os.environ.get('DB_PORT', 3306),
         'ATOMIC_REQUESTS': False,
         'CONN_MAX_AGE': 60,
