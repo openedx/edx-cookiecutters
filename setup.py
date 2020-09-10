@@ -59,7 +59,7 @@ README = open(os.path.join(os.path.dirname(__file__), "README.rst")).read()
 setup(
     name="edx-cookiecutters",
     version=VERSION,
-    description="""blah blah blah""",
+    description="""Contains cookiecutter templates for common Open edX projects""",
     long_description=README,
     author="edX",
     author_email="oscm@edx.org",
