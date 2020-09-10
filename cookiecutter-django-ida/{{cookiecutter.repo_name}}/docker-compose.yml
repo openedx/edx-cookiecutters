@@ -1,23 +1,40 @@
-db:
-  image: mysql:5.6
-  container_name: db
-  environment:
-    MYSQL_ROOT_PASSWORD: ""
-    MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+version: "2.1"
+services:
+  db:
+    image: mysql:5.6
+    container_name: {{cookiecutter.project_name}}.db
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    networks:
+      - devstack_default
+    volumes:
+      - {{cookiecutter.repo_name}}_mysql:/var/lib/mysql
 
-memcache:
-  image: memcached:1.4.24
-  container_name: memcache
+  memcache:
+    image: memcached:1.4.24
+    container_name: {{cookiecutter.project_name}}.memcache
 
-{{cookiecutter.repo_name}}:
-  # Uncomment this line to use the official {{cookiecutter.repo_name}} base image
-  image: openedx/{{cookiecutter.repo_name}}
+  app:
+    # Uncomment this line to use the official {{cookiecutter.repo_name}} base image
+    image: openedx/{{cookiecutter.repo_name}}
 
-  container_name: {{cookiecutter.repo_name}}
-  volumes:
-    - .:/edx/app/{{cookiecutter.repo_name}}/
-  command: bash -c 'gunicorn --reload --workers=2 --name {{cookiecutter.repo_name}} -b :{{cookiecutter.port}} -c /edx/app/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.repo_name}}.wsgi:application'
-  environment:
-    DJANGO_SETTINGS_MODULE: {{cookiecutter.repo_name}}.settings.devstack
-  ports:
-    - "{{cookiecutter.port}}:{{cookiecutter.port}}" # TODO: change this to your port
+    container_name: {{cookiecutter.repo_name}}.app
+    volumes:
+      - .:/edx/app/{{cookiecutter.repo_name}}/
+    command: bash -c 'while true; do python /edx/app/{{cookiecutter.repo_name}}/manage.py runserver 0.0.0.0:{{cookiecutter.port}}; sleep 2; done'
+    environment:
+      DJANGO_SETTINGS_MODULE: {{cookiecutter.repo_name}}.settings.devstack
+    ports:
+      - "{{cookiecutter.port}}:{{cookiecutter.port}}" # TODO: change this to your port
+    networks:
+      - devstack_default
+    stdin_open: true
+    tty: true
+
+networks:
+  devstack_default:
+    external: true
+
+volumes:
+  {{cookiecutter.repo_name}}_mysql:

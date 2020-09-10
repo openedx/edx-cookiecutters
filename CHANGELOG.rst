@@ -5,6 +5,66 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-08-26
+----------
+
+Changed
+~~~~~~~
+
+* Configure devstack Django settings to have a good JWT_AUTH and a DATABASES that point at the mysql container.
+* Install mysqlclient
+* The app container should accept stdin.
+* Use the python dev server as the app container's command, since it can hot-reload.
+* Rename containers in a more standard way.
+* Clean pycrypto crap before requirements are built.
+* Add devstack-themed make targets.
+* Ignore emacs backup files.
+
+2020-08-14
+----------
+
+Changed
+~~~~~~~
+
+* Ignores /healthcheck endpoint in monitoring for IDAs
+
+2020-08-07
+----------
+
+Fixed
+~~~~~
+
+- Tweaks to the READMEs to separate using cookiecutters from updating
+  cookiecutters; clarify the use of a virtualenv for running cookiecutters;
+  correct the way we talk about Slack and getting help; minor formatting
+  improvements.
+
+2020-08-03
+----------
+
+Fixed
+~~~~~~~
+
+* Doc8 configs no longer have a max line length, which goes against our best practice to not use hard line breaks, as documented in `OEP-19: Developer Documentation Best Practices`_.
+
+.. _`OEP-19: Developer Documentation Best Practices`: https://open-edx-proposals.readthedocs.io/en/latest/oep-0019-bp-developer-documentation.html#best-practices
+
+2020-07-28
+----------
+
+Fixed
+~~~~~~~
+
+* Include ``JWT_AUTH_COOKIE`` in the base ``JWT_AUTH`` settings dict.
+
+2020-07-15
+----------
+
+Changed
+~~~~~~~
+
+* Changed how oauth2_urlpatterns is imported in the urls.py file
+
 2020-07-09
 ----------
 

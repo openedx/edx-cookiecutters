@@ -53,16 +53,14 @@ Please do not report security issues in public. Please email security@edx.org.
 Getting Help
 ------------
 
-If you're having trouble, we have discussion forums at
-https://discuss.openedx.org where you can connect with others in the community.
+If you're having trouble, we have discussion forums at https://discuss.openedx.org where you can connect with others in the community.
 
-Our real-time conversations are on Slack. You can request a `Slack
-invitation`_, then join our `community Slack team`_.
+Our real-time conversations are on Slack. You can request a `Slack invitation`_, then join our `community Slack workspace`_.
 
 For more information about these options, see the `Getting Help`_ page.
 
 .. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
-.. _community Slack team: https://openedx.slack.com/
+.. _community Slack workspace: https://openedx.slack.com/
 .. _Getting Help: https://openedx.org/getting-help
 
 .. |pypi-badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.repo_name }}.svg

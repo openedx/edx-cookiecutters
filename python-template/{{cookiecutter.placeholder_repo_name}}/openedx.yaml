@@ -1,24 +1,21 @@
-# openedx.yaml
+# This file describes this Open edX repo, as described in OEP-2:
+# https://open-edx-proposals.readthedocs.io/en/latest/oep-0002-bp-repo-metadata.html#specification
 
 ---
-owner:
-    type: {{ cookiecutter.owner_type }}{% if cookiecutter.owner_type == 'team' %}
-    team: {{ cookiecutter.owner_name }}{% elif cookiecutter.owner_type == 'repo' %}
-    repo: {{ cookiecutter.owner_name }}{% endif %}
 nick: {{ cookiecutter.repo_name }}
 tags:
     - tools
 oeps:
-    oep-2: True
+    oep-2: true
     oep-3:
-        state: False
+        state: false
         reason: TODO - Implement for this application if appropriate
     oep-5:
-        state: False
+        state: false
         reason: TODO - Implement for this application if appropriate
-    oep-18: True
+    oep-18: true
     oep-30:
-        state: True
+        state: true
 openedx-release:
     # The openedx-release key is described in OEP-10:
     #   https://open-edx-proposals.readthedocs.io/en/latest/oep-0010-proc-openedx-releases.html

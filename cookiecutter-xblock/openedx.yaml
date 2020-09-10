@@ -4,6 +4,5 @@
 oeps:
     oep-2: true
     oep-7: false
-owner: cpennington
 tags:
     - backend-tooling

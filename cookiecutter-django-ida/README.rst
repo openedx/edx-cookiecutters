@@ -27,39 +27,11 @@ The necessary configuration is also in place to support:
 Usage
 -----
 
-As with any new project, you will need to create a virtual environment. Once this is set up, install cookiecutter and edx-lint:
 
-.. code-block:: bash
+To create a project using this cookiecutter, follow the instructions found in edx-cookiecutter's `readme`_.
 
-    $ pip install cookiecutter
-    $ pip install edx-lint
+.. _readme: https://github.com/edx/edx-cookiecutters/blob/master/README.rst
 
-cookiecutter has the ability to pull templates directly from git, so there is no need to clone this repo. To access the template, provide the repo path as an argument:
-
-.. code-block:: bash
-
-    $ cd <workspace>
-    $ cookiecutter https://github.com/edx/edx-cookiecutters.git --directory cookiecutter-django-ida
-
-You will be prompted for a few basic details (described below). These will be used to create the new project.
-
-..  list-table::
-    :widths: 25 75
-    :header-rows: 1
-
-    * - repo_name
-      - Short (Python-friendly) name of the project. This should also be the name of the repository (e.g., ecommerce, credentials).
-    * - project_name
-      - Full name of the project. (e.g., E-Commerce Service)
-    * - project_short_description
-    * - author_name
-    * - author_email
-    * - owner_type
-      - two options: team or repo. Is a team directly owning it, or is this cookiecutter output only used by one repository?
-    * - owner_name
-      - the name of either the team or repository that is owning this
-    * - port
-      - Port number for the project. Should be in the form `18***` with the 3 digits being any that aren't currently in use by other services.
 
 After the new folder is created, you will need to:
 
@@ -68,6 +40,7 @@ After the new folder is created, you will need to:
 3. ``make upgrade``
 4. ``make docker_build``
 5. ``docker-compose up``
+6. ``./provision-{project_name}.sh``
 
 **Note** This cookiecutter repo currently has some issues with repos that use a hyphen in their name. If this is the case, some pieces of the repo will need to be changed from ``new-repo-name`` to ``new_repo_name``, particularly the Python pieces.
 
@@ -128,7 +101,15 @@ Reporting Security Issues
 
 Please do not report security issues in public. Please email security@edx.org.
 
-Get Help
---------
+Getting Help
+------------
 
-Ask questions and discuss this project on `Slack <https://openedx.slack.com/messages/general/>`_ or in the `edx-code Google Group <https://groups.google.com/forum/#!forum/edx-code>`_.
+If you're having trouble, we have discussion forums at https://discuss.openedx.org where you can connect with others in the community.
+
+Our real-time conversations are on Slack. You can request a `Slack invitation`_, then join our `community Slack workspace`_.
+
+For more information about these options, see the `Getting Help`_ page.
+
+.. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
+.. _community Slack workspace: https://openedx.slack.com/
+.. _Getting Help: https://openedx.org/getting-help
