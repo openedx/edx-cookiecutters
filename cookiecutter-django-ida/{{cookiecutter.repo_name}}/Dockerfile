@@ -57,8 +57,6 @@ CMD gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiec
 # bust the image cache
 COPY . /edx/app/{{cookiecutter.repo_name}}
 
-
 FROM app as newrelic
 RUN pip install newrelic
 CMD newrelic-admin run-program gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.repo_name}}.wsgi:application
-
