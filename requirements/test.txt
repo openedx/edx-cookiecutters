@@ -10,7 +10,7 @@ astroid==2.3.3            # via -r requirements/base.txt, pylint, pylint-celery
 attrs==20.2.0             # via pytest
 babel==2.8.0              # via sphinx
 binaryornot==0.4.4        # via -r requirements/base.txt, cookiecutter
-bleach==3.1.5             # via readme-renderer
+bleach==3.2.0             # via readme-renderer
 certifi==2020.6.20        # via -r requirements/base.txt, requests
 chardet==3.0.4            # via -r requirements/base.txt, binaryornot, doc8, requests
 click-log==0.3.2          # via -r requirements/base.txt, edx-lint
@@ -40,7 +40,7 @@ poyo==0.5.0               # via -r requirements/base.txt, cookiecutter
 py==1.9.0                 # via pytest
 pycodestyle==2.6.0        # via -r requirements/test.in
 pydocstyle==5.1.1         # via -r requirements/test.in
-pygments==2.6.1           # via doc8, readme-renderer, sphinx
+pygments==2.7.1           # via doc8, readme-renderer, sphinx
 pylint-celery==0.3        # via -r requirements/base.txt, edx-lint
 pylint-django==2.0.11     # via -r requirements/base.txt, edx-lint
 pylint-plugin-utils==0.6  # via -r requirements/base.txt, pylint-celery, pylint-django
