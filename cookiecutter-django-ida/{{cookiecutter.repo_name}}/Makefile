@@ -189,14 +189,14 @@ github_docker_build:
 	docker build . -f Dockerfile --target app -t openedx/repo_name
 	docker build . -f Dockerfile --target newrelic -t openedx/repo_name:latest-newrelic
 
-github_docker_tag: docker_build
+github_docker_tag: github_docker_build
 	docker tag openedx/repo_name openedx/repo_name:${GITHUB_SHA}
 	docker tag openedx/repo_name:latest-newrelic openedx/repo_name:${GITHUB_SHA}-newrelic
 
 github_docker_auth:
 	echo "$$DOCKERHUB_PASSWORD" | docker login -u "$$DOCKERHUB_USERNAME" --password-stdin
 
-github_docker_push: docker_tag docker_auth ## push to docker hub
+github_docker_push: github_docker_tag github_docker_auth ## push to docker hub
 	docker push 'openedx/repo_name:latest'
 	docker push "openedx/repo_name:${GITHUB_SHA}"
 	docker push 'openedx/repo_name:latest-newrelic'
