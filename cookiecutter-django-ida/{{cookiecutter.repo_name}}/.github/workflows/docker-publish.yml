@@ -19,4 +19,4 @@ jobs:
         env:
           DOCKERHUB_PASSWORD: ${% raw %}{{ secrets.DOCKERHUB_PASSWORD }}{% endraw %}
           DOCKERHUB_USERNAME: ${% raw %}{{ secrets.DOCKERHUB_USERNAME }}{% endraw %}
-        run : make docker_push
+        run : make github_docker_push
