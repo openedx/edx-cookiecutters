@@ -17,6 +17,6 @@ jobs:
 
       - name: Build and Push docker image
         env:
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${% raw %}{{ secrets.DOCKERHUB_PASSWORD }}{% endraw %}
+          DOCKERHUB_USERNAME: ${% raw %}{{ secrets.DOCKERHUB_USERNAME }}{% endraw %}
         run : make docker_push
