@@ -12,6 +12,3 @@ Describe in a couple of sentences what this PR adds
 - [ ] Changelog record added
 - [ ] Documentation updated (not only docstrings)
 - [ ] Commits are squashed
-
-**Post merge:**
-- [ ] Delete working branch (if not needed anymore)
