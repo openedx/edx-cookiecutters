@@ -10,7 +10,7 @@ astroid==2.3.3            # via -r requirements/base.txt, pylint, pylint-celery
 attrs==20.2.0             # via pytest
 babel==2.8.0              # via sphinx
 binaryornot==0.4.4        # via -r requirements/base.txt, cookiecutter
-bleach==3.2.0             # via readme-renderer
+bleach==3.2.1             # via readme-renderer
 certifi==2020.6.20        # via -r requirements/base.txt, requests
 chardet==3.0.4            # via -r requirements/base.txt, binaryornot, doc8, requests
 click-log==0.3.2          # via -r requirements/base.txt, edx-lint
@@ -24,7 +24,7 @@ edx-lint==1.5.2           # via -r requirements/base.txt, -r requirements/test.i
 edx-sphinx-theme==1.5.0   # via -r requirements/test.in
 idna==2.10                # via -r requirements/base.txt, requests
 imagesize==1.2.0          # via sphinx
-importlib-metadata==1.7.0  # via pluggy, pytest
+importlib-metadata==1.7.0  # via -c requirements/constraints.txt, pluggy, pytest
 isort==4.3.21             # via -r requirements/base.txt, -r requirements/test.in, pylint
 jinja2-time==0.2.0        # via -r requirements/base.txt, cookiecutter
 jinja2==2.11.2            # via -r requirements/base.txt, cookiecutter, jinja2-time, sphinx

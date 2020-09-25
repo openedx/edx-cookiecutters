@@ -19,3 +19,6 @@ django<3.0
 pyobjc-core; sys_platform == 'darwin'
 pyobjc-framework-cocoa; sys_platform == 'darwin'
 pyobjc-framework-fsevents; sys_platform == 'darwin'
+
+# importlib-metadata>1.7.0 is causing conflicts in running make upgrade on python35
+importlib-metadata==1.7.0
