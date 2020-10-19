@@ -103,7 +103,7 @@ Github Checks
 
 On your first PR, ensure Travis and Codecov checks are running.
 
-If Travis is not running, you can activate manually at https://travis-ci.org/edx/YOUR-REPO-NAME
+If Travis is not running, you can activate manually at https://travis-ci.com/edx/YOUR-REPO-NAME
 
 If Codecov is not running, complete an ITSUPPORT ticket.
 
@@ -175,8 +175,8 @@ refer to this `list of resources`_ if you need any assistance.
 .. _list of resources: https://open.edx.org/getting-help
 
 
-.. |travis-badge| image:: https://travis-ci.org/edx/cookiecutter-django-app.svg?branch=master
-    :target: https://travis-ci.org/edx/cookiecutter-django-app
+.. |travis-badge| image:: https://travis-ci.com/edx/cookiecutter-django-app.svg?branch=master
+    :target: https://travis-ci.com/edx/cookiecutter-django-app
     :alt: Travis
 
 .. |license-badge| image:: https://img.shields.io/github/license/edx/cookiecutter-django-app.svg
