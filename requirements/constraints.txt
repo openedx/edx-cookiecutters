@@ -8,8 +8,9 @@
 # pin when possible.  Writing an issue against the offending project and
 # linking to it here is good.
 
-# Imposed by pytest-cookies 0.5.1 to continue supporting Python 3.4
+# Imposed by pytest-cookies 0.4.0 to continue supporting Python 3.4
 arrow<0.14.0
+cookiecutter
 
 # We want to stick with Django 2
 django<3.0
