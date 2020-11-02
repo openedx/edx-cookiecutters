@@ -156,7 +156,8 @@ def test_upgrade(options_baked):
             for line in str(exc):
                 if pattern.search(line):
                     error_message = '{}:{}'.format(message, line)
-                    pytest.fail(str(exc))
+                    pytest.fail(error_message)
+        pytest.fail(str(exc))
 
 
 def test_quality(options_baked):
