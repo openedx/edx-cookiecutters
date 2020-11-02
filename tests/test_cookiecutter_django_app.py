@@ -152,7 +152,7 @@ def test_upgrade(options_baked):
         sh.make('upgrade', _env=new_env)
     except sh.ErrorReturnCode as exc:
         known_error_pattern = {re.compile("Could not find a version that matches"):"there is a constraint mismatch"}
-        for pattern, message in known_error_pattern:
+        for pattern, message in known_error_pattern.items():
             for line in str(exc):
                 if pattern.search(line):
                     error_message = '{}:{}'.format(message, line)
