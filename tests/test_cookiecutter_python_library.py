@@ -109,8 +109,10 @@ def test_setup_py(options_baked):
 def test_upgrade(options_baked):
     """Make sure the upgrade target works"""
     try:
+        new_env = os.environ.copy()
+        new_env["PIP_COMPILE_OPTS"] = "-q"
         # Sanity check the generated Makefile
-        sh.make('upgrade')
+        sh.make('upgrade', _env=new_env)
     except sh.ErrorReturnCode as exc:
         pytest.fail(str(exc))
 
