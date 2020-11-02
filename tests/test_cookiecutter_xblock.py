@@ -130,7 +130,7 @@ def test_quality(options_baked):
                 sh.pydocstyle(name)
                 sh.isort(name, check_only=True, diff=True)
             except sh.ErrorReturnCode as exc:
-                pytest.fail(str(exc))
+                pytest.fail(str(exc.stderr))
 
     try:
         # Sanity check the generated Makefile
