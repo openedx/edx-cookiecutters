@@ -114,7 +114,7 @@ def test_upgrade(options_baked):
         # Sanity check the generated Makefile
         sh.make('upgrade', _env=new_env)
     except sh.ErrorReturnCode as exc:
-        pytest.fail(str(exc))
+        pytest.fail(str(exc.stderr))
 
 
 def test_quality(options_baked):
@@ -130,7 +130,7 @@ def test_quality(options_baked):
                 sh.pydocstyle(name)
                 sh.isort(name, check_only=True, diff=True)
             except sh.ErrorReturnCode as exc:
-                pytest.fail(str(exc.stderr))
+                pytest.fail(str(exc))
 
     try:
         # Sanity check the generated Makefile
