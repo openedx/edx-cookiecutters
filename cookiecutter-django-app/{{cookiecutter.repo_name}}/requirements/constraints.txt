@@ -9,4 +9,6 @@
 # linking to it here is good.
 
 # code-annotations currently restricts to Django<2.3
-Django<2.3
+Django>2.3
+
+requests<1.8
