@@ -10,12 +10,12 @@ astroid==2.3.3            # via -r requirements/base.txt, pylint, pylint-celery
 attrs==20.2.0             # via pytest
 babel==2.8.0              # via sphinx
 binaryornot==0.4.4        # via -r requirements/base.txt, cookiecutter
-bleach==3.2.0             # via readme-renderer
+bleach==3.2.1             # via readme-renderer
 certifi==2020.6.20        # via -r requirements/base.txt, requests
 chardet==3.0.4            # via -r requirements/base.txt, binaryornot, doc8, requests
 click-log==0.3.2          # via -r requirements/base.txt, edx-lint
 click==7.1.2              # via -r requirements/base.txt, click-log, cookiecutter, edx-lint
-cookiecutter==1.7.2       # via -c requirements/constraints.txt, -r requirements/base.txt, pytest-cookies
+cookiecutter==1.7.2       # via -r requirements/base.txt, pytest-cookies
 django-model-utils==4.0.0  # via -r requirements/test.in
 django==2.2.16            # via -c requirements/constraints.txt, -r requirements/test.in, django-model-utils
 doc8==0.8.1               # via -r requirements/test.in
@@ -24,7 +24,6 @@ edx-lint==1.5.2           # via -r requirements/base.txt, -r requirements/test.i
 edx-sphinx-theme==1.5.0   # via -r requirements/test.in
 idna==2.10                # via -r requirements/base.txt, requests
 imagesize==1.2.0          # via sphinx
-importlib-metadata==1.7.0  # via pluggy, pytest
 isort==4.3.21             # via -r requirements/base.txt, -r requirements/test.in, pylint
 jinja2-time==0.2.0        # via -r requirements/base.txt, cookiecutter
 jinja2==2.11.2            # via -r requirements/base.txt, cookiecutter, jinja2-time, sphinx
@@ -33,8 +32,7 @@ markupsafe==1.1.1         # via -r requirements/base.txt, cookiecutter, jinja2
 mccabe==0.6.1             # via -r requirements/base.txt, pylint
 more-itertools==8.5.0     # via pytest
 packaging==20.4           # via bleach, pytest, sphinx
-pathlib2==2.3.5           # via pytest
-pbr==5.5.0                # via stevedore
+pbr==5.5.1                # via stevedore
 pluggy==0.13.1            # via pytest
 poyo==0.5.0               # via -r requirements/base.txt, cookiecutter
 py==1.9.0                 # via pytest
@@ -51,11 +49,11 @@ pytest==5.4.3             # via pytest-cookies
 python-dateutil==2.8.1    # via -r requirements/base.txt, arrow
 python-slugify==4.0.1     # via -r requirements/base.txt, cookiecutter
 pytz==2020.1              # via babel, django
-readme-renderer==26.0     # via -r requirements/test.in
+readme-renderer==28.0     # via -r requirements/test.in
 requests==2.24.0          # via -r requirements/base.txt, cookiecutter, sphinx
 restructuredtext-lint==1.3.1  # via doc8
 sh==1.14.0                # via -r requirements/test.in
-six==1.15.0               # via -r requirements/base.txt, astroid, bleach, cookiecutter, doc8, edx-lint, edx-sphinx-theme, packaging, pathlib2, python-dateutil, readme-renderer, stevedore
+six==1.15.0               # via -r requirements/base.txt, astroid, bleach, cookiecutter, doc8, edx-lint, edx-sphinx-theme, packaging, python-dateutil, readme-renderer
 snowballstemmer==2.0.0    # via pydocstyle, sphinx
 sphinx-rtd-theme==0.5.0   # via -r requirements/test.in
 sphinx==3.2.1             # via -r requirements/test.in, edx-sphinx-theme, sphinx-rtd-theme
@@ -65,15 +63,13 @@ sphinxcontrib-htmlhelp==1.0.3  # via sphinx
 sphinxcontrib-jsmath==1.0.1  # via sphinx
 sphinxcontrib-qthelp==1.0.3  # via sphinx
 sphinxcontrib-serializinghtml==1.1.4  # via sphinx
-sqlparse==0.3.1           # via django
-stevedore==1.32.0         # via doc8
+sqlparse==0.4.1           # via django
+stevedore==3.2.2          # via doc8
 text-unidecode==1.3       # via -r requirements/base.txt, python-slugify
-typed-ast==1.4.1          # via -r requirements/base.txt, astroid
-urllib3==1.25.10          # via -r requirements/base.txt, requests
+urllib3==1.25.11          # via -r requirements/base.txt, requests
 wcwidth==0.2.5            # via pytest
 webencodings==0.5.1       # via bleach
 wrapt==1.11.2             # via -r requirements/base.txt, astroid
-zipp==1.2.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
