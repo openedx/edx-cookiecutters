@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-10-30
+----------
+
+Fixed
+~~~~~
+
+* Don't fill in a sample url pattern for Django apps, just suggest one in a comment
+
 2020-08-26
 ----------
 
