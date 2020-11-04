@@ -67,8 +67,8 @@ For more information about these options, see the `Getting Help`_ page.
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
     :alt: PyPI
 
-.. |travis-badge| image:: https://travis-ci.org/edx/{{ cookiecutter.repo_name }}.svg?branch=master
-    :target: https://travis-ci.org/edx/{{ cookiecutter.repo_name }}
+.. |travis-badge| image:: https://travis-ci.com/edx/{{ cookiecutter.repo_name }}.svg?branch=master
+    :target: https://travis-ci.com/edx/{{ cookiecutter.repo_name }}
     :alt: Travis
 
 .. |codecov-badge| image:: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}/coverage.svg?branch=master
