@@ -103,7 +103,7 @@ Github Checks
 
 On your first PR, ensure Travis and Codecov checks are running.
 
-If Travis is not running, you can activate manually at https://travis-ci.com/edx/YOUR-REPO-NAME
+If Travis is not running, you can activate manually at https://travis-ci.com/edx/edx-cookiecutters
 
 If Codecov is not running, complete an ITSUPPORT ticket.
 
