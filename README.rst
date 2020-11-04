@@ -4,6 +4,8 @@ edx-cookiecutters
 
 This repository holds most of the Open edX public cookiecutters.
 
+.. Note: the test for running upgrade in cookiecutters is currently flacky. We are working on debugging it, but in the mean time, if your PR fails on upgrade, return tests and it should clear up.
+
 Using the cookiecutters
 ***********************
 
