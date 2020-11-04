@@ -175,8 +175,8 @@ refer to this `list of resources`_ if you need any assistance.
 .. _list of resources: https://open.edx.org/getting-help
 
 
-.. |travis-badge| image:: https://travis-ci.com/edx/cookiecutter-django-app.svg?branch=master
-    :target: https://travis-ci.com/edx/cookiecutter-django-app
+.. |travis-badge| image:: https://travis-ci.com/edx/edx-cookiecutters.svg?branch=master
+    :target: https://travis-ci.com/edx/edx-cookiecutters
     :alt: Travis
 
 .. |license-badge| image:: https://img.shields.io/github/license/edx/cookiecutter-django-app.svg
