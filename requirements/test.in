@@ -16,3 +16,4 @@ sh                        # Used to execute flake8 in tests
 Sphinx                    # Documentation builder
 sphinx_rtd_theme          # For pylint import checks of the generated conf.py
 doc8                      # reStructuredText style checker
+virtualenv                # To create a virtualenv when running commands in generated projects

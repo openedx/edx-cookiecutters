@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-11-05
+----------
+
+Fixed
+~~~~~
+
+* Use virtualenv to prevent flakiness in ``make upgrade`` test
+
 2020-10-30
 ----------
 
