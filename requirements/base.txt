@@ -30,5 +30,6 @@ python-slugify==4.0.1     # via cookiecutter
 requests==2.24.0          # via cookiecutter
 six==1.15.0               # via astroid, cookiecutter, edx-lint, python-dateutil
 text-unidecode==1.3       # via python-slugify
+typed-ast==1.4.1          # via astroid
 urllib3==1.25.11          # via requests
 wrapt==1.11.2             # via astroid
