@@ -85,7 +85,7 @@ ROOT_URLCONF = '{{cookiecutter.repo_name}}.urls'
 WSGI_APPLICATION = '{{cookiecutter.repo_name}}.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 # Set this value in the environment-specific files (e.g. local.py, production.py, test.py)
 DATABASES = {
     'default': {
@@ -138,7 +138,7 @@ STATICFILES_DIRS = (
 )
 
 # TEMPLATE CONFIGURATION
-# See: https://docs.djangoproject.com/en/1.11/ref/settings/#templates
+# See: https://docs.djangoproject.com/en/2.2/ref/settings/#templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -5,11 +5,11 @@ A cookiecutter_ template for edX Django projects.
 
 .. _cookiecutter: https://cookiecutter.readthedocs.org/en/latest/index.html
 
-**This template produces a Python 3.5 project.**
+**This template produces a Python 3.8 project.**
 
 This cookiecutter template is intended for new edX independently deployable apps (IDAs). It includes the following packages:
 
-* Django 1.11.x
+* Django 2.2
 * Django REST Framework
 * Django Waffle
 

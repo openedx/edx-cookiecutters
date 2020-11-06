@@ -20,7 +20,7 @@ MAINTAINER devops@edx.org
 RUN apt-get update && apt-get -qy install --no-install-recommends \
  language-pack-en \
  locales \
- python3.5 \
+ python3.8 \
  python3-pip \
  libmysqlclient-dev \
  libssl-dev \
