@@ -4,6 +4,14 @@ Change Log
 ..
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
+2020-11-06
+----------
+
+Fixed
+~~~~~
+
+* Fix Read the Docs config to point to the correct config file.
+  ``requirements/docs.txt`` should be ``requirements/doc.txt``
 
 2020-11-05
 ----------
