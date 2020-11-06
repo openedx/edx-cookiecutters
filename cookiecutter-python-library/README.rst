@@ -5,7 +5,7 @@ A cookiecutter_ template for edX python projects. For django related cookiecutte
 
 .. _cookiecutter: https://cookiecutter.readthedocs.org/en/latest/index.html
 
-**This template produces a Python 3.5 project.**
+**This template produces a Python 3.8 project.**
 
 This cookiecutter template is intended for new edX python libraries.
 
