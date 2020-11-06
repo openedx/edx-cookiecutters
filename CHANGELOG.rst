@@ -4,6 +4,15 @@ Change Log
 ..
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
+
+2020-11-06
+----------
+
+Changed
+~~~~~~~
+
+* All projects (including top level) use Python 3.8 and Django 2.2
+
 2020-11-06
 ----------
 
