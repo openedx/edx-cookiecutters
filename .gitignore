@@ -32,7 +32,8 @@ pip-log.txt
 coverage.xml
 htmlcov/
 
-
+# Virtual environment
+/venv/
 
 # The Silver Searcher
 .agignore
