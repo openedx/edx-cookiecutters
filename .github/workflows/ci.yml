@@ -1,0 +1,32 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: ['py38']
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install pip
+      run: |
+        pip install --upgrade pip
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements/travis.txt
+        pip install tox
+    - name: Run Tests
+      run: |
+        tox -e py38
+    - name: Run Quality Check
+      run: |
+        tox -e quality
