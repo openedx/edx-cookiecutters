@@ -23,6 +23,57 @@ cookiecutter-python-library
 cookiecutter-xblock
     for creating a XBlock repository as well as a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
 
+Development Workflow
+--------------------
+
+One Time Setup
+______________
+.. code-block::
+
+  # Clone the repository
+  git clone git@github.com:edx/edx-cookiecutters.git
+  cd edx-cookiecutters
+
+  # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
+  # $(basename $(pwd)) will give you the name of the current working directory, in this case ``edx-cookiecutters``
+  mkvirtualenv -p python3.8 edx-cookiecutters
+
+
+Every time you develop something in this repo
+_____________________________________________
+.. code-block::
+
+  # Activate the virtualenv
+  workon edx-cookiecutters
+
+  # Grab the latest code
+  git checkout master
+  git pull
+
+  # Install/update the dev requirements
+  make requirements
+
+  # Run the tests and quality checks (to verify the status before you make any changes)
+  make validate
+
+  # Make a new branch for your changes
+  git checkout -b <your_github_username>/<short_description>
+
+  # Using your favorite editor, edit the code to make your change.
+  vim …
+
+  # Run your new tests
+  pytest ./path/to/new/tests
+
+  # Run all the tests and quality checks
+  make validate
+
+  # Commit all your changes
+  git commit …
+  git push
+
+  # Open a PR and ask for review.
+
 
 Using a cookiecutter
 --------------------
