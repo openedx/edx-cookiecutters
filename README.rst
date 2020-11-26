@@ -27,7 +27,7 @@ Development Workflow
 --------------------
 
 One Time Setup
-______________
+~~~~~~~~~~~~~~
 .. code-block::
 
   # Clone the repository
@@ -35,12 +35,11 @@ ______________
   cd edx-cookiecutters
 
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
-  # $(basename $(pwd)) will give you the name of the current working directory, in this case ``edx-cookiecutters``
   mkvirtualenv -p python3.8 edx-cookiecutters
 
 
 Every time you develop something in this repo
-_____________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block::
 
   # Activate the virtualenv

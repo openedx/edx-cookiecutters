@@ -27,7 +27,7 @@ Development Workflow
 --------------------
 
 One Time Setup
-______________
+~~~~~~~~~~~~~~
 .. code-block::
 
   # Clone the repository
@@ -35,12 +35,11 @@ ______________
   cd {{ cookiecutter.repo_name }}
 
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
-  # $(basename $(pwd)) will give you the name of the current working directory, in this case ``{{ cookiecutter.repo_name }}``
   mkvirtualenv -p python3.8 {{ cookiecutter.repo_name }}
 
 
 Every time you develop something in this repo
-_____________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. code-block::
 
   # Activate the virtualenv
