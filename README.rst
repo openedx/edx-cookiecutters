@@ -83,6 +83,7 @@ Commands::
 
     $ make requirements  # from inside edx-cookiecutter repo
     # Replace <OUTPUT-DIRECTORY> with the base directory; your new directory will go inside.
+    # Replace <COOKIECUTTER-NAME> with one of the available cookiecutters documented above. 
     $ cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
 
 TODOs after creating cookiecutter
@@ -96,7 +97,7 @@ Updating cookiecutters
 
 If you are modifying and debugging cookiecutters on a local device, please see "Local Debugging of the layered cookiecutters" section below.
 
-Cookiecutters using layered apporach
+Cookiecutters using layered approach
 ------------------------------------
 
 - cookiecutter-python-library
