@@ -1,7 +1,6 @@
 import platform
 import sys
-from logging.handlers import SysLogHandler
-from os import environ, path
+from os import environ
 
 from django.core.exceptions import ImproperlyConfigured
 
@@ -14,10 +13,8 @@ def get_env_setting(setting):
         error_msg = "Set the [%s] env variable!" % setting
         raise ImproperlyConfigured(error_msg)
 
-def get_logger_config(log_dir='/var/tmp',
-                      logging_env="no_env",
-                      edx_filename="edx.log",
-                      dev_env=False,
+
+def get_logger_config(logging_env="no_env",
                       debug=False,
                       service_variant='{{cookiecutter.repo_name}}'):
     """
@@ -26,12 +23,12 @@ def get_logger_config(log_dir='/var/tmp',
     """
 
     hostname = platform.node().split(".")[0]
-    syslog_format = (u"[service_variant={service_variant}]"
-                     u"[%(name)s][env:{logging_env}] %(levelname)s "
-                     u"[{hostname}  %(process)d] [user %(userid)s] [ip %(remoteip)s] [%(filename)s:%(lineno)d] "
-                     u"- %(message)s").format(service_variant=service_variant,
-                                              logging_env=logging_env,
-                                              hostname=hostname)
+    syslog_format = ("[service_variant={service_variant}]"
+                     "[%(name)s][env:{logging_env}] %(levelname)s "
+                     "[{hostname}  %(process)d] [user %(userid)s] [ip %(remoteip)s] [%(filename)s:%(lineno)d] "
+                     "- %(message)s").format(service_variant=service_variant,
+                                             logging_env=logging_env,
+                                             hostname=hostname)
 
     handlers = ['console']
 
@@ -40,8 +37,8 @@ def get_logger_config(log_dir='/var/tmp',
         'disable_existing_loggers': False,
         'formatters': {
             'standard': {
-                'format': u'%(asctime)s %(levelname)s %(process)d '
-                          u'[%(name)s] [user %(userid)s] [ip %(remoteip)s] %(filename)s:%(lineno)d - %(message)s',
+                'format': '%(asctime)s %(levelname)s %(process)d '
+                          '[%(name)s] [user %(userid)s] [ip %(remoteip)s] %(filename)s:%(lineno)d - %(message)s',
             },
             'syslog_format': {'format': syslog_format},
             'raw': {'format': '%(message)s'},
