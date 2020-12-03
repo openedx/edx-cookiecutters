@@ -9,6 +9,7 @@ from edx_lint.cmd.write import write_main
 
 from utils_edx_cookiecutters.layered_cookiecutter import LayeredCookiecutter
 
+layered_cookiecutter = LayeredCookiecutter(os.getcwd())
 
 # Using the template to create things
 extra_context = {}

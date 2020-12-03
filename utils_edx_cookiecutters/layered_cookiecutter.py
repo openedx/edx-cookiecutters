@@ -3,7 +3,7 @@
 """
 from os import getenv
 from pathlib import Path
-from shutil import shutil_move, shutil_rmtree
+from shutil import rmtree as shutil_rmtree, move as shutil_move
 
 from cookiecutter.main import cookiecutter
 from edx_lint.cmd.write import write_main
@@ -17,7 +17,9 @@ class LayeredCookiecutter():
     # cookiecutter can import a template from either github or from a location on local disk.
     # If someone is debugging this repository locally, the below block is necessary to pull in
     #   local versions of the templates
-    EDX_COOKIECUTTER_ROOTDIR = Path(getenv('EDX_COOKIECUTTER_ROOTDIR') or 'https://github.com/edx/edx-cookiecutters.git')
+    EDX_COOKIECUTTER_ROOTDIR = Path(
+        getenv('EDX_COOKIECUTTER_ROOTDIR') or 'https://github.com/edx/edx-cookiecutters.git'
+        )
 
     def __init__(self, project_rootdir, edx_cookiecutter_rootdir=None):
         if edx_cookiecutter_rootdir is not None:
@@ -79,7 +81,7 @@ class LayeredCookiecutter():
                     self.EDX_COOKIECUTTER_ROOTDIR,
                     extra_context=template["extra_context"],
                     no_input=True,
-                    directory=template["template_name"], 
+                    directory=template["template_name"],
                 )
 
             template_output_loc = self.project_rootdir / Path(template["extra_context"]["placeholder_repo_name"])

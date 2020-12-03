@@ -22,7 +22,7 @@ extra_context["author_email"] = "{{cookiecutter.author_email}}"
 extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 extra_context["requires_django"] = "yes"
 
-extra_context["placeholder_repo_name"] = python_placeholder_repo_name
+extra_context["placeholder_repo_name"] = "placeholder_repo_name"
 
 layered_cookiecutter.add_template(template_name='python-template', extra_context=extra_context)
 
