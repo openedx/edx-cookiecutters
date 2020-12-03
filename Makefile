@@ -20,6 +20,7 @@ REQ_FILES = \
 	requirements/pip-tools \
 	requirements/base \
 	requirements/test \
+	requirements/ci \
 	requirements/dev \
 
 
