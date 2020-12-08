@@ -87,7 +87,7 @@ Commands::
     $ cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
 
 TODOs after creating cookiecutter
---------------------------------
+---------------------------------
 
 - Modify project README
 - Modify project docs/decisions/0001-purpose-of-this-repo.rst ADR
