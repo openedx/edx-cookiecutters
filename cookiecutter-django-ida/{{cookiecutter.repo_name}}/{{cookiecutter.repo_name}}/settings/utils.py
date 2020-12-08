@@ -22,12 +22,15 @@ def get_logger_config(logging_env="no_env",
     result of this to the LOGGING var in your settings.
     """
     hostname = platform.node().split(".")[0]
-    syslog_format = ("[service_variant={service_variant}]"
-                     "[%(name)s][env:{logging_env}] %(levelname)s "
-                     "[{hostname}  %(process)d] [user %(userid)s] [ip %(remoteip)s] [%(filename)s:%(lineno)d] "
-                     "- %(message)s").format(service_variant=service_variant,
-                                             logging_env=logging_env,
-                                             hostname=hostname)
+    syslog_format = (
+        "[service_variant={service_variant}]"
+        "[%(name)s][env:{logging_env}] %(levelname)s "
+        "[{hostname}  %(process)d] [user %(userid)s] [ip %(remoteip)s] [%(filename)s:%(lineno)d] "
+        "- %(message)s"
+    ).format(
+        service_variant=service_variant,
+        logging_env=logging_env, hostname=hostname
+    )
 
     handlers = ['console']
 
