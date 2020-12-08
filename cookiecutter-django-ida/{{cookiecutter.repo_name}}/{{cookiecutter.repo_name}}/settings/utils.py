@@ -21,7 +21,6 @@ def get_logger_config(logging_env="no_env",
     Return the appropriate logging config dictionary. You should assign the
     result of this to the LOGGING var in your settings.
     """
-
     hostname = platform.node().split(".")[0]
     syslog_format = ("[service_variant={service_variant}]"
                      "[%(name)s][env:{logging_env}] %(levelname)s "
@@ -59,6 +58,7 @@ def get_logger_config(logging_env="no_env",
                 'level': 'DEBUG' if debug else 'INFO',
                 'class': 'logging.StreamHandler',
                 'formatter': 'standard',
+                'filters': ['userid_context', 'remoteip_context'],
                 'stream': sys.stdout,
             },
         },
