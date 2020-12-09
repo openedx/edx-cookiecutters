@@ -3,7 +3,8 @@
 """
 from os import getenv
 from pathlib import Path
-from shutil import rmtree as shutil_rmtree, move as shutil_move
+from shutil import move as shutil_move
+from shutil import rmtree as shutil_rmtree
 
 from cookiecutter.main import cookiecutter
 from edx_lint.cmd.write import write_main
