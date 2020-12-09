@@ -87,7 +87,7 @@ class LayeredCookiecutter():
 
             template_output_loc = self.project_rootdir / Path(template["extra_context"]["placeholder_repo_name"])
             for f in template_output_loc.iterdir():
-                self.move(template_output_loc / f, self.project_rootdir / f)
+                self.move(template_output_loc / f, self.project_rootdir / f.name)
 
             for object_name in template["remove_object"]:
                 self.remove(object_name)
