@@ -33,7 +33,7 @@ class LayeredCookiecutter():
         """
         src = Path(src)
         dest = Path(dest)
-        if dest.is_file(dest):
+        if dest.is_file():
             src.unlink()
             return
         if src.is_dir() and dest.is_dir():
@@ -78,7 +78,7 @@ class LayeredCookiecutter():
         for counter, template in enumerate(self.templates):
             template["extra_context"]["placeholder_repo_name"] = "placeholder_dir_{}".format(counter)
             cookiecutter(
-                    self.EDX_COOKIECUTTER_ROOTDIR,
+                    str(self.EDX_COOKIECUTTER_ROOTDIR),
                     extra_context=template["extra_context"],
                     no_input=True,
                     directory=template["template_name"],
