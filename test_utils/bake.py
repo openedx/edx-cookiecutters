@@ -1,5 +1,5 @@
 """
-    Functions to help test cookiecutters
+Functions to help test cookiecutters
 """
 
 import os

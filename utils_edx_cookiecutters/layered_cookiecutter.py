@@ -9,6 +9,8 @@ from shutil import rmtree as shutil_rmtree
 from cookiecutter.main import cookiecutter
 from edx_lint.cmd.write import write_main
 
+from .run_make import run_make
+
 
 class LayeredCookiecutter():
     """
@@ -39,7 +41,7 @@ class LayeredCookiecutter():
             return
         if src.is_dir() and dest.is_dir():
             for content in src.iterdir():
-                self.move(src / content, dest / content)
+                self.move(content, dest / content.name)
             src.rmdir()
         else:
             shutil_move(src, dest)
@@ -87,9 +89,12 @@ class LayeredCookiecutter():
 
             template_output_loc = self.project_rootdir / Path(template["extra_context"]["placeholder_repo_name"])
             for f in template_output_loc.iterdir():
-                self.move(template_output_loc / f, self.project_rootdir / f.name)
+                self.move(f, self.project_rootdir / f.name)
 
-            for object_name in template["remove_object"]:
+            # make sure placeholder_repo is deleted after everything has been moved out
+            placeholder_dir = template["extra_context"]["placeholder_repo_name"]
+            for object_name in template["remove_object"] + [placeholder_dir]:
                 self.remove(object_name)
             # Post build fixes
             write_main(['pylintrc'])
+            run_make('upgrade')
