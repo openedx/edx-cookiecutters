@@ -41,6 +41,10 @@ After the new folder is created, you will need to:
 4. ``make docker_build``
 5. ``docker-compose up``
 6. ``./provision-{project_name}.sh``
+7. Commit and push all your changes: ``git commit …`` ``git push``
+8. Connect repo to renovate(and other github tools): see `Set up Renovate to Automate JavaScript Dependency Updates`_
+
+.. _Set up Renovate to Automate JavaScript Dependency Updates: https://openedx.atlassian.net/wiki/spaces/AC/pages/1841791377/Set+up+Renovate+to+Automate+JavaScript+Dependency+Updates
 
 **Note** This cookiecutter repo currently has some issues with repos that use a hyphen in their name. If this is the case, some pieces of the repo will need to be changed from ``new-repo-name`` to ``new_repo_name``, particularly the Python pieces.
 
