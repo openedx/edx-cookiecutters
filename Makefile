@@ -31,9 +31,7 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 REQ_PATH = "python-template/{{cookiecutter.placeholder_repo_name}}/requirements"
 
 upgrade_template: export CUSTOM_COMPILE_COMMAND=make upgrade
-# update the requirements/pip-tools.txt files within our cookiecutter template code with 
-# the latest packages satisfying requirements
-upgrade_template: 
+upgrade_template: ## update the requirements/pip-tools.txt files within our cookiecutter template code with the latest packages satisfying requirements
 	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) --rebuild -o "$(REQ_PATH)/pip-tools.txt" "$(REQ_PATH)/pip-tools.in"
 
