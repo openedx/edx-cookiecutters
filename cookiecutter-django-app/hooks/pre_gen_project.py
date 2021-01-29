@@ -10,7 +10,7 @@ import sys
 
 logging.basicConfig(level=logging.DEBUG)
 
-logger = logging.getLogger('pre_gen_project')  # pylint: disable=C0103
+logger = logging.getLogger('pre_gen_project')
 
 APP_REGEX = r'^[_a-zA-Z][_a-zA-Z0-9]+$'
 

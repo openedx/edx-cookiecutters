@@ -354,6 +354,7 @@ disable =
 	using-cmp-argument,
 	xrange-builtin,
 	zip-builtin-not-iterating,
+	django-not-configured,
 
 [REPORTS]
 output-format = text
