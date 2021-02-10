@@ -39,12 +39,12 @@ quality: ## check coding style with pycodestyle and pylint
 	pylint */hooks/pre_gen_project.py */hooks/post_gen_project.py
 	pycodestyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
 	pydocstyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
-	pycodestyle tests
-	pydocstyle tests
 
 	pylint utils_edx_cookiecutters test_utils
+
 	pycodestyle tests utils_edx_cookiecutters test_utils
-	isort --check-only --diff --recursive */hooks tests utils_edx_cookiecutters test_utils
+	pydocstyle tests utils_edx_cookiecutters test_utils
+	isort --check-only --diff */hooks tests utils_edx_cookiecutters test_utils
 
 requirements: ## install development environment requirements
 	pip install -qr requirements/pip.txt

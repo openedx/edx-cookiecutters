@@ -11,6 +11,8 @@ from tempfile import TemporaryDirectory
 
 def run_in_virtualenv(shell_script):
     """
+    Run shell script in virtualenv.
+
     Set up virtualenv in current directory and run provided shell script
     with virtualenv active. Virtualenv is deleted after script runs.
     """
