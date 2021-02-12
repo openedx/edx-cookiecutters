@@ -82,7 +82,7 @@ edx-lint==4.0.1
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
-edx-sphinx-theme==1.6.1
+edx-sphinx-theme==2.0.0
     # via -r requirements/test.in
 filelock==3.0.12
     # via virtualenv
@@ -121,7 +121,7 @@ mccabe==0.6.1
     # via
     #   -r requirements/base.txt
     #   pylint
-more-itertools==8.6.0
+more-itertools==8.7.0
     # via pytest
 packaging==20.9
     # via
