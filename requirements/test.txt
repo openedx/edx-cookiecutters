@@ -144,7 +144,7 @@ pycodestyle==2.6.0
     # via -r requirements/test.in
 pydocstyle==5.1.1
     # via -r requirements/test.in
-pygments==2.7.4
+pygments==2.8.0
     # via
     #   doc8
     #   readme-renderer
@@ -162,7 +162,7 @@ pylint-plugin-utils==0.6
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pylint==2.6.0
+pylint==2.6.2
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -222,7 +222,7 @@ snowballstemmer==2.1.0
     #   sphinx
 sphinx-rtd-theme==0.5.1
     # via -r requirements/test.in
-sphinx==3.4.3
+sphinx==3.5.1
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
