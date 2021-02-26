@@ -8,7 +8,7 @@ arrow==0.13.2
     # via
     #   -c requirements/constraints.txt
     #   jinja2-time
-astroid==2.4.2
+astroid==2.5
     # via
     #   pylint
     #   pylint-celery
@@ -32,12 +32,12 @@ code-annotations==1.1.0
     # via edx-lint
 cookiecutter==1.7.2
     # via -r requirements/base.in
-django==2.2.18
+django==2.2.19
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   code-annotations
     #   edx-lint
-edx-lint==4.0.1
+edx-lint==4.1.0
     # via -r requirements/base.in
 idna==2.10
     # via requests
@@ -50,7 +50,7 @@ jinja2==2.11.3
     #   code-annotations
     #   cookiecutter
     #   jinja2-time
-lazy-object-proxy==1.4.3
+lazy-object-proxy==1.5.2
     # via astroid
 markupsafe==1.1.1
     # via
@@ -70,7 +70,7 @@ pylint-plugin-utils==0.6
     # via
     #   pylint-celery
     #   pylint-django
-pylint==2.6.2
+pylint==2.7.1
     # via
     #   edx-lint
     #   pylint-celery
@@ -90,7 +90,6 @@ requests==2.25.1
     # via cookiecutter
 six==1.15.0
     # via
-    #   astroid
     #   cookiecutter
     #   edx-lint
     #   python-dateutil
