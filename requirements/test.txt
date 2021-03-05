@@ -14,7 +14,7 @@ arrow==0.13.2
     #   -r requirements/base.txt
     #   jinja2-time
     #   pytest-cookies
-astroid==2.5
+astroid==2.5.1
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -162,7 +162,7 @@ pylint-plugin-utils==0.6
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pylint==2.7.1
+pylint==2.7.2
     # via
     #   -r requirements/base.txt
     #   edx-lint

@@ -19,7 +19,7 @@ arrow==0.13.2
     #   -r requirements/test.txt
     #   jinja2-time
     #   pytest-cookies
-astroid==2.5
+astroid==2.5.1
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -197,7 +197,7 @@ pylint-plugin-utils==0.6
     #   -r requirements/test.txt
     #   pylint-celery
     #   pylint-django
-pylint==2.7.1
+pylint==2.7.2
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -316,7 +316,7 @@ toml==0.10.2
     #   tox
 tox-battery==0.6.1
     # via -r requirements/dev.in
-tox==3.22.0
+tox==3.23.0
     # via
     #   -r requirements/ci.txt
     #   tox-battery

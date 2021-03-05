@@ -8,7 +8,7 @@ arrow==0.13.2
     # via
     #   -c requirements/constraints.txt
     #   jinja2-time
-astroid==2.5
+astroid==2.5.1
     # via
     #   pylint
     #   pylint-celery
@@ -70,7 +70,7 @@ pylint-plugin-utils==0.6
     # via
     #   pylint-celery
     #   pylint-django
-pylint==2.7.1
+pylint==2.7.2
     # via
     #   edx-lint
     #   pylint-celery
