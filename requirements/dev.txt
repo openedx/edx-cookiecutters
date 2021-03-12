@@ -178,7 +178,7 @@ pycodestyle==2.6.0
     # via -r requirements/test.txt
 pydocstyle==5.1.1
     # via -r requirements/test.txt
-pygments==2.8.0
+pygments==2.8.1
     # via
     #   -r requirements/test.txt
     #   doc8
@@ -266,7 +266,7 @@ snowballstemmer==2.1.0
     #   sphinx
 sphinx-rtd-theme==0.5.1
     # via -r requirements/test.txt
-sphinx==3.5.1
+sphinx==3.5.2
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
