@@ -78,7 +78,7 @@ docutils==0.16
     #   readme-renderer
     #   restructuredtext-lint
     #   sphinx
-edx-lint==4.1.0
+edx-lint==4.1.1
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -140,9 +140,9 @@ poyo==0.5.0
     #   cookiecutter
 py==1.10.0
     # via pytest
-pycodestyle==2.6.0
+pycodestyle==2.7.0
     # via -r requirements/test.in
-pydocstyle==5.1.1
+pydocstyle==6.0.0
     # via -r requirements/test.in
 pygments==2.8.1
     # via
@@ -255,11 +255,11 @@ toml==0.10.2
     # via
     #   -r requirements/base.txt
     #   pylint
-urllib3==1.26.3
+urllib3==1.26.4
     # via
     #   -r requirements/base.txt
     #   requests
-virtualenv==20.4.2
+virtualenv==20.4.3
     # via -r requirements/test.in
 wcwidth==0.2.5
     # via pytest
