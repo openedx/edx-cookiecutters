@@ -6,9 +6,22 @@
   "version": "0.1.0",
   "author_name": "edX",
   "author_email": "you@edx.org",
-  "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"],
+  "open_source_license": [
+    "AGPL 3.0",
+    "Apache Software License 2.0",
+    "Not open source"
+  ],
   "setup_py_keyword_args": "None",
-  "setup_py_loading_pkg_data": ["no", "yes"],
-  "requires_django": ["no", "yes"],
-  "placeholder_repo_name": "placeholder_repo_name"
+  "setup_py_loading_pkg_data": [
+    "no",
+    "yes"
+  ],
+  "requires_django": [
+    "no",
+    "yes"
+  ],
+  "placeholder_repo_name": "placeholder_repo_name",
+  "_copy_without_render": [
+    ".github/workflows/*.yml"
+  ]
 }
