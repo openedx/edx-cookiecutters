@@ -78,7 +78,7 @@ docutils==0.16
     #   readme-renderer
     #   restructuredtext-lint
     #   sphinx
-edx-lint==4.1.1
+edx-lint==5.0.0
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -92,7 +92,7 @@ idna==2.10
     #   requests
 imagesize==1.2.0
     # via sphinx
-isort==5.7.0
+isort==5.8.0
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -108,7 +108,7 @@ jinja2==2.11.3
     #   cookiecutter
     #   jinja2-time
     #   sphinx
-lazy-object-proxy==1.5.2
+lazy-object-proxy==1.6.0
     # via
     #   -r requirements/base.txt
     #   astroid
@@ -221,7 +221,7 @@ snowballstemmer==2.1.0
     #   sphinx
 sphinx-rtd-theme==0.5.1
     # via -r requirements/test.in
-sphinx==3.5.2
+sphinx==3.5.3
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
