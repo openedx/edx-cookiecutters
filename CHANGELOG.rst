@@ -13,6 +13,11 @@ Fixed
 
 * Fixed django module documentation by using proper django settings.
 
+Added
+~~~~~
+
+* Added "Edit on Github" button to new project's ReadTheDocs.
+
 2020-11-25
 ----------
 
