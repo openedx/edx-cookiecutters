@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2021-04-05
+----------
+
+Fixed
+~~~~~
+
+* Fixed django module documentation by using proper django settings.
+
 2020-11-25
 ----------
 
