@@ -107,7 +107,6 @@ html_context = {
     "conf_py_path": "/docs/", # Path in the checkout to the docs root
 }
 
-
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
