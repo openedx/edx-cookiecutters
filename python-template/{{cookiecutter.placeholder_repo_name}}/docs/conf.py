@@ -97,6 +97,16 @@ author = edx_theme.AUTHOR
 project_title = '{{ cookiecutter.project_name }}'
 documentation_title = "{project_title}".format(project_title=project_title)
 
+
+# Set display_github to False if you don't want "edit on Github" button
+html_context = {
+    "display_github": True,  # Integrate GitHub
+    "github_user": "edx",  # Username
+    "github_repo": '{{ cookiecutter.project_name }}',  # Repo name
+    "github_version": "master",  # Version
+    "conf_py_path": "/docs/",  # Path in the checkout to the docs root
+}
+
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
