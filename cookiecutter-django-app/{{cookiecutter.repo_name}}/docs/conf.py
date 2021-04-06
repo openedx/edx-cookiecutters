@@ -20,7 +20,6 @@ from subprocess import check_call
 
 import edx_theme
 from django import setup as django_setup
-from django.conf import settings
 
 
 def get_version(*file_paths):
@@ -41,7 +40,7 @@ sys.path.append(REPO_ROOT)
 VERSION = get_version('../{{ cookiecutter.app_name }}', '__init__.py')
 
 # Configure Django for autodoc usage
-settings.configure()
+os.environ['DJANGO_SETTINGS_MODULE'] = 'test_settings'
 django_setup()
 
 # If extensions (or modules to document with autodoc) are in another directory,
