@@ -18,6 +18,7 @@ def run_in_virtualenv(shell_script):
         venv_path = str(Path(parent_dir) / 'venv')
         try:
             subprocess.check_call(['virtualenv', '-p', sys.executable, '--clear', venv_path])
+            subprocess.check_call(f'. {venv_path}/bin/activate; cp ./requirements/pip.txt {str(Path(parent_dir))}; pip install -qr {str(Path(parent_dir) / "pip.txt")}', env={}, shell=True)
             subprocess.check_call(f'. {venv_path}/bin/activate; {shell_script}', env={}, shell=True)
         finally:
             if shutil.rmtree.avoids_symlink_attacks:
