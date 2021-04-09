@@ -19,7 +19,7 @@ arrow==0.13.2
     #   -r requirements/test.txt
     #   jinja2-time
     #   pytest-cookies
-astroid==2.5.1
+astroid==2.5.2
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -63,7 +63,7 @@ click==7.1.2
     #   cookiecutter
     #   edx-lint
     #   pip-tools
-code-annotations==1.1.0
+code-annotations==1.1.1
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -78,7 +78,7 @@ distlib==0.3.1
     #   virtualenv
 django-model-utils==4.1.1
     # via -r requirements/test.txt
-django==2.2.19
+django==2.2.20
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -89,14 +89,16 @@ doc8==0.8.1
     # via -r requirements/test.txt
 docutils==0.16
     # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   doc8
     #   readme-renderer
     #   restructuredtext-lint
     #   sphinx
+    #   sphinx-rtd-theme
 edx-lint==5.0.0
     # via -r requirements/test.txt
-edx-sphinx-theme==2.0.0
+edx-sphinx-theme==2.1.0
     # via -r requirements/test.txt
 filelock==3.0.12
     # via
@@ -201,7 +203,7 @@ pylint-plugin-utils==0.6
     #   -r requirements/test.txt
     #   pylint-celery
     #   pylint-django
-pylint==2.7.2
+pylint==2.7.4
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -268,7 +270,7 @@ snowballstemmer==2.1.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx-rtd-theme==0.5.1
+sphinx-rtd-theme==0.5.2
     # via -r requirements/test.txt
 sphinx==3.5.3
     # via
