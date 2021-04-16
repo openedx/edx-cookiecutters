@@ -14,7 +14,7 @@ arrow==0.13.2
     #   -r requirements/base.txt
     #   jinja2-time
     #   pytest-cookies
-astroid==2.5.2
+astroid==2.5.3
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -155,7 +155,7 @@ pylint-celery==0.3
     # via
     #   -r requirements/base.txt
     #   edx-lint
-pylint-django==2.4.2
+pylint-django==2.4.3
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -223,7 +223,7 @@ snowballstemmer==2.1.0
     #   sphinx
 sphinx-rtd-theme==0.5.2
     # via -r requirements/test.in
-sphinx==3.5.3
+sphinx==3.5.4
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
