@@ -32,7 +32,7 @@ code-annotations==1.1.1
     # via edx-lint
 cookiecutter==1.7.2
     # via -r requirements/base.in
-django==2.2.20
+django==2.2.22
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   code-annotations
@@ -78,7 +78,7 @@ pylint==2.8.2
     #   pylint-plugin-utils
 python-dateutil==2.8.1
     # via arrow
-python-slugify==4.0.1
+python-slugify==5.0.2
     # via
     #   code-annotations
     #   cookiecutter
@@ -88,7 +88,7 @@ pyyaml==5.4.1
     # via code-annotations
 requests==2.25.1
     # via cookiecutter
-six==1.15.0
+six==1.16.0
     # via
     #   cookiecutter
     #   edx-lint
