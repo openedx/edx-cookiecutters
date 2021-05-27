@@ -2,7 +2,6 @@ import os
 
 from {{cookiecutter.repo_name}}.settings.base import *
 
-
 # IN-MEMORY TEST DATABASE
 DATABASES = {
     'default': {
