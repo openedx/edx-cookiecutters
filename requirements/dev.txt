@@ -18,7 +18,6 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-    #   pytest-cookies
 astroid==2.5.6
     # via
     #   -r requirements/test.txt
@@ -113,6 +112,10 @@ imagesize==1.2.0
     # via
     #   -r requirements/test.txt
     #   sphinx
+iniconfig==1.1.1
+    # via
+    #   -r requirements/test.txt
+    #   pytest
 isort==5.8.0
     # via
     #   -r requirements/test.txt
@@ -140,10 +143,6 @@ mccabe==0.6.1
     # via
     #   -r requirements/test.txt
     #   pylint
-more-itertools==8.8.0
-    # via
-    #   -r requirements/test.txt
-    #   pytest
 packaging==20.9
     # via
     #   -r requirements/ci.txt
@@ -213,9 +212,9 @@ pyparsing==2.4.7
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   packaging
-pytest-cookies==0.5.1
+pytest-cookies==0.6.1
     # via -r requirements/test.txt
-pytest==5.4.3
+pytest==6.2.4
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -319,6 +318,7 @@ toml==0.10.2
     #   -r requirements/test.txt
     #   pep517
     #   pylint
+    #   pytest
     #   tox
 tox-battery==0.6.1
     # via -r requirements/dev.in
@@ -326,19 +326,15 @@ tox==3.23.1
     # via
     #   -r requirements/ci.txt
     #   tox-battery
-urllib3==1.26.4
+urllib3==1.26.5
     # via
     #   -r requirements/test.txt
     #   requests
-virtualenv==20.4.6
+virtualenv==20.4.7
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   tox
-wcwidth==0.2.5
-    # via
-    #   -r requirements/test.txt
-    #   pytest
 webencodings==0.5.1
     # via
     #   -r requirements/test.txt
