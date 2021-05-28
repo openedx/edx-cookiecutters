@@ -13,7 +13,6 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
-    #   pytest-cookies
 astroid==2.5.6
     # via
     #   -r requirements/base.txt
@@ -93,6 +92,8 @@ idna==2.10
     #   requests
 imagesize==1.2.0
     # via sphinx
+iniconfig==1.1.1
+    # via pytest
 isort==5.8.0
     # via
     #   -r requirements/base.txt
@@ -121,8 +122,6 @@ mccabe==0.6.1
     # via
     #   -r requirements/base.txt
     #   pylint
-more-itertools==8.8.0
-    # via pytest
 packaging==20.9
     # via
     #   bleach
@@ -171,9 +170,9 @@ pylint==2.8.2
     #   pylint-plugin-utils
 pyparsing==2.4.7
     # via packaging
-pytest-cookies==0.5.1
+pytest-cookies==0.6.1
     # via -r requirements/test.in
-pytest==5.4.3
+pytest==6.2.4
     # via pytest-cookies
 python-dateutil==2.8.1
     # via
@@ -255,14 +254,13 @@ toml==0.10.2
     # via
     #   -r requirements/base.txt
     #   pylint
-urllib3==1.26.4
+    #   pytest
+urllib3==1.26.5
     # via
     #   -r requirements/base.txt
     #   requests
-virtualenv==20.4.6
+virtualenv==20.4.7
     # via -r requirements/test.in
-wcwidth==0.2.5
-    # via pytest
 webencodings==0.5.1
     # via bleach
 wrapt==1.12.1
