@@ -18,7 +18,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-astroid==2.5.6
+astroid==2.5.7
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -39,7 +39,7 @@ bleach==3.3.0
     # via
     #   -r requirements/test.txt
     #   readme-renderer
-certifi==2020.12.5
+certifi==2021.5.30
     # via
     #   -r requirements/test.txt
     #   requests
@@ -70,7 +70,7 @@ cookiecutter==1.7.3
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-distlib==0.3.1
+distlib==0.3.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
