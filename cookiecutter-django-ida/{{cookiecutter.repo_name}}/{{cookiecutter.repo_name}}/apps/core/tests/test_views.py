@@ -10,7 +10,6 @@ from django.urls import reverse
 
 from {{cookiecutter.repo_name}}.apps.core.constants import Status
 
-
 User = get_user_model()
 
 

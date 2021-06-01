@@ -12,7 +12,6 @@ from edx_django_utils.monitoring import ignore_transaction
 
 from {{cookiecutter.repo_name}}.apps.core.constants import Status
 
-
 logger = logging.getLogger(__name__)
 User = get_user_model()
 

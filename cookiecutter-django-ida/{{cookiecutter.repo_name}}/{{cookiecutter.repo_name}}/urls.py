@@ -24,7 +24,6 @@ from rest_framework_swagger.views import get_swagger_view
 from {{cookiecutter.repo_name}}.apps.api import urls as api_urls
 from {{cookiecutter.repo_name}}.apps.core import views as core_views
 
-
 admin.autodiscover()
 
 urlpatterns = oauth2_urlpatterns + [

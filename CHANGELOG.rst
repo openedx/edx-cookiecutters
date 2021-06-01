@@ -5,6 +5,24 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2021-06-01
+----------
+
+Fixed
+~~~~~
+
+* Django-IDA Dockerfiles
+
+Added
+~~~~~
+
+* Testing Dockerfiles into `make test` for Django-IDA
+
+Changed
+~~~~~~~
+
+* Django-IDA Dockerfile now uses ubuntu focal
+
 2021-04-05
 ----------
 

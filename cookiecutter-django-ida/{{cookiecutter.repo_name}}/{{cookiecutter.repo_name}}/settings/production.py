@@ -1,9 +1,9 @@
 from os import environ
+
 import yaml
 
 from {{cookiecutter.repo_name}}.settings.base import *
 from {{cookiecutter.repo_name}}.settings.utils import get_env_setting
-
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG

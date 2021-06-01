@@ -1,5 +1,5 @@
-FROM ubuntu:bionic as app
-MAINTAINER devops@edx.org
+FROM ubuntu:focal as app
+MAINTAINER sre@edx.org
 
 
 # Packages installed:
@@ -11,10 +11,14 @@ MAINTAINER devops@edx.org
 
 # python3-pip; install pip to install application requirements.txt files
 
-# libssl-dev; # mysqlclient wont install without this.
-
 # libmysqlclient-dev; to install header files needed to use native C implementation for
 # MySQL-python for performance gains.
+
+# libssl-dev; # mysqlclient wont install without this.
+
+# python3-dev; to install header files for python extensions; much wheel-building depends on this
+
+# gcc; for compiling python extensions distributed with python packages like mysql-client
 
 # If you add a package here please include a comment above describing what it is used for
 RUN apt-get update && apt-get -qy install --no-install-recommends \
@@ -24,11 +28,14 @@ RUN apt-get update && apt-get -qy install --no-install-recommends \
  python3-pip \
  libmysqlclient-dev \
  libssl-dev \
- python3-dev && \
- pip3 install --upgrade pip setuptools && \
- rm -rf /var/lib/apt/lists/*
+ python3-dev \
+ gcc
 
-RUN ln -s /usr/bin/pip3 /usr/bin/pip
+
+RUN pip install --upgrade pip setuptools
+# delete apt package lists because we do not need them inflating our image
+RUN rm -rf /var/lib/apt/lists/*
+
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
 RUN locale-gen en_US.UTF-8
@@ -47,7 +54,7 @@ WORKDIR /edx/app/{{cookiecutter.repo_name}}
 COPY requirements/production.txt /edx/app/{{cookiecutter.repo_name}}/requirements/production.txt
 
 # Dependencies are installed as root so they cannot be modified by the application user.
-RUN pip3 install -r requirements/production.txt
+RUN pip install -r requirements/production.txt
 
 RUN mkdir -p /edx/var/log
 

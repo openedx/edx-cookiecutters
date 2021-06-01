@@ -23,8 +23,8 @@ def close_all_caches():
     """
     # We do this in a way that is safe for 1.4 and 1.8 while we still have some
     # 1.4 installations.
-    from django.conf import settings
-    from django.core import cache as django_cache
+    from django.conf import settings  # lint-amnesty, pylint: disable=import-outside-toplevel
+    from django.core import cache as django_cache  # lint-amnesty, pylint: disable=import-outside-toplevel
     if hasattr(django_cache, 'caches'):
         get_cache = django_cache.caches.__getitem__
     else:
@@ -50,7 +50,7 @@ def post_fork(server, worker):  # pylint: disable=unused-argument
 
 def when_ready(server):  # pylint: disable=unused-argument
     """When running in debug mode, run Django's `check` to better match what `manage.py runserver` does"""
-    from django.conf import settings
-    from django.core.management import call_command
+    from django.conf import settings  # lint-amnesty, pylint: disable=import-outside-toplevel
+    from django.core.management import call_command  # lint-amnesty, pylint: disable=import-outside-toplevel
     if settings.DEBUG:
         call_command("check")
