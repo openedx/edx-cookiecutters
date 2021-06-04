@@ -18,7 +18,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-astroid==2.5.7
+astroid==2.5.6
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -77,7 +77,7 @@ distlib==0.3.2
     #   virtualenv
 django-model-utils==4.1.1
     # via -r requirements/test.txt
-django==2.2.23
+django==2.2.24
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -200,7 +200,7 @@ pylint-plugin-utils==0.6
     #   -r requirements/test.txt
     #   pylint-celery
     #   pylint-django
-pylint==2.8.2
+pylint==2.8.3
     # via
     #   -r requirements/test.txt
     #   edx-lint
