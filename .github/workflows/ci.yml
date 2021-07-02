@@ -38,3 +38,14 @@ jobs:
       env:
         TOXENV: ${{ matrix.toxenv }}
       run: tox
+    - name: Run check-keywords
+      # This will analyze django apps to see if any of the model fields
+      # have names that are on a list of reseverd keywords and should not
+      # be used.
+      run: |
+        pip install -r requirements/base.txt
+        cookiecutter --no-input cookiecutter-django-ida
+        cd repo_name
+        make upgrade
+        pip install -r requirements/production.txt
+        make check_keywords
