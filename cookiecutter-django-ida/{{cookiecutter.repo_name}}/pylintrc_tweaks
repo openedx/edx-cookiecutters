@@ -5,4 +5,7 @@ ignore+= ,migrations, settings, wsgi.py
 const-rgx = (([A-Z_][A-Z0-9_]*)|(__.*__)|log|urlpatterns|logger|User)$
 
 [MESSAGES CONTROL]
-DISABLE+= ,invalid-name,django-not-configured
+DISABLE+=
+    invalid-name,
+    django-not-configured,
+    consider-using-with,

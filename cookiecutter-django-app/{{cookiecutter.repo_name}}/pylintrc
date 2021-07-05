@@ -72,7 +72,7 @@
 [MASTER]
 ignore = migrations
 persistent = yes
-load-plugins = edx_lint.pylint,pylint_celery
+load-plugins = edx_lint.pylint,pylint_django,pylint_celery
 
 [MESSAGES CONTROL]
 enable = 
@@ -385,6 +385,8 @@ disable =
 	xrange-builtin,
 	
 	logging-fstring-interpolation,
+	invalid-name,
+	django-not-configured,
 	consider-using-with,
 
 [REPORTS]
@@ -485,4 +487,4 @@ int-import-graph =
 [EXCEPTIONS]
 overgeneral-exceptions = Exception
 
-# 9939ae97c9646d39c0837b2070cec44da8bc4466
+# ca6efd2a9c8b0581efaf6e4ced1b105f47e4436b
