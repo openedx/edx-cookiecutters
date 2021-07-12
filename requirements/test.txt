@@ -93,7 +93,7 @@ imagesize==1.2.0
     # via sphinx
 iniconfig==1.1.1
     # via pytest
-isort==5.9.1
+isort==5.9.2
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -217,7 +217,7 @@ snowballstemmer==2.1.0
     # via
     #   pydocstyle
     #   sphinx
-sphinx==4.0.2
+sphinx==4.1.0
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme

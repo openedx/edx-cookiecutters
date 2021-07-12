@@ -115,7 +115,7 @@ iniconfig==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-isort==5.9.1
+isort==5.9.2
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -266,7 +266,7 @@ snowballstemmer==2.1.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==4.0.2
+sphinx==4.1.0
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
