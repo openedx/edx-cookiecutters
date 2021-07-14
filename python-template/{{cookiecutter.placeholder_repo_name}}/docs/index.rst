@@ -19,6 +19,7 @@ Contents:
    internationalization
    modules
    changelog
+   decisions
 
 
 Indices and tables
