@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2021-07-15
+----------
+
+Changed
+~~~~~~~
+
+* Update cookiecutters so that sphinx warnings are treated as errors.
+
 2021-06-01
 ----------
 
