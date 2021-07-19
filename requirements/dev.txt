@@ -8,11 +8,6 @@ alabaster==0.7.12
     # via
     #   -r requirements/test.txt
     #   sphinx
-appdirs==1.4.4
-    # via
-    #   -r requirements/ci.txt
-    #   -r requirements/test.txt
-    #   virtualenv
 arrow==0.13.2
     # via
     #   -c requirements/constraints.txt
@@ -31,11 +26,16 @@ babel==2.9.1
     # via
     #   -r requirements/test.txt
     #   sphinx
+backports.entry-points-selectable==1.1.0
+    # via
+    #   -r requirements/ci.txt
+    #   -r requirements/test.txt
+    #   virtualenv
 binaryornot==0.4.4
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-bleach==3.3.0
+bleach==3.3.1
     # via
     #   -r requirements/test.txt
     #   readme-renderer
@@ -48,6 +48,9 @@ chardet==4.0.0
     #   -r requirements/test.txt
     #   binaryornot
     #   doc8
+charset-normalizer==2.0.3
+    # via
+    #   -r requirements/test.txt
     #   requests
 click==8.0.1
     # via
@@ -103,7 +106,7 @@ filelock==3.0.12
     #   -r requirements/test.txt
     #   tox
     #   virtualenv
-idna==2.10
+idna==3.2
     # via
     #   -r requirements/test.txt
     #   requests
@@ -154,12 +157,17 @@ pbr==5.6.0
     # via
     #   -r requirements/test.txt
     #   stevedore
-pep517==0.10.0
+pep517==0.11.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
 pip-tools==6.2.0
     # via -r requirements/pip-tools.txt
+platformdirs==2.0.2
+    # via
+    #   -r requirements/ci.txt
+    #   -r requirements/test.txt
+    #   virtualenv
 pluggy==0.13.1
     # via
     #   -r requirements/ci.txt
@@ -217,7 +225,7 @@ pytest==6.2.4
     #   pytest-cookies
 pytest-cookies==0.6.1
     # via -r requirements/test.txt
-python-dateutil==2.8.1
+python-dateutil==2.8.2
     # via
     #   -r requirements/test.txt
     #   arrow
@@ -237,7 +245,7 @@ pyyaml==5.4.1
     #   code-annotations
 readme-renderer==29.0
     # via -r requirements/test.txt
-requests==2.25.1
+requests==2.26.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
@@ -266,7 +274,7 @@ snowballstemmer==2.1.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==4.1.0
+sphinx==4.1.1
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
@@ -313,13 +321,15 @@ text-unidecode==1.3
 toml==0.10.2
     # via
     #   -r requirements/ci.txt
-    #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
-    #   pep517
     #   pylint
     #   pytest
     #   tox
-tox==3.23.1
+tomli==1.0.4
+    # via
+    #   -r requirements/pip-tools.txt
+    #   pep517
+tox==3.24.0
     # via
     #   -r requirements/ci.txt
     #   tox-battery
@@ -329,7 +339,7 @@ urllib3==1.26.6
     # via
     #   -r requirements/test.txt
     #   requests
-virtualenv==20.4.7
+virtualenv==20.6.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt

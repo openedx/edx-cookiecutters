@@ -17,9 +17,9 @@ binaryornot==0.4.4
 certifi==2021.5.30
     # via requests
 chardet==4.0.0
-    # via
-    #   binaryornot
-    #   requests
+    # via binaryornot
+charset-normalizer==2.0.3
+    # via requests
 click==8.0.1
     # via
     #   click-log
@@ -38,7 +38,7 @@ django==2.2.24
     #   edx-lint
 edx-lint==5.0.0
     # via -r requirements/base.in
-idna==2.10
+idna==3.2
     # via requests
 isort==5.9.2
     # via pylint
@@ -73,7 +73,7 @@ pylint-plugin-utils==0.6
     # via
     #   pylint-celery
     #   pylint-django
-python-dateutil==2.8.1
+python-dateutil==2.8.2
     # via arrow
 python-slugify==5.0.2
     # via
@@ -83,7 +83,7 @@ pytz==2021.1
     # via django
 pyyaml==5.4.1
     # via code-annotations
-requests==2.25.1
+requests==2.26.0
     # via cookiecutter
 six==1.16.0
     # via
