@@ -11,7 +11,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
-astroid==2.6.2
+astroid==2.6.5
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -36,7 +36,6 @@ chardet==4.0.0
     # via
     #   -r requirements/base.txt
     #   binaryornot
-    #   doc8
 charset-normalizer==2.0.3
     # via
     #   -r requirements/base.txt
@@ -71,7 +70,7 @@ django==2.2.24
     #   edx-lint
 django-model-utils==4.1.1
     # via -r requirements/test.in
-doc8==0.8.1
+doc8==0.9.0
     # via -r requirements/test.in
 docutils==0.16
     # via
@@ -133,7 +132,7 @@ pbr==5.6.0
     # via
     #   -r requirements/base.txt
     #   stevedore
-platformdirs==2.0.2
+platformdirs==2.1.0
     # via virtualenv
 pluggy==0.13.1
     # via pytest
@@ -152,7 +151,7 @@ pygments==2.9.0
     #   doc8
     #   readme-renderer
     #   sphinx
-pylint==2.9.3
+pylint==2.9.5
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -212,7 +211,6 @@ six==1.16.0
     #   -r requirements/base.txt
     #   bleach
     #   cookiecutter
-    #   doc8
     #   edx-lint
     #   edx-sphinx-theme
     #   python-dateutil
