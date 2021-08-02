@@ -18,7 +18,7 @@ certifi==2021.5.30
     # via requests
 chardet==4.0.0
     # via binaryornot
-charset-normalizer==2.0.3
+charset-normalizer==2.0.4
     # via requests
 click==8.0.1
     # via
@@ -28,7 +28,7 @@ click==8.0.1
     #   edx-lint
 click-log==0.3.2
     # via edx-lint
-code-annotations==1.1.2
+code-annotations==1.2.0
     # via edx-lint
 cookiecutter==1.7.3
     # via -r requirements/base.in
@@ -40,7 +40,7 @@ edx-lint==5.0.0
     # via -r requirements/base.in
 idna==3.2
     # via requests
-isort==5.9.2
+isort==5.9.3
     # via pylint
 jinja2==3.0.1
     # via
@@ -59,7 +59,7 @@ pbr==5.6.0
     # via stevedore
 poyo==0.5.0
     # via cookiecutter
-pylint==2.9.5
+pylint==2.9.6
     # via
     #   edx-lint
     #   pylint-celery

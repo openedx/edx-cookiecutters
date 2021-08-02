@@ -47,7 +47,7 @@ chardet==4.0.0
     # via
     #   -r requirements/test.txt
     #   binaryornot
-charset-normalizer==2.0.3
+charset-normalizer==2.0.4
     # via
     #   -r requirements/test.txt
     #   requests
@@ -64,7 +64,7 @@ click-log==0.3.2
     # via
     #   -r requirements/test.txt
     #   edx-lint
-code-annotations==1.1.2
+code-annotations==1.2.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -117,7 +117,7 @@ iniconfig==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-isort==5.9.2
+isort==5.9.3
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -162,7 +162,7 @@ pep517==0.11.0
     #   pip-tools
 pip-tools==6.2.0
     # via -r requirements/pip-tools.txt
-platformdirs==2.1.0
+platformdirs==2.2.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -193,7 +193,7 @@ pygments==2.9.0
     #   doc8
     #   readme-renderer
     #   sphinx
-pylint==2.9.5
+pylint==2.9.6
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -272,7 +272,7 @@ snowballstemmer==2.1.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==4.1.1
+sphinx==4.1.2
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
@@ -323,11 +323,11 @@ toml==0.10.2
     #   pylint
     #   pytest
     #   tox
-tomli==1.1.0
+tomli==1.2.0
     # via
     #   -r requirements/pip-tools.txt
     #   pep517
-tox==3.24.0
+tox==3.24.1
     # via
     #   -r requirements/ci.txt
     #   tox-battery
@@ -337,7 +337,7 @@ urllib3==1.26.6
     # via
     #   -r requirements/test.txt
     #   requests
-virtualenv==20.6.0
+virtualenv==20.7.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt

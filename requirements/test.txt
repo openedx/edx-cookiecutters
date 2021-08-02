@@ -36,7 +36,7 @@ chardet==4.0.0
     # via
     #   -r requirements/base.txt
     #   binaryornot
-charset-normalizer==2.0.3
+charset-normalizer==2.0.4
     # via
     #   -r requirements/base.txt
     #   requests
@@ -51,7 +51,7 @@ click-log==0.3.2
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==1.1.2
+code-annotations==1.2.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -95,7 +95,7 @@ imagesize==1.2.0
     # via sphinx
 iniconfig==1.1.1
     # via pytest
-isort==5.9.2
+isort==5.9.3
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -132,7 +132,7 @@ pbr==5.6.0
     # via
     #   -r requirements/base.txt
     #   stevedore
-platformdirs==2.1.0
+platformdirs==2.2.0
     # via virtualenv
 pluggy==0.13.1
     # via pytest
@@ -151,7 +151,7 @@ pygments==2.9.0
     #   doc8
     #   readme-renderer
     #   sphinx
-pylint==2.9.5
+pylint==2.9.6
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -220,7 +220,7 @@ snowballstemmer==2.1.0
     # via
     #   pydocstyle
     #   sphinx
-sphinx==4.1.1
+sphinx==4.1.2
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
@@ -261,7 +261,7 @@ urllib3==1.26.6
     # via
     #   -r requirements/base.txt
     #   requests
-virtualenv==20.6.0
+virtualenv==20.7.0
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
