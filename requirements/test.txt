@@ -11,7 +11,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
-astroid==2.6.5
+astroid==2.6.6
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -26,7 +26,7 @@ binaryornot==0.4.4
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-bleach==3.3.1
+bleach==4.0.0
     # via readme-renderer
 certifi==2021.5.30
     # via
