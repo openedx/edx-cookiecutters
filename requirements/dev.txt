@@ -187,7 +187,7 @@ pycodestyle==2.7.0
     # via -r requirements/test.txt
 pydocstyle==6.1.1
     # via -r requirements/test.txt
-pygments==2.9.0
+pygments==2.10.0
     # via
     #   -r requirements/test.txt
     #   doc8
@@ -337,7 +337,7 @@ urllib3==1.26.6
     # via
     #   -r requirements/test.txt
     #   requests
-virtualenv==20.7.0
+virtualenv==20.7.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -346,7 +346,7 @@ webencodings==0.5.1
     # via
     #   -r requirements/test.txt
     #   bleach
-wheel==0.36.2
+wheel==0.37.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
