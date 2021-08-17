@@ -113,7 +113,9 @@ Cookiecutters using layered approach
 - cookiecutter-django-ida
 - cookiecutter-xblock
 
-If you are updating above cookiecutters, please see docs/decisions/0003-layered-cookiecutter.rst and docs/how_tos/modifying_layered_cookiecutter.rst
+If you are updating above cookiecutters, please see `0003-layered-cookiecutter ADR
+<./docs/decisions/0003-layered-cookiecutter.rst>`_ and `How-to modify layered cookiecutters
+<./docs/how_tos/modifying_layered_cookiecutter.rst>`_.
 
 Local Debugging of the layered cookiecutters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
