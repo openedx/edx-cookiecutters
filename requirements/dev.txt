@@ -13,7 +13,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-astroid==2.6.6
+astroid==2.7.2
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -166,6 +166,7 @@ platformdirs==2.2.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
+    #   pylint
     #   virtualenv
 pluggy==0.13.1
     # via
@@ -193,7 +194,7 @@ pygments==2.10.0
     #   doc8
     #   readme-renderer
     #   sphinx
-pylint==2.9.6
+pylint==2.10.2
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -307,7 +308,7 @@ sqlparse==0.4.1
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==3.3.0
+stevedore==3.4.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -327,7 +328,7 @@ tomli==1.2.1
     # via
     #   -r requirements/pip-tools.txt
     #   pep517
-tox==3.24.1
+tox==3.24.3
     # via
     #   -r requirements/ci.txt
     #   tox-battery
