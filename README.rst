@@ -136,7 +136,7 @@ eg::
 Decisions
 *********
 
-See docs/decisions/0003-layered-cookiecutter.rst for details on layering cookiecutters to share boilerplate files.
+See `0003-layered-cookiecutter ADR <./docs/decisions/0003-layered-cookiecutter.rst>`_ for details on layering cookiecutters to share boilerplate files.
 
 Community
 *********
