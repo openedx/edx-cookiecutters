@@ -4,12 +4,10 @@ edx-cookiecutters
 
 This repository holds most of the Open edX public cookiecutters.
 
-Using the cookiecutters
-***********************
 
 
 Available cookiecutters
-------------------------
+***********************
 
 cookiecutter-django-ida
     for creating new independently deployable apps (IDAs).
@@ -23,11 +21,12 @@ cookiecutter-python-library
 cookiecutter-xblock
     for creating a XBlock repository as well as a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
 
-Development Workflow
---------------------
 
-One Time Setup
-~~~~~~~~~~~~~~
+Using the cookiecutters
+***********************
+
+1. One Time Setup
+-----------------
 .. code-block::
 
   # Clone the repository
@@ -37,11 +36,43 @@ One Time Setup
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
   mkvirtualenv -p python3.8 edx-cookiecutters
 
+2. Create a cookiecutter Repository
+--------------------------------
 
-Every time you develop something in this repo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+These instructions assume you have cloned this repository and are currently in its head dir. You will need a virtualenv for running the cookiecutter. You can discard it once the cookiecutter has made your new repo.
+
+Commands::
+
+    $ make requirements  # from inside edx-cookiecutter repo
+    # Replace <OUTPUT-DIRECTORY> with the base directory; your new directory will go inside.
+    # Replace <COOKIECUTTER-NAME> with one of the available cookiecutters documented above.
+    $ cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
+
+3. TODOs after creating cookiecutter
+-----------------------------------
+
+- Modify project README
+- Modify project docs/decisions/0001-purpose-of-this-repo.rst ADR
+
+Updating cookiecutters
+**********************
+
+If you find anything that is outdated in the cookiecutters in this repository, please create a PR with updates.
+
+
+.. Note:: Some of the cookiecutters in this repository use the layered cookiecutter approach. If you are modifying these, please see "Local Debugging of the layered cookiecutters" section below.
+
+
+Directions for contributing to this repository
+----------------------------------------------
 .. code-block::
 
+  # Clone the repository
+  git clone git@github.com:edx/edx-cookiecutters.git
+  cd edx-cookiecutters
+
+  # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
+  mkvirtualenv -p python3.8 edx-cookiecutters
   # Activate the virtualenv
   workon edx-cookiecutters
 
@@ -52,7 +83,7 @@ Every time you develop something in this repo
   # Install/update the dev requirements
   make requirements
 
-  # Run the tests and quality checks (to verify the status before you make any changes)
+  # Run the tests and quality checks (to verify the status before you make any changes**
   make validate
 
   # Make a new branch for your changes
@@ -74,29 +105,6 @@ Every time you develop something in this repo
   # Open a PR and ask for review.
 
 
-Using a cookiecutter
---------------------
-
-These instructions assume you have cloned this repository and are currently in its head dir. You will need a virtualenv for running the cookiecutter. You can discard it once the cookiecutter has made your new repo.
-
-Commands::
-
-    $ make requirements  # from inside edx-cookiecutter repo
-    # Replace <OUTPUT-DIRECTORY> with the base directory; your new directory will go inside.
-    # Replace <COOKIECUTTER-NAME> with one of the available cookiecutters documented above. 
-    $ cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
-
-TODOs after creating cookiecutter
----------------------------------
-
-- Modify project README
-- Modify project docs/decisions/0001-purpose-of-this-repo.rst ADR
-
-Updating cookiecutters
-**********************
-
-If you are modifying and debugging cookiecutters on a local device, please see "Local Debugging of the layered cookiecutters" section below.
-
 Cookiecutters using layered approach
 ------------------------------------
 
@@ -105,10 +113,12 @@ Cookiecutters using layered approach
 - cookiecutter-django-ida
 - cookiecutter-xblock
 
-If you are updating above cookiecutters, please see docs/decisions/0003-layered-cookiecutter.rst and docs/how_tos/modifying_layered_cookiecutter.rst
+If you are updating above cookiecutters, please see `0003-layered-cookiecutter ADR
+<./docs/decisions/0003-layered-cookiecutter.rst>`_ and `How-to modify layered cookiecutters
+<./docs/how_tos/modifying_layered_cookiecutter.rst>`_.
 
 Local Debugging of the layered cookiecutters
---------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To ensure that the layered cookiecutters pull from your local code,
 instead of GitHub, run cookiecutter like::
@@ -122,10 +132,11 @@ eg::
     $ make cookiecutter-python-library
     $ make cookiecutter-xblock
 
-Decisions
----------
 
-See docs/decisions/0003-layered-cookiecutter.rst for details on layering cookiecutters to share boilerplate files.
+Decisions
+*********
+
+See `0003-layered-cookiecutter ADR <./docs/decisions/0003-layered-cookiecutter.rst>`_ for details on layering cookiecutters to share boilerplate files.
 
 Community
 *********
