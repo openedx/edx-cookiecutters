@@ -8,7 +8,7 @@ arrow==0.13.2
     # via
     #   -c requirements/constraints.txt
     #   jinja2-time
-astroid==2.7.2
+astroid==2.7.3
     # via
     #   pylint
     #   pylint-celery
@@ -32,11 +32,7 @@ code-annotations==1.2.0
     # via edx-lint
 cookiecutter==1.7.3
     # via -r requirements/base.in
-django==2.2.24
-    # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   edx-lint
-edx-lint==5.0.0
+edx-lint==5.1.0
     # via -r requirements/base.in
 idna==3.2
     # via requests
@@ -57,7 +53,7 @@ mccabe==0.6.1
     # via pylint
 pbr==5.6.0
     # via stevedore
-platformdirs==2.2.0
+platformdirs==2.3.0
     # via pylint
 poyo==0.5.0
     # via cookiecutter
@@ -81,8 +77,6 @@ python-slugify==5.0.2
     # via
     #   code-annotations
     #   cookiecutter
-pytz==2021.1
-    # via django
 pyyaml==5.4.1
     # via code-annotations
 requests==2.26.0
@@ -92,8 +86,6 @@ six==1.16.0
     #   cookiecutter
     #   edx-lint
     #   python-dateutil
-sqlparse==0.4.1
-    # via django
 stevedore==3.4.0
     # via code-annotations
 text-unidecode==1.3

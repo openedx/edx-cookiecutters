@@ -13,7 +13,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-astroid==2.7.2
+astroid==2.7.3
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -82,7 +82,6 @@ django==2.2.24
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   django-model-utils
-    #   edx-lint
 django-model-utils==4.1.1
     # via -r requirements/test.txt
 doc8==0.9.0
@@ -95,7 +94,7 @@ docutils==0.16
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.0.0
+edx-lint==5.1.0
     # via -r requirements/test.txt
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.txt
@@ -162,15 +161,14 @@ pep517==0.11.0
     #   pip-tools
 pip-tools==6.2.0
     # via -r requirements/pip-tools.txt
-platformdirs==2.2.0
+platformdirs==2.3.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   pylint
     #   virtualenv
-pluggy==0.13.1
+pluggy==1.0.0
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   pytest
@@ -220,7 +218,7 @@ pyparsing==2.4.7
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   packaging
-pytest==6.2.4
+pytest==6.2.5
     # via
     #   -r requirements/test.txt
     #   pytest-cookies

@@ -11,7 +11,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
-astroid==2.7.2
+astroid==2.7.3
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -64,10 +64,8 @@ distlib==0.3.2
 django==2.2.24
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   -r requirements/base.txt
     #   -r requirements/test.in
     #   django-model-utils
-    #   edx-lint
 django-model-utils==4.1.1
     # via -r requirements/test.in
 doc8==0.9.0
@@ -79,7 +77,7 @@ docutils==0.16
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.0.0
+edx-lint==5.1.0
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -132,15 +130,13 @@ pbr==5.6.0
     # via
     #   -r requirements/base.txt
     #   stevedore
-platformdirs==2.2.0
+platformdirs==2.3.0
     # via
     #   -r requirements/base.txt
     #   pylint
     #   virtualenv
-pluggy==0.13.1
-    # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   pytest
+pluggy==1.0.0
+    # via pytest
 poyo==0.5.0
     # via
     #   -r requirements/base.txt
@@ -178,7 +174,7 @@ pylint-plugin-utils==0.6
     #   pylint-django
 pyparsing==2.4.7
     # via packaging
-pytest==6.2.4
+pytest==6.2.5
     # via pytest-cookies
 pytest-cookies==0.6.1
     # via -r requirements/test.in
@@ -193,7 +189,6 @@ python-slugify==5.0.2
     #   cookiecutter
 pytz==2021.1
     # via
-    #   -r requirements/base.txt
     #   babel
     #   django
 pyyaml==5.4.1
@@ -245,9 +240,7 @@ sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 sqlparse==0.4.1
-    # via
-    #   -r requirements/base.txt
-    #   django
+    # via django
 stevedore==3.4.0
     # via
     #   -r requirements/base.txt
