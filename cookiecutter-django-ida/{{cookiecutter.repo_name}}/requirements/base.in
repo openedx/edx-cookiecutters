@@ -11,6 +11,6 @@ edx-auth-backends
 edx-django-utils
 edx-django-release-util
 edx-drf-extensions
-edx-rest-api-client==1.9.2
+edx-rest-api-client
 mysqlclient
 pytz
