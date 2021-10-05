@@ -11,12 +11,4 @@
 # Common constraints for edx repos
 -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
 
-## begin copied from edx-platform as of https://github.com/edx/edx-platform/blob/1fb0ed58bb4b55a714b6bd9a29ac6ae1a47abbf7/requirements/constraints.txt#L21
-# cryptography 3.3 has dropped python3.5 support.
-cryptography<3.3
-
-# PYJWT[crypto]==2.0.1 requires cryptography>=3.3.1
-PyJWT[crypto]<2.0.0
-# social-auth-core>=4.0.0 requires PYJWT>=2.0.0
-social-auth-core<4.0.0
 
