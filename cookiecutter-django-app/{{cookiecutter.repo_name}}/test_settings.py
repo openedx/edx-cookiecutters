@@ -27,8 +27,11 @@ DATABASES = {
 }
 
 INSTALLED_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.messages',
+    'django.contrib.sessions',
     '{{ cookiecutter.app_name }}',
 )
 
@@ -39,3 +42,20 @@ LOCALE_PATHS = [
 ROOT_URLCONF = '{{ cookiecutter.app_name }}.urls'
 
 SECRET_KEY = 'insecure-secret-key'
+
+MIDDLEWARE = (
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+)
+
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'APP_DIRS': False,
+    'OPTIONS': {
+        'context_processors': [
+            'django.contrib.auth.context_processors.auth',  # this is required for admin
+            'django.contrib.messages.context_processors.messages',  # this is required for admin
+        ],
+    },
+}]

@@ -5,6 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2021-10-01
+----------
+
+Added
+~~~~~
+
+* Include system checks for Django apps in order to catch mismatches between
+  model fields and Django admin.
+
 2021-07-15
 ----------
 

@@ -13,6 +13,10 @@ auth.Group:
   ".. no_pii:": "This model has no PII"
 auth.Permission:
   ".. no_pii:": "This model has no PII"
+auth.User:
+  ".. pii": "This model minimally contains a username, password, and email"
+  ".. pii_types": "username, email_address, password"
+  ".. pii_retirement": "consumer_api"
 contenttypes.ContentType:
   ".. no_pii:": "This model has no PII"
 sessions.Session:
