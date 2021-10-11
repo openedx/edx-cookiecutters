@@ -11,7 +11,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
-astroid==2.8.0
+astroid==2.8.2
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -28,7 +28,7 @@ binaryornot==0.4.4
     #   cookiecutter
 bleach==4.1.0
     # via readme-renderer
-certifi==2021.5.30
+certifi==2021.10.8
     # via
     #   -r requirements/base.txt
     #   requests
@@ -40,7 +40,7 @@ charset-normalizer==2.0.6
     # via
     #   -r requirements/base.txt
     #   requests
-click==8.0.1
+click==8.0.3
     # via
     #   -r requirements/base.txt
     #   click-log
@@ -143,7 +143,7 @@ poyo==0.5.0
     #   cookiecutter
 py==1.10.0
     # via pytest
-pycodestyle==2.7.0
+pycodestyle==2.8.0
     # via -r requirements/test.in
 pydocstyle==6.1.1
     # via -r requirements/test.in
