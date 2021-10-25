@@ -29,7 +29,7 @@ admin.autodiscover()
 urlpatterns = oauth2_urlpatterns + [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(api_urls)),
-    url(r'^api-docs/', get_swagger_view(title='{{cookiecutter.project_name}} API')),
+    url(r'^api-docs/', get_swagger_view(title='{{cookiecutter.repo_name}} API')),
     url(r'^auto_auth/$', core_views.AutoAuth.as_view(), name='auto_auth'),
     url(r'', include('csrf.urls')),  # Include csrf urls from edx-drf-extensions
     url(r'^health/$', core_views.health, name='health'),

@@ -9,22 +9,22 @@ services:
     networks:
       - devstack_default
     volumes:
-      - {{cookiecutter.repo_name}}_mysql:/var/lib/mysql
+      - {{cookiecutter.project_name}}_mysql:/var/lib/mysql
 
   memcache:
     image: memcached:1.4.24
     container_name: {{cookiecutter.project_name}}.memcache
 
   app:
-    # Uncomment this line to use the official {{cookiecutter.repo_name}} base image
-    image: openedx/{{cookiecutter.repo_name}}
+    # Uncomment this line to use the official {{cookiecutter.project_name}} base image
+    image: openedx/{{cookiecutter.project_name}}
 
-    container_name: {{cookiecutter.repo_name}}.app
+    container_name: {{cookiecutter.project_name}}.app
     volumes:
-      - .:/edx/app/{{cookiecutter.repo_name}}/
-    command: bash -c 'while true; do python /edx/app/{{cookiecutter.repo_name}}/manage.py runserver 0.0.0.0:{{cookiecutter.port}}; sleep 2; done'
+      - .:/edx/app/{{cookiecutter.project_name}}/
+    command: bash -c 'while true; do python /edx/app/{{cookiecutter.project_name}}/manage.py runserver 0.0.0.0:{{cookiecutter.port}}; sleep 2; done'
     environment:
-      DJANGO_SETTINGS_MODULE: {{cookiecutter.repo_name}}.settings.devstack
+      DJANGO_SETTINGS_MODULE: {{cookiecutter.project_name}}.settings.devstack
     ports:
       - "{{cookiecutter.port}}:{{cookiecutter.port}}" # TODO: change this to your port
     networks:
@@ -37,4 +37,4 @@ networks:
     external: true
 
 volumes:
-  {{cookiecutter.repo_name}}_mysql:
+  {{cookiecutter.project_name}}_mysql:

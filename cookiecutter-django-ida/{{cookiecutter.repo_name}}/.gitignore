@@ -49,9 +49,9 @@ pii_report
 !django.mo
 !djangojs.po
 !djangojs.mo
-{{cookiecutter.repo_name}}/conf/locale/fake*/LC_MESSAGES/*.po
-{{cookiecutter.repo_name}}/conf/locale/fake*/LC_MESSAGES/*.mo
-{{cookiecutter.repo_name}}/conf/locale/messages.mo
+{{cookiecutter.project_name}}/conf/locale/fake*/LC_MESSAGES/*.po
+{{cookiecutter.project_name}}/conf/locale/fake*/LC_MESSAGES/*.mo
+{{cookiecutter.project_name}}/conf/locale/messages.mo
 
 
 # Mr Developer

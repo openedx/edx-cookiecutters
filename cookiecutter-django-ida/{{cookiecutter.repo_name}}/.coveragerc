@@ -3,8 +3,8 @@ branch = True
 data_file = .coverage
 source={{cookiecutter.repo_name}}
 omit =
-    {{cookiecutter.repo_name}}/settings*
-    {{cookiecutter.repo_name}}/conf*
+    {{cookiecutter.project_name}}/settings*
+    {{cookiecutter.project_name}}/conf*
     *wsgi.py
     *migrations*
     *admin.py

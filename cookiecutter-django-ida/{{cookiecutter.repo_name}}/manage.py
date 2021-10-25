@@ -9,7 +9,7 @@ import sys
 PWD = os.path.abspath(os.path.dirname(__file__))
 
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', '{{cookiecutter.repo_name}}.settings.local')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', '{{cookiecutter.project_name}}.settings.local')
     sys.path.append(PWD)
     try:
         from django.core.management import execute_from_command_line

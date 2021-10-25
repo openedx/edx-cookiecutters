@@ -42,7 +42,7 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-ENV DJANGO_SETTINGS_MODULE {{cookiecutter.repo_name}}.settings.production
+ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.production
 
 EXPOSE {{cookiecutter.port}}
 RUN useradd -m --shell /bin/false app
@@ -63,7 +63,7 @@ RUN mkdir -p /edx/var/log
 USER app
 
 # Gunicorn 19 does not log to stdout or stderr by default. Once we are past gunicorn 19, the logging to STDOUT need not be specified.
-CMD gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.repo_name}}.wsgi:application
+CMD gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiecutter.repo_name}}/{{cookiecutter.project_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.project_name}}.wsgi:application
 
 # This line is after the requirements so that changes to the code will not
 # bust the image cache
@@ -71,4 +71,4 @@ COPY . /edx/app/{{cookiecutter.repo_name}}
 
 FROM app as newrelic
 RUN pip install newrelic
-CMD newrelic-admin run-program gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.repo_name}}.wsgi:application
+CMD newrelic-admin run-program gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiecutter.repo_name}}/{{cookiecutter.project_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.project_name}}.wsgi:application

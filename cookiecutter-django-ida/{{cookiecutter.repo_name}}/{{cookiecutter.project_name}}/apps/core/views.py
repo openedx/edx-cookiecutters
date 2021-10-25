@@ -27,7 +27,7 @@ def health(_):
         HttpResponse: 503 if the service is unavailable, with JSON data indicating the health of each required service
 
     Example:
-        >>> response = requests.get('https://{{cookiecutter.project_name}}.edx.org/health')
+        >>> response = requests.get('https://{{cookiecutter.repo_name}}.edx.org/health')
         >>> response.status_code
         200
         >>> response.content
