@@ -172,7 +172,7 @@ pylint-plugin-utils==0.6
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pyparsing==2.4.7
+pyparsing==3.0.1
     # via packaging
 pytest==6.2.5
     # via pytest-cookies
@@ -240,7 +240,7 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 sqlparse==0.4.2
     # via django
-stevedore==3.4.0
+stevedore==3.5.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -263,7 +263,7 @@ urllib3==1.26.7
     # via
     #   -r requirements/base.txt
     #   requests
-virtualenv==20.8.1
+virtualenv==20.9.0
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
