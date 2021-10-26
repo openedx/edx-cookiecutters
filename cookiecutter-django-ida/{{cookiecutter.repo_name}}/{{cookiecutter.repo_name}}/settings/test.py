@@ -1,6 +1,6 @@
 import os
 
-from {{cookiecutter.repo_name}}.settings.base import *
+from {{cookiecutter.project_name}}.settings.base import *
 
 # IN-MEMORY TEST DATABASE
 DATABASES = {

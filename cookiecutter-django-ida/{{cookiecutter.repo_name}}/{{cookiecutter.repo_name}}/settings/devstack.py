@@ -1,4 +1,4 @@
-from {{cookiecutter.repo_name}}.settings.local import *
+from {{cookiecutter.project_name}}.settings.local import *
 
 DATABASES = {
     'default': {

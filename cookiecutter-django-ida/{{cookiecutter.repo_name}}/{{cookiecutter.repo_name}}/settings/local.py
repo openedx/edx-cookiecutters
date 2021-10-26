@@ -1,4 +1,4 @@
-from {{cookiecutter.repo_name}}.settings.base import *
+from {{cookiecutter.project_name}}.settings.base import *
 
 DEBUG = True
 
