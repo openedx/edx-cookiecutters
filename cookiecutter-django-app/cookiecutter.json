@@ -1,6 +1,6 @@
 {
   "repo_name": "repo_name",
-  "app_name": "{{ cookiecutter.repo_name.lower()|replace(' ', '_')|replace('-', '_') }}",
+  "app_name": "{{ cookiecutter.repo_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_') }}",
   "project_name": "{{ cookiecutter.repo_name }}",
   "project_title": "{{ cookiecutter.project_name }}",
   "project_short_description": "What is this project?",

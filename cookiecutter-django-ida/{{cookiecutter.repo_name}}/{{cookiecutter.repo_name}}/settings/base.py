@@ -3,7 +3,7 @@ from os.path import abspath, dirname, join
 
 from corsheaders.defaults import default_headers as corsheaders_default_headers
 
-from {{cookiecutter.repo_name}}.settings.utils import get_logger_config
+from {{cookiecutter.project_name}}.settings.utils import get_logger_config
 
 # PATH vars
 here = lambda *x: join(abspath(dirname(__file__)), *x)
