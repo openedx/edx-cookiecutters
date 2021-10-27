@@ -58,6 +58,7 @@ extra_context["version"] = "{{cookiecutter.version}}"
 extra_context["author_name"] = "{{cookiecutter.author_name}}"
 extra_context["author_email"] = "{{cookiecutter.author_email}}"
 extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
+extra_context["if_features_docs"] = "yes"
 
 extra_context["placeholder_repo_name"] = python_placeholder_repo_name
 
@@ -79,7 +80,6 @@ os.rmdir(python_template_cookiecutter_output_loc)
 
 # Removing unecessary files from python and django templates:
 remove("setup.py")
-remove("tox.ini")
 remove("MANIFEST.in")
 
 write_main(['pylintrc'])

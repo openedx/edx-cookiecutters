@@ -6,9 +6,11 @@ from corsheaders.defaults import default_headers as corsheaders_default_headers
 from {{cookiecutter.project_name}}.settings.utils import get_logger_config
 
 # PATH vars
-here = lambda *x: join(abspath(dirname(__file__)), *x)
-PROJECT_ROOT = here("..")
-root = lambda *x: join(abspath(PROJECT_ROOT), *x)
+PROJECT_ROOT = join(abspath(dirname(__file__)), "..")
+
+
+def root(*path_fragments):
+    return join(abspath(PROJECT_ROOT), *path_fragments)
 
 
 # SECURITY WARNING: keep the secret key used in production secret!

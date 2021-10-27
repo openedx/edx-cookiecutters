@@ -20,6 +20,10 @@
     "no",
     "yes"
   ],
+  "if_features_docs": [
+    "no",
+    "yes"
+  ],
   "placeholder_repo_name": "placeholder_repo_name",
   "_copy_without_render": [
     ".github/workflows/*.yml"
