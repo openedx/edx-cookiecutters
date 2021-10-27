@@ -12,7 +12,7 @@ root = lambda *x: join(abspath(PROJECT_ROOT), *x)
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('{{cookiecutter.repo_name|upper}}_SECRET_KEY', 'insecure-secret-key')
+SECRET_KEY = os.environ.get('{{cookiecutter.project_name|upper}}_SECRET_KEY', 'insecure-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -41,8 +41,8 @@ THIRD_PARTY_APPS = (
 )
 
 PROJECT_APPS = (
-    '{{cookiecutter.repo_name}}.apps.core',
-    '{{cookiecutter.repo_name}}.apps.api',
+    '{{cookiecutter.project_name}}.apps.core',
+    '{{cookiecutter.project_name}}.apps.api',
 )
 
 INSTALLED_APPS += THIRD_PARTY_APPS
@@ -79,10 +79,10 @@ CORS_ALLOW_HEADERS = corsheaders_default_headers + (
 )
 CORS_ORIGIN_WHITELIST = []
 
-ROOT_URLCONF = '{{cookiecutter.repo_name}}.urls'
+ROOT_URLCONF = '{{cookiecutter.project_name}}.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = '{{cookiecutter.repo_name}}.wsgi.application'
+WSGI_APPLICATION = '{{cookiecutter.project_name}}.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -155,7 +155,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
-                '{{cookiecutter.repo_name}}.apps.core.context_processors.core',
+                '{{cookiecutter.project_name}}.apps.core.context_processors.core',
             ),
             'debug': True,  # Django will only display debug pages if the global DEBUG setting is set to True.
         }
@@ -168,9 +168,9 @@ TEMPLATES = [
 # The purpose of customizing the cookie names is to avoid conflicts when
 # multiple Django services are running behind the same hostname.
 # Detailed information at: https://docs.djangoproject.com/en/dev/ref/settings/
-SESSION_COOKIE_NAME = '{{cookiecutter.repo_name}}_sessionid'
-CSRF_COOKIE_NAME = '{{cookiecutter.repo_name}}_csrftoken'
-LANGUAGE_COOKIE_NAME = '{{cookiecutter.repo_name}}_language'
+SESSION_COOKIE_NAME = '{{cookiecutter.project_name}}_sessionid'
+CSRF_COOKIE_NAME = '{{cookiecutter.project_name}}_csrftoken'
+LANGUAGE_COOKIE_NAME = '{{cookiecutter.project_name}}_language'
 # END COOKIE CONFIGURATION
 
 CSRF_COOKIE_SECURE = False

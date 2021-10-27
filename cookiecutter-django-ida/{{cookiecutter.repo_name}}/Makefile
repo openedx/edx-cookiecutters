@@ -68,21 +68,21 @@ coverage: clean
 	$(BROWSER) htmlcov/index.html
 
 isort_check: ## check that isort has been run
-	isort --check-only -rc {{cookiecutter.repo_name}}/
+	isort --check-only -rc {{cookiecutter.project_name}}/
 
 isort: ## run isort to sort imports in all Python files
-	isort --recursive --atomic {{cookiecutter.repo_name}}/
+	isort --recursive --atomic {{cookiecutter.project_name}}/
 
 style: ## run Python style checker
-	pylint --rcfile=pylintrc {{cookiecutter.repo_name}} *.py
+	pylint --rcfile=pylintrc {{cookiecutter.project_name}} *.py
 
 lint: ## run Python code linting
-	pylint --rcfile=pylintrc {{cookiecutter.repo_name}} *.py
+	pylint --rcfile=pylintrc {{cookiecutter.project_name}} *.py
 
 quality: style isort_check lint ## check code style and import sorting, then lint
 
 pii_check: ## check for PII annotations on all Django models
-	DJANGO_SETTINGS_MODULE={{cookiecutter.repo_name}}.settings.test \
+	DJANGO_SETTINGS_MODULE={{cookiecutter.project_name}}.settings.test \
 	code_annotations django_find_annotations --config_file .pii_annotations.yml --lint --report --coverage
 
 check_keywords: ## Scan the Django models in all installed apps in this project for restricted field names
@@ -113,7 +113,7 @@ extract_translations: ## extract strings to be translated, outputting .mo files
 	python manage.py makemessages -l en -v1 -d djangojs
 
 dummy_translations: ## generate dummy translation (.po) files
-	cd {{cookiecutter.repo_name}} && i18n_tool dummy
+	cd {{cookiecutter.project_name}} && i18n_tool dummy
 
 compile_translations: # compile translation files, outputting .po files for each supported language
 	python manage.py compilemessages
@@ -136,7 +136,7 @@ pkg-devstack: ## build the {{cookiecutter.repo_name}} image from the latest conf
 	docker build -t {{cookiecutter.repo_name}}:latest -f docker/build/{{cookiecutter.repo_name}}/Dockerfile git://github.com/edx/configuration
 
 detect_changed_source_translations: ## check if translation files are up-to-date
-	cd {{cookiecutter.repo_name}} && i18n_tool changed
+	cd {{cookiecutter.project_name}} && i18n_tool changed
 
 validate_translations: fake_translations detect_changed_source_translations ## install fake translations and check if translation files are up-to-date
 
