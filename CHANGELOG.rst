@@ -5,6 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2021-10-27
+----------
+
+Added
+~~~~~
+
+* Added GitHub Actions to the python-template cookiecutter so that all 
+  cookiecutters will make repos that check for conventional commits.
+
 2021-10-01
 ----------
 
