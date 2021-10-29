@@ -107,6 +107,10 @@ upgrade: piptools ## update the requirements/*.txt files with the latest package
 	pip-compile --upgrade -o requirements/validation.txt requirements/validation.in
 	pip-compile --upgrade -o requirements/dev.txt requirements/dev.in
 	pip-compile --upgrade -o requirements/production.txt requirements/production.in
+	# Let tox control the Django version for tests
+	grep -e "^django==" requirements/base.txt > requirements/django.txt
+	sed '/^[dD]jango==/d' requirements/test.txt > requirements/test.tmp
+	mv requirements/test.tmp requirements/test.txt
 
 extract_translations: ## extract strings to be translated, outputting .mo files
 	python manage.py makemessages -l en -v1 -d django
@@ -201,3 +205,6 @@ github_docker_push: github_docker_tag github_docker_auth ## push to docker hub
 	docker push "openedx/repo_name:${GITHUB_SHA}"
 	docker push 'openedx/repo_name:latest-newrelic'
 	docker push "openedx/repo_name:${GITHUB_SHA}-newrelic"
+
+selfcheck: ## check that the Makefile is well-formed
+	@echo "The Makefile is well-formed."

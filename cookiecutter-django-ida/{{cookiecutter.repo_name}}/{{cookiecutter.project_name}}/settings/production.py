@@ -21,26 +21,26 @@ DICT_UPDATE_KEYS = ('JWT_AUTH',)
 MEDIA_STORAGE_BACKEND = {}
 FILE_STORAGE_BACKEND = {}
 
-CONFIG_FILE = get_env_setting('{{cookiecutter.project_name|upper}}_CFG')
-with open(CONFIG_FILE, encoding='utf-8') as f:
-    config_from_yaml = yaml.load(f)
+if '{{cookiecutter.project_name|upper}}_CFG' in environ:
+    CONFIG_FILE = get_env_setting('{{cookiecutter.project_name|upper}}_CFG')
+    with open(CONFIG_FILE, encoding='utf-8') as f:
+        config_from_yaml = yaml.load(f)
 
-    # Remove the items that should be used to update dicts, and apply them separately rather
-    # than pumping them into the local vars.
-    dict_updates = {key: config_from_yaml.pop(key, None) for key in DICT_UPDATE_KEYS}
+        # Remove the items that should be used to update dicts, and apply them separately rather
+        # than pumping them into the local vars.
+        dict_updates = {key: config_from_yaml.pop(key, None) for key in DICT_UPDATE_KEYS}
 
-    for key, value in dict_updates.items():
-        if value:
-            vars()[key].update(value)
+        for key, value in dict_updates.items():
+            if value:
+                vars()[key].update(value)
 
-    vars().update(config_from_yaml)
+        vars().update(config_from_yaml)
 
-    # Unpack the media and files storage backend settings for django storages.
-    # These dicts are not Django settings themselves, but they contain a mapping
-    # of Django settings.
-    vars().update(FILE_STORAGE_BACKEND)
-    vars().update(MEDIA_STORAGE_BACKEND)
-2
+        # Unpack the media and files storage backend settings for django storages.
+        # These dicts are not Django settings themselves, but they contain a mapping
+        # of Django settings.
+        vars().update(FILE_STORAGE_BACKEND)
+        vars().update(MEDIA_STORAGE_BACKEND)
 
 DB_OVERRIDES = dict(
     PASSWORD=environ.get('DB_MIGRATION_PASS', DATABASES['default']['PASSWORD']),

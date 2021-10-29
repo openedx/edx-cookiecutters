@@ -20,6 +20,9 @@ Contents:
    modules
    changelog
    decisions
+   {%- if cookiecutter.if_features_docs == "yes" %}
+   features
+   {%- endif %}
 
 
 Indices and tables

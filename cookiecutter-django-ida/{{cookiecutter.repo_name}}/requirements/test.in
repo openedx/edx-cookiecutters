@@ -9,3 +9,4 @@ edx-lint
 mock
 pytest-cov
 pytest-django
+tox

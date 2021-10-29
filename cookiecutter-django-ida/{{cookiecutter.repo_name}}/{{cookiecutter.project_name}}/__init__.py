@@ -1,4 +1,4 @@
 """
-{{cookiecutter.repo_name}} module
+{{cookiecutter.repo_name}} module.
 """
 __version__ = '{{ cookiecutter.version }}'
