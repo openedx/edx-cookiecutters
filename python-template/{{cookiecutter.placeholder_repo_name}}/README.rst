@@ -46,7 +46,7 @@ Every time you develop something in this repo
   workon {{ cookiecutter.repo_name }}
 
   # Grab the latest code
-  git checkout master
+  git checkout main
   git pull
 
   # Install/update the dev requirements
@@ -117,12 +117,12 @@ For more information about these options, see the `Getting Help`_ page.
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
     :alt: PyPI
 
-.. |ci-badge| image:: https://github.com/edx/{{ cookiecutter.repo_name }}/workflows/Python%20CI/badge.svg?branch=master
+.. |ci-badge| image:: https://github.com/edx/{{ cookiecutter.repo_name }}/workflows/Python%20CI/badge.svg?branch=main
     :target: https://github.com/edx/{{ cookiecutter.repo_name }}/actions
     :alt: CI
 
-.. |codecov-badge| image:: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}/coverage.svg?branch=master
-    :target: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}?branch=master
+.. |codecov-badge| image:: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}/coverage.svg?branch=main
+    :target: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}?branch=main
     :alt: Codecov
 
 .. |doc-badge| image:: https://readthedocs.org/projects/{{ cookiecutter.repo_name }}/badge/?version=latest
@@ -134,5 +134,5 @@ For more information about these options, see the `Getting Help`_ page.
     :alt: Supported Python versions
 
 .. |license-badge| image:: https://img.shields.io/github/license/edx/{{ cookiecutter.repo_name }}.svg
-    :target: https://github.com/edx/{{ cookiecutter.repo_name }}/blob/master/LICENSE.txt
+    :target: https://github.com/edx/{{ cookiecutter.repo_name }}/blob/main/LICENSE.txt
     :alt: License

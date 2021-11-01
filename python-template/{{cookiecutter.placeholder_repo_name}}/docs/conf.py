@@ -101,7 +101,7 @@ html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "edx",  # Username
     "github_repo": '{{ cookiecutter.project_name }}',  # Repo name
-    "github_version": "master",  # Version
+    "github_version": "main",  # Version
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
 }
 
