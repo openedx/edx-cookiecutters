@@ -29,4 +29,4 @@ Consequences
 
 - Much of our tooling may need to be updated to handle both "main" and "master" for some transitional period.
 
-  + Continuing to use "master" for a new repository would require manual changes after using the cookie-cutter.
+  - Continuing to use "master" for a new repository would require manual changes after using the cookie-cutter.
