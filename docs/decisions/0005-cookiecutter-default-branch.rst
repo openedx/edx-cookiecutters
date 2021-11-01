@@ -25,7 +25,6 @@ As an additional nudge in this direction, it was decided not to provide an optio
 Consequences
 ------------
 
-
 - Using "main" for a new repository for a library should be safe at this time, but using it for a new IDA may required additional changes to support it.
 
 - Much of our tooling may need to be updated to handle both "main" and "master" for some transitional period.
