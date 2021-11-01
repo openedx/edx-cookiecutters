@@ -12,10 +12,11 @@ Context
 
 Github now sets default branch of each new repository to main. And the software industry as a whole has been moving towards default branch name flexibility and away from naming the default branch "master".
 
+There are number of places in edx-cookiecutters where we make assumption about the name of the default branch. Until now, we assumed that name is "master".
 Decision
 --------
 
-It as decided to change name of default branches to "main" for all new repositories created with cookiecutters.
+The name of the default branch will be assumed to be "main" by edx-cookiecutter tooling.
 
 Consequences
 ------------
