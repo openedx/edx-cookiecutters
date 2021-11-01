@@ -18,7 +18,7 @@ There are number of places in edx-cookiecutters where we make assumption about t
 Decision
 --------
 
-edx-cookiecutters tooling will assuming new repositories created using the cookiecutters will have the default name of "main".
+edx-cookiecutters tooling will assume new repositories created using the cookiecutters will have the default name of "main".
 
 Consequences
 ------------
