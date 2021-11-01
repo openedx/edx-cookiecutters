@@ -8,7 +8,7 @@ arrow==0.13.2
     # via
     #   -c requirements/constraints.txt
     #   jinja2-time
-astroid==2.8.3
+astroid==2.8.4
     # via
     #   pylint
     #   pylint-celery
@@ -32,7 +32,7 @@ code-annotations==1.2.0
     # via edx-lint
 cookiecutter==1.7.3
     # via -r requirements/base.in
-edx-lint==5.2.0
+edx-lint==5.2.1
     # via -r requirements/base.in
 idna==3.3
     # via requests
@@ -98,7 +98,7 @@ typing-extensions==3.10.0.2
     #   pylint
 urllib3==1.26.7
     # via requests
-wrapt==1.13.2
+wrapt==1.13.3
     # via astroid
 
 # The following packages are considered to be unsafe in a requirements file:

@@ -13,7 +13,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-astroid==2.8.3
+astroid==2.8.4
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -94,11 +94,11 @@ docutils==0.17.1
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.2.0
+edx-lint==5.2.1
     # via -r requirements/test.txt
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.txt
-filelock==3.3.1
+filelock==3.3.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -143,7 +143,7 @@ mccabe==0.6.1
     # via
     #   -r requirements/test.txt
     #   pylint
-packaging==21.0
+packaging==21.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -213,7 +213,7 @@ pylint-plugin-utils==0.6
     #   -r requirements/test.txt
     #   pylint-celery
     #   pylint-django
-pyparsing==3.0.1
+pyparsing==2.4.7
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -322,7 +322,7 @@ toml==0.10.2
     #   pylint
     #   pytest
     #   tox
-tomli==1.2.1
+tomli==1.2.2
     # via
     #   -r requirements/pip-tools.txt
     #   pep517
@@ -354,7 +354,7 @@ wheel==0.37.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
-wrapt==1.13.2
+wrapt==1.13.3
     # via
     #   -r requirements/test.txt
     #   astroid
