@@ -14,6 +14,7 @@ Github now sets default branch of each new repository to main. And the software 
 
 There are number of places in edx-cookiecutters where we make assumption about the name of the default branch. Until now, we assumed that name was "master".
 
+
 Decision
 --------
 
