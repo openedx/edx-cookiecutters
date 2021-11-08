@@ -29,7 +29,6 @@ echo -e "rules:
   severity: INFO
   message: Updating load_requirements method with new standard
   fix: |
-    # UPDATED VIA SEMGREP - if you need to remove/modify this method remove this line and add a comment specifying why.
     def load_requirements(*requirements_paths):
         \"\"\"
         Load all requirements from the specified requirements files.
@@ -38,6 +37,8 @@ echo -e "rules:
         with -c in the requirements files.
         Returns a list of requirement strings.
         \"\"\"
+        # UPDATED VIA SEMGREP - if you need to remove/modify this method remove this line and add a comment specifying why.
+
         requirements = {}
         constraint_files = set()
 
@@ -54,7 +55,7 @@ echo -e "rules:
                 # constraints in place
                 if existing_version_constraints and existing_version_constraints != version_constraints:
                     raise BaseException(f'Multiple constraint definitions found for {package}:'
-                                        f' "{existing_version_constraints}" and "{version_constraints}".'
+                                        f' \"{existing_version_constraints}\" and \"{version_constraints}\".'
                                         f'Combine constraints into one location with {package}'
                                         f'{existing_version_constraints},{version_constraints}.')
                 if add_if_not_present or package in current_requirements:
@@ -77,7 +78,9 @@ echo -e "rules:
                         add_version_constraint_or_raise(line, requirements, False)
 
         # process back into list of pkg><=constraints strings
-        return [f'{pkg}{version or \"\"}' for (pkg, version) in sorted(requirements.items())]" > ./update-setup-tmp/load_requirements.yaml;
+        constrained_requirements = [f'{pkg}{version or \"\"}' for (pkg, version) in sorted(requirements.items())]
+        return constrained_requirements" > ./update-setup-tmp/load_requirements.yaml;
+
 echo -e "rules:
 - id: fix-is_requirement
   languages:
@@ -88,7 +91,6 @@ echo -e "rules:
   severity: INFO
   message: Updating is_requirement method with new standard
   fix: |
-    # UPDATED VIA SEMGREP - if you need to remove/modify this method remove this line and add a comment specifying why
     def is_requirement(line):
         \"\"\"
         Return True if the requirement line is a package requirement.
@@ -97,6 +99,8 @@ echo -e "rules:
             bool: True if the line is not blank, a comment,
             a URL, or an included file
         \"\"\"
+        # UPDATED VIA SEMGREP - if you need to remove/modify this method remove this line and add a comment specifying why
+
         return line and line.strip() and not line.startswith(('-r', '#', '-e', 'git+', '-c'))" > ./update-setup-tmp/is_requirement.yaml;
 
 # --debug will provide additional logging in case things fail
@@ -108,8 +112,13 @@ python setup.py bdist_wheel;
 
 # add constraints file to manifest so python tests pass
 # note: this will not work for repositories where the constraints file has been changed from requirements/constraints.txt
-if [ -s "MANIFEST.in" ] && [ -s "requirements/constraints.txt" ]
+if [ -s "MANIFEST.in" ] && [ -s "requirements/constraints.txt" ] && [ -z "$(grep 'requirements/constraints.txt' MANIFEST.in)" ]
 then
+    # bash magic to check if Manifest file does not end with a newline
+    if [[ $(tail -c1 "MANIFEST.in" | wc -l) -eq 0 ]]
+    then
+        echo -e "" >> MANIFEST.in
+    fi
     echo "include requirements/constraints.txt" >> MANIFEST.in
 fi
 
@@ -117,8 +126,8 @@ fi
 echo -e "[ARCHBOM-1772](https://openedx.atlassian.net/browse/ARCHBOM-1772)
  Update setup.py to use constraint files when generating requirements files for packaging and distribution.
  PR generated automatically with Jenkins job cleanup-python-code. " > .git/cleanup-python-code-description;
-echo -e "\nOld requirements file: \n" >> .git/cleanup-python-code-description;
+echo -e "\nResult of running \`python setup.py bdist_wheel\` before applying fix (in .egg-info/requires.txt)\: \n" >> .git/cleanup-python-code-description;
 cat ./update-setup-tmp/old_requires.txt >> .git/cleanup-python-code-description;
-echo -e "\n New requirements file: \n" >> .git/cleanup-python-code-description;
+echo -e "\nResult of running \`python setup.py bdist_wheel\` after applying fix (in .egg-info/requires.txt)\: \n" >> .git/cleanup-python-code-description;
 cat "$(pwd)/$wheel_dir/requires.txt" >> .git/cleanup-python-code-description;
 rm -rf update-setup-tmp
