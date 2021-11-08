@@ -116,7 +116,7 @@ iniconfig==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-isort==5.9.3
+isort==5.10.0
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -151,7 +151,7 @@ packaging==21.2
     #   pytest
     #   sphinx
     #   tox
-pbr==5.6.0
+pbr==5.7.0
     # via
     #   -r requirements/test.txt
     #   stevedore
@@ -177,7 +177,7 @@ poyo==0.5.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-py==1.10.0
+py==1.11.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -341,7 +341,7 @@ urllib3==1.26.7
     # via
     #   -r requirements/test.txt
     #   requests
-virtualenv==20.9.0
+virtualenv==20.10.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
