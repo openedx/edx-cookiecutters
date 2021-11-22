@@ -11,7 +11,9 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
-astroid==2.8.5
+asgiref==3.4.1
+    # via django
+astroid==2.8.6
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -61,7 +63,7 @@ cookiecutter==1.7.3
     #   pytest-cookies
 distlib==0.3.3
     # via virtualenv
-django==2.2.24
+django==3.2.9
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -83,7 +85,7 @@ edx-lint==5.2.1
     #   -r requirements/test.in
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.in
-filelock==3.3.2
+filelock==3.4.0
     # via virtualenv
 idna==3.3
     # via
@@ -121,12 +123,12 @@ mccabe==0.6.1
     # via
     #   -r requirements/base.txt
     #   pylint
-packaging==21.2
+packaging==21.3
     # via
     #   bleach
     #   pytest
     #   sphinx
-pbr==5.7.0
+pbr==5.8.0
     # via
     #   -r requirements/base.txt
     #   stevedore
@@ -172,7 +174,7 @@ pylint-plugin-utils==0.6
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pyparsing==2.4.7
+pyparsing==3.0.6
     # via packaging
 pytest==6.2.5
     # via pytest-cookies
@@ -215,7 +217,7 @@ six==1.16.0
     #   edx-sphinx-theme
     #   python-dateutil
     #   virtualenv
-snowballstemmer==2.1.0
+snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
