@@ -76,12 +76,12 @@ cookiecutter==1.7.3
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-distlib==0.3.3
+distlib==0.3.4
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==3.2.9
+django==3.2.10
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -246,7 +246,7 @@ pyyaml==6.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
-readme-renderer==30.0
+readme-renderer==31.0
     # via -r requirements/test.txt
 requests==2.26.0
     # via
