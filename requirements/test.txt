@@ -61,9 +61,9 @@ cookiecutter==1.7.3
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-distlib==0.3.3
+distlib==0.3.4
     # via virtualenv
-django==3.2.9
+django==3.2.10
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -85,7 +85,7 @@ edx-lint==5.2.1
     #   -r requirements/test.in
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.in
-filelock==3.4.0
+filelock==3.4.2
     # via virtualenv
 idna==3.3
     # via
@@ -111,7 +111,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-lazy-object-proxy==1.6.0
+lazy-object-proxy==1.7.1
     # via
     #   -r requirements/base.txt
     #   astroid
@@ -132,7 +132,7 @@ pbr==5.8.0
     # via
     #   -r requirements/base.txt
     #   stevedore
-platformdirs==2.4.0
+platformdirs==2.4.1
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -197,7 +197,7 @@ pyyaml==6.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
-readme-renderer==30.0
+readme-renderer==32.0
     # via -r requirements/test.in
 requests==2.26.0
     # via
@@ -221,7 +221,7 @@ snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
-sphinx==4.3.1
+sphinx==4.3.2
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
