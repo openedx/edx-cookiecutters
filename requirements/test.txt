@@ -13,7 +13,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.4.1
     # via django
-astroid==2.9.1
+astroid==2.9.3
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -36,7 +36,7 @@ chardet==4.0.0
     # via
     #   -r requirements/base.txt
     #   binaryornot
-charset-normalizer==2.0.9
+charset-normalizer==2.0.10
     # via
     #   -r requirements/base.txt
     #   requests
@@ -61,7 +61,7 @@ cookiecutter==1.7.3
     #   pytest-cookies
 distlib==0.3.4
     # via virtualenv
-django==3.2.10
+django==3.2.11
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -147,7 +147,7 @@ pycodestyle==2.8.0
     # via -r requirements/test.in
 pydocstyle==6.1.1
     # via -r requirements/test.in
-pygments==2.11.1
+pygments==2.11.2
     # via
     #   doc8
     #   readme-renderer
@@ -197,7 +197,7 @@ pyyaml==6.0
     #   code-annotations
 readme-renderer==32.0
     # via -r requirements/test.in
-requests==2.26.0
+requests==2.27.1
     # via
     #   -r requirements/base.txt
     #   cookiecutter
@@ -259,7 +259,7 @@ typing-extensions==4.0.1
     #   -r requirements/base.txt
     #   astroid
     #   pylint
-urllib3==1.26.7
+urllib3==1.26.8
     # via
     #   -r requirements/base.txt
     #   requests

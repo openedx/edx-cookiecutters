@@ -8,7 +8,7 @@ arrow==0.13.2
     # via
     #   -c requirements/constraints.txt
     #   jinja2-time
-astroid==2.9.1
+astroid==2.9.3
     # via
     #   pylint
     #   pylint-celery
@@ -18,7 +18,7 @@ certifi==2021.10.8
     # via requests
 chardet==4.0.0
     # via binaryornot
-charset-normalizer==2.0.9
+charset-normalizer==2.0.10
     # via requests
 click==8.0.3
     # via
@@ -79,7 +79,7 @@ python-slugify==5.0.2
     #   cookiecutter
 pyyaml==6.0
     # via code-annotations
-requests==2.26.0
+requests==2.27.1
     # via cookiecutter
 six==1.16.0
     # via
@@ -96,7 +96,7 @@ typing-extensions==4.0.1
     # via
     #   astroid
     #   pylint
-urllib3==1.26.7
+urllib3==1.26.8
     # via requests
 wrapt==1.13.3
     # via astroid
