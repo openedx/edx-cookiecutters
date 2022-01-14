@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-01-14
+----------
+
+Changed
+~~~~~~~
+
+* Makefile created for django-ida now interpolates repo_name into dockerhub commands.
+
 2021-10-27
 ----------
 
