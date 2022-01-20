@@ -5,6 +5,18 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-01-19
+----------
+
+Added
+~~~~~~~
+
+* Added Support for Django40
+
+Removed
+~~~~~~~~
+* Removed Support for Django22, 30, 31
+
 2022-01-14
 ----------
 
