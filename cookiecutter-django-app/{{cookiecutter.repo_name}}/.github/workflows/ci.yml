@@ -2,10 +2,10 @@ name: Python CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
     branches:
-      - '**'
+    - '**'
 
 
 jobs:
@@ -16,29 +16,29 @@ jobs:
       matrix:
         os: [ubuntu-20.04]
         python-version: ['3.8']
-        toxenv: ["django22", "django30", "quality", "docs", "pii_check"]
+        toxenv: [quality, docs, pii_check, django32, django40]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
+    - uses: actions/checkout@v2
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
 
-      - name: Install pip
-        run: pip install -r requirements/pip.txt
+    - name: Install pip
+      run: pip install -r requirements/pip.txt
 
-      - name: Install Dependencies
-        run: pip install -r requirements/ci.txt
+    - name: Install Dependencies
+      run: pip install -r requirements/ci.txt
 
-      - name: Run Tests
-        env:
-          TOXENV: ${{ matrix.toxenv }}
-        run: tox
+    - name: Run Tests
+      env:
+        TOXENV: ${{ matrix.toxenv }}
+      run: tox
 
-      - name: Run coverage
-        if: matrix.python-version == '3.8' && matrix.toxenv == 'quality'
-        uses: codecov/codecov-action@v1
-        with:
-          flags: unittests
-          fail_ci_if_error: true
+    - name: Run coverage
+      if: matrix.python-version == '3.8' && matrix.toxenv == 'django32'
+      uses: codecov/codecov-action@v1
+      with:
+        flags: unittests
+        fail_ci_if_error: true

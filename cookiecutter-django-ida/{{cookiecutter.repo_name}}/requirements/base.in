@@ -1,7 +1,7 @@
 # Core requirements for using this application
 -c constraints.txt
 
-Django>=2.2          # Web application framework
+Django         # Web application framework
 django-cors-headers
 django-extensions
 django-rest-swagger
