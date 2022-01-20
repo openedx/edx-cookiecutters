@@ -24,7 +24,7 @@ FILE_STORAGE_BACKEND = {}
 if '{{cookiecutter.project_name|upper}}_CFG' in environ:
     CONFIG_FILE = get_env_setting('{{cookiecutter.project_name|upper}}_CFG')
     with open(CONFIG_FILE, encoding='utf-8') as f:
-        config_from_yaml = yaml.load(f)
+        config_from_yaml = yaml.safe_load(f)
 
         # Remove the items that should be used to update dicts, and apply them separately rather
         # than pumping them into the local vars.
