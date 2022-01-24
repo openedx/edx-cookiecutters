@@ -11,7 +11,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
-asgiref==3.4.1
+asgiref==3.5.0
     # via django
 astroid==2.9.3
     # via
@@ -174,7 +174,7 @@ pylint-plugin-utils==0.7
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pyparsing==3.0.6
+pyparsing==3.0.7
     # via packaging
 pytest==6.2.5
     # via pytest-cookies
