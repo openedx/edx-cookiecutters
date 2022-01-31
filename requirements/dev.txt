@@ -13,7 +13,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-asgiref==3.4.1
+asgiref==3.5.0
     # via
     #   -r requirements/test.txt
     #   django
@@ -46,7 +46,7 @@ chardet==4.0.0
     # via
     #   -r requirements/test.txt
     #   binaryornot
-charset-normalizer==2.0.10
+charset-normalizer==2.0.11
     # via
     #   -r requirements/test.txt
     #   requests
@@ -216,7 +216,7 @@ pylint-plugin-utils==0.7
     #   -r requirements/test.txt
     #   pylint-celery
     #   pylint-django
-pyparsing==3.0.6
+pyparsing==3.0.7
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
