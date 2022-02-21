@@ -46,6 +46,9 @@ jobs:
         pip install -r requirements/base.txt
         cookiecutter --no-input cookiecutter-django-ida
         cd repo_name
+        pip install --upgrade pip
+        pip install --upgrade pip-tools
+        pip-compile --upgrade -o requirements/pip-tools.txt requirements/pip-tools.in
         make upgrade
         pip install -r requirements/production.txt
         make check_keywords

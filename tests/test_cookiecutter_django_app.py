@@ -146,6 +146,8 @@ def test_setup_py(options_baked):
 def test_upgrade(options_baked):
     """Make sure the upgrade target works"""
     try:
+        run_in_virtualenv('pip install --upgrade pip')
+        run_in_virtualenv('pip install --upgrade pip-tools')
         run_in_virtualenv('make upgrade')
     except sh.ErrorReturnCode as exc:
         pytest.fail(str(exc.stderr))
