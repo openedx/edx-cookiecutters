@@ -11,7 +11,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
-asgiref==3.4.1
+asgiref==3.5.0
     # via django
 astroid==2.9.3
     # via
@@ -36,11 +36,11 @@ chardet==4.0.0
     # via
     #   -r requirements/base.txt
     #   binaryornot
-charset-normalizer==2.0.10
+charset-normalizer==2.0.12
     # via
     #   -r requirements/base.txt
     #   requests
-click==8.0.3
+click==8.0.4
     # via
     #   -r requirements/base.txt
     #   click-log
@@ -51,7 +51,7 @@ click-log==0.3.2
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==1.2.0
+code-annotations==1.3.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -61,7 +61,7 @@ cookiecutter==1.7.3
     #   pytest-cookies
 distlib==0.3.4
     # via virtualenv
-django==3.2.11
+django==3.2.12
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -83,7 +83,7 @@ edx-lint==5.2.1
     #   -r requirements/test.in
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.in
-filelock==3.4.2
+filelock==3.6.0
     # via virtualenv
 idna==3.3
     # via
@@ -91,7 +91,7 @@ idna==3.3
     #   requests
 imagesize==1.3.0
     # via sphinx
-importlib-metadata==4.10.1
+importlib-metadata==4.11.2
     # via sphinx
 iniconfig==1.1.1
     # via pytest
@@ -115,7 +115,7 @@ lazy-object-proxy==1.7.1
     # via
     #   -r requirements/base.txt
     #   astroid
-markupsafe==2.0.1
+markupsafe==2.1.0
     # via
     #   -r requirements/base.txt
     #   jinja2
@@ -128,11 +128,11 @@ packaging==21.3
     #   bleach
     #   pytest
     #   sphinx
-pbr==5.8.0
+pbr==5.8.1
     # via
     #   -r requirements/base.txt
     #   stevedore
-platformdirs==2.4.1
+platformdirs==2.5.1
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -165,7 +165,7 @@ pylint-celery==0.3
     # via
     #   -r requirements/base.txt
     #   edx-lint
-pylint-django==2.5.0
+pylint-django==2.5.2
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -174,9 +174,9 @@ pylint-plugin-utils==0.7
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pyparsing==3.0.6
+pyparsing==3.0.7
     # via packaging
-pytest==6.2.5
+pytest==7.0.1
     # via pytest-cookies
 pytest-cookies==0.6.1
     # via -r requirements/test.in
@@ -184,7 +184,7 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/base.txt
     #   arrow
-python-slugify==5.0.2
+python-slugify==6.1.1
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -197,14 +197,14 @@ pyyaml==6.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
-readme-renderer==32.0
+readme-renderer==33.0
     # via -r requirements/test.in
 requests==2.27.1
     # via
     #   -r requirements/base.txt
     #   cookiecutter
     #   sphinx
-restructuredtext-lint==1.3.2
+restructuredtext-lint==1.4.0
     # via doc8
 sh==1.14.2
     # via -r requirements/test.in
@@ -255,8 +255,9 @@ toml==0.10.2
     # via
     #   -r requirements/base.txt
     #   pylint
-    #   pytest
-typing-extensions==4.0.1
+tomli==2.0.1
+    # via pytest
+typing-extensions==4.1.1
     # via
     #   -r requirements/base.txt
     #   astroid
@@ -265,7 +266,7 @@ urllib3==1.26.8
     # via
     #   -r requirements/base.txt
     #   requests
-virtualenv==20.13.0
+virtualenv==20.13.3
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
