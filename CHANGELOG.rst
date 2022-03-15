@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-02-18
+----------
+
+Removed
+~~~~~~~~
+* Removed redundant New Relic agent injection in Dockerfile
+
+
 2022-01-19
 ----------
 
