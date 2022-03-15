@@ -5,7 +5,6 @@ edx-cookiecutters
 This repository holds most of the Open edX public cookiecutters.
 
 
-
 Available cookiecutters
 ***********************
 
