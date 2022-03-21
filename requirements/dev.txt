@@ -138,7 +138,7 @@ lazy-object-proxy==1.7.1
     # via
     #   -r requirements/test.txt
     #   astroid
-markupsafe==2.1.0
+markupsafe==2.1.1
     # via
     #   -r requirements/test.txt
     #   jinja2
@@ -221,7 +221,7 @@ pyparsing==3.0.7
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   packaging
-pytest==7.1.0
+pytest==7.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -236,7 +236,7 @@ python-slugify==6.1.1
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-pytz==2021.3
+pytz==2022.1
     # via
     #   -r requirements/test.txt
     #   babel
@@ -341,11 +341,11 @@ typing-extensions==4.1.1
     #   -r requirements/test.txt
     #   astroid
     #   pylint
-urllib3==1.26.8
+urllib3==1.26.9
     # via
     #   -r requirements/test.txt
     #   requests
-virtualenv==20.13.3
+virtualenv==20.13.4
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
