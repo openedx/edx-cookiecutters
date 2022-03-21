@@ -47,7 +47,7 @@ jinja2-time==0.2.0
     # via cookiecutter
 lazy-object-proxy==1.7.1
     # via astroid
-markupsafe==2.1.0
+markupsafe==2.1.1
     # via jinja2
 mccabe==0.6.1
     # via pylint
@@ -96,7 +96,7 @@ typing-extensions==4.1.1
     # via
     #   astroid
     #   pylint
-urllib3==1.26.8
+urllib3==1.26.9
     # via requests
 wrapt==1.13.3
     # via astroid
