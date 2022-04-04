@@ -50,7 +50,7 @@ charset-normalizer==2.0.12
     # via
     #   -r requirements/test.txt
     #   requests
-click==8.0.4
+click==8.1.2
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -87,7 +87,7 @@ django==3.2.12
     #   django-model-utils
 django-model-utils==4.2.0
     # via -r requirements/test.txt
-doc8==0.10.1
+doc8==0.11.1
     # via -r requirements/test.txt
 docutils==0.17.1
     # via
@@ -200,7 +200,7 @@ pygments==2.11.2
     #   doc8
     #   readme-renderer
     #   sphinx
-pylint==2.13.2
+pylint==2.13.4
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -365,7 +365,7 @@ wrapt==1.14.0
     # via
     #   -r requirements/test.txt
     #   astroid
-zipp==3.7.0
+zipp==3.8.0
     # via
     #   -r requirements/test.txt
     #   importlib-metadata

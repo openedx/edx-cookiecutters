@@ -20,7 +20,7 @@ chardet==4.0.0
     # via binaryornot
 charset-normalizer==2.0.12
     # via requests
-click==8.0.4
+click==8.1.2
     # via
     #   click-log
     #   code-annotations
@@ -59,7 +59,7 @@ platformdirs==2.5.1
     # via pylint
 poyo==0.5.0
     # via cookiecutter
-pylint==2.13.2
+pylint==2.13.4
     # via
     #   edx-lint
     #   pylint-celery

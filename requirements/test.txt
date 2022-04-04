@@ -40,7 +40,7 @@ charset-normalizer==2.0.12
     # via
     #   -r requirements/base.txt
     #   requests
-click==8.0.4
+click==8.1.2
     # via
     #   -r requirements/base.txt
     #   click-log
@@ -72,7 +72,7 @@ django==3.2.12
     #   django-model-utils
 django-model-utils==4.2.0
     # via -r requirements/test.in
-doc8==0.10.1
+doc8==0.11.1
     # via -r requirements/test.in
 docutils==0.17.1
     # via
@@ -158,7 +158,7 @@ pygments==2.11.2
     #   doc8
     #   readme-renderer
     #   sphinx
-pylint==2.13.2
+pylint==2.13.4
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -277,7 +277,7 @@ wrapt==1.14.0
     # via
     #   -r requirements/base.txt
     #   astroid
-zipp==3.7.0
+zipp==3.8.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
