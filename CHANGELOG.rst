@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-04-08
+----------
+
+Fixed
+~~~~~~~~
+* Fixed an issue with default config for JWT auth for new IDAs.
+
+
 2022-02-18
 ----------
 
@@ -39,7 +47,7 @@ Changed
 Added
 ~~~~~
 
-* Added GitHub Actions to the python-template cookiecutter so that all 
+* Added GitHub Actions to the python-template cookiecutter so that all
   cookiecutters will make repos that check for conventional commits.
 
 2021-10-01
