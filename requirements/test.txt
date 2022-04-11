@@ -26,7 +26,7 @@ binaryornot==0.4.4
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-bleach==4.1.0
+bleach==5.0.0
     # via readme-renderer
 certifi==2021.10.8
     # via
@@ -129,7 +129,6 @@ mccabe==0.7.0
     #   pylint
 packaging==21.3
     # via
-    #   bleach
     #   pytest
     #   sphinx
 pbr==5.8.1
@@ -158,7 +157,7 @@ pygments==2.11.2
     #   doc8
     #   readme-renderer
     #   sphinx
-pylint==2.13.4
+pylint==2.13.5
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -178,7 +177,7 @@ pylint-plugin-utils==0.7
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pyparsing==3.0.7
+pyparsing==3.0.8
     # via packaging
 pytest==7.1.1
     # via pytest-cookies
