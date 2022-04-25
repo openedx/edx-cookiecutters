@@ -91,8 +91,9 @@ def test_readme(options_baked, custom_template):
     assert "cookie_repo" == readme_lines[0]
     assert ':target: https://pypi.python.org/pypi/cookie_repo/' in readme_lines
     try:
-        sh.python("setup.py", 'check', restructuredtext=True, strict=True)
-    except sh.ErrorReturnCode as exc:
+        os.system("python -m build --wheel")
+        os.system("twine check dist/*")
+    except os.ErrorReturnCode as exc:
         pytest.fail(str(exc))
 
 

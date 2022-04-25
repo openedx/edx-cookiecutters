@@ -11,7 +11,8 @@ isort                     # to standardize order of imports
 pycodestyle               # PEP 8 compliance validation
 pydocstyle                # PEP 257 compliance validation
 pytest-cookies            # pytest extension for cookiecutter testing
-readme_renderer           # Check README.rst for PyPI compatibility
+twine                     # Check README.rst for PyPI compatibility
+build                     # Needed to build wheel for twine check
 sh                        # Used to execute flake8 in tests
 Sphinx                    # Documentation builder
 sphinx_rtd_theme          # For pylint import checks of the generated conf.py
