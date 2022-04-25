@@ -13,14 +13,14 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.5.0
     # via django
-astroid==2.11.2
+astroid==2.11.3
     # via
     #   -r requirements/base.txt
     #   pylint
     #   pylint-celery
 attrs==21.4.0
     # via pytest
-babel==2.9.1
+babel==2.10.1
     # via sphinx
 binaryornot==0.4.4
     # via
@@ -28,6 +28,8 @@ binaryornot==0.4.4
     #   cookiecutter
 bleach==5.0.0
     # via readme-renderer
+build==0.7.0
+    # via -r requirements/test.in
 certifi==2021.10.8
     # via
     #   -r requirements/base.txt
@@ -55,6 +57,8 @@ code-annotations==1.3.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
+commonmark==0.9.1
+    # via rich
 cookiecutter==1.7.3
     # via
     #   -r requirements/base.txt
@@ -96,7 +100,10 @@ idna==3.3
 imagesize==1.3.0
     # via sphinx
 importlib-metadata==4.11.3
-    # via sphinx
+    # via
+    #   keyring
+    #   sphinx
+    #   twine
 iniconfig==1.1.1
     # via pytest
 isort==5.10.1
@@ -115,6 +122,8 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
+keyring==23.5.0
+    # via twine
 lazy-object-proxy==1.7.1
     # via
     #   -r requirements/base.txt
@@ -129,13 +138,18 @@ mccabe==0.7.0
     #   pylint
 packaging==21.3
     # via
+    #   build
     #   pytest
     #   sphinx
 pbr==5.8.1
     # via
     #   -r requirements/base.txt
     #   stevedore
-platformdirs==2.5.1
+pep517==0.12.0
+    # via build
+pkginfo==1.8.2
+    # via twine
+platformdirs==2.5.2
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -152,12 +166,13 @@ pycodestyle==2.8.0
     # via -r requirements/test.in
 pydocstyle==6.1.1
     # via -r requirements/test.in
-pygments==2.11.2
+pygments==2.12.0
     # via
     #   doc8
     #   readme-renderer
+    #   rich
     #   sphinx
-pylint==2.13.5
+pylint==2.13.7
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -179,7 +194,7 @@ pylint-plugin-utils==0.7
     #   pylint-django
 pyparsing==3.0.8
     # via packaging
-pytest==7.1.1
+pytest==7.1.2
     # via pytest-cookies
 pytest-cookies==0.6.1
     # via -r requirements/test.in
@@ -200,15 +215,23 @@ pyyaml==6.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
-readme-renderer==34.0
-    # via -r requirements/test.in
+readme-renderer==35.0
+    # via twine
 requests==2.27.1
     # via
     #   -r requirements/base.txt
     #   cookiecutter
+    #   requests-toolbelt
     #   sphinx
+    #   twine
+requests-toolbelt==0.9.1
+    # via twine
 restructuredtext-lint==1.4.0
     # via doc8
+rfc3986==2.0.0
+    # via twine
+rich==12.2.0
+    # via twine
 sh==1.14.2
     # via -r requirements/test.in
 six==1.16.0
@@ -257,17 +280,23 @@ text-unidecode==1.3
 tomli==2.0.1
     # via
     #   -r requirements/base.txt
+    #   build
+    #   pep517
     #   pylint
     #   pytest
+twine==4.0.0
+    # via -r requirements/test.in
 typing-extensions==4.2.0
     # via
     #   -r requirements/base.txt
     #   astroid
     #   pylint
+    #   rich
 urllib3==1.26.9
     # via
     #   -r requirements/base.txt
     #   requests
+    #   twine
 virtualenv==20.14.1
     # via -r requirements/test.in
 webencodings==0.5.1
