@@ -34,6 +34,8 @@ certifi==2021.10.8
     # via
     #   -r requirements/base.txt
     #   requests
+cffi==1.15.0
+    # via cryptography
 chardet==4.0.0
     # via
     #   -r requirements/base.txt
@@ -63,6 +65,8 @@ cookiecutter==1.7.3
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
+cryptography==37.0.1
+    # via secretstorage
 dill==0.3.4
     # via
     #   -r requirements/base.txt
@@ -111,6 +115,10 @@ isort==5.10.1
     #   -r requirements/base.txt
     #   -r requirements/test.in
     #   pylint
+jeepney==0.8.0
+    # via
+    #   keyring
+    #   secretstorage
 jinja2==3.1.1
     # via
     #   -r requirements/base.txt
@@ -164,6 +172,8 @@ py==1.11.0
     # via pytest
 pycodestyle==2.8.0
     # via -r requirements/test.in
+pycparser==2.21
+    # via cffi
 pydocstyle==6.1.1
     # via -r requirements/test.in
 pygments==2.12.0
@@ -202,7 +212,7 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/base.txt
     #   arrow
-python-slugify==6.1.1
+python-slugify==6.1.2
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -230,8 +240,10 @@ restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==12.2.0
+rich==12.3.0
     # via twine
+secretstorage==3.3.2
+    # via keyring
 sh==1.14.2
     # via -r requirements/test.in
 six==1.16.0
