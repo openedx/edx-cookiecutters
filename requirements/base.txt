@@ -20,7 +20,7 @@ chardet==4.0.0
     # via binaryornot
 charset-normalizer==2.0.12
     # via requests
-click==8.1.2
+click==8.1.3
     # via
     #   click-log
     #   code-annotations
@@ -40,7 +40,7 @@ idna==3.3
     # via requests
 isort==5.10.1
     # via pylint
-jinja2==3.1.1
+jinja2==3.1.2
     # via
     #   code-annotations
     #   cookiecutter
@@ -75,7 +75,7 @@ pylint-plugin-utils==0.7
     #   pylint-django
 python-dateutil==2.8.2
     # via arrow
-python-slugify==6.1.1
+python-slugify==6.1.2
     # via
     #   code-annotations
     #   cookiecutter
