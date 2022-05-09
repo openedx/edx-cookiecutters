@@ -13,7 +13,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.5.1
     # via django
-astroid==2.11.3
+astroid==2.11.4
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -65,7 +65,7 @@ cookiecutter==1.7.3
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==37.0.1
+cryptography==37.0.2
     # via secretstorage
 dill==0.3.4
     # via
@@ -149,7 +149,7 @@ packaging==21.3
     #   build
     #   pytest
     #   sphinx
-pbr==5.8.1
+pbr==5.9.0
     # via
     #   -r requirements/base.txt
     #   stevedore
@@ -182,7 +182,7 @@ pygments==2.12.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.13.7
+pylint==2.13.8
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -240,7 +240,7 @@ restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==12.3.0
+rich==12.4.1
     # via twine
 secretstorage==3.3.2
     # via keyring
@@ -313,7 +313,7 @@ virtualenv==20.14.1
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
-wrapt==1.14.0
+wrapt==1.14.1
     # via
     #   -r requirements/base.txt
     #   astroid
