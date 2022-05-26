@@ -6,7 +6,8 @@
         migrate html_coverage upgrade extract_translation dummy_translations \
         compile_translations fake_translations  pull_translations \
         push_translations start-devstack open-devstack  pkg-devstack \
-        detect_changed_source_translations validate_translations check_keywords
+        detect_changed_source_translations validate_translations check_keywords \
+		install_transifex_client
 
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
