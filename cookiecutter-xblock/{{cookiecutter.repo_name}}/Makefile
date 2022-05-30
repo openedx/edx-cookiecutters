@@ -34,10 +34,12 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
 	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
 
-requirements: ## install development environment requirements
+piptools: ## install pinned version of pip-compile and pip-sync
 	pip install -r requirements/pip.txt
-	pip install -qr requirements/pip-tools.txt
-	pip install -r requirements/dev.txt
+	pip install -r requirements/pip-tools.txt
+	
+requirements: piptools## install development environment requirements
+	pip-sync -q requirements/dev.txt requirements/private.*
 
 dev.clean:
 	-docker rm $(REPO_NAME)-dev
