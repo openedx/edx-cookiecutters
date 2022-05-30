@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-07-13
+----------
+
+Fixed
+~~~~~
+
+- Standardised the Requirements file structure in all templates.
+
 2022-07-12
 ----------
 
