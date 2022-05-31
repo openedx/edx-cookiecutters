@@ -53,8 +53,13 @@ INSTALLED_APPS += PROJECT_APPS
 MIDDLEWARE = (
     # Resets RequestCache utility for added safety.
     'edx_django_utils.cache.middleware.RequestCacheMiddleware',
-    # Enables monitoring utility for writing custom metrics.
-    'edx_django_utils.monitoring.middleware.MonitoringCustomMetricsMiddleware',
+
+    # Monitoring middleware should be immediately after RequestCacheMiddleware
+    'edx_django_utils.monitoring.DeploymentMonitoringMiddleware',  # python and django version
+    'edx_django_utils.monitoring.CookieMonitoringMiddleware',  # cookie names (compliance) and sizes
+    'edx_django_utils.monitoring.CachedCustomMonitoringMiddleware',  # support accumulate & increment
+    'edx_django_utils.monitoring.MonitoringMemoryMiddleware',  # memory usage
+
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',

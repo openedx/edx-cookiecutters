@@ -5,11 +5,24 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-05-31
+----------
+
+Fixed
+~~~~~
+
+- Used newer, non-deprecated name for metrics monitoring middleware from edx-django-utils
+
+Added
+~~~~~
+
+- Added several more monitoring middlewares for IDAs
+
 2022-04-08
 ----------
 
 Fixed
-~~~~~~~~
+~~~~~
 * Fixed an issue with default config for JWT auth for new IDAs.
 
 
@@ -17,7 +30,7 @@ Fixed
 ----------
 
 Removed
-~~~~~~~~
+~~~~~~~
 * Removed redundant New Relic agent injection in Dockerfile
 
 
@@ -25,12 +38,12 @@ Removed
 ----------
 
 Added
-~~~~~~~
+~~~~~
 
 * Added Support for Django40
 
 Removed
-~~~~~~~~
+~~~~~~~
 * Removed Support for Django22, 30, 31
 
 2022-01-14
