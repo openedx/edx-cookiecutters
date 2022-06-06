@@ -9,3 +9,4 @@ DISABLE+=
     invalid-name,
     django-not-configured,
     consider-using-with,
+    bad-option-value,
