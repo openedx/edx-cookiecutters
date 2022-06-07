@@ -110,7 +110,7 @@ def test_models(options_baked):
 def test_urls(options_baked):
     """The urls.py file should be present."""
     urls_file_txt = Path("cookie_lover/urls.py").read_text()
-    basic_url = "url(r'', TemplateView.as_view(template_name=\"cookie_lover/base.html\"))"
+    basic_url = "re_path(r'', TemplateView.as_view(template_name=\"cookie_lover/base.html\"))"
     assert basic_url in urls_file_txt
 
 
