@@ -1,11 +1,11 @@
 .DEFAULT_GOAL := help
 
 .PHONY: help clean piptools requirements ci_requirements dev_requirements \
-        validation_requirements doc_requirementsprod_requirements static shell \
+        validation_requirements doc_requirements prod_requirements static shell \
         test coverage isort_check isort style lint quality pii_check validate \
         migrate html_coverage upgrade extract_translation dummy_translations \
-        compile_translations fake_translations  pull_translations \
-        push_translations start-devstack open-devstack  pkg-devstack \
+        compile_translations fake_translations pull_translations \
+        push_translations start-devstack open-devstack pkg-devstack \
         detect_changed_source_translations validate_translations check_keywords
 
 define BROWSER_PYSCRIPT
