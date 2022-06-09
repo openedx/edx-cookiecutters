@@ -148,7 +148,7 @@ STATICFILES_DIRS = (
 )
 
 # TEMPLATE CONFIGURATION
-# See: https://docs.djangoproject.com/en/2.2/ref/settings/#templates
+# See: https://docs.djangoproject.com/en/3.2/ref/settings/#templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -162,6 +162,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
                 'django.template.context_processors.media',
+                'django.template.context_processors.request',
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
