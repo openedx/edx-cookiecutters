@@ -10,7 +10,7 @@ If you're creating a standalone Django service, you should probably use
 
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _cookiecutter-django-ida: https://github.com/edx/edx-cookiecutters/cookiecutter-django-ida
+.. _cookiecutter-django-ida: https://github.com/openedx/edx-cookiecutters/tree/master/cookiecutter-django-ida
 
 
 Features
