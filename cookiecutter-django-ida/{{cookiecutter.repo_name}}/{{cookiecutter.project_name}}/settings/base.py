@@ -105,6 +105,9 @@ DATABASES = {
     }
 }
 
+# New DB primary keys default to an IntegerField.
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
