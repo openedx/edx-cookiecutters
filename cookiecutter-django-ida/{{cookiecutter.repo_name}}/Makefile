@@ -68,7 +68,7 @@ coverage: clean
 	$(BROWSER) htmlcov/index.html
 
 isort_check: ## check that isort has been run
-	isort --check-only -rc {{cookiecutter.project_name}}/
+	isort --check-only {{cookiecutter.project_name}}/
 
 isort: ## run isort to sort imports in all Python files
 	isort --recursive --atomic {{cookiecutter.project_name}}/
