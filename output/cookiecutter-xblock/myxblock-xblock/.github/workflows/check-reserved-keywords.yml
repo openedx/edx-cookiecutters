@@ -1,0 +1,27 @@
+name: Check Reserved Keywords
+
+on:
+  - pull_request
+
+jobs:
+  check-reserved-keywords:
+    name: Check Reserved Keywords
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install pip
+      run: pip install -r requirements/pip.txt
+
+    - name: Install Dependencies
+      run: pip install -r requirements/dev.txt
+
+    - name: Check Keywords
+      run: make check_keywords

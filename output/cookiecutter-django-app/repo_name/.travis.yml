@@ -1,0 +1,49 @@
+# Config file for automatic testing at travis-ci.com
+# To connect a new edX repository to Travis, see
+# https://openedx.atlassian.net/wiki/spaces/EdxOps/pages/157464369/How+to+connect+a+repository+to+Travis+CI
+#
+# Be sure to change the Travis settings in the web UI to enable both
+# "Build pushed branches" and "Build pushed pull requests".
+
+language: python
+
+python:
+  - 3.8
+
+env:
+  - TOXENV=django22
+  - TOXENV=django30
+
+matrix:
+  include:
+    - python: 3.8
+      env: TOXENV=quality
+    - python: 3.8
+      env: TOXENV=docs
+    - python: 3.8
+      env: TOXENV=pii_check
+
+cache:
+  - pip
+
+before_install:
+  - pip install --upgrade pip
+
+install:
+  - pip install -r requirements/travis.txt
+
+script:
+  - tox
+
+after_success:
+  - codecov
+
+# Set token via "travis encrypt --add deploy.password"; for details, see
+# https://docs.travis-ci.com/user/deployment/pypi
+deploy:
+  provider: pypi
+  user: "__token__"
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+    condition: '$TOXENV = quality'
