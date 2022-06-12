@@ -1,6 +1,0 @@
-[run]
-branch = True
-data_file = .coverage
-source=repo_name
-omit =
-    tests
