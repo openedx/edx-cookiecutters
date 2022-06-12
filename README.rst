@@ -59,6 +59,7 @@ Updating cookiecutters
 
 If you find anything that is outdated in the cookiecutters in this repository, please create a PR with updates.
 
+.. Note:: Set EDX_COOKIECUTTER_ROOTDIR="$(PWD)" before running the cookiecutter after making local changes. Without this environmental variable set, the repository will layer in the python-template cookiecutter from GitHub instead of your local.
 
 .. Note:: Some of the cookiecutters in this repository use the layered cookiecutter approach. If you are modifying these, please see "Local Debugging of the layered cookiecutters" section below.
 
