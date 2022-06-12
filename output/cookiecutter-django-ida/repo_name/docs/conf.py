@@ -17,6 +17,7 @@ import sys
 from subprocess import check_call
 
 import edx_theme
+from django import setup as django_setup
 
 
 def get_version(*file_paths):
@@ -40,6 +41,9 @@ sys.path.append(REPO_ROOT)
 
 VERSION = get_version('../repo_name', '__init__.py')
 
+# Configure Django for autodoc usage
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'repo_name.settings.test')
+django_setup()
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
