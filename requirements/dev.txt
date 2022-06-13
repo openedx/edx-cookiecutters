@@ -77,7 +77,7 @@ commonmark==0.9.1
     # via
     #   -r requirements/test.txt
     #   rich
-cookiecutter==1.7.3
+cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -111,11 +111,11 @@ docutils==0.17.1
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.2.2
+edx-lint==5.2.4
     # via -r requirements/test.txt
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.txt
-filelock==3.7.0
+filelock==3.7.1
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -159,7 +159,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-keyring==23.5.1
+keyring==23.6.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -195,7 +195,7 @@ pep517==0.12.0
     #   pip-tools
 pip-tools==6.6.2
     # via -r requirements/pip-tools.txt
-pkginfo==1.8.2
+pkginfo==1.8.3
     # via
     #   -r requirements/test.txt
     #   twine
@@ -211,10 +211,6 @@ pluggy==1.0.0
     #   -r requirements/test.txt
     #   pytest
     #   tox
-poyo==0.5.0
-    # via
-    #   -r requirements/test.txt
-    #   cookiecutter
 py==1.11.0
     # via
     #   -r requirements/ci.txt
@@ -236,7 +232,7 @@ pygments==2.12.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.13.9
+pylint==2.14.1
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -285,11 +281,12 @@ pyyaml==6.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
+    #   cookiecutter
 readme-renderer==35.0
     # via
     #   -r requirements/test.txt
     #   twine
-requests==2.27.1
+requests==2.28.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
@@ -323,7 +320,6 @@ six==1.16.0
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   bleach
-    #   cookiecutter
     #   edx-lint
     #   edx-sphinx-theme
     #   python-dateutil
@@ -334,7 +330,7 @@ snowballstemmer==2.2.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==5.0.0
+sphinx==5.0.1
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
@@ -390,13 +386,17 @@ tomli==2.0.1
     #   pep517
     #   pylint
     #   pytest
+tomlkit==0.11.0
+    # via
+    #   -r requirements/test.txt
+    #   pylint
 tox==3.25.0
     # via
     #   -r requirements/ci.txt
     #   tox-battery
 tox-battery==0.6.1
     # via -r requirements/dev.in
-twine==4.0.0
+twine==4.0.1
     # via -r requirements/test.txt
 typing-extensions==4.2.0
     # via
