@@ -4,12 +4,12 @@
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
 |license-badge|
 
+{{ cookiecutter.project_short_description}}
+
 The ``README.rst`` file should start with a brief description of the repository,
 which sets it in the context of other repositories under the ``edx``
 organization. It should make clear where this fits in to the overall edX
 codebase.
-
-{{ cookiecutter.project_short_description}}
 
 Overview (please modify)
 ------------------------

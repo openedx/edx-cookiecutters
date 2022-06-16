@@ -71,7 +71,7 @@ These catalogs can be created by running::
 The previous command will create the necessary ``.po`` files under
 ``{{cookiecutter.repo_name}}/{{cookiecutter.package_name}}/locale/en/LC_MESSAGES/text.po``.
 The ``text.po`` file is created from the ``django-partial.po`` file created by
-``django-admin makemessages`` (`makemessages documentation <https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#message-files>`_),
+``django-admin makemessages`` (`makemessages documentation <https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#message-files>`_),
 this is why you will not see a ``django-partial.po`` file.
 
 3. Create language specific translations
@@ -114,7 +114,7 @@ Once translations are in place, use the following Make target to compile the tra
     $ make compile_translations
 
 The previous command will compile ``.po`` files using
-``django-admin compilemessages`` (`compilemessages documentation <https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#compiling-message-files>`_).
+``django-admin compilemessages`` (`compilemessages documentation <https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#compiling-message-files>`_).
 After compiling the ``.po`` file(s), ``django-statici18n`` is used to create language specific catalogs. See
 ``django-statici18n`` `documentation <https://django-statici18n.readthedocs.io/en/latest/>`_ for more information.
 
@@ -147,5 +147,5 @@ If there are any errors compiling ``.po`` files run the following command to val
     $ make validate
 
 See `django's i18n troubleshooting documentation
-<https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#troubleshooting-gettext-incorrectly-detects-python-format-in-strings-with-percent-signs>`_
+<https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#troubleshooting-gettext-incorrectly-detects-python-format-in-strings-with-percent-signs>`_
 for more information.

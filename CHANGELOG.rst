@@ -5,6 +5,18 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-07-11
+----------
+
+Fixed
+~~~~~
+
+- Fix or remove ``tags`` repo metadata in several templates
+- Remove extraneous period after short description
+- Move short description to top of readme
+- Use project name, not repo name, for package name in setup.py
+- Change Django documentation and setup.py references from 2.2 to 3.2
+
 2022-07-05
 ----------
 

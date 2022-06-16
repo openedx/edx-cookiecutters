@@ -3,8 +3,6 @@
 
 ---
 nick: {{ cookiecutter.repo_name }}
-tags:
-    - tools
 oeps:
     oep-2: true
     oep-3:
