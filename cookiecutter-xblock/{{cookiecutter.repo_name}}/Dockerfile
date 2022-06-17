@@ -1,4 +1,4 @@
-FROM jbarciauskas/xblock-sdk
+FROM openedx/xblock-sdk
 RUN mkdir -p /usr/local/src/{{cookiecutter.repo_name}}
 VOLUME ["/usr/local/src/{{cookiecutter.repo_name}}"]
 RUN apt-get update && apt-get install -y gettext
