@@ -13,14 +13,14 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.5.2
     # via django
-astroid==2.11.5
+astroid==2.11.6
     # via
     #   -r requirements/base.txt
     #   pylint
     #   pylint-celery
 attrs==21.4.0
     # via pytest
-babel==2.10.1
+babel==2.10.3
     # via sphinx
 binaryornot==0.4.4
     # via
@@ -30,10 +30,12 @@ bleach==5.0.0
     # via readme-renderer
 build==0.8.0
     # via -r requirements/test.in
-certifi==2022.5.18.1
+certifi==2022.6.15
     # via
     #   -r requirements/base.txt
     #   requests
+cffi==1.15.0
+    # via cryptography
 chardet==4.0.0
     # via
     #   -r requirements/base.txt
@@ -63,6 +65,8 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
+cryptography==37.0.2
+    # via secretstorage
 dill==0.3.5.1
     # via
     #   -r requirements/base.txt
@@ -91,7 +95,7 @@ edx-lint==5.2.4
     #   -r requirements/test.in
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.in
-filelock==3.4.2
+filelock==3.7.1
     # via virtualenv
 idna==3.3
     # via
@@ -111,6 +115,10 @@ isort==5.10.1
     #   -r requirements/base.txt
     #   -r requirements/test.in
     #   pylint
+jeepney==0.8.0
+    # via
+    #   keyring
+    #   secretstorage
 jinja2==3.1.2
     # via
     #   -r requirements/base.txt
@@ -160,6 +168,8 @@ py==1.11.0
     # via pytest
 pycodestyle==2.8.0
     # via -r requirements/test.in
+pycparser==2.21
+    # via cffi
 pydocstyle==6.1.1
     # via -r requirements/test.in
 pygments==2.12.0
@@ -168,7 +178,7 @@ pygments==2.12.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.14.1
+pylint==2.14.3
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -229,6 +239,8 @@ rfc3986==2.0.0
     # via twine
 rich==12.4.4
     # via twine
+secretstorage==3.3.2
+    # via keyring
 sh==1.14.2
     # via -r requirements/test.in
 six==1.16.0
@@ -243,7 +255,7 @@ snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
-sphinx==5.0.1
+sphinx==5.0.2
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
