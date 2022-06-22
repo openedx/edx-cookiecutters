@@ -211,5 +211,8 @@ selfcheck: ## check that the Makefile is well-formed
 	@echo "The Makefile is well-formed."
 
 install_transifex_client: ## Install the Transifex client
+	# Instaling client will skip CHANGELOG and LICENSE files from git changes
+	# so remind the user to commit the change first before installing client.
+	git diff -s --exit-code HEAD || { echo "Please commit changes first."; exit 1; }
 	curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
-	git checkout -- LICENSE README.md
+	git checkout -- LICENSE README.md ## overwritten by Transifex installer
