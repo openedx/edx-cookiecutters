@@ -1,13 +1,13 @@
 .DEFAULT_GOAL := help
 
 .PHONY: help clean piptools requirements ci_requirements dev_requirements \
-        validation_requirements doc_requirementsprod_requirements static shell \
+        validation_requirements doc_requirements prod_requirements static shell \
         test coverage isort_check isort style lint quality pii_check validate \
         migrate html_coverage upgrade extract_translation dummy_translations \
-        compile_translations fake_translations  pull_translations \
-        push_translations start-devstack open-devstack  pkg-devstack \
+        compile_translations fake_translations pull_translations \
+        push_translations start-devstack open-devstack pkg-devstack \
         detect_changed_source_translations validate_translations check_keywords \
-		install_transifex_client
+        install_transifex_client
 
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
@@ -69,7 +69,7 @@ coverage: clean
 	$(BROWSER) htmlcov/index.html
 
 isort_check: ## check that isort has been run
-	isort --check-only -rc {{cookiecutter.project_name}}/
+	isort --check-only {{cookiecutter.project_name}}/
 
 isort: ## run isort to sort imports in all Python files
 	isort --recursive --atomic {{cookiecutter.project_name}}/

@@ -53,8 +53,13 @@ INSTALLED_APPS += PROJECT_APPS
 MIDDLEWARE = (
     # Resets RequestCache utility for added safety.
     'edx_django_utils.cache.middleware.RequestCacheMiddleware',
-    # Enables monitoring utility for writing custom metrics.
-    'edx_django_utils.monitoring.middleware.MonitoringCustomMetricsMiddleware',
+
+    # Monitoring middleware should be immediately after RequestCacheMiddleware
+    'edx_django_utils.monitoring.DeploymentMonitoringMiddleware',  # python and django version
+    'edx_django_utils.monitoring.CookieMonitoringMiddleware',  # cookie names (compliance) and sizes
+    'edx_django_utils.monitoring.CachedCustomMonitoringMiddleware',  # support accumulate & increment
+    'edx_django_utils.monitoring.MonitoringMemoryMiddleware',  # memory usage
+
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -100,6 +105,9 @@ DATABASES = {
     }
 }
 
+# New DB primary keys default to an IntegerField.
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
@@ -140,7 +148,7 @@ STATICFILES_DIRS = (
 )
 
 # TEMPLATE CONFIGURATION
-# See: https://docs.djangoproject.com/en/2.2/ref/settings/#templates
+# See: https://docs.djangoproject.com/en/3.2/ref/settings/#templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -154,6 +162,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
                 'django.template.context_processors.media',
+                'django.template.context_processors.request',
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
