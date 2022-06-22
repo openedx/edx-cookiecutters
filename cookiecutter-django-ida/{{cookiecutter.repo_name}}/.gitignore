@@ -87,3 +87,6 @@ private.py
 *.trace
 
 docs/_build/
+
+#transifex exe
+tx

@@ -3,7 +3,7 @@
 .PHONY: dev.clean dev.build dev.run upgrade help requirements
 .PHONY: extract_translations compile_translations
 .PHONY: detect_changed_source_translations dummy_translations build_dummy_translations
-.PHONY: validate_translations pull_translations push_translations symlink_translations
+.PHONY: validate_translations pull_translations push_translations symlink_translations install_transifex_clients
 
 REPO_NAME := {{cookiecutter.repo_name}}
 PACKAGE_NAME := {{cookiecutter.package_name}}
@@ -78,3 +78,10 @@ push_translations: extract_translations ## push translations to transifex
 
 symlink_translations:
 	if [ ! -d "$(TRANSLATIONS_DIR)" ]; then ln -s locale/ $(TRANSLATIONS_DIR); fi
+
+install_transifex_client: ## Install the Transifex client
+	# Instaling client will skip CHANGELOG and LICENSE files from git changes
+	# so remind the user to commit the change first before installing client.
+	git diff -s --exit-code HEAD || { echo "Please commit changes first."; exit 1; }
+	curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+	git checkout -- LICENSE README.md ## overwritten by Transifex installer
