@@ -16,7 +16,7 @@ binaryornot==0.4.4
     # via cookiecutter
 certifi==2022.6.15
     # via requests
-chardet==4.0.0
+chardet==5.0.0
     # via binaryornot
 charset-normalizer==2.0.12
     # via requests
