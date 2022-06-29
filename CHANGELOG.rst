@@ -13,6 +13,10 @@ Fixed
 
 - Only run ``make check_keywords`` for IDAs, not all repos
 
+Removed
+~~~~~~~
+* Removed redundant New Relic agent injection in Makefile
+
 2022-07-11
 ----------
 
