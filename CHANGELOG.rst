@@ -15,7 +15,8 @@ Fixed
 
 Removed
 ~~~~~~~
-* Removed redundant New Relic agent injection in Makefile
+- Removed redundant New Relic agent injection in Makefile
+- Removed references to now unsupported Travis CI
 
 2022-07-11
 ----------

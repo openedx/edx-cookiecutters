@@ -150,16 +150,6 @@ validate_translations: fake_translations detect_changed_source_translations ## i
 docker_build:
 	docker build . -f Dockerfile -t openedx/{{cookiecutter.repo_name}}
 
-travis_docker_tag: docker_build
-	docker tag openedx/{{cookiecutter.repo_name}} openedx/{{cookiecutter.repo_name}}:$$TRAVIS_COMMIT
-
-travis_docker_auth:
-	echo "$$DOCKER_PASSWORD" | docker login -u "$$DOCKER_USERNAME" --password-stdin
-
-travis_docker_push: travis_docker_tag travis_docker_auth ## push to docker hub
-	docker push 'openedx/{{cookiecutter.repo_name}}:latest'
-	docker push "openedx/{{cookiecutter.repo_name}}:$$TRAVIS_COMMIT"
-
 # devstack-themed shortcuts
 dev.up: # Starts all containers
 	docker-compose up -d
