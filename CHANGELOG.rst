@@ -5,7 +5,7 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2022-06-30
+2022-07-05
 ----------
 
 Fixed
