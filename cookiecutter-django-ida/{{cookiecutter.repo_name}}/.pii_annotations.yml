@@ -9,7 +9,7 @@ annotations:
         - ".. pii_types:":
             choices:
               - id # Unique identifier for the user which is shared across systems
-              - name # Used for any part of the user’s name
+              - name # Used for any part of the user's name
               - username
               - password
               - location # Used for any part of any type address or country stored

@@ -53,9 +53,12 @@ quality: ## check coding style with pycodestyle and pylint
 pii_check: ## check for PII annotations on all Django models
 	tox -e pii_check
 
-requirements: ## install development environment requirements
-	pip install -qr requirements/pip-tools.txt
-	pip-sync requirements/dev.txt requirements/private.*
+piptools: ## install pinned version of pip-compile and pip-sync
+	pip install -r requirements/pip.txt
+	pip install -r requirements/pip-tools.txt
+	
+requirements: piptools ## install development environment requirements
+	pip-sync -q requirements/dev.txt requirements/private.*
 
 test: clean ## run tests in the current virtualenv
 	pytest
