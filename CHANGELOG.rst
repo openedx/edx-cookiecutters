@@ -11,7 +11,7 @@ Change Log
 Fixed
 ~~~~~
 
-- Fix or remove ``tags`` repo metadata in several templates
+- Fix or remove ``tags`` repo metadata in several templates; remove deprecated ``nick`` from openedx.yaml (see OEP-2)
 - Remove extraneous period after short description
 - Move short description to top of readme
 - Use project name, not repo name, for package name in setup.py
