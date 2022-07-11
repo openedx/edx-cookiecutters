@@ -169,7 +169,7 @@ Our real-time conversations are on Slack. You can request a `Slack invitation`_,
 
 For more information about these options, see the `Getting Help`_ page.
 
-.. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
+.. _Slack invitation: https://openedx.org/slack
 .. _community Slack workspace: https://openedx.slack.com/
 .. _Getting Help: https://openedx.org/getting-help
 .. _tox: https://tox.readthedocs.io/en/latest/
