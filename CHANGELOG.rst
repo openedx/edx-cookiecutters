@@ -16,6 +16,7 @@ Fixed
 - Move short description to top of readme
 - Use project name, not repo name, for package name in setup.py
 - Change Django documentation and setup.py references from 2.2 to 3.2
+- Only run ``make check_keywords`` for IDAs, not all repos
 
 2022-07-05
 ----------
