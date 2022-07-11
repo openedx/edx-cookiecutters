@@ -2,7 +2,7 @@
   "repo_name": "repo_name",
   "library_name": "{{ cookiecutter.repo_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_') }}",
   "project_name": "{{ cookiecutter.repo_name }}",
-  "project_short_description": "What is this project?",
+  "project_short_description": "One-line description for README and other doc files.",
   "version": "0.1.0",
   "author_name": "edX",
   "author_email": "you@edx.org",

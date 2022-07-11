@@ -119,7 +119,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding="u
 CHANGELOG = open(os.path.join(os.path.dirname(__file__), 'CHANGELOG.rst'), encoding="utf8").read()
 
 setup(
-    name='{{ cookiecutter.repo_name }}',
+    name='{{ cookiecutter.project_name }}',
     version=VERSION,
     description="""{{ cookiecutter.project_short_description }}""",
     long_description=README + '\n\n' + CHANGELOG,
@@ -141,7 +141,7 @@ setup(
         'Development Status :: 3 - Alpha',
         {%- if cookiecutter.requires_django == "yes" %}
         'Framework :: Django',
-        'Framework :: Django :: 2.2',
+        'Framework :: Django :: 3.2',
         {%- endif %}
         'Intended Audience :: Developers',
         {%- if cookiecutter.open_source_license == "AGPL 3.0" %}
