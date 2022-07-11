@@ -56,7 +56,7 @@ pii_check: ## check for PII annotations on all Django models
 piptools: ## install pinned version of pip-compile and pip-sync
 	pip install -r requirements/pip.txt
 	pip install -r requirements/pip-tools.txt
-	
+
 requirements: piptools ## install development environment requirements
 	pip-sync -q requirements/dev.txt requirements/private.*
 
@@ -68,6 +68,7 @@ diff_cover: test ## find diff lines that need test coverage
 
 test-all: quality pii_check ## run tests on every supported Python/Django combination
 	tox
+	tox -e docs
 
 validate: quality pii_check test ## run tests and quality checks
 

@@ -175,3 +175,11 @@ def test_quality(options_baked):
         sh.doc8("docs", ignore_path="docs/_build")
     except sh.ErrorReturnCode as exc:
         pytest.fail(str(exc))
+
+
+def test_tests(options_baked):
+    """Make sure the tox default tests work"""
+    try:
+        run_in_virtualenv('pip install -r requirements/ci.txt; tox')
+    except sh.ErrorReturnCode as exc:
+        pytest.fail(str(exc.stderr))

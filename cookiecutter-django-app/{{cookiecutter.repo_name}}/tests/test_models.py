@@ -14,4 +14,13 @@ class Test{{ model }}:
     def test_something(self):
         """TODO: Write real test cases."""
 {%- endfor -%}
+{%- else %}
+
+
+def test_placeholder():
+    """
+    Placeholder to allow pytest to succeed before real tests are in place.
+
+    (If there are no tests, it will exit with code 5.)
+    """
 {%- endif %}
