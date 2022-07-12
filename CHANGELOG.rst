@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-07-12
+----------
+
+Fixed
+~~~~~
+
+- Only run ``make check_keywords`` for IDAs, not all repos
+
 2022-07-11
 ----------
 
