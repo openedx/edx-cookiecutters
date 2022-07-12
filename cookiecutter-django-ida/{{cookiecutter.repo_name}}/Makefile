@@ -149,20 +149,6 @@ validate_translations: fake_translations detect_changed_source_translations ## i
 
 docker_build:
 	docker build . -f Dockerfile -t openedx/{{cookiecutter.repo_name}}
-	docker build . -f Dockerfile --target newrelic -t openedx/{{cookiecutter.repo_name}}:latest-newrelic
-
-travis_docker_tag: docker_build
-	docker tag openedx/{{cookiecutter.repo_name}} openedx/{{cookiecutter.repo_name}}:$$TRAVIS_COMMIT
-	docker tag openedx/{{cookiecutter.repo_name}}:latest-newrelic openedx/{{cookiecutter.repo_name}}:$$TRAVIS_COMMIT-newrelic
-
-travis_docker_auth:
-	echo "$$DOCKER_PASSWORD" | docker login -u "$$DOCKER_USERNAME" --password-stdin
-
-travis_docker_push: travis_docker_tag travis_docker_auth ## push to docker hub
-	docker push 'openedx/{{cookiecutter.repo_name}}:latest'
-	docker push "openedx/{{cookiecutter.repo_name}}:$$TRAVIS_COMMIT"
-	docker push 'openedx/{{cookiecutter.repo_name}}:latest-newrelic'
-	docker push "openedx/{{cookiecutter.repo_name}}:$$TRAVIS_COMMIT-newrelic"
 
 # devstack-themed shortcuts
 dev.up: # Starts all containers
@@ -194,11 +180,9 @@ db-shell: # Run the app shell as root, enter the app's database
 
 github_docker_build:
 	docker build . -f Dockerfile --target app -t openedx/{{cookiecutter.repo_name}}
-	docker build . -f Dockerfile --target newrelic -t openedx/{{cookiecutter.repo_name}}:latest-newrelic
 
 github_docker_tag: github_docker_build
 	docker tag openedx/{{cookiecutter.repo_name}} openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA}
-	docker tag openedx/{{cookiecutter.repo_name}}:latest-newrelic openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA}-newrelic
 
 github_docker_auth:
 	echo "$$DOCKERHUB_PASSWORD" | docker login -u "$$DOCKERHUB_USERNAME" --password-stdin
@@ -206,8 +190,6 @@ github_docker_auth:
 github_docker_push: github_docker_tag github_docker_auth ## push to docker hub
 	docker push 'openedx/{{cookiecutter.repo_name}}:latest'
 	docker push "openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA}"
-	docker push 'openedx/{{cookiecutter.repo_name}}:latest-newrelic'
-	docker push "openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA}-newrelic"
 
 selfcheck: ## check that the Makefile is well-formed
 	@echo "The Makefile is well-formed."
