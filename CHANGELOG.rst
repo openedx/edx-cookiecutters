@@ -12,6 +12,7 @@ Fixed
 ~~~~~
 
 - Only run ``make check_keywords`` for IDAs, not all repos
+- Ensure django-app unit tests will work, and test this in cookiecutter's own CI
 
 Removed
 ~~~~~~~
