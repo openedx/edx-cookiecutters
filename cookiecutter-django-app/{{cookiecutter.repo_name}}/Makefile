@@ -64,14 +64,14 @@ requirements: piptools ## install development environment requirements
 	pip-sync -q requirements/dev.txt requirements/private.*
 
 test: clean ## run tests in the current virtualenv
-	pytest
+	tox
 
 diff_cover: test ## find diff lines that need test coverage
 	diff-cover coverage.xml
 
-test-all: quality pii_check ## run tests on every supported Python/Django combination
-	tox
+test-all: clean test quality pii_check ## run tests on every supported Python/Django combination
 	tox -e docs
+	rm -rf build # artifact produced by docs run, interferes with pytest
 
 validate: quality pii_check test ## run tests and quality checks
 
