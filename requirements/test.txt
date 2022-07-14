@@ -13,7 +13,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.5.2
     # via django
-astroid==2.11.6
+astroid==2.11.7
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -65,7 +65,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==37.0.2
+cryptography==37.0.4
     # via secretstorage
 dill==0.3.5.1
     # via
@@ -73,7 +73,7 @@ dill==0.3.5.1
     #   pylint
 distlib==0.3.4
     # via virtualenv
-django==3.2.13
+django==3.2.14
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -292,7 +292,7 @@ tomli==2.0.1
     #   pep517
     #   pylint
     #   pytest
-tomlkit==0.11.0
+tomlkit==0.11.1
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -304,7 +304,7 @@ typing-extensions==4.3.0
     #   astroid
     #   pylint
     #   rich
-urllib3==1.26.9
+urllib3==1.26.10
     # via
     #   -r requirements/base.txt
     #   requests
