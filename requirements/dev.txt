@@ -92,7 +92,7 @@ dill==0.3.5.1
     # via
     #   -r requirements/test.txt
     #   pylint
-distlib==0.3.4
+distlib==0.3.5
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -162,7 +162,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-keyring==23.6.0
+keyring==23.7.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -235,7 +235,7 @@ pygments==2.12.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.14.4
+pylint==2.14.5
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -309,7 +309,7 @@ rfc3986==2.0.0
     # via
     #   -r requirements/test.txt
     #   twine
-rich==12.4.4
+rich==12.5.1
     # via
     #   -r requirements/test.txt
     #   twine
@@ -369,7 +369,7 @@ sqlparse==0.4.2
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==3.5.0
+stevedore==4.0.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -430,7 +430,7 @@ wrapt==1.14.1
     # via
     #   -r requirements/test.txt
     #   astroid
-zipp==3.8.0
+zipp==3.8.1
     # via
     #   -r requirements/test.txt
     #   importlib-metadata
