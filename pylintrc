@@ -285,8 +285,6 @@ disable =
 	feature-toggle-needs-doc,
 	illegal-waffle-usage,
 	
-	non-ascii-bytes-literal,
-	
 	logging-fstring-interpolation,
 	django-not-configured,
 
@@ -385,4 +383,4 @@ int-import-graph =
 [EXCEPTIONS]
 overgeneral-exceptions = Exception
 
-# ee575a203b0d5d0ec9c87b4d5cb4ed1e7c661331
+# e02952f57d4f71daf09e6a7f5093eeaeb95a62d2
