@@ -71,7 +71,7 @@ dill==0.3.5.1
     # via
     #   -r requirements/base.txt
     #   pylint
-distlib==0.3.4
+distlib==0.3.5
     # via virtualenv
 django==3.2.14
     # via
@@ -130,7 +130,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-keyring==23.6.0
+keyring==23.7.0
     # via twine
 lazy-object-proxy==1.7.1
     # via
@@ -178,7 +178,7 @@ pygments==2.12.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.14.4
+pylint==2.14.5
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -237,7 +237,7 @@ restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==12.4.4
+rich==12.5.1
     # via twine
 secretstorage==3.3.2
     # via keyring
@@ -276,7 +276,7 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 sqlparse==0.4.2
     # via django
-stevedore==3.5.0
+stevedore==4.0.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -317,7 +317,7 @@ wrapt==1.14.1
     # via
     #   -r requirements/base.txt
     #   astroid
-zipp==3.8.0
+zipp==3.8.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
