@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2022-07-17
+----------
+
+Fixed
+~~~~~
+
+- Update the cookiecutter for XBlocks to use the supported Docker image rather than a legacy, unsupported fork
+   
 2022-05-31
 ----------
 
