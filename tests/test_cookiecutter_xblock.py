@@ -89,12 +89,6 @@ def test_readme(options_baked, custom_template):
         pytest.fail(str(exc))
 
 
-def test_travis(options_baked):
-    """The generated .travis.yml file should pass a sanity check."""
-    travis_text = Path(".travis.yml").read_text()
-    assert 'pip install -r requirements/travis.txt' in travis_text
-
-
 def test_manifest(options_baked):
     """The generated MANIFEST.in should pass a sanity check."""
     manifest_text = Path("MANIFEST.in").read_text()

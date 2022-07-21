@@ -3,7 +3,7 @@
 .PHONY: dev.clean dev.build dev.run upgrade help requirements
 .PHONY: extract_translations compile_translations
 .PHONY: detect_changed_source_translations dummy_translations build_dummy_translations
-.PHONY: validate_translations pull_translations push_translations symlink_translations
+.PHONY: validate_translations pull_translations push_translations symlink_translations install_transifex_clients
 
 REPO_NAME := {{cookiecutter.repo_name}}
 PACKAGE_NAME := {{cookiecutter.package_name}}
@@ -22,22 +22,28 @@ PIP_COMPILE = pip-compile --upgrade $(PIP_COMPILE_OPTS)
 
 upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
 upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -r requirements/pip-tools.txt
+	pip install -qr requirements/pip-tools.txt
 	# Make sure to compile files after any other files they include!
-	$(PIP_COMPILE) --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
+	$(PIP_COMPILE) --allow-unsafe -o requirements/pip.txt requirements/pip.in
 	$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
-	pip install -r requirements/pip-tools.txt
+	pip install -qr requirements/pip.txt
+	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
 	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
 	$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
 	$(PIP_COMPILE) -o requirements/quality.txt requirements/quality.in
 	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
 	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
+	# Let tox control the Django version for tests
+	sed '/^[dD]jango==/d' requirements/test.txt > requirements/test.tmp
+	mv requirements/test.tmp requirements/test.txt
 
-requirements: ## install development environment requirements
+piptools: ## install pinned version of pip-compile and pip-sync
 	pip install -r requirements/pip.txt
-	pip install -qr requirements/pip-tools.txt
-	pip install -r requirements/dev.txt
+	pip install -r requirements/pip-tools.txt
+	
+requirements: piptools## install development environment requirements
+	pip-sync -q requirements/dev.txt requirements/private.*
 
 dev.clean:
 	-docker rm $(REPO_NAME)-dev
@@ -78,3 +84,10 @@ push_translations: extract_translations ## push translations to transifex
 
 symlink_translations:
 	if [ ! -d "$(TRANSLATIONS_DIR)" ]; then ln -s locale/ $(TRANSLATIONS_DIR); fi
+
+install_transifex_client: ## Install the Transifex client
+	# Instaling client will skip CHANGELOG and LICENSE files from git changes
+	# so remind the user to commit the change first before installing client.
+	git diff -s --exit-code HEAD || { echo "Please commit changes first."; exit 1; }
+	curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+	git checkout -- LICENSE README.md ## overwritten by Transifex installer

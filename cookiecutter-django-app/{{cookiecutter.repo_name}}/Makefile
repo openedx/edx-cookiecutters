@@ -1,6 +1,6 @@
 .PHONY: clean compile_translations coverage diff_cover docs dummy_translations \
         extract_translations fake_translations help pii_check pull_translations push_translations \
-        quality requirements selfcheck test test-all upgrade validate
+        quality requirements selfcheck test test-all upgrade validate install_transifex_client
 
 .DEFAULT_GOAL := help
 
@@ -30,13 +30,16 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	$(BROWSER)docs/_build/html/index.html
 
 # Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile --rebuild --upgrade $(PIP_COMPILE_OPTS)
+PIP_COMPILE = pip-compile --upgrade $(PIP_COMPILE_OPTS)
 
 upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
 upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
 	pip install -qr requirements/pip-tools.txt
 	# Make sure to compile files after any other files they include!
+	$(PIP_COMPILE) --allow-unsafe -o requirements/pip.txt requirements/pip.in
 	$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
+	pip install -qr requirements/pip.txt
+	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
 	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
 	$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
@@ -53,9 +56,12 @@ quality: ## check coding style with pycodestyle and pylint
 pii_check: ## check for PII annotations on all Django models
 	tox -e pii_check
 
-requirements: ## install development environment requirements
-	pip install -qr requirements/pip-tools.txt
-	pip-sync requirements/dev.txt requirements/private.*
+piptools: ## install pinned version of pip-compile and pip-sync
+	pip install -r requirements/pip.txt
+	pip install -r requirements/pip-tools.txt
+
+requirements: piptools ## install development environment requirements
+	pip-sync -q requirements/dev.txt requirements/private.*
 
 test: clean ## run tests in the current virtualenv
 	pytest
@@ -65,6 +71,7 @@ diff_cover: test ## find diff lines that need test coverage
 
 test-all: quality pii_check ## run tests on every supported Python/Django combination
 	tox
+	tox -e docs
 
 validate: quality pii_check test ## run tests and quality checks
 
@@ -96,3 +103,10 @@ dummy_translations: ## generate dummy translation (.po) files
 build_dummy_translations: extract_translations dummy_translations compile_translations ## generate and compile dummy translation files
 
 validate_translations: build_dummy_translations detect_changed_source_translations ## validate translations
+
+install_transifex_client: ## Install the Transifex client
+	# Instaling client will skip CHANGELOG and LICENSE files from git changes
+	# so remind the user to commit the change first before installing client.
+	git diff -s --exit-code HEAD || { echo "Please commit changes first."; exit 1; }
+	curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+	git checkout -- LICENSE README.md ## overwritten by Transifex installer

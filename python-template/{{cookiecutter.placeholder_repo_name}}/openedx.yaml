@@ -2,9 +2,6 @@
 # https://open-edx-proposals.readthedocs.io/en/latest/oep-0002-bp-repo-metadata.html#specification
 
 ---
-nick: {{ cookiecutter.repo_name }}
-tags:
-    - tools
 oeps:
     oep-2: true
     oep-3:

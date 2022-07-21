@@ -9,7 +9,7 @@ A cookiecutter_ template for edX Django projects.
 
 This cookiecutter template is intended for new edX independently deployable apps (IDAs). It includes the following packages:
 
-* Django 2.2
+* Django 3.2
 * Django REST Framework
 * Django Waffle
 
@@ -114,6 +114,6 @@ Our real-time conversations are on Slack. You can request a `Slack invitation`_,
 
 For more information about these options, see the `Getting Help`_ page.
 
-.. _Slack invitation: https://openedx-slack-invite.herokuapp.com/
+.. _Slack invitation: https://openedx.org/slack
 .. _community Slack workspace: https://openedx.slack.com/
 .. _Getting Help: https://openedx.org/getting-help

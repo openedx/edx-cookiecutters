@@ -74,7 +74,7 @@ MIDDLEWARE = (
     # Enables force_django_cache_miss functionality for TieredCache.
     'edx_django_utils.cache.middleware.TieredCacheMiddleware',
     # Outputs monitoring metrics for a request.
-    'edx_rest_framework_extensions.middleware.RequestMetricsMiddleware',
+    'edx_rest_framework_extensions.middleware.RequestCustomAttributesMiddleware',
     # Ensures proper DRF permissions in support of JWTs
     'edx_rest_framework_extensions.auth.jwt.middleware.EnsureJWTAuthSettingsMiddleware',
 )
@@ -92,7 +92,7 @@ ROOT_URLCONF = '{{cookiecutter.project_name}}.urls'
 WSGI_APPLICATION = '{{cookiecutter.project_name}}.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 # Set this value in the environment-specific files (e.g. local.py, production.py, test.py)
 DATABASES = {
     'default': {

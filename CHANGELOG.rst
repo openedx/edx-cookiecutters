@@ -12,7 +12,50 @@ Fixed
 ~~~~~
 
 - Update the cookiecutter for XBlocks to use the supported Docker image rather than a legacy, unsupported fork
-   
+
+2022-07-13
+----------
+
+Fixed
+~~~~~
+
+- Standardised the Requirements file structure in all templates.
+
+2022-07-12
+----------
+
+Fixed
+~~~~~
+
+- Only run ``make check_keywords`` for IDAs, not all repos
+- Ensure django-app unit tests will work, and test this in cookiecutter's own CI
+
+Removed
+~~~~~~~
+- Removed redundant New Relic agent injection in Makefile
+- Removed references to now unsupported Travis CI
+
+2022-07-11
+----------
+
+Fixed
+~~~~~
+
+- Fix or remove ``tags`` repo metadata in several templates; remove deprecated ``nick`` from openedx.yaml (see OEP-2)
+- Remove extraneous period after short description
+- Move short description to top of readme
+- Use project name, not repo name, for package name in setup.py
+- Change Django documentation and setup.py references from 2.2 to 3.2
+
+2022-07-05
+----------
+
+Fixed
+~~~~~
+
+- Used newer, non-deprecated name for middleware to add custom attributes to requests from edx-drf-extensions
+
+>>>>>>> master
 2022-05-31
 ----------
 
