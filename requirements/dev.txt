@@ -317,7 +317,7 @@ secretstorage==3.3.2
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==1.14.2
+sh==1.14.3
     # via -r requirements/test.txt
 six==1.16.0
     # via
@@ -334,7 +334,7 @@ snowballstemmer==2.2.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==5.0.2
+sphinx==5.1.0
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme

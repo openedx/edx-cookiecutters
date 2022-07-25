@@ -241,7 +241,7 @@ rich==12.5.1
     # via twine
 secretstorage==3.3.2
     # via keyring
-sh==1.14.2
+sh==1.14.3
     # via -r requirements/test.in
 six==1.16.0
     # via
@@ -255,7 +255,7 @@ snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
-sphinx==5.0.2
+sphinx==5.1.0
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
