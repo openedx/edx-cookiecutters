@@ -22,7 +22,7 @@ astroid==2.11.7
     #   -r requirements/test.txt
     #   pylint
     #   pylint-celery
-attrs==21.4.0
+attrs==22.1.0
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -47,10 +47,6 @@ certifi==2022.6.15
     # via
     #   -r requirements/test.txt
     #   requests
-cffi==1.15.1
-    # via
-    #   -r requirements/test.txt
-    #   cryptography
 chardet==5.0.0
     # via
     #   -r requirements/test.txt
@@ -84,10 +80,6 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==37.0.4
-    # via
-    #   -r requirements/test.txt
-    #   secretstorage
 dill==0.3.5.1
     # via
     #   -r requirements/test.txt
@@ -105,7 +97,9 @@ django==3.2.14
 django-model-utils==4.2.0
     # via -r requirements/test.txt
 doc8==0.11.2
-    # via -r requirements/test.txt
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/test.txt
 docutils==0.17.1
     # via
     #   -r requirements/test.txt
@@ -146,11 +140,6 @@ isort==5.10.1
     # via
     #   -r requirements/test.txt
     #   pylint
-jeepney==0.8.0
-    # via
-    #   -r requirements/test.txt
-    #   keyring
-    #   secretstorage
 jinja2==3.1.2
     # via
     #   -r requirements/test.txt
@@ -191,7 +180,7 @@ pbr==5.9.0
     # via
     #   -r requirements/test.txt
     #   stevedore
-pep517==0.12.0
+pep517==0.13.0
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -220,12 +209,8 @@ py==1.11.0
     #   -r requirements/test.txt
     #   pytest
     #   tox
-pycodestyle==2.8.0
+pycodestyle==2.9.0
     # via -r requirements/test.txt
-pycparser==2.21
-    # via
-    #   -r requirements/test.txt
-    #   cffi
 pydocstyle==6.1.1
     # via -r requirements/test.txt
 pygments==2.12.0
@@ -313,10 +298,6 @@ rich==12.5.1
     # via
     #   -r requirements/test.txt
     #   twine
-secretstorage==3.3.2
-    # via
-    #   -r requirements/test.txt
-    #   keyring
 sh==1.14.3
     # via -r requirements/test.txt
 six==1.16.0
@@ -328,13 +309,12 @@ six==1.16.0
     #   edx-sphinx-theme
     #   python-dateutil
     #   tox
-    #   virtualenv
 snowballstemmer==2.2.0
     # via
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==5.1.0
+sphinx==5.1.1
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
@@ -408,12 +388,12 @@ typing-extensions==4.3.0
     #   astroid
     #   pylint
     #   rich
-urllib3==1.26.10
+urllib3==1.26.11
     # via
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.15.1
+virtualenv==20.16.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
