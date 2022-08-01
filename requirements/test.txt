@@ -18,7 +18,7 @@ astroid==2.11.7
     #   -r requirements/base.txt
     #   pylint
     #   pylint-celery
-attrs==21.4.0
+attrs==22.1.0
     # via pytest
 babel==2.10.3
     # via sphinx
@@ -34,8 +34,6 @@ certifi==2022.6.15
     # via
     #   -r requirements/base.txt
     #   requests
-cffi==1.15.1
-    # via cryptography
 chardet==5.0.0
     # via
     #   -r requirements/base.txt
@@ -65,8 +63,6 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==37.0.4
-    # via secretstorage
 dill==0.3.5.1
     # via
     #   -r requirements/base.txt
@@ -81,7 +77,9 @@ django==3.2.14
 django-model-utils==4.2.0
     # via -r requirements/test.in
 doc8==0.11.2
-    # via -r requirements/test.in
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/test.in
 docutils==0.17.1
     # via
     #   doc8
@@ -115,10 +113,6 @@ isort==5.10.1
     #   -r requirements/base.txt
     #   -r requirements/test.in
     #   pylint
-jeepney==0.8.0
-    # via
-    #   keyring
-    #   secretstorage
 jinja2==3.1.2
     # via
     #   -r requirements/base.txt
@@ -153,7 +147,7 @@ pbr==5.9.0
     # via
     #   -r requirements/base.txt
     #   stevedore
-pep517==0.12.0
+pep517==0.13.0
     # via build
 pkginfo==1.8.3
     # via twine
@@ -166,10 +160,8 @@ pluggy==1.0.0
     # via pytest
 py==1.11.0
     # via pytest
-pycodestyle==2.8.0
+pycodestyle==2.9.0
     # via -r requirements/test.in
-pycparser==2.21
-    # via cffi
 pydocstyle==6.1.1
     # via -r requirements/test.in
 pygments==2.12.0
@@ -239,8 +231,6 @@ rfc3986==2.0.0
     # via twine
 rich==12.5.1
     # via twine
-secretstorage==3.3.2
-    # via keyring
 sh==1.14.3
     # via -r requirements/test.in
 six==1.16.0
@@ -250,12 +240,11 @@ six==1.16.0
     #   edx-lint
     #   edx-sphinx-theme
     #   python-dateutil
-    #   virtualenv
 snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
-sphinx==5.1.0
+sphinx==5.1.1
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
@@ -304,12 +293,12 @@ typing-extensions==4.3.0
     #   astroid
     #   pylint
     #   rich
-urllib3==1.26.10
+urllib3==1.26.11
     # via
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.15.1
+virtualenv==20.16.2
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
