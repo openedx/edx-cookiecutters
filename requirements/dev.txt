@@ -47,6 +47,10 @@ certifi==2022.6.15
     # via
     #   -r requirements/test.txt
     #   requests
+cffi==1.15.1
+    # via
+    #   -r requirements/test.txt
+    #   cryptography
 chardet==5.0.0
     # via
     #   -r requirements/test.txt
@@ -80,6 +84,10 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
+cryptography==37.0.4
+    # via
+    #   -r requirements/test.txt
+    #   secretstorage
 dill==0.3.5.1
     # via
     #   -r requirements/test.txt
@@ -89,7 +97,7 @@ distlib==0.3.5
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==3.2.14
+django==3.2.15
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -140,6 +148,11 @@ isort==5.10.1
     # via
     #   -r requirements/test.txt
     #   pylint
+jeepney==0.8.0
+    # via
+    #   -r requirements/test.txt
+    #   keyring
+    #   secretstorage
 jinja2==3.1.2
     # via
     #   -r requirements/test.txt
@@ -151,7 +164,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-keyring==23.7.0
+keyring==23.8.1
     # via
     #   -r requirements/test.txt
     #   twine
@@ -209,8 +222,12 @@ py==1.11.0
     #   -r requirements/test.txt
     #   pytest
     #   tox
-pycodestyle==2.9.0
+pycodestyle==2.9.1
     # via -r requirements/test.txt
+pycparser==2.21
+    # via
+    #   -r requirements/test.txt
+    #   cffi
 pydocstyle==6.1.1
     # via -r requirements/test.txt
 pygments==2.12.0
@@ -271,7 +288,7 @@ pyyaml==6.0
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==35.0
+readme-renderer==36.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -298,6 +315,10 @@ rich==12.5.1
     # via
     #   -r requirements/test.txt
     #   twine
+secretstorage==3.3.2
+    # via
+    #   -r requirements/test.txt
+    #   keyring
 sh==1.14.3
     # via -r requirements/test.txt
 six==1.16.0
@@ -370,7 +391,7 @@ tomli==2.0.1
     #   pep517
     #   pylint
     #   pytest
-tomlkit==0.11.1
+tomlkit==0.11.2
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -393,7 +414,7 @@ urllib3==1.26.11
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.16.2
+virtualenv==20.16.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
