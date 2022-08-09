@@ -1,14 +1,14 @@
 4. Which Cookiecutters in edx-cookiecutters?
-============================================
+############################################
 
 Status
-------
+******
 
 Accepted
 
 
 Context
--------
+*******
 
 * Currently, the only cookiecutters in this repository are the Open edx public python cookiecutters.
 
@@ -20,7 +20,7 @@ Context
 
 
 Decision
---------
+********
 
 edx-cookiecutter should be the central point for public edx cookiecutters. Most Open edx public cookiecutters should be placed in this repository.
 
@@ -28,14 +28,14 @@ If there is a complelling case why a cookiecutter should be elsewhere, a link to
 
 
 Consequences
-------------
+************
 
 All edx cookiecutters should be moved to this repository.
 
 Rejected Alternatives
----------------------
+*********************
 
 Seperate Repos for frontend and backend cookiecutters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================
 
 Rejected because of the very real possiblity of creating a cookiecutter that deals with both frontend and backend.

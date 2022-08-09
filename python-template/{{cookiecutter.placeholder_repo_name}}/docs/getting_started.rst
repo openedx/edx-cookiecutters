@@ -1,5 +1,5 @@
 Getting Started
-===============
+###############
 
 If you have not already done so, create/activate a `virtualenv`_. Unless otherwise stated, assume all terminal code
 below is executed within the virtualenv.
@@ -8,7 +8,7 @@ below is executed within the virtualenv.
 
 
 Install dependencies
---------------------
+********************
 Dependencies can be installed via the command below.
 
 .. code-block:: bash

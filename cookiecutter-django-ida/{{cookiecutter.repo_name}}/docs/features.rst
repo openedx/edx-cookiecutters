@@ -1,7 +1,7 @@
 .. _chapter-features:
 
 Feature Toggling
-================
+################
 All new features/functionality should be released behind a feature gate. This allows us to easily disable features
 in the event that an issue is discovered in production. This project uses the
 `Waffle <https://waffle.readthedocs.org/en/latest/>`_ library for feature gating.
@@ -24,7 +24,7 @@ For information on creating or updating features, refer to the
 `Waffle documentation <https://waffle.readthedocs.org/en/latest/>`_.
 
 Permanent Feature Rollout
--------------------------
+*************************
 Over time some features may become permanent and no longer need a feature gate around them. In such instances, the
 relevant code and tests should be updated to remove the feature gate. Once the code is released, the feature flag/switch
 should be deleted.
