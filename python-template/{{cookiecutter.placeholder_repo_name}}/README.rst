@@ -2,32 +2,27 @@
 #############################
 
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
-|license-badge|
+|license-badge| |status-badge|
+
+Purpose
+*******
 
 {{ cookiecutter.project_short_description}}
 
-The ``README.rst`` file should start with a brief description of the repository,
-which sets it in the context of other repositories under the ``edx``
-organization. It should make clear where this fits in to the overall edX
-codebase.
+The ``README.rst`` file should start with a brief description of the repository and its purpose.
+It should be described in the context of other repositories under the ``openedx``
+organization. It should make clear where this fits in to the overall Open edX
+codebase and should be oriented towards people who are new to the Open edX
+project.
 
-Overview (please modify)
-************************
+Getting Started
+***************
 
-The ``README.rst`` file should then provide an overview of the code in this
-repository, including the main components and useful entry points for starting
-to understand the code in more detail.
-
-Documentation
-*************
-
-(TODO: `Set up documentation <https://openedx.atlassian.net/wiki/spaces/DOC/pages/21627535/Publish+Documentation+on+Read+the+Docs>`_)
-
-Development Workflow
-********************
+Developing
+==========
 
 One Time Setup
-==============
+--------------
 .. code-block::
 
   # Clone the repository
@@ -39,7 +34,7 @@ One Time Setup
 
 
 Every time you develop something in this repo
-=============================================
+---------------------------------------------
 .. code-block::
 
   # Activate the virtualenv
@@ -59,7 +54,7 @@ Every time you develop something in this repo
   git checkout -b <your_github_username>/<short_description>
 
   # Using your favorite editor, edit the code to make your change.
-  vim …
+  vim ...
 
   # Run your new tests
   pytest ./path/to/new/tests
@@ -68,10 +63,52 @@ Every time you develop something in this repo
   make validate
 
   # Commit all your changes
-  git commit …
+  git commit ...
   git push
 
   # Open a PR and ask for review.
+
+Deploying
+=========
+
+How can a new user, go about deploying this component? Is it just a few commands? Is there a larger how-to that should be linked here?
+
+For details on how to deploy this component, checkout the `deployment how-to`_
+
+.. _deployment how-to: https://docs.openedx.org/projects/this-project/how-tos/how-to-deploy-this-component.html
+
+Getting Help
+************
+
+Documentation
+=============
+
+Start by going through `the documentation`_.  If you need more help see below.
+
+.. _the documentation: https://docs.openedx.org/projects/{{cookiecutter.repo_name}}
+
+(TODO: `Set up documentation <https://openedx.atlassian.net/wiki/spaces/DOC/pages/21627535/Publish+Documentation+on+Read+the+Docs>`_)
+
+More Help
+=========
+If you're having trouble, we have discussion forums at
+https://discuss.openedx.org where you can connect with others in the
+community.
+
+Our real-time conversations are on Slack. You can request a `Slack
+invitation`_, then join our `community Slack workspace`_.
+
+For anything non-trivial, the best path is to open an issue in this
+repository with as many details about the issue you are facing as you
+can provide.
+
+https://github.com/openedx/DoneXBlock/issues
+
+For more information about these options, see the `Getting Help`_ page.
+
+.. _Slack invitation: https://openedx.org/slack
+.. _community Slack workspace: https://openedx.slack.com/
+.. _Getting Help: https://openedx.org/getting-help
 
 License
 *******
@@ -81,37 +118,39 @@ otherwise noted.
 
 Please see `LICENSE.txt <LICENSE.txt>`_ for details.
 
-How To Contribute
-*****************
+Contributing
+************
 
 Contributions are very welcome.
-Please read `How To Contribute <https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details.
-Even though they were written with ``edx-platform`` in mind, the guidelines
-should be followed for all Open edX projects.
+Please read `How To Contribute <https://openedx.org/r/how-to-contribute>`_ for details.
 
-The pull request description template should be automatically applied if you are creating a pull request from GitHub. Otherwise you
-can find it at `PULL_REQUEST_TEMPLATE.md <.github/PULL_REQUEST_TEMPLATE.md>`_.
+This project is currently accepting all types of contributions, bug fixes,
+security fixes, maintenance work, or new features.  However, please make sure
+to have a discussion about your new feature idea with the maintainers prior to
+beginning development to maximize the chances of your change being accepted.
+You can start a conversation by creating a new issue on this repo summarizing
+your idea.
 
-The issue report template should be automatically applied if you are creating an issue on GitHub as well. Otherwise you
-can find it at `ISSUE_TEMPLATE.md <.github/ISSUE_TEMPLATE.md>`_.
+The Open edX Code of Conduct
+****************************
+
+All community members are expected to follow the `Open edX Code of Conduct`_.
+
+.. _Open edX Code of Conduct: https://openedx.org/code-of-conduct/
+
+People
+******
+
+The assigned maintainers for this component and other project details may be
+found in `Backstage`_. Backstage pulls this data from the ``catalog-info.yaml``
+file in this repo.
+
+.. _Backstage: https://open-edx-backstage.herokuapp.com/catalog/default/component/{{ cookiecutter.repo_name }}
 
 Reporting Security Issues
 *************************
 
-Please do not report security issues in public. Please email security@edx.org.
-
-Getting Help
-************
-
-If you're having trouble, we have discussion forums at https://discuss.openedx.org where you can connect with others in the community.
-
-Our real-time conversations are on Slack. You can request a `Slack invitation`_, then join our `community Slack workspace`_.
-
-For more information about these options, see the `Getting Help`_ page.
-
-.. _Slack invitation: https://openedx.org/slack
-.. _community Slack workspace: https://openedx.slack.com/
-.. _Getting Help: https://openedx.org/getting-help
+Please do not report security issues in public. Please email security@tcril.org.
 
 .. |pypi-badge| image:: https://img.shields.io/pypi/v/{{ cookiecutter.repo_name }}.svg
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
@@ -136,3 +175,9 @@ For more information about these options, see the `Getting Help`_ page.
 .. |license-badge| image:: https://img.shields.io/github/license/edx/{{ cookiecutter.repo_name }}.svg
     :target: https://github.com/edx/{{ cookiecutter.repo_name }}/blob/main/LICENSE.txt
     :alt: License
+
+.. Choose one of the statuses below and remove the other status-badge lines.
+.. |status-badge| image:: https://img.shields.io/badge/Status-Experimental-yellow
+.. .. |status-badge| image:: https://img.shields.io/badge/Status-Maintained-brightgreen
+.. .. |status-badge| image:: https://img.shields.io/badge/Status-Deprecated-orange
+.. .. |status-badge| image:: https://img.shields.io/badge/Status-Unsupported-red
