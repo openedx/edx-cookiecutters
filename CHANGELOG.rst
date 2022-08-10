@@ -63,7 +63,6 @@ Fixed
 
 - Used newer, non-deprecated name for middleware to add custom attributes to requests from edx-drf-extensions
 
->>>>>>> master
 2022-05-31
 **********
 
