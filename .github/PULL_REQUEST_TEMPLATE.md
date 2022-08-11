@@ -1,14 +1,7 @@
-**Description:**
-
-Describe in a couple of sentences what this PR adds
-
-**JIRA:**
-
-[XXX-XXXX](https://openedx.atlassian.net/browse/XXX-XXXX)
 
 **Merge checklist:**
-- [ ] All reviewers approved
-- [ ] CI build is green
+Check off if complete or not applicable:
 - [ ] Changelog record added
 - [ ] Documentation updated (not only docstrings)
 - [ ] Commits are squashed
+- [ ] Noted any: Concerns, dependencies, deadlines, tickets, testing instructions

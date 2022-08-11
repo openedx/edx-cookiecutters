@@ -5,7 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2020-08-08
+2022-08-12
+**********
+
+Changed
+=======
+
+- Updated generated PR template to be more concise
+
+2022-08-08
 **********
 
 Changed
