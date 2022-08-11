@@ -102,7 +102,7 @@ For anything non-trivial, the best path is to open an issue in this
 repository with as many details about the issue you are facing as you
 can provide.
 
-https://github.com/openedx/DoneXBlock/issues
+https://github.com/openedx/{{ cookiecutter.repo_name }}/issues
 
 For more information about these options, see the `Getting Help`_ page.
 
