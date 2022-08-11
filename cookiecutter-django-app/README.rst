@@ -1,6 +1,5 @@
-===========================
 Cookiecutter Django Package
-===========================
+###########################
 
 |ci-badge| |license-badge|
 
@@ -14,7 +13,7 @@ If you're creating a standalone Django service, you should probably use
 
 
 Features
---------
+********
 
 * Sane setup.py for easy PyPI registration/distribution
 * Github Actions for CI configuration
@@ -25,7 +24,7 @@ Features
 * Basic model generation
 
 Usage
------
+*****
 
 First, create your empty repo on Github (in our example below, we would call
 it ``blogging_for_humans``) and set up your virtual environment with your
@@ -71,7 +70,7 @@ Now take a look at your repo. Awesome, right?
 
 
 Address TODOs
-~~~~~~~~~~~~~
+=============
 
 Look around in the new repo for sections marked `TODO`.  Here are a few known
 places where they may appear:
@@ -87,7 +86,7 @@ Finally, it's time to write the code!!!
 
 
 Running Tests
-~~~~~~~~~~~~~
+=============
 
 Code has been written, but does it actually work? Let's find out!
 
@@ -99,7 +98,7 @@ Code has been written, but does it actually work? Let's find out!
 
 
 Github Checks
-~~~~~~~~~~~~~
+=============
 
 On your first PR, ensure Github Actions and Codecov checks are running.
 
@@ -108,7 +107,7 @@ If Github Actions are not running, you can look their state here https://github.
 If Codecov is not running, complete an ITSUPPORT ticket.
 
 Register on PyPI
-~~~~~~~~~~~~~~~~
+================
 
 Once you have at least a prototype working and tests running, it's time to
 register the application on PyPI.
@@ -128,7 +127,7 @@ to publish your package to PyPi in your Github workflow file you'd need to add t
 ``PY_UPLOAD_TOKEN`` is available organization wide edX repos via Github secrets.
 
 Releasing on PyPI
-~~~~~~~~~~~~~~~~~
+=================
 
 Time to release a new version? Update the version number in the application
 module's ``__init__.py`` file, update ``CHANGELOG.rst`` accordingly, and run::
@@ -139,13 +138,13 @@ and create a Github release with new tag, your Github workflow should automatica
 created and should publish the package to PyPi
 
 Add to Django Packages
-~~~~~~~~~~~~~~~~~~~~~~
+======================
 
 Once you have a release, and assuming you have an account there, just go to https://www.djangopackages.com/packages/add/ and add it there.
 
 
 License
--------
+*******
 
 The code in this repository is licensed under the Apache License, Version 2.0,
 unless otherwise noted.
@@ -154,7 +153,7 @@ Please see ``LICENSE.txt`` for details.
 
 
 How to Contribute
------------------
+*****************
 
 Contributions are very welcome.
 Please read `How To Contribute <https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details.
@@ -163,12 +162,12 @@ should be followed for all Open edX projects.
 
 
 Reporting Security Issues
--------------------------
+*************************
 
 Please do not report security issues in public. Please email security@edx.org
 
 Getting Help
-------------
+************
 
 Have a question about this repository, or about the Open edX project in general?  Please
 refer to this `list of resources`_ if you need any assistance.

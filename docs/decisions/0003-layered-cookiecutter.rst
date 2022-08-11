@@ -1,19 +1,19 @@
 1. Layered Cookiecutters
-========================
+########################
 
 Status
-------
+******
 
 Accepted
 
 Context
--------
+*******
 
 * We duplicate boilerplate files across our multiple cookiecutters.
 * Historically, it's been difficult keeping the same files across the multiple cookiecutters up-to-date.
 
 Decision
---------
+********
 
 We will layer cookiecutters in order to share boilerpate code. This approach requires two categories of cookiecutters:
 
@@ -35,7 +35,7 @@ Here is an example of 3 final-output cookiecutters layered with one shared templ
                           python-template
 
 Implementation Details
-~~~~~~~~~~~~~~~~~~~~~~
+======================
 
 Cookiecutter allows you to define ``pre_gen_project.py`` and ``post_gen_project.py`` files that run at the beginning and end of folder creation.
 
@@ -46,10 +46,10 @@ The layers are copied in high to low order, so the top-most (the most specific) 
 For example: for cookiecutter-django-ida (CDI), the CDI specific files/folders are created first. To avoid conflicts, ``post_gen_project.py`` uses the python-template to create files/folders in ``placeholder_repo_name_0``. After file creation, the files are moved to the correct location. Finally, CDI can delete any unnecessary files created by python-template.
 
 Consequences
-------------
+************
 
 Possible drawbacks
-~~~~~~~~~~~~~~~~~~
+==================
 
 This approach of layers and shared files may make it difficult to know where to find a particular file since it could have been abstracted into any of the layers.
 
@@ -60,20 +60,20 @@ To offset this, it is recommended that there be only one template-only layer. If
 Additionally, the decision to not allow partial file overwrites should help someone more quickly find the correct location for a change.
 
 Rejected Alternatives
----------------------
+*********************
 
 No sharing of boilerpate code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=============================
 
 As noted in the `Context`_, we had a maintenance problem when not sharing boilerplate code. It remains to be seen if the potential drawbacks of this approach will outweigh the drawbacks of the original maintenance problem.
 
 Failed alternative layering implementation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================================
 
 Initially, we tried to layer from bottom up by doing most of the layering in pre_gen_project.py file. This failed because cookiecutter folder creation does allow overlaying a folder from a higher layer. If a folder ``{{ cookiecutter.name }}`` already exists from a previous layer, the cookiecutter would error out. This cookiecutter behavior resulted in us moving the layering to ``post_gen_project.py``, which results in a top-to-bottom approach to layering.
 
 References
-----------
+**********
 
 Archived cookiecutters:
 

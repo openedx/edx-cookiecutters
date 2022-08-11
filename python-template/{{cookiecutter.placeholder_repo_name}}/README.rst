@@ -1,5 +1,5 @@
 {{cookiecutter.project_name}}
-=============================
+#############################
 
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
 |license-badge|
@@ -12,22 +12,22 @@ organization. It should make clear where this fits in to the overall edX
 codebase.
 
 Overview (please modify)
-------------------------
+************************
 
 The ``README.rst`` file should then provide an overview of the code in this
 repository, including the main components and useful entry points for starting
 to understand the code in more detail.
 
 Documentation
--------------
+*************
 
 (TODO: `Set up documentation <https://openedx.atlassian.net/wiki/spaces/DOC/pages/21627535/Publish+Documentation+on+Read+the+Docs>`_)
 
 Development Workflow
---------------------
+********************
 
 One Time Setup
-~~~~~~~~~~~~~~
+==============
 .. code-block::
 
   # Clone the repository
@@ -39,7 +39,7 @@ One Time Setup
 
 
 Every time you develop something in this repo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=============================================
 .. code-block::
 
   # Activate the virtualenv
@@ -74,7 +74,7 @@ Every time you develop something in this repo
   # Open a PR and ask for review.
 
 License
--------
+*******
 
 The code in this repository is licensed under the {{ cookiecutter.open_source_license }} unless
 otherwise noted.
@@ -82,7 +82,7 @@ otherwise noted.
 Please see `LICENSE.txt <LICENSE.txt>`_ for details.
 
 How To Contribute
------------------
+*****************
 
 Contributions are very welcome.
 Please read `How To Contribute <https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details.
@@ -96,12 +96,12 @@ The issue report template should be automatically applied if you are creating an
 can find it at `ISSUE_TEMPLATE.md <.github/ISSUE_TEMPLATE.md>`_.
 
 Reporting Security Issues
--------------------------
+*************************
 
 Please do not report security issues in public. Please email security@edx.org.
 
 Getting Help
-------------
+************
 
 If you're having trouble, we have discussion forums at https://discuss.openedx.org where you can connect with others in the community.
 
