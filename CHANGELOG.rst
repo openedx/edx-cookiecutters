@@ -5,6 +5,16 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2020-08-15
+**********
+
+.. I wish we used a tool to manage changelogs so that I didn't have to choose
+    a date when I made a commit, since I don't know what date the change will
+    be merged...
+
+- Added explicit PLACEHOLDER and TODO markers to the README to make clear where
+  edits are needed.
+  
 2020-08-08
 **********
 
