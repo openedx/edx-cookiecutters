@@ -1,6 +1,11 @@
 {{cookiecutter.project_name}}
 #############################
 
+.. note::
+
+  This README was auto-generated. Please review its contents and update all
+  relevant sections.
+
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
 |license-badge| |status-badge|
 
@@ -71,11 +76,11 @@ Every time you develop something in this repo
 Deploying
 =========
 
-How can a new user, go about deploying this component? Is it just a few commands? Is there a larger how-to that should be linked here?
+How can a new user go about deploying this component? Is it just a few commands? Is there a larger how-to that should be linked here?
 
 For details on how to deploy this component, checkout the `deployment how-to`_
 
-.. _deployment how-to: https://docs.openedx.org/projects/this-project/how-tos/how-to-deploy-this-component.html
+.. _deployment how-to: https://docs.openedx.org/projects/{{ cookiecutter.repo_name }}/how-tos/how-to-deploy-this-component.html
 
 Getting Help
 ************
