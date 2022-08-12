@@ -12,6 +12,9 @@ Changed
 =======
 
 - Re-ruled all the RST files to match the new docs guidance.
+- Update template README.rst to match `OEP-55 Guidelines`_
+
+.. _OEP-55 Guidelines: https://open-edx-proposals.readthedocs.io/en/latest/processes/oep-0055/decisions/0003-readme-specification.html
 
 2022-07-17
 **********
