@@ -29,7 +29,8 @@ RUN apt-get update && apt-get -qy install --no-install-recommends \
  libmysqlclient-dev \
  libssl-dev \
  python3-dev \
- gcc
+ gcc \
+ build-essential \
 
 
 RUN pip install --upgrade pip setuptools
