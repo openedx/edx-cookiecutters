@@ -120,7 +120,7 @@ edx-lint==5.2.4
     # via -r requirements/test.txt
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.txt
-filelock==3.7.1
+filelock==3.8.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -164,7 +164,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-keyring==23.8.1
+keyring==23.8.2
     # via
     #   -r requirements/test.txt
     #   twine
@@ -189,7 +189,7 @@ packaging==21.3
     #   pytest
     #   sphinx
     #   tox
-pbr==5.9.0
+pbr==5.10.0
     # via
     #   -r requirements/test.txt
     #   stevedore
@@ -278,7 +278,7 @@ python-slugify==6.1.2
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.1
+pytz==2022.2.1
     # via
     #   -r requirements/test.txt
     #   babel
@@ -315,7 +315,7 @@ rich==12.5.1
     # via
     #   -r requirements/test.txt
     #   twine
-secretstorage==3.3.2
+secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -391,7 +391,7 @@ tomli==2.0.1
     #   pep517
     #   pylint
     #   pytest
-tomlkit==0.11.2
+tomlkit==0.11.4
     # via
     #   -r requirements/test.txt
     #   pylint
