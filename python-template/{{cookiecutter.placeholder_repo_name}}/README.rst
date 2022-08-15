@@ -3,8 +3,10 @@
 
 .. note::
 
-  This README was auto-generated. Please review its contents and update all
-  relevant sections.
+  This README was auto-generated. Maintainer: please review its contents and
+  update all relevant sections. Instructions to you are marked with
+  "PLACEHOLDER" or "TODO". Update or remove those sections, and remove this
+  note when you are done.
 
 |pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
 |license-badge| |status-badge|
@@ -14,7 +16,7 @@ Purpose
 
 {{ cookiecutter.project_short_description}}
 
-The ``README.rst`` file should start with a brief description of the repository and its purpose.
+TODO: The ``README.rst`` file should start with a brief description of the repository and its purpose.
 It should be described in the context of other repositories under the ``openedx``
 organization. It should make clear where this fits in to the overall Open edX
 codebase and should be oriented towards people who are new to the Open edX
@@ -31,7 +33,7 @@ One Time Setup
 .. code-block::
 
   # Clone the repository
-  git clone git@github.com:edx/{{ cookiecutter.repo_name }}.git
+  git clone git@github.com:openedx/{{ cookiecutter.repo_name }}.git
   cd {{ cookiecutter.repo_name }}
 
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
@@ -76,9 +78,10 @@ Every time you develop something in this repo
 Deploying
 =========
 
-How can a new user go about deploying this component? Is it just a few commands? Is there a larger how-to that should be linked here?
+TODO: How can a new user go about deploying this component? Is it just a few
+commands? Is there a larger how-to that should be linked here?
 
-For details on how to deploy this component, checkout the `deployment how-to`_
+PLACEHOLDER: For details on how to deploy this component, see the `deployment how-to`_
 
 .. _deployment how-to: https://docs.openedx.org/projects/{{ cookiecutter.repo_name }}/how-tos/how-to-deploy-this-component.html
 
@@ -88,7 +91,7 @@ Getting Help
 Documentation
 =============
 
-Start by going through `the documentation`_.  If you need more help see below.
+PLACEHOLDER: Start by going through `the documentation`_.  If you need more help see below.
 
 .. _the documentation: https://docs.openedx.org/projects/{{cookiecutter.repo_name}}
 
@@ -96,6 +99,7 @@ Start by going through `the documentation`_.  If you need more help see below.
 
 More Help
 =========
+
 If you're having trouble, we have discussion forums at
 https://discuss.openedx.org where you can connect with others in the
 community.
@@ -161,12 +165,12 @@ Please do not report security issues in public. Please email security@tcril.org.
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
     :alt: PyPI
 
-.. |ci-badge| image:: https://github.com/edx/{{ cookiecutter.repo_name }}/workflows/Python%20CI/badge.svg?branch=main
-    :target: https://github.com/edx/{{ cookiecutter.repo_name }}/actions
+.. |ci-badge| image:: https://github.com/openedx/{{ cookiecutter.repo_name }}/workflows/Python%20CI/badge.svg?branch=main
+    :target: https://github.com/openedx/{{ cookiecutter.repo_name }}/actions
     :alt: CI
 
-.. |codecov-badge| image:: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}/coverage.svg?branch=main
-    :target: https://codecov.io/github/edx/{{ cookiecutter.repo_name }}?branch=main
+.. |codecov-badge| image:: https://codecov.io/github/openedx/{{ cookiecutter.repo_name }}/coverage.svg?branch=main
+    :target: https://codecov.io/github/openedx/{{ cookiecutter.repo_name }}?branch=main
     :alt: Codecov
 
 .. |doc-badge| image:: https://readthedocs.org/projects/{{ cookiecutter.repo_name }}/badge/?version=latest
@@ -177,11 +181,11 @@ Please do not report security issues in public. Please email security@tcril.org.
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
     :alt: Supported Python versions
 
-.. |license-badge| image:: https://img.shields.io/github/license/edx/{{ cookiecutter.repo_name }}.svg
-    :target: https://github.com/edx/{{ cookiecutter.repo_name }}/blob/main/LICENSE.txt
+.. |license-badge| image:: https://img.shields.io/github/license/openedx/{{ cookiecutter.repo_name }}.svg
+    :target: https://github.com/openedx/{{ cookiecutter.repo_name }}/blob/main/LICENSE.txt
     :alt: License
 
-.. Choose one of the statuses below and remove the other status-badge lines.
+.. TODO: Choose one of the statuses below and remove the other status-badge lines.
 .. |status-badge| image:: https://img.shields.io/badge/Status-Experimental-yellow
 .. .. |status-badge| image:: https://img.shields.io/badge/Status-Maintained-brightgreen
 .. .. |status-badge| image:: https://img.shields.io/badge/Status-Deprecated-orange
