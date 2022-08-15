@@ -1,3 +1,4 @@
+repo_name ="{{cookiecutter.placeholder_repo_name}}"
 name="{{cookiecutter.project_name}}"
 port="{{cookiecutter.port}}"
 
@@ -20,11 +21,11 @@ docker exec -i {{cookiecutter.project_name}}.db mysql -u root -se "CREATE DATABA
 
 # Run migrations
 echo -e "${GREEN}Running migrations for ${name}...${NC}"
-docker exec -t {{cookiecutter.project_name}}.app bash -c "cd /edx/app/${name}/ && make migrate"
+docker exec -t {{cookiecutter.project_name}}.app bash -c "cd /edx/app/${repo_name}/ && make migrate"
 
 # Create superuser
 echo -e "${GREEN}Creating super-user for ${name}...${NC}"
-docker exec -t {{cookiecutter.project_name}}.app bash -c "echo 'from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(\"edx\", \"edx@example.com\", \"edx\") if not User.objects.filter(username=\"edx\").exists() else None' | python /edx/app/${name}/manage.py shell"
+docker exec -t {{cookiecutter.project_name}}.app bash -c "echo 'from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(\"edx\", \"edx@example.com\", \"edx\") if not User.objects.filter(username=\"edx\").exists() else None' | python /edx/app/${repo_name}/manage.py shell"
 
 # Provision IDA User in LMS
 echo -e "${GREEN}Provisioning ${name}_worker in LMS...${NC}"
