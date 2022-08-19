@@ -2,7 +2,7 @@
 # https://open-edx-proposals.readthedocs.io/en/latest/processes/oep-0055-proc-project-maintainers.html
 
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: ""
 metadata:
   name: '{{ cookiecutter.repo_name }}'
   description: "{{ cookiecutter.project_short_description }}"
