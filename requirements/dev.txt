@@ -55,7 +55,7 @@ chardet==5.0.0
     # via
     #   -r requirements/test.txt
     #   binaryornot
-charset-normalizer==2.1.0
+charset-normalizer==2.1.1
     # via
     #   -r requirements/test.txt
     #   requests
@@ -230,7 +230,7 @@ pycparser==2.21
     #   cffi
 pydocstyle==6.1.1
     # via -r requirements/test.txt
-pygments==2.12.0
+pygments==2.13.0
     # via
     #   -r requirements/test.txt
     #   doc8
@@ -288,7 +288,7 @@ pyyaml==6.0
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==36.0
+readme-renderer==37.0
     # via
     #   -r requirements/test.txt
     #   twine
