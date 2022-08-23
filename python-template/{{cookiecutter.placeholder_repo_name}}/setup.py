@@ -92,7 +92,8 @@ def is_requirement(line):
 
 {% if cookiecutter.setup_py_loading_pkg_data == "yes" %}
 def package_data(pkg, roots):
-    """Generic function to find package_data.
+    """
+    Declare package_data based on `roots`.
 
     All of the files under each of the `roots` will be declared as package
     data for package `pkg`.
