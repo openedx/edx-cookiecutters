@@ -46,7 +46,7 @@ configurations = [
 
 @pytest.fixture(name='custom_template', scope="module")
 def fixture_custom_template(cookies_session):
-    template = cookies_session._default_template + "/cookiecutter-python-library"  # pylint: disable=protected-access
+    template = cookies_session._default_template + "/cookiecutter-xblock"  # pylint: disable=protected-access
     return template
 
 
