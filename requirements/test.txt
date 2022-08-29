@@ -13,7 +13,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.5.2
     # via django
-astroid==2.11.7
+astroid==2.12.4
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -71,7 +71,7 @@ dill==0.3.5.1
     # via
     #   -r requirements/base.txt
     #   pylint
-distlib==0.3.5
+distlib==0.3.6
     # via virtualenv
 django==3.2.15
     # via
@@ -180,7 +180,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.14.5
+pylint==2.15.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -305,7 +305,7 @@ typing-extensions==4.3.0
     #   astroid
     #   pylint
     #   rich
-urllib3==1.26.11
+urllib3==1.26.12
     # via
     #   -r requirements/base.txt
     #   requests
@@ -320,6 +320,3 @@ wrapt==1.14.1
     #   astroid
 zipp==3.8.1
     # via importlib-metadata
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
