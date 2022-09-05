@@ -8,7 +8,7 @@ arrow==0.13.2
     # via
     #   -c requirements/constraints.txt
     #   jinja2-time
-astroid==2.12.4
+astroid==2.12.5
     # via
     #   pylint
     #   pylint-celery
