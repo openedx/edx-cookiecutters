@@ -128,7 +128,7 @@ setup(
     author_email='oscm@edx.org',
     url='https://github.com/edx/{{ cookiecutter.repo_name }}',
     packages=find_packages(
-        include=['{{ cookiecutter.sub_dir_name }}'],
+        include=['{{ cookiecutter.sub_dir_name }}', '{{ cookiecutter.sub_dir_name }}.*'],
         exclude=["*tests"],
     ),
     include_package_data=True,
