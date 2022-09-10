@@ -31,6 +31,6 @@ References
 
 Archived cookiecutters:
 
-* https://github.com/edx/cookiecutter-django-app
-* https://github.com/edx/cookiecutter-django-ida
-* https://github.com/edx/cookiecutter-xblock
+* https://github.com/openedx/cookiecutter-django-app
+* https://github.com/openedx/cookiecutter-django-ida
+* https://github.com/openedx/cookiecutter-xblock

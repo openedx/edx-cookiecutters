@@ -4,7 +4,7 @@ It enables creation of the XBlock repository as well as a Dockerfile for buildin
 
 To create a new XBlock using this cookiecutter template, follow the instructions found in edx-cookiecutter's `readme`_.
 
-.. _readme: https://github.com/edx/edx-cookiecutters/blob/master/README.rst
+.. _readme: https://github.com/openedx/edx-cookiecutters/blob/master/README.rst
 
 
 Enter the short name and primary class name of your new XBlock when prompted.
