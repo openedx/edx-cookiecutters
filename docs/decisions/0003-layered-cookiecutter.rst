@@ -77,5 +77,5 @@ References
 
 Archived cookiecutters:
 
-* https://github.com/edx/cookiecutter-django-app
-* https://github.com/edx/cookiecutter-django-ida
+* https://github.com/edx-unsupported/cookiecutter-django-app
+* https://github.com/edx-unsupported/cookiecutter-django-ida

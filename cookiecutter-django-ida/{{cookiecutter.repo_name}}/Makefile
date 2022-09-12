@@ -144,7 +144,7 @@ open-devstack: ## open a shell on the server started by start-devstack
 	docker exec -it {{cookiecutter.repo_name}} /edx/app/{{cookiecutter.repo_name}}/devstack.sh open
 
 pkg-devstack: ## build the {{cookiecutter.repo_name}} image from the latest configuration and code
-	docker build -t {{cookiecutter.repo_name}}:latest -f docker/build/{{cookiecutter.repo_name}}/Dockerfile git://github.com/edx/configuration
+	docker build -t {{cookiecutter.repo_name}}:latest -f docker/build/{{cookiecutter.repo_name}}/Dockerfile git://github.com/openedx/configuration
 
 detect_changed_source_translations: ## check if translation files are up-to-date
 	cd {{cookiecutter.project_name}} && i18n_tool changed

@@ -58,7 +58,7 @@ for more information.
 =================================================
 
 This cookiecutter template offers multiple make targets which are shortcuts to
-use `edx-i18n-tools <https://github.com/edx/i18n-tools>`_.
+use `edx-i18n-tools <https://github.com/openedx/i18n-tools>`_.
 
 After marking strings as translatable we have to create the raw message catalogs.
 These catalogs are created in ``.po`` files. For more information see
@@ -99,7 +99,7 @@ To use translations from transifex use the follow Make target to pull translatio
 
     $ make pull_translations
 
-See `config instructions <https://github.com/edx/i18n-tools#transifex-commands>`_ for information on how to set up your
+See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
 transifex credentials.
 
 See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
@@ -122,7 +122,7 @@ To upload translations to transiflex use the follow Make target::
 
     $ make push_translations
 
-See `config instructions <https://github.com/edx/i18n-tools#transifex-commands>`_ for information on how to set up your
+See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
 transifex credentials.
 
 See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating

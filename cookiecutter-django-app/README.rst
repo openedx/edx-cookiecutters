@@ -43,7 +43,7 @@ cookiecutter-django-app.
 
 To create a project using this cookiecutter, follow the instructions found in edx-cookiecutter's `readme`_.
 
-.. _readme: https://github.com/edx/edx-cookiecutters/blob/master/README.rst
+.. _readme: https://github.com/openedx/edx-cookiecutters/blob/master/README.rst
 
 After the new folder is created, you will need to:
 
@@ -102,7 +102,7 @@ Github Checks
 
 On your first PR, ensure Github Actions and Codecov checks are running.
 
-If Github Actions are not running, you can look their state here https://github.com/edx/edx-cookiecutters/actions
+If Github Actions are not running, you can look their state here https://github.com/openedx/edx-cookiecutters/actions
 
 If Codecov is not running, complete an ITSUPPORT ticket.
 
@@ -156,7 +156,7 @@ How to Contribute
 *****************
 
 Contributions are very welcome.
-Please read `How To Contribute <https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details.
+Please read `How To Contribute <https://github.com/openedx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details.
 Even though they were written with ``edx-platform`` in mind, the guidelines
 should be followed for all Open edX projects.
 
@@ -175,10 +175,10 @@ refer to this `list of resources`_ if you need any assistance.
 .. _list of resources: https://open.edx.org/getting-help
 
 
-.. |ci-badge| image:: https://github.com/edx/edx-django-utils/workflows/Python%20CI/badge.svg?branch=master
-    :target: https://github.com/edx/edx-django-utils/actions
+.. |ci-badge| image:: https://github.com/openedx/edx-django-utils/workflows/Python%20CI/badge.svg?branch=master
+    :target: https://github.com/openedx/edx-django-utils/actions
     :alt: CI
 
 .. |license-badge| image:: https://img.shields.io/github/license/edx/cookiecutter-django-app.svg
-    :target: https://github.com/edx/cookiecutter-django-app/blob/master/LICENSE.txt
+    :target: https://github.com/openedx/cookiecutter-django-app/blob/master/LICENSE.txt
     :alt: License
