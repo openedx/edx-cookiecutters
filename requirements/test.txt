@@ -13,7 +13,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.5.2
     # via django
-astroid==2.12.5
+astroid==2.12.9
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -30,7 +30,7 @@ bleach==5.0.1
     # via readme-renderer
 build==0.8.0
     # via -r requirements/test.in
-certifi==2022.6.15
+certifi==2022.6.15.1
     # via
     #   -r requirements/base.txt
     #   requests
@@ -65,7 +65,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==37.0.4
+cryptography==38.0.1
     # via secretstorage
 dill==0.3.5.1
     # via
@@ -91,7 +91,7 @@ docutils==0.17.1
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.2.4
+edx-lint==5.2.5
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -184,7 +184,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.0
+pylint==2.15.2
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -314,7 +314,7 @@ urllib3==1.26.12
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.16.4
+virtualenv==20.16.5
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
