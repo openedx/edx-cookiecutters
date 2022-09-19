@@ -17,7 +17,7 @@ asgiref==3.5.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.12.5
+astroid==2.12.10
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -43,7 +43,7 @@ build==0.8.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   pip-tools
-certifi==2022.6.15
+certifi==2022.9.14
     # via
     #   -r requirements/test.txt
     #   requests
@@ -84,7 +84,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==37.0.4
+cryptography==38.0.1
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -116,7 +116,7 @@ docutils==0.17.1
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.2.4
+edx-lint==5.3.0
     # via -r requirements/test.txt
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.txt
@@ -126,7 +126,7 @@ filelock==3.8.0
     #   -r requirements/test.txt
     #   tox
     #   virtualenv
-idna==3.3
+idna==3.4
     # via
     #   -r requirements/test.txt
     #   requests
@@ -168,7 +168,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-keyring==23.9.1
+keyring==23.9.3
     # via
     #   -r requirements/test.txt
     #   twine
@@ -245,7 +245,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.0
+pylint==2.15.2
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -387,23 +387,21 @@ text-unidecode==1.3
     # via
     #   -r requirements/test.txt
     #   python-slugify
-toml==0.10.2
-    # via
-    #   -r requirements/ci.txt
-    #   tox
 tomli==2.0.1
     # via
+    #   -r requirements/ci.txt
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
     #   pep517
     #   pylint
     #   pytest
+    #   tox
 tomlkit==0.11.4
     # via
     #   -r requirements/test.txt
     #   pylint
-tox==3.25.1
+tox==3.26.0
     # via
     #   -r requirements/ci.txt
     #   tox-battery
@@ -422,7 +420,7 @@ urllib3==1.26.12
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.16.4
+virtualenv==20.16.5
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
