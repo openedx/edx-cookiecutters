@@ -8,7 +8,7 @@ on:
        branch:
          description: 'Target branch to create requirements PR against'
          required: true
-         default: 'master'
+         default: 'main'
 jobs:
    call-upgrade-python-requirements-workflow:
     with:
