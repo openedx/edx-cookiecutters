@@ -51,6 +51,7 @@ Commands::
 ===================================
 
 - Modify project README
+- Modify the "requirements upgrade workflow" at ".github/workflows/upgrade-python-requirements.yml" and add "team_reviewers" and the "email_address" of the team/person
 - Modify project docs/decisions/0001-purpose-of-this-repo.rst ADR
 
 Updating cookiecutters
