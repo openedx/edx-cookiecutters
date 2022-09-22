@@ -19,7 +19,7 @@ jobs:
         toxenv: ["py38", "quality", "docs", "pii_check"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: setup python
         uses: actions/setup-python@v2
         with:
@@ -38,7 +38,7 @@ jobs:
 
       - name: Run coverage
         if: matrix.python-version == '3.8' && matrix.toxenv == 'quality'
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v3
         with:
           flags: unittests
           fail_ci_if_error: true
