@@ -43,7 +43,7 @@ build==0.8.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   pip-tools
-certifi==2022.9.14
+certifi==2022.9.24
     # via
     #   -r requirements/test.txt
     #   requests
@@ -245,7 +245,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.2
+pylint==2.15.3
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -296,7 +296,7 @@ pyyaml==6.0
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==37.1
+readme-renderer==37.2
     # via
     #   -r requirements/test.txt
     #   twine
@@ -343,7 +343,7 @@ snowballstemmer==2.2.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==5.1.1
+sphinx==5.2.1
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
@@ -374,7 +374,7 @@ sphinxcontrib-serializinghtml==1.1.5
     # via
     #   -r requirements/test.txt
     #   sphinx
-sqlparse==0.4.2
+sqlparse==0.4.3
     # via
     #   -r requirements/test.txt
     #   django
