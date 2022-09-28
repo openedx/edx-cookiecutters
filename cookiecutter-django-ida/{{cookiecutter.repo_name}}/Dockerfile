@@ -1,5 +1,5 @@
 FROM ubuntu:focal as app
-MAINTAINER sre@edx.org
+LABEL maintainer="sre@edx.org"
 
 
 # Packages installed:
@@ -20,7 +20,10 @@ MAINTAINER sre@edx.org
 
 # gcc; for compiling python extensions distributed with python packages like mysql-client
 
+# rm -rf moved as sub-command for optimization best practices
+
 # If you add a package here please include a comment above describing what it is used for
+# Add new lines suffixed by \ prior to the rm to ensure cache is cleared once apt completes
 RUN apt-get update && apt-get -qy install --no-install-recommends \
  language-pack-en \
  locales \
@@ -29,12 +32,10 @@ RUN apt-get update && apt-get -qy install --no-install-recommends \
  libmysqlclient-dev \
  libssl-dev \
  python3-dev \
- gcc
-
+ gcc \
+ && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip setuptools
-# delete apt package lists because we do not need them inflating our image
-RUN rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
