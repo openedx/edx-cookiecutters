@@ -105,7 +105,7 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==4.12.0
+importlib-metadata==5.0.0
     # via
     #   keyring
     #   sphinx
@@ -117,7 +117,7 @@ isort==5.10.1
     #   -r requirements/base.txt
     #   -r requirements/test.in
     #   pylint
-jaraco-classes==3.2.2
+jaraco-classes==3.2.3
     # via keyring
 jeepney==0.8.0
     # via
@@ -219,7 +219,7 @@ python-slugify==6.1.2
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.2.1
+pytz==2022.4
     # via
     #   babel
     #   django
@@ -243,7 +243,7 @@ restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==12.5.1
+rich==12.6.0
     # via twine
 secretstorage==3.3.3
     # via keyring
@@ -260,7 +260,7 @@ snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
-sphinx==5.2.1
+sphinx==5.2.3
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
@@ -297,7 +297,7 @@ tomli==2.0.1
     #   pep517
     #   pylint
     #   pytest
-tomlkit==0.11.4
+tomlkit==0.11.5
     # via
     #   -r requirements/base.txt
     #   pylint

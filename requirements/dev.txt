@@ -134,7 +134,7 @@ imagesize==1.4.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-importlib-metadata==4.12.0
+importlib-metadata==5.0.0
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -148,7 +148,7 @@ isort==5.10.1
     # via
     #   -r requirements/test.txt
     #   pylint
-jaraco-classes==3.2.2
+jaraco-classes==3.2.3
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -286,7 +286,7 @@ python-slugify==6.1.2
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.2.1
+pytz==2022.4
     # via
     #   -r requirements/test.txt
     #   babel
@@ -319,7 +319,7 @@ rfc3986==2.0.0
     # via
     #   -r requirements/test.txt
     #   twine
-rich==12.5.1
+rich==12.6.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -343,7 +343,7 @@ snowballstemmer==2.2.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==5.2.1
+sphinx==5.2.3
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
@@ -397,7 +397,7 @@ tomli==2.0.1
     #   pylint
     #   pytest
     #   tox
-tomlkit==0.11.4
+tomlkit==0.11.5
     # via
     #   -r requirements/test.txt
     #   pylint
