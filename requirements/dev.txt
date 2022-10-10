@@ -97,7 +97,7 @@ distlib==0.3.6
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==3.2.15
+django==3.2.16
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -206,7 +206,7 @@ pep517==0.13.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pip-tools==6.8.0
+pip-tools==6.9.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.8.3
     # via
@@ -307,7 +307,7 @@ requests==2.28.1
     #   requests-toolbelt
     #   sphinx
     #   twine
-requests-toolbelt==0.9.1
+requests-toolbelt==0.10.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -409,7 +409,7 @@ tox-battery==0.6.1
     # via -r requirements/dev.in
 twine==4.0.1
     # via -r requirements/test.txt
-typing-extensions==4.3.0
+typing-extensions==4.4.0
     # via
     #   -r requirements/test.txt
     #   astroid
@@ -437,7 +437,7 @@ wrapt==1.14.1
     # via
     #   -r requirements/test.txt
     #   astroid
-zipp==3.8.1
+zipp==3.9.0
     # via
     #   -r requirements/test.txt
     #   importlib-metadata
