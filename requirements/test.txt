@@ -13,7 +13,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.5.2
     # via django
-astroid==2.12.10
+astroid==2.12.11
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -184,7 +184,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.3
+pylint==2.15.4
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -260,7 +260,7 @@ snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
-sphinx==5.2.3
+sphinx==5.3.0
     # via
     #   -r requirements/test.in
     #   edx-sphinx-theme
@@ -281,7 +281,7 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 sqlparse==0.4.3
     # via django
-stevedore==4.0.0
+stevedore==4.0.1
     # via
     #   -r requirements/base.txt
     #   code-annotations
