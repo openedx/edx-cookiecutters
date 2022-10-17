@@ -17,7 +17,7 @@ asgiref==3.5.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.12.10
+astroid==2.12.11
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -245,7 +245,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.3
+pylint==2.15.4
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -343,7 +343,7 @@ snowballstemmer==2.2.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-sphinx==5.2.3
+sphinx==5.3.0
     # via
     #   -r requirements/test.txt
     #   edx-sphinx-theme
@@ -378,7 +378,7 @@ sqlparse==0.4.3
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==4.0.0
+stevedore==4.0.1
     # via
     #   -r requirements/test.txt
     #   code-annotations
