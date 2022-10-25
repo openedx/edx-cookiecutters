@@ -7,7 +7,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: lint
-      uses: luke142367/Docker-Lint-Action@v1.0.0
+      uses: luke142367/Docker-Lint-Action@5c4c86226f39785a66827bbc2e322600c9afa3a9 # v1.1.1
       with:
         target: cookiecutter-django-ida/{{cookiecutter.repo_name}}/Dockerfile
       env:
