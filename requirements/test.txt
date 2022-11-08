@@ -20,7 +20,7 @@ astroid==2.12.12
     #   pylint-celery
 attrs==22.1.0
     # via pytest
-babel==2.10.3
+babel==2.11.0
     # via sphinx
 binaryornot==0.4.4
     # via
@@ -65,7 +65,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==38.0.1
+cryptography==38.0.3
     # via secretstorage
 dill==0.3.6
     # via
@@ -97,7 +97,7 @@ edx-lint==5.3.0
     #   -r requirements/test.in
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.in
-exceptiongroup==1.0.0
+exceptiongroup==1.0.1
     # via pytest
 filelock==3.8.0
     # via virtualenv
@@ -136,7 +136,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-keyring==23.9.3
+keyring==23.11.0
     # via twine
 lazy-object-proxy==1.8.0
     # via
@@ -165,7 +165,7 @@ pep517==0.13.0
     # via build
 pkginfo==1.8.3
     # via twine
-platformdirs==2.5.2
+platformdirs==2.5.3
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -219,7 +219,7 @@ python-slugify==6.1.2
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.5
+pytz==2022.6
     # via
     #   babel
     #   django
@@ -228,7 +228,7 @@ pyyaml==6.0
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==37.2
+readme-renderer==37.3
     # via twine
 requests==2.28.1
     # via
@@ -265,7 +265,7 @@ sphinx==5.3.0
     #   -r requirements/test.in
     #   edx-sphinx-theme
     #   sphinx-rtd-theme
-sphinx-rtd-theme==1.0.0
+sphinx-rtd-theme==1.1.1
     # via -r requirements/test.in
 sphinxcontrib-applehelp==1.0.2
     # via sphinx
