@@ -26,7 +26,7 @@ attrs==22.1.0
     # via
     #   -r requirements/test.txt
     #   pytest
-babel==2.10.3
+babel==2.11.0
     # via
     #   -r requirements/test.txt
     #   sphinx
@@ -84,7 +84,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==38.0.1
+cryptography==38.0.3
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -120,7 +120,7 @@ edx-lint==5.3.0
     # via -r requirements/test.txt
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.txt
-exceptiongroup==1.0.0
+exceptiongroup==1.0.1
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -172,7 +172,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-keyring==23.9.3
+keyring==23.11.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -216,7 +216,7 @@ pkginfo==1.8.3
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==2.5.2
+platformdirs==2.5.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -288,7 +288,7 @@ python-slugify==6.1.2
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.5
+pytz==2022.6
     # via
     #   -r requirements/test.txt
     #   babel
@@ -298,7 +298,7 @@ pyyaml==6.0
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==37.2
+readme-renderer==37.3
     # via
     #   -r requirements/test.txt
     #   twine
@@ -350,7 +350,7 @@ sphinx==5.3.0
     #   -r requirements/test.txt
     #   edx-sphinx-theme
     #   sphinx-rtd-theme
-sphinx-rtd-theme==1.0.0
+sphinx-rtd-theme==1.1.1
     # via -r requirements/test.txt
 sphinxcontrib-applehelp==1.0.2
     # via
@@ -431,7 +431,7 @@ webencodings==0.5.1
     # via
     #   -r requirements/test.txt
     #   bleach
-wheel==0.37.1
+wheel==0.38.2
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
