@@ -17,7 +17,7 @@ asgiref==3.5.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.12.12
+astroid==2.12.13
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -102,7 +102,7 @@ django==3.2.16
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   django-model-utils
-django-model-utils==4.2.0
+django-model-utils==4.3.1
     # via -r requirements/test.txt
 doc8==0.11.2
     # via
@@ -120,7 +120,7 @@ edx-lint==5.3.0
     # via -r requirements/test.txt
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.txt
-exceptiongroup==1.0.1
+exceptiongroup==1.0.4
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -210,13 +210,13 @@ pep517==0.13.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pip-tools==6.9.0
+pip-tools==6.10.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.8.3
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==2.5.3
+platformdirs==2.5.4
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -247,7 +247,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.5
+pylint==2.15.6
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -283,7 +283,7 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/test.txt
     #   arrow
-python-slugify==6.1.2
+python-slugify==7.0.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -380,7 +380,7 @@ sqlparse==0.4.3
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==4.1.0
+stevedore==4.1.1
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -403,7 +403,7 @@ tomlkit==0.11.6
     # via
     #   -r requirements/test.txt
     #   pylint
-tox==3.27.0
+tox==3.27.1
     # via
     #   -r requirements/ci.txt
     #   tox-battery
@@ -422,7 +422,7 @@ urllib3==1.26.12
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.16.6
+virtualenv==20.16.7
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -431,7 +431,7 @@ webencodings==0.5.1
     # via
     #   -r requirements/test.txt
     #   bleach
-wheel==0.38.2
+wheel==0.38.4
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
