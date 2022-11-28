@@ -84,7 +84,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==38.0.3
+cryptography==38.0.4
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -138,7 +138,7 @@ imagesize==1.4.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-importlib-metadata==5.0.0
+importlib-metadata==5.1.0
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -232,7 +232,7 @@ py==1.11.0
     # via
     #   -r requirements/ci.txt
     #   tox
-pycodestyle==2.9.1
+pycodestyle==2.10.0
     # via -r requirements/test.txt
 pycparser==2.21
     # via
@@ -417,7 +417,7 @@ typing-extensions==4.4.0
     #   astroid
     #   pylint
     #   rich
-urllib3==1.26.12
+urllib3==1.26.13
     # via
     #   -r requirements/test.txt
     #   requests
@@ -439,7 +439,7 @@ wrapt==1.14.1
     # via
     #   -r requirements/test.txt
     #   astroid
-zipp==3.10.0
+zipp==3.11.0
     # via
     #   -r requirements/test.txt
     #   importlib-metadata
