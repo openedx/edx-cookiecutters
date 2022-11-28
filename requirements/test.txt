@@ -65,7 +65,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==38.0.3
+cryptography==38.0.4
     # via secretstorage
 dill==0.3.6
     # via
@@ -107,7 +107,7 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==5.0.0
+importlib-metadata==5.1.0
     # via
     #   keyring
     #   sphinx
@@ -172,7 +172,7 @@ platformdirs==2.5.4
     #   virtualenv
 pluggy==1.0.0
     # via pytest
-pycodestyle==2.9.1
+pycodestyle==2.10.0
     # via -r requirements/test.in
 pycparser==2.21
     # via cffi
@@ -309,7 +309,7 @@ typing-extensions==4.4.0
     #   astroid
     #   pylint
     #   rich
-urllib3==1.26.12
+urllib3==1.26.13
     # via
     #   -r requirements/base.txt
     #   requests
@@ -322,5 +322,5 @@ wrapt==1.14.1
     # via
     #   -r requirements/base.txt
     #   astroid
-zipp==3.10.0
+zipp==3.11.0
     # via importlib-metadata
