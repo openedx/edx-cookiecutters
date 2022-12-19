@@ -107,14 +107,16 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==5.1.0
+importlib-metadata==5.2.0
     # via
     #   keyring
     #   sphinx
     #   twine
+importlib-resources==5.10.1
+    # via keyring
 iniconfig==1.1.1
     # via pytest
-isort==5.10.1
+isort==5.11.3
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -136,7 +138,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-keyring==23.11.0
+keyring==23.13.1
     # via twine
 lazy-object-proxy==1.8.0
     # via
@@ -184,7 +186,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.8
+pylint==2.15.9
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -217,7 +219,7 @@ python-slugify==7.0.0
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.6
+pytz==2022.7
     # via
     #   babel
     #   django
@@ -321,4 +323,6 @@ wrapt==1.14.1
     #   -r requirements/base.txt
     #   astroid
 zipp==3.11.0
-    # via importlib-metadata
+    # via
+    #   importlib-metadata
+    #   importlib-resources
