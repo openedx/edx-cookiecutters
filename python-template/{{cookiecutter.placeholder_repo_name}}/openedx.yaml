@@ -17,5 +17,7 @@ openedx-release:
     # The openedx-release key is described in OEP-10:
     #   https://open-edx-proposals.readthedocs.io/en/latest/oep-0010-proc-openedx-releases.html
     # The FAQ might also be helpful: https://openedx.atlassian.net/wiki/spaces/COMM/pages/1331268879/Open+edX+Release+FAQ
+    # Note: This will only work if the repo is in the `openedx` org in github.  Repos in other orgs that have this
+    # setting will still be treated as if they don't want to be part of the Open edX releases.
     maybe: true   # Delete this "maybe" line when you have decided about Open edX inclusion.
     ref: main
