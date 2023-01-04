@@ -13,7 +13,7 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-asgiref==3.5.2
+asgiref==3.6.0
     # via
     #   -r requirements/test.txt
     #   django
@@ -22,7 +22,7 @@ astroid==2.12.13
     #   -r requirements/test.txt
     #   pylint
     #   pylint-celery
-attrs==22.1.0
+attrs==22.2.0
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -120,7 +120,7 @@ edx-lint==5.3.0
     # via -r requirements/test.txt
 edx-sphinx-theme==3.0.0
     # via -r requirements/test.txt
-exceptiongroup==1.0.4
+exceptiongroup==1.1.0
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -138,17 +138,21 @@ imagesize==1.4.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-importlib-metadata==5.1.0
+importlib-metadata==5.2.0
     # via
     #   -r requirements/test.txt
     #   keyring
     #   sphinx
     #   twine
+importlib-resources==5.10.1
+    # via
+    #   -r requirements/test.txt
+    #   keyring
 iniconfig==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-isort==5.10.1
+isort==5.11.4
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -172,7 +176,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-keyring==23.11.0
+keyring==23.13.1
     # via
     #   -r requirements/test.txt
     #   twine
@@ -210,7 +214,7 @@ pep517==0.13.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pip-tools==6.11.0
+pip-tools==6.12.1
     # via -r requirements/pip-tools.txt
 pkginfo==1.9.2
     # via
@@ -247,7 +251,7 @@ pygments==2.13.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.8
+pylint==2.15.9
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -282,7 +286,7 @@ python-slugify==7.0.0
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.6
+pytz==2022.7
     # via
     #   -r requirements/test.txt
     #   babel
@@ -397,7 +401,7 @@ tomlkit==0.11.6
     # via
     #   -r requirements/test.txt
     #   pylint
-tox==3.27.1
+tox==3.28.0
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/ci.txt
@@ -438,6 +442,7 @@ zipp==3.11.0
     # via
     #   -r requirements/test.txt
     #   importlib-metadata
+    #   importlib-resources
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
