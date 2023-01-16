@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-alabaster==0.7.12
+alabaster==0.7.13
     # via sphinx
 arrow==0.13.2
     # via
@@ -28,7 +28,7 @@ binaryornot==0.4.4
     #   cookiecutter
 bleach==5.0.1
     # via readme-renderer
-build==0.9.0
+build==0.10.0
     # via -r requirements/test.in
 certifi==2022.12.7
     # via
@@ -40,7 +40,7 @@ chardet==5.1.0
     # via
     #   -r requirements/base.txt
     #   binaryornot
-charset-normalizer==2.1.1
+charset-normalizer==3.0.1
     # via
     #   -r requirements/base.txt
     #   requests
@@ -159,12 +159,10 @@ packaging==23.0
     #   build
     #   pytest
     #   sphinx
-pbr==5.11.0
+pbr==5.11.1
     # via
     #   -r requirements/base.txt
     #   stevedore
-pep517==0.13.0
-    # via build
 pkginfo==1.9.6
     # via twine
 platformdirs==2.6.2
@@ -186,7 +184,7 @@ pygments==2.14.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.9
+pylint==2.15.10
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -206,7 +204,9 @@ pylint-plugin-utils==0.7
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pytest==7.2.0
+pyproject-hooks==1.0.0
+    # via build
+pytest==7.2.1
     # via pytest-cookies
 pytest-cookies==0.6.1
     # via -r requirements/test.in
@@ -219,7 +219,7 @@ python-slugify==7.0.0
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.7
+pytz==2022.7.1
     # via
     #   babel
     #   django
@@ -230,7 +230,7 @@ pyyaml==6.0
     #   cookiecutter
 readme-renderer==37.3
     # via twine
-requests==2.28.1
+requests==2.28.2
     # via
     #   -r requirements/base.txt
     #   cookiecutter
@@ -243,7 +243,7 @@ restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==13.0.1
+rich==13.1.0
     # via twine
 secretstorage==3.3.3
     # via keyring
@@ -295,8 +295,8 @@ tomli==2.0.1
     # via
     #   -r requirements/base.txt
     #   build
-    #   pep517
     #   pylint
+    #   pyproject-hooks
     #   pytest
 tomlkit==0.11.6
     # via
@@ -310,7 +310,7 @@ typing-extensions==4.4.0
     #   astroid
     #   pylint
     #   rich
-urllib3==1.26.13
+urllib3==1.26.14
     # via
     #   -r requirements/base.txt
     #   requests
