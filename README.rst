@@ -29,14 +29,14 @@ Using the cookiecutters
 .. code-block::
 
   # Clone the repository
-  git clone git@github.com:edx/edx-cookiecutters.git
+  git clone git@github.com:openedx/edx-cookiecutters.git
   cd edx-cookiecutters
 
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
   mkvirtualenv -p python3.8 edx-cookiecutters
 
 2. Create a cookiecutter Repository
-================================
+===================================
 
 These instructions assume you have cloned this repository and are currently in its head dir. You will need a virtualenv for running the cookiecutter. You can discard it once the cookiecutter has made your new repo.
 
@@ -47,12 +47,14 @@ Commands::
     # Replace <COOKIECUTTER-NAME> with one of the available cookiecutters documented above.
     $ cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
 
-3. TODOs after creating cookiecutter
+3. TODOs after running cookiecutter
 ===================================
 
 - Modify project README
 - Modify the "requirements upgrade workflow" at ".github/workflows/upgrade-python-requirements.yml" and add "team_reviewers" and the "email_address" of the team/person
 - Modify project docs/decisions/0001-purpose-of-this-repo.rst ADR
+- Commit and push to GitHub
+- On GitHub, update repo's "About" description
 
 Updating cookiecutters
 **********************
@@ -68,7 +70,7 @@ Directions for contributing to this repository
 .. code-block::
 
   # Clone the repository
-  git clone git@github.com:edx/edx-cookiecutters.git
+  git clone git@github.com:openedx/edx-cookiecutters.git
   cd edx-cookiecutters
 
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
