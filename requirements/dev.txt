@@ -17,7 +17,7 @@ asgiref==3.6.0
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.13.3
+astroid==2.14.1
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -93,7 +93,7 @@ distlib==0.3.6
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==3.2.16
+django==3.2.17
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -213,7 +213,7 @@ pbr==5.11.1
     # via
     #   -r requirements/test.txt
     #   stevedore
-pip-tools==6.12.1
+pip-tools==6.12.2
     # via -r requirements/pip-tools.txt
 pkginfo==1.9.6
     # via
@@ -250,7 +250,7 @@ pygments==2.14.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.10
+pylint==2.16.1
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -363,7 +363,7 @@ sphinxcontrib-devhelp==1.0.2
     # via
     #   -r requirements/test.txt
     #   sphinx
-sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-htmlhelp==2.0.1
     # via
     #   -r requirements/test.txt
     #   sphinx
@@ -443,7 +443,7 @@ wrapt==1.14.1
     # via
     #   -r requirements/test.txt
     #   astroid
-zipp==3.12.0
+zipp==3.12.1
     # via
     #   -r requirements/test.txt
     #   importlib-metadata
