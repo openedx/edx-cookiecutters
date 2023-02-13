@@ -13,7 +13,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.6.0
     # via django
-astroid==2.13.3
+astroid==2.14.2
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -63,7 +63,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==39.0.0
+cryptography==39.0.1
     # via secretstorage
 dill==0.3.6
     # via
@@ -71,7 +71,7 @@ dill==0.3.6
     #   pylint
 distlib==0.3.6
     # via virtualenv
-django==3.2.16
+django==3.2.17
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -82,7 +82,7 @@ doc8==0.11.2
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.in
-docutils==0.17.1
+docutils==0.18.1
     # via
     #   doc8
     #   readme-renderer
@@ -167,7 +167,7 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==2.6.2
+platformdirs==3.0.0
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -186,7 +186,7 @@ pygments==2.14.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.10
+pylint==2.16.1
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -249,7 +249,7 @@ rich==13.3.1
     # via twine
 secretstorage==3.3.3
     # via keyring
-sh==1.14.3
+sh==2.0.1
     # via -r requirements/test.in
 six==1.16.0
     # via
@@ -268,14 +268,16 @@ sphinx==5.3.0
     #   -r requirements/test.in
     #   edx-sphinx-theme
     #   sphinx-rtd-theme
-sphinx-rtd-theme==1.1.1
+sphinx-rtd-theme==1.2.0
     # via -r requirements/test.in
 sphinxcontrib-applehelp==1.0.4
     # via sphinx
 sphinxcontrib-devhelp==1.0.2
     # via sphinx
-sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-htmlhelp==2.0.1
     # via sphinx
+sphinxcontrib-jquery==2.0.0
+    # via sphinx-rtd-theme
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
 sphinxcontrib-qthelp==1.0.3
@@ -284,7 +286,7 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 sqlparse==0.4.3
     # via django
-stevedore==4.1.1
+stevedore==5.0.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -317,7 +319,7 @@ urllib3==1.26.14
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.17.1
+virtualenv==20.19.0
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
@@ -325,7 +327,10 @@ wrapt==1.14.1
     # via
     #   -r requirements/base.txt
     #   astroid
-zipp==3.12.0
+zipp==3.13.0
     # via
     #   importlib-metadata
     #   importlib-resources
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools
