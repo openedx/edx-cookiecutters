@@ -17,7 +17,7 @@ asgiref==3.6.0
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.13.3
+astroid==2.14.2
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -80,7 +80,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==39.0.0
+cryptography==39.0.1
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -93,7 +93,7 @@ distlib==0.3.6
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==3.2.16
+django==3.2.17
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -104,7 +104,7 @@ doc8==0.11.2
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
-docutils==0.17.1
+docutils==0.18.1
     # via
     #   -r requirements/test.txt
     #   doc8
@@ -213,13 +213,13 @@ pbr==5.11.1
     # via
     #   -r requirements/test.txt
     #   stevedore
-pip-tools==6.12.1
+pip-tools==6.12.2
     # via -r requirements/pip-tools.txt
 pkginfo==1.9.6
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==2.6.2
+platformdirs==3.0.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -250,7 +250,7 @@ pygments==2.14.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.15.10
+pylint==2.16.1
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -331,7 +331,7 @@ secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==1.14.3
+sh==2.0.1
     # via -r requirements/test.txt
 six==1.16.0
     # via
@@ -353,7 +353,7 @@ sphinx==5.3.0
     #   -r requirements/test.txt
     #   edx-sphinx-theme
     #   sphinx-rtd-theme
-sphinx-rtd-theme==1.1.1
+sphinx-rtd-theme==1.2.0
     # via -r requirements/test.txt
 sphinxcontrib-applehelp==1.0.4
     # via
@@ -363,10 +363,14 @@ sphinxcontrib-devhelp==1.0.2
     # via
     #   -r requirements/test.txt
     #   sphinx
-sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-htmlhelp==2.0.1
     # via
     #   -r requirements/test.txt
     #   sphinx
+sphinxcontrib-jquery==2.0.0
+    # via
+    #   -r requirements/test.txt
+    #   sphinx-rtd-theme
 sphinxcontrib-jsmath==1.0.1
     # via
     #   -r requirements/test.txt
@@ -383,7 +387,7 @@ sqlparse==0.4.3
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==4.1.1
+stevedore==5.0.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -426,7 +430,7 @@ urllib3==1.26.14
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.17.1
+virtualenv==20.19.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -443,7 +447,7 @@ wrapt==1.14.1
     # via
     #   -r requirements/test.txt
     #   astroid
-zipp==3.12.0
+zipp==3.13.0
     # via
     #   -r requirements/test.txt
     #   importlib-metadata
