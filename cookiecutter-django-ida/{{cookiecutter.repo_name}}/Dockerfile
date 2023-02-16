@@ -42,12 +42,38 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.production
 
 EXPOSE {{cookiecutter.port}}
 RUN useradd -m --shell /bin/false app
 
 WORKDIR /edx/app/{{cookiecutter.repo_name}}
+
+RUN mkdir -p /edx/var/log
+
+# Code is owned by root so it cannot be modified by the application user.
+# So we copy it before changing users.
+USER app
+
+FROM app as dev
+ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.devstack
+
+# Copy the requirements explicitly even though we copy everything below
+# this prevents the image cache from busting unless the dependencies have changed.
+COPY requirements/development.txt /edx/app/{{cookiecutter.repo_name}}/requirements/development.txt
+
+# Dependencies are installed as root so they cannot be modified by the application user.
+RUN pip install -r requirements/development.txt
+
+# Gunicorn 19 does not log to stdout or stderr by default. Once we are past gunicorn 19, the logging to STDOUT need not be specified.
+CMD while true; do python ./manage.py runserver 0.0.0.0:8120; sleep 2; done
+
+# This line is after the requirements so that changes to the code will not
+# bust the image cache
+COPY . /edx/app/{{cookiecutter.repo_name}}
+
+
+FROM app as prod
+ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.production
 
 # Copy the requirements explicitly even though we copy everything below
 # this prevents the image cache from busting unless the dependencies have changed.
@@ -55,12 +81,6 @@ COPY requirements/production.txt /edx/app/{{cookiecutter.repo_name}}/requirement
 
 # Dependencies are installed as root so they cannot be modified by the application user.
 RUN pip install -r requirements/production.txt
-
-RUN mkdir -p /edx/var/log
-
-# Code is owned by root so it cannot be modified by the application user.
-# So we copy it before changing users.
-USER app
 
 # Gunicorn 19 does not log to stdout or stderr by default. Once we are past gunicorn 19, the logging to STDOUT need not be specified.
 CMD gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiecutter.repo_name}}/{{cookiecutter.project_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.project_name}}.wsgi:application
