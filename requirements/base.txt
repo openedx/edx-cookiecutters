@@ -34,7 +34,7 @@ cookiecutter==2.1.1
     # via -r requirements/base.in
 dill==0.3.6
     # via pylint
-edx-lint==5.3.0
+edx-lint==5.3.2
     # via -r requirements/base.in
 idna==3.4
     # via requests
@@ -57,7 +57,7 @@ pbr==5.11.1
     # via stevedore
 platformdirs==3.0.0
     # via pylint
-pylint==2.16.1
+pylint==2.16.2
     # via
     #   edx-lint
     #   pylint-celery
@@ -95,7 +95,7 @@ tomli==2.0.1
     # via pylint
 tomlkit==0.11.6
     # via pylint
-typing-extensions==4.4.0
+typing-extensions==4.5.0
     # via
     #   astroid
     #   pylint

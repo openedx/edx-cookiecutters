@@ -71,7 +71,7 @@ dill==0.3.6
     #   pylint
 distlib==0.3.6
     # via virtualenv
-django==3.2.17
+django==3.2.18
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -89,7 +89,7 @@ docutils==0.18.1
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.3.0
+edx-lint==5.3.2
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -110,7 +110,7 @@ importlib-metadata==6.0.0
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==5.10.2
+importlib-resources==5.12.0
     # via keyring
 iniconfig==2.0.0
     # via pytest
@@ -186,7 +186,7 @@ pygments==2.14.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.16.1
+pylint==2.16.2
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -249,7 +249,7 @@ rich==13.3.1
     # via twine
 secretstorage==3.3.3
     # via keyring
-sh==2.0.1
+sh==2.0.2
     # via -r requirements/test.in
 six==1.16.0
     # via
@@ -308,7 +308,7 @@ tomlkit==0.11.6
     #   pylint
 twine==4.0.2
     # via -r requirements/test.in
-typing-extensions==4.4.0
+typing-extensions==4.5.0
     # via
     #   -r requirements/base.txt
     #   astroid
@@ -327,7 +327,7 @@ wrapt==1.14.1
     # via
     #   -r requirements/base.txt
     #   astroid
-zipp==3.13.0
+zipp==3.14.0
     # via
     #   importlib-metadata
     #   importlib-resources
