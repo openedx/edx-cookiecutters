@@ -26,6 +26,7 @@ RUN apt-get update && apt-get -qy install --no-install-recommends \
  locales \
  python3.8 \
  python3-pip \
+ python3-virtualenv \
  libmysqlclient-dev \
  libssl-dev \
  python3-dev \
@@ -42,6 +43,10 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
+ENV COOKIE_CUTTER_VENV_DIR="/edx/app/{{cookiecutter.repo_name}}/venvs/{{cookiecutter.repo_name}}"
+ENV PATH="$COOKIE_CUTTER_VENV_DIR/bin:$PATH"
+RUN virtualenv -p python3.8 --always-copy ${COOKIE_CUTTER_VENV_DIR}
+
 
 EXPOSE {{cookiecutter.port}}
 RUN useradd -m --shell /bin/false app
@@ -64,8 +69,7 @@ COPY requirements/development.txt /edx/app/{{cookiecutter.repo_name}}/requiremen
 # Dependencies are installed as root so they cannot be modified by the application user.
 RUN pip install -r requirements/development.txt
 
-# Gunicorn 19 does not log to stdout or stderr by default. Once we are past gunicorn 19, the logging to STDOUT need not be specified.
-CMD while true; do python ./manage.py runserver 0.0.0.0:8120; sleep 2; done
+CMD while true; do python ./manage.py runserver 0.0.0.0:{{cookiecutter.port}}; sleep 2; done
 
 # This line is after the requirements so that changes to the code will not
 # bust the image cache
