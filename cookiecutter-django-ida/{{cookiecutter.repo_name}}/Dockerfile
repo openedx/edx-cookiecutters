@@ -71,8 +71,6 @@ CMD while true; do python ./manage.py runserver 0.0.0.0:{{cookiecutter.port}}; s
 # bust the image cache
 COPY . /edx/app/{{cookiecutter.repo_name}}
 
-# Code is owned by root so it cannot be modified by the application user.
-# So we copy it before changing users.
 USER app
 
 
@@ -86,13 +84,10 @@ COPY requirements/production.txt /edx/app/{{cookiecutter.repo_name}}/requirement
 # Dependencies are installed as root so they cannot be modified by the application user.
 RUN pip install -r requirements/production.txt
 
-# Gunicorn 19 does not log to stdout or stderr by default. Once we are past gunicorn 19, the logging to STDOUT need not be specified.
 CMD gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiecutter.repo_name}}/{{cookiecutter.project_name}}/docker_gunicorn_configuration.py --log-file - --max-requests=1000 {{cookiecutter.project_name}}.wsgi:application
 
 # This line is after the requirements so that changes to the code will not
 # bust the image cache
 COPY . /edx/app/{{cookiecutter.repo_name}}
 
-# Code is owned by root so it cannot be modified by the application user.
-# So we copy it before changing users.
 USER app
