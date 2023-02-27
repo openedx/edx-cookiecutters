@@ -55,25 +55,25 @@ WORKDIR /edx/app/{{cookiecutter.repo_name}}
 
 RUN mkdir -p /edx/var/log
 
-# Code is owned by root so it cannot be modified by the application user.
-# So we copy it before changing users.
-USER app
-
 FROM app as dev
 ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.devstack
 
 # Copy the requirements explicitly even though we copy everything below
 # this prevents the image cache from busting unless the dependencies have changed.
-COPY requirements/development.txt /edx/app/{{cookiecutter.repo_name}}/requirements/development.txt
+COPY requirements/dev.txt /edx/app/{{cookiecutter.repo_name}}/requirements/dev.txt
 
 # Dependencies are installed as root so they cannot be modified by the application user.
-RUN pip install -r requirements/development.txt
+RUN pip install -r requirements/dev.txt
 
 CMD while true; do python ./manage.py runserver 0.0.0.0:{{cookiecutter.port}}; sleep 2; done
 
 # This line is after the requirements so that changes to the code will not
 # bust the image cache
 COPY . /edx/app/{{cookiecutter.repo_name}}
+
+# Code is owned by root so it cannot be modified by the application user.
+# So we copy it before changing users.
+USER app
 
 
 FROM app as prod
@@ -92,3 +92,7 @@ CMD gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiec
 # This line is after the requirements so that changes to the code will not
 # bust the image cache
 COPY . /edx/app/{{cookiecutter.repo_name}}
+
+# Code is owned by root so it cannot be modified by the application user.
+# So we copy it before changing users.
+USER app
