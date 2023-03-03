@@ -73,7 +73,7 @@ pylint-plugin-utils==0.7
     #   pylint-django
 python-dateutil==2.8.2
     # via arrow
-python-slugify==8.0.0
+python-slugify==8.0.1
     # via
     #   code-annotations
     #   cookiecutter
@@ -101,5 +101,5 @@ typing-extensions==4.5.0
     #   pylint
 urllib3==1.26.14
     # via requests
-wrapt==1.14.1
+wrapt==1.15.0
     # via astroid
