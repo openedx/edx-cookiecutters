@@ -8,7 +8,7 @@ arrow==0.13.2
     # via
     #   -c requirements/constraints.txt
     #   jinja2-time
-astroid==2.14.2
+astroid==2.15.0
     # via
     #   pylint
     #   pylint-celery
@@ -55,9 +55,9 @@ mccabe==0.7.0
     # via pylint
 pbr==5.11.1
     # via stevedore
-platformdirs==3.0.0
+platformdirs==3.1.0
     # via pylint
-pylint==2.16.2
+pylint==2.16.3
     # via
     #   edx-lint
     #   pylint-celery
