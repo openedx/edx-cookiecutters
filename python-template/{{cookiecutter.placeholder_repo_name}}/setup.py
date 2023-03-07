@@ -6,7 +6,7 @@ import os
 import re
 import sys
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 {%- set license_classifiers = ['AGPL 3.0', 'Apache Software License 2.0'] %}
 
@@ -92,7 +92,8 @@ def is_requirement(line):
 
 {% if cookiecutter.setup_py_loading_pkg_data == "yes" %}
 def package_data(pkg, roots):
-    """Generic function to find package_data.
+    """
+    Declare package_data based on `roots`.
 
     All of the files under each of the `roots` will be declared as package
     data for package `pkg`.
@@ -125,10 +126,12 @@ setup(
     long_description=README + '\n\n' + CHANGELOG,
     author='edX',
     author_email='oscm@edx.org',
-    url='https://github.com/edx/{{ cookiecutter.repo_name }}',
-    packages=[
-        '{{ cookiecutter.sub_dir_name }}',
-    ],
+    url='https://github.com/openedx/{{ cookiecutter.repo_name }}',
+    packages=find_packages(
+        include=['{{ cookiecutter.sub_dir_name }}', '{{ cookiecutter.sub_dir_name }}.*'],
+        exclude=["*tests"],
+    ),
+
     include_package_data=True,
     install_requires=load_requirements('requirements/base.in'),
     python_requires=">=3.8",

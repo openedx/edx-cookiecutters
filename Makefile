@@ -36,6 +36,7 @@ upgrade_template: export CUSTOM_COMPILE_COMMAND=make upgrade
 upgrade_template: ## update the requirements/pip-tools.txt files within our cookiecutter template code with the latest packages satisfying requirements
 	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) --rebuild -o "$(REQ_PATH)/pip-tools.txt" "$(REQ_PATH)/pip-tools.in"
+	$(PIP_COMPILE) --allow-unsafe --rebuild -o "$(REQ_PATH)/pip.txt" "$(REQ_PATH)/pip.in"
 
 quality: ## check coding style with pycodestyle and pylint
 	pylint */hooks/pre_gen_project.py */hooks/post_gen_project.py

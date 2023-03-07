@@ -30,7 +30,7 @@ Usage
 
 To create a project using this cookiecutter, follow the instructions found in edx-cookiecutter's `readme`_.
 
-.. _readme: https://github.com/edx/edx-cookiecutters/blob/master/README.rst
+.. _readme: https://github.com/openedx/edx-cookiecutters/blob/master/README.rst
 
 
 After the new folder is created, you will need to:
@@ -76,12 +76,12 @@ Documentation
 
 Sphinx is set up for your project in the ``docs`` directory. All developer documentation should be added here (as opposed to a long README file). Doing this also has the added benefit of giving you a good starting point when the time comes to open source your project!
 
-Sphinx is themed with the common edX theme `edx-sphinx-theme <https://github.com/edx/edx-sphinx-theme>`_ by default. If you wish to publish your documentation to Read the Docs you will need to make sure to take the steps `outlined here <https://edx-sphinx-theme.readthedocs.io/en/latest/readme.html#read-the-docs-configuration>`_.
+Sphinx is themed with the common edX theme `edx-sphinx-theme <https://github.com/openedx/edx-sphinx-theme>`_ by default. If you wish to publish your documentation to Read the Docs you will need to make sure to take the steps `outlined here <https://edx-sphinx-theme.readthedocs.io/en/latest/readme.html#read-the-docs-configuration>`_.
 
 How To Contribute
 *****************
 
-Contributions are welcome. Please read `How To Contribute <https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details. Even though it was written with ``edx-platform`` in mind, these guidelines should be followed for Open edX code in general.
+Contributions are welcome. Please read `How To Contribute <https://github.com/openedx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details. Even though it was written with ``edx-platform`` in mind, these guidelines should be followed for Open edX code in general.
 
 Testing
 =======

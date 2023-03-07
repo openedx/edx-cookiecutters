@@ -42,7 +42,7 @@ Mark translatable strings in python::
     # Translators: This comment will appear in the `.po` file.
     message = _("This will be marked.")
 
-See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#python-source-code>`_
+See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#python-source-code>`__
 for more information.
 
 You can also use ``gettext`` to mark strings in javascript::
@@ -51,14 +51,14 @@ You can also use ``gettext`` to mark strings in javascript::
     // Translators: This comment will appear in the `.po` file.
     var message = gettext("Custom message.");
 
-See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#javascript-files>`_
+See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#javascript-files>`__
 for more information.
 
 2. Run i18n tools to create Raw message catalogs
 =================================================
 
 This cookiecutter template offers multiple make targets which are shortcuts to
-use `edx-i18n-tools <https://github.com/edx/i18n-tools>`_.
+use `edx-i18n-tools <https://github.com/openedx/i18n-tools>`_.
 
 After marking strings as translatable we have to create the raw message catalogs.
 These catalogs are created in ``.po`` files. For more information see
@@ -99,7 +99,7 @@ To use translations from transifex use the follow Make target to pull translatio
 
     $ make pull_translations
 
-See `config instructions <https://github.com/edx/i18n-tools#transifex-commands>`_ for information on how to set up your
+See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
 transifex credentials.
 
 See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
@@ -122,7 +122,7 @@ To upload translations to transiflex use the follow Make target::
 
     $ make push_translations
 
-See `config instructions <https://github.com/edx/i18n-tools#transifex-commands>`_ for information on how to set up your
+See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
 transifex credentials.
 
 See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating

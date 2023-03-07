@@ -3,4 +3,4 @@ include LICENSE.txt
 include README.rst
 include requirements/base.in
 include requirements/constraints.txt
-recursive-include {{cookiecutter.sub_dir_name}} *.html *.png *.gif *.js *.css *.jpg *.jpeg *.svg *.py
+recursive-include {{cookiecutter.sub_dir_name}} *.html *.png *.gif *.js *.css *.jpg *.jpeg *.svg

@@ -1,10 +1,9 @@
 """TO-DO: Write a description of what this XBlock is."""
 
 import pkg_resources
-
 from django.utils import translation
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer
+from xblock.fields import Integer, Scope
 from xblock.fragment import Fragment
 from xblockutils.resources import ResourceLoader
 
@@ -34,6 +33,8 @@ class {{cookiecutter.class_name}}(XBlock):
         The primary view of the {{cookiecutter.class_name}}, shown to students
         when viewing courses.
         """
+        if context:
+            pass  # TO-DO: do something based on the context.
         html = self.resource_string("static/html/{{cookiecutter.package_name}}.html")
         frag = Fragment(html.format(self=self))
         frag.add_css(self.resource_string("static/css/{{cookiecutter.package_name}}.css"))
@@ -54,6 +55,8 @@ class {{cookiecutter.class_name}}(XBlock):
         """
         An example handler, which increments the data.
         """
+        if suffix:
+            pass  # TO-DO: Use the suffix when storing data.
         # Just to show data coming in...
         assert data['hello'] == 'world'
 

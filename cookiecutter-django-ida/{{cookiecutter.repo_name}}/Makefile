@@ -110,9 +110,9 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
 	$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
 	$(PIP_COMPILE) -o requirements/quality.txt requirements/quality.in
+	$(PIP_COMPILE) -o requirements/validation.txt requirements/validation.in
 	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
 	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
-	$(PIP_COMPILE) -o requirements/validation.txt requirements/validation.in
 	$(PIP_COMPILE) -o requirements/production.txt requirements/production.in
 	# Let tox control the Django version for tests
 	grep -e "^django==" requirements/base.txt > requirements/django.txt
@@ -132,7 +132,7 @@ compile_translations: # compile translation files, outputting .po files for each
 fake_translations: ## generate and compile dummy translation files
 
 pull_translations: ## pull translations from Transifex
-	tx pull -af --mode reviewed
+	tx pull -af -t --mode reviewed
 
 push_translations: ## push source translation files (.po) from Transifex
 	tx push -s
@@ -144,7 +144,7 @@ open-devstack: ## open a shell on the server started by start-devstack
 	docker exec -it {{cookiecutter.repo_name}} /edx/app/{{cookiecutter.repo_name}}/devstack.sh open
 
 pkg-devstack: ## build the {{cookiecutter.repo_name}} image from the latest configuration and code
-	docker build -t {{cookiecutter.repo_name}}:latest -f docker/build/{{cookiecutter.repo_name}}/Dockerfile git://github.com/edx/configuration
+	docker build -t {{cookiecutter.repo_name}}:latest -f docker/build/{{cookiecutter.repo_name}}/Dockerfile git://github.com/openedx/configuration
 
 detect_changed_source_translations: ## check if translation files are up-to-date
 	cd {{cookiecutter.project_name}} && i18n_tool changed

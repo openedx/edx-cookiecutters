@@ -5,7 +5,7 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2022-08-12
+2023-03-07
 **********
 
 Changed
@@ -13,6 +13,16 @@ Changed
 
 - Updated generated PR template to be more concise
 
+2022-08-15
+**********
+
+.. I wish we used a tool to manage changelogs so that I didn't have to choose
+    a date when I made a commit, since I don't know what date the change will
+    be merged...
+
+- Added explicit PLACEHOLDER and TODO markers to the README to make clear where
+  edits are needed.
+  
 2022-08-08
 **********
 
@@ -20,6 +30,9 @@ Changed
 =======
 
 - Re-ruled all the RST files to match the new docs guidance.
+- Update template README.rst to match `OEP-55 Guidelines`_
+
+.. _OEP-55 Guidelines: https://open-edx-proposals.readthedocs.io/en/latest/processes/oep-0055/decisions/0003-readme-specification.html
 
 2022-07-17
 **********
