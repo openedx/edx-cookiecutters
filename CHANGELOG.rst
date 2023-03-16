@@ -11,7 +11,7 @@ Change Log
 Changed
 =======
 
-- Updated generated PR template to be more concise
+- Updated generated PR templates to be as small as possible, with checklists customized to repo type
 
 2023-03-16
 **********
