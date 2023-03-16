@@ -5,7 +5,7 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2023-03-07
+2023-03-17
 **********
 
 Changed
@@ -13,12 +13,13 @@ Changed
 
 - Updated generated PR template to be more concise
 
-2022-08-15
+2023-03-16
 **********
 
-.. I wish we used a tool to manage changelogs so that I didn't have to choose
-    a date when I made a commit, since I don't know what date the change will
-    be merged...
+- Move ``check-reserved-keywords.yml`` to correct place for IDA. (Was not ending up in output at all since `<https://github.com/openedx/edx-cookiecutters/pull/215>`_.)
+
+2022-08-15
+**********
 
 - Added explicit PLACEHOLDER and TODO markers to the README to make clear where
   edits are needed.
