@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-03-17
+**********
+
+Changed
+=======
+
+- Updated generated PR templates to be as small as possible, with checklists customized to repo type
+
 2023-03-16
 **********
 
