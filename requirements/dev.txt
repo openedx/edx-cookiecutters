@@ -112,7 +112,7 @@ docutils==0.18.1
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.3.2
+edx-lint==5.3.4
     # via -r requirements/test.txt
 edx-sphinx-theme==3.1.0
     # via -r requirements/test.txt
@@ -120,7 +120,7 @@ exceptiongroup==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-filelock==3.9.0
+filelock==3.10.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -134,7 +134,7 @@ imagesize==1.4.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-importlib-metadata==6.0.0
+importlib-metadata==6.1.0
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -353,6 +353,7 @@ sphinx==5.3.0
     #   -r requirements/test.txt
     #   edx-sphinx-theme
     #   sphinx-rtd-theme
+    #   sphinxcontrib-jquery
 sphinx-rtd-theme==1.2.0
     # via -r requirements/test.txt
 sphinxcontrib-applehelp==1.0.4
@@ -367,7 +368,7 @@ sphinxcontrib-htmlhelp==2.0.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-sphinxcontrib-jquery==2.0.0
+sphinxcontrib-jquery==4.1
     # via
     #   -r requirements/test.txt
     #   sphinx-rtd-theme
@@ -439,7 +440,7 @@ webencodings==0.5.1
     # via
     #   -r requirements/test.txt
     #   bleach
-wheel==0.38.4
+wheel==0.40.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
