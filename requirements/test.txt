@@ -89,7 +89,7 @@ docutils==0.18.1
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.3.2
+edx-lint==5.3.4
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -97,7 +97,7 @@ edx-sphinx-theme==3.1.0
     # via -r requirements/test.in
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.9.0
+filelock==3.10.0
     # via virtualenv
 idna==3.4
     # via
@@ -105,7 +105,7 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==6.0.0
+importlib-metadata==6.1.0
     # via
     #   keyring
     #   sphinx
@@ -268,6 +268,7 @@ sphinx==5.3.0
     #   -r requirements/test.in
     #   edx-sphinx-theme
     #   sphinx-rtd-theme
+    #   sphinxcontrib-jquery
 sphinx-rtd-theme==1.2.0
     # via -r requirements/test.in
 sphinxcontrib-applehelp==1.0.4
@@ -276,7 +277,7 @@ sphinxcontrib-devhelp==1.0.2
     # via sphinx
 sphinxcontrib-htmlhelp==2.0.1
     # via sphinx
-sphinxcontrib-jquery==2.0.0
+sphinxcontrib-jquery==4.1
     # via sphinx-rtd-theme
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
@@ -331,6 +332,3 @@ zipp==3.15.0
     # via
     #   importlib-metadata
     #   importlib-resources
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
