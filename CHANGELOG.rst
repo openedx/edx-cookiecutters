@@ -5,6 +5,16 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-04-20
+**********
+
+Changed
+=======
+
+- Switched to ``sphinx-book-theme`` as the new standard theme across all Open
+  edX repos.  See https://github.com/openedx/edx-sphinx-theme/issues/184 for
+  more details.
+
 2023-04-18
 **********
 
@@ -54,7 +64,7 @@ Changed
 
 - Added explicit PLACEHOLDER and TODO markers to the README to make clear where
   edits are needed.
-  
+
 2022-08-08
 **********
 
