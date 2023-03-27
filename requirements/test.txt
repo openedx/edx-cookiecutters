@@ -13,7 +13,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.6.0
     # via django
-astroid==2.15.0
+astroid==2.15.1
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -63,7 +63,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==39.0.2
+cryptography==40.0.1
     # via secretstorage
 dill==0.3.6
     # via
@@ -97,7 +97,7 @@ edx-sphinx-theme==3.1.0
     # via -r requirements/test.in
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.10.0
+filelock==3.10.6
     # via virtualenv
 idna==3.4
     # via
@@ -167,7 +167,7 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==3.1.1
+platformdirs==3.2.0
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -186,7 +186,7 @@ pygments==2.14.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.17.0
+pylint==2.17.1
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -210,7 +210,7 @@ pyproject-hooks==1.0.0
     # via build
 pytest==7.2.2
     # via pytest-cookies
-pytest-cookies==0.6.1
+pytest-cookies==0.7.0
     # via -r requirements/test.in
 python-dateutil==2.8.2
     # via
@@ -221,7 +221,7 @@ python-slugify==8.0.1
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.7.1
+pytz==2023.2
     # via
     #   babel
     #   django
@@ -249,7 +249,7 @@ rich==13.3.2
     # via twine
 secretstorage==3.3.3
     # via keyring
-sh==2.0.2
+sh==2.0.3
     # via -r requirements/test.in
 six==1.16.0
     # via

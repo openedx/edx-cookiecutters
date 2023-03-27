@@ -17,7 +17,7 @@ asgiref==3.6.0
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.15.0
+astroid==2.15.1
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -80,7 +80,7 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==39.0.2
+cryptography==40.0.1
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -120,7 +120,7 @@ exceptiongroup==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-filelock==3.10.0
+filelock==3.10.6
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -219,7 +219,7 @@ pkginfo==1.9.6
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==3.1.1
+platformdirs==3.2.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -250,7 +250,7 @@ pygments==2.14.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.17.0
+pylint==2.17.1
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -279,7 +279,7 @@ pytest==7.2.2
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-pytest-cookies==0.6.1
+pytest-cookies==0.7.0
     # via -r requirements/test.txt
 python-dateutil==2.8.2
     # via
@@ -290,7 +290,7 @@ python-slugify==8.0.1
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-pytz==2022.7.1
+pytz==2023.2
     # via
     #   -r requirements/test.txt
     #   babel
@@ -331,7 +331,7 @@ secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==2.0.2
+sh==2.0.3
     # via -r requirements/test.txt
 six==1.16.0
     # via
