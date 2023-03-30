@@ -120,12 +120,15 @@ def test_github_actions_ci():
     assert 'pip install -r requirements/ci.txt' in ci_text
 
 
-def test_app_config(options_baked):
-    """The generated Django AppConfig should look correct."""
+def test_dunder_init(options_baked):
+    """The generated init file should have at least the version string."""
     init_text = Path("cookie_lover/__init__.py").read_text()
-    pattern = r"^default_app_config = 'cookie_lover.apps.CookieLoverConfig'  #"
+    pattern = r"^__version__ = "
     assert re.search(pattern, init_text, re.MULTILINE)
 
+
+def test_app_config(options_baked):
+    """The generated Django AppConfig should have an AppConfig subclass."""
     apps_text = Path("cookie_lover/apps.py").read_text()
     pattern = r'^class CookieLoverConfig\(AppConfig\):$'
     assert re.search(pattern, apps_text, re.MULTILINE)
