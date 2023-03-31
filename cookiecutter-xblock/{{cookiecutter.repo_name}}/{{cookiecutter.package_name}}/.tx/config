@@ -1,3 +1,8 @@
 [main]
 host = https://www.transifex.com
 
+[o:open-edx:p:p:xblocks:r:{{cookiecutter.repo_name}}]
+file_filter = {{cookiecutter.package_name}}/translations/<lang>/LC_MESSAGES/text.po
+source_file = {{cookiecutter.package_name}}/translations/en/LC_MESSAGES/text.po
+source_lang = en
+type        = PO

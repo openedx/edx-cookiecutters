@@ -1,14 +1,14 @@
 [main]
 host = https://www.transifex.com
 
-[edx-platform.{{cookiecutter.repo_name}}]
+[o:open-edx:p:edx-platform:r:{{cookiecutter.repo_name}}]
 file_filter = {{cookiecutter.project_name}}/conf/locale/<lang>/LC_MESSAGES/django.po
 source_file = {{cookiecutter.project_name}}/conf/locale/en/LC_MESSAGES/django.po
 source_lang = en
-type = PO
+type        = PO
 
-[edx-platform.{{cookiecutter.repo_name}}-js]
+[o:open-edx:p:edx-platform:r:{{cookiecutter.repo_name}}-js]
 file_filter = {{cookiecutter.project_name}}/conf/locale/<lang>/LC_MESSAGES/djangojs.po
 source_file = {{cookiecutter.project_name}}/conf/locale/en/LC_MESSAGES/djangojs.po
 source_lang = en
-type = PO
+type        = PO
