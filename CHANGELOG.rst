@@ -11,6 +11,7 @@ Change Log
 Changed
 =======
 
+- Remove deprecated codecov CI package in requirements/ci.in
 - Added linebreaks to root urls.py docstring for cookiecutter-django-ida to squash Sphinx error.
 
 2023-03-17
