@@ -1,7 +1,7 @@
 [run]
 branch = True
 data_file = .coverage
-source={{cookiecutter.repo_name}}
+source={{cookiecutter.project_name}}
 omit =
     {{cookiecutter.project_name}}/settings*
     {{cookiecutter.project_name}}/conf*
