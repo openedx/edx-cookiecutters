@@ -5,6 +5,16 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-04-11
+**********
+
+Changed
+=======
+
+- Updated upgrade-python-requirements.yml GitHub Action to latest from `upgrade-python-requirements.yml template`_.
+
+     .. _`upgrade-python-requirements.yml template`: https://github.com/openedx/.github/blob/master/workflow-templates/upgrade-python-requirements.yml
+
 2023-03-17
 **********
 
