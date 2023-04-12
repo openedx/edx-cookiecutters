@@ -12,7 +12,10 @@ Changed
 =======
 
 - Updated upgrade-python-requirements.yml GitHub Action to latest from `upgrade-python-requirements.yml template`_.
+- Remove deprecated codecov CI package in requirements/ci.in
 - Added linebreaks to root urls.py docstring for cookiecutter-django-ida to squash Sphinx error.
+- Fixed cookiecutter-django-ida .coveragerc file so it references project_name, not source_name.
+- Fixed .github/workflow/ci.yml so it uploads coverage reports in the tox env that the coverage files are generated in.
 
 .. _`upgrade-python-requirements.yml template`: https://github.com/openedx/.github/blob/master/workflow-templates/upgrade-python-requirements.yml
 
