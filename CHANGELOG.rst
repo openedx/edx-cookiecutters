@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-04-11
+**********
+
+Changed
+=======
+
+- Added linebreaks to root urls.py docstring for cookiecutter-django-ida to squash Sphinx error.
+
 2023-03-17
 **********
 
