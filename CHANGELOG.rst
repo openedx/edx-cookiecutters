@@ -13,6 +13,8 @@ Changed
 
 - Remove deprecated codecov CI package in requirements/ci.in
 - Added linebreaks to root urls.py docstring for cookiecutter-django-ida to squash Sphinx error.
+- Fixed cookiecutter-django-ida .coveragerc file so it references project_name, not source_name.
+- Fixed .github/workflow/ci.yml so it uploads coverage reports in the tox env that the coverage files are generated in.
 
 2023-03-17
 **********
