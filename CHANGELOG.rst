@@ -12,8 +12,10 @@ Changed
 =======
 
 - Updated upgrade-python-requirements.yml GitHub Action to latest from `upgrade-python-requirements.yml template`_.
+- Added linebreaks to root urls.py docstring for cookiecutter-django-ida to squash Sphinx error.
 
-     .. _`upgrade-python-requirements.yml template`: https://github.com/openedx/.github/blob/master/workflow-templates/upgrade-python-requirements.yml
+.. _`upgrade-python-requirements.yml template`: https://github.com/openedx/.github/blob/master/workflow-templates/upgrade-python-requirements.yml
+
 
 2023-03-17
 **********
