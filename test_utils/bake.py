@@ -34,5 +34,5 @@ def bake_in_temp_dir(cookies, *args, **kwargs):
     result = cookies.bake(*args, **kwargs)
     if result.exception:
         raise result.exception
-    with inside_dir(str(result.project)):
+    with inside_dir(str(result.project_path)):
         yield
