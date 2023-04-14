@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-04-14
+**********
+
+Fixed
+=====
+
+- Removed ``default_app_config`` from django-app cookiecutter output's dunder-init file (deprecated in Django 3, removed in Django 4)
+
 2023-04-11
 **********
 
