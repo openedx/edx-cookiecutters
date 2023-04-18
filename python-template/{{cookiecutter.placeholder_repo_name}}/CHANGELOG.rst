@@ -16,8 +16,8 @@ Unreleased
 
 *
 
-[{{ cookiecutter.version }}] - {% now 'local' %}
-************************************************
+{{ cookiecutter.version }} – {% now 'local' %}
+**********************************************
 
 Added
 =====
