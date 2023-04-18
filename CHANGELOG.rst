@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-04-18
+**********
+
+Fixed
+=====
+
+- Corrected the punctuation of changelog entries.
+
 2023-04-14
 **********
 
