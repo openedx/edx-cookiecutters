@@ -4,6 +4,8 @@
 #
 #    make upgrade
 #
+accessible-pygments==0.0.4
+    # via pydata-sphinx-theme
 alabaster==0.7.13
     # via sphinx
 arrow==0.13.2
@@ -19,7 +21,11 @@ astroid==2.15.3
     #   pylint
     #   pylint-celery
 babel==2.12.1
-    # via sphinx
+    # via
+    #   pydata-sphinx-theme
+    #   sphinx
+beautifulsoup4==4.12.2
+    # via pydata-sphinx-theme
 binaryornot==0.4.4
     # via
     #   -r requirements/base.txt
@@ -83,6 +89,7 @@ doc8==0.11.2
 docutils==0.18.1
     # via
     #   doc8
+    #   pydata-sphinx-theme
     #   readme-renderer
     #   restructuredtext-lint
     #   sphinx
@@ -91,11 +98,9 @@ edx-lint==5.3.4
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
-edx-sphinx-theme==3.1.0
-    # via -r requirements/test.in
 exceptiongroup==1.1.1
     # via pytest
-filelock==3.11.0
+filelock==3.12.0
     # via virtualenv
 idna==3.4
     # via
@@ -103,7 +108,7 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==6.4.1
+importlib-metadata==6.5.0
     # via
     #   keyring
     #   sphinx
@@ -157,6 +162,7 @@ more-itertools==9.1.0
 packaging==23.1
     # via
     #   build
+    #   pydata-sphinx-theme
     #   pytest
     #   sphinx
 pbr==5.11.1
@@ -176,11 +182,15 @@ pycodestyle==2.10.0
     # via -r requirements/test.in
 pycparser==2.21
     # via cffi
+pydata-sphinx-theme==0.13.3
+    # via sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.in
-pygments==2.15.0
+pygments==2.15.1
     # via
+    #   accessible-pygments
     #   doc8
+    #   pydata-sphinx-theme
     #   readme-renderer
     #   rich
     #   sphinx
@@ -254,19 +264,23 @@ six==1.16.0
     #   -r requirements/base.txt
     #   bleach
     #   edx-lint
-    #   edx-sphinx-theme
     #   python-dateutil
 snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
+soupsieve==2.4.1
+    # via beautifulsoup4
 sphinx==5.3.0
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
-    #   edx-sphinx-theme
+    #   pydata-sphinx-theme
+    #   sphinx-book-theme
     #   sphinx-rtd-theme
     #   sphinxcontrib-jquery
+sphinx-book-theme==1.0.1
+    # via -r requirements/test.in
 sphinx-rtd-theme==1.2.0
     # via -r requirements/test.in
 sphinxcontrib-applehelp==1.0.4
@@ -283,7 +297,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sqlparse==0.4.3
+sqlparse==0.4.4
     # via django
 stevedore==5.0.0
     # via
@@ -311,6 +325,7 @@ typing-extensions==4.5.0
     # via
     #   -r requirements/base.txt
     #   astroid
+    #   pydata-sphinx-theme
     #   pylint
     #   rich
 urllib3==1.26.15
@@ -318,7 +333,7 @@ urllib3==1.26.15
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.21.0
+virtualenv==20.22.0
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach

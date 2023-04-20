@@ -15,6 +15,9 @@ Contents:
 
    readme
    getting_started
+   quickstarts/index
+   concepts/index
+   how-tos/index
    testing
    internationalization
    modules
@@ -23,6 +26,7 @@ Contents:
    {%- if cookiecutter.if_features_docs == "yes" %}
    features
    {%- endif %}
+   references/index
 
 
 Indices and tables

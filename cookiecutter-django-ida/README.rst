@@ -76,7 +76,7 @@ Documentation
 
 Sphinx is set up for your project in the ``docs`` directory. All developer documentation should be added here (as opposed to a long README file). Doing this also has the added benefit of giving you a good starting point when the time comes to open source your project!
 
-Sphinx is themed with the common edX theme `edx-sphinx-theme <https://github.com/openedx/edx-sphinx-theme>`_ by default. If you wish to publish your documentation to Read the Docs you will need to make sure to take the steps `outlined here <https://edx-sphinx-theme.readthedocs.io/en/latest/readme.html#read-the-docs-configuration>`_.
+Sphinx is themed with the Sphinx book theme `sphinx-book-theme <https://github.com/executablebooks/sphinx-book-theme>`_ by default. If you wish to publish your documentation to Read the Docs you will need to make sure to take the steps `outlined here <https://openedx.atlassian.net/wiki/spaces/DOC/pages/3723755596/How+to+Add+a+Repo+to+ReadTheDocs>`_.
 
 How To Contribute
 *****************

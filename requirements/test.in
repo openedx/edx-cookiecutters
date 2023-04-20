@@ -6,7 +6,7 @@
 Django                    # For pylint import checks of the generated output
 django-model-utils        # For pylint import checks of the generated output
 edx-lint                  # edX pylint rules and plugins
-edx-sphinx-theme          # For pylint import checks of the generated output
+sphinx-book-theme         # For pylint import checks of the generated output
 isort                     # to standardize order of imports
 pycodestyle               # PEP 8 compliance validation
 pydocstyle                # PEP 257 compliance validation
