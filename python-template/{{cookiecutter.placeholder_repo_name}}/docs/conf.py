@@ -99,7 +99,7 @@ top_level_doc = 'index'
 # General information about the project.
 project = '{{ cookiecutter.project_name }}'
 copyright = f'{datetime.now().year}, edX Inc.'  # pylint: disable=redefined-builtin
-author = 'edX Inc.'
+author = 'Axim Collaborative, Inc.'
 project_title = '{{ cookiecutter.project_name }}'
 documentation_title = f"{project_title}"
 
