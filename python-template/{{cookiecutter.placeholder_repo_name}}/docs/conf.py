@@ -215,7 +215,7 @@ html_theme_options = {
                 href="https://openedx.org"
                 property="cc:attributionName"
                 rel="cc:attributionURL"
-            >The Axim Collaborative</a>
+            >Axim Collaborative, Inc</a>
         are licensed under a
             <a
                 rel="license"
