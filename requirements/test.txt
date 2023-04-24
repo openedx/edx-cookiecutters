@@ -108,7 +108,7 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==6.5.0
+importlib-metadata==6.6.0
     # via
     #   keyring
     #   sphinx
