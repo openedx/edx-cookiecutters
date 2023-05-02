@@ -41,8 +41,8 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 piptools: ## install pinned version of pip-compile and pip-sync
 	pip install -r requirements/pip.txt
 	pip install -r requirements/pip-tools.txt
-	
-requirements: piptools## install development environment requirements
+
+requirements: piptools ## install development environment requirements
 	pip-sync -q requirements/dev.txt requirements/private.*
 
 dev.clean:

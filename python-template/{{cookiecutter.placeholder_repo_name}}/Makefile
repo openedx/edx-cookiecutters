@@ -57,10 +57,11 @@ quality: ## check coding style with pycodestyle and pylint
 	twine check dist/*
 	make selfcheck
 
-
-requirements: ## install development environment requirements
+piptools: ## install pinned version of pip-compile and pip-sync
 	pip install -r requirements/pip.txt
 	pip install -r requirements/pip-tools.txt
+
+requirements: piptools ## install development environment requirements
 	pip-sync requirements/dev.txt requirements/private.*
 
 test: clean ## run tests in the current virtualenv
