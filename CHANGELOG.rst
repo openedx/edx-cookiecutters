@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-05-02
+**********
+
+Removed
+=======
+
+- Removed ``clean_pycrypto`` from IDA cookiecutter Makefile
+
 2023-04-20
 **********
 
