@@ -5,6 +5,24 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-05-10
+**********
+
+Fixed
+=====
+
+- Add missing ``docs`` Makefile target to ``cookiecutter-django-ida`` and suppressed long-line lint as appropriate
+
+Changed
+=======
+
+- Use short version of ``BROWSER`` script in django-ida Makefile to match others
+
+Added
+=====
+
+- Improve testing for ``cookiecutter-django-ida`` (migrations, quality check, docker image build, docs build)
+
 2023-05-04
 **********
 

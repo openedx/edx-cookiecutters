@@ -1,2 +1,0 @@
-cookiecutter
-edx-lint
