@@ -5,6 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-05-03
+**********
+
+Fixed
+=====
+
+- Ensure ``cookiecutter-django-ida`` Makefile installs pip-tools before trying to use pip-sync in requirements targets (https://github.com/openedx/edx-cookiecutters/issues/317)
+- Add ``piptools`` target to ``cookiecutter-xblock`` Makefile for consistency
+
 2023-05-02
 **********
 
