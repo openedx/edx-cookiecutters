@@ -31,7 +31,11 @@ def move(src, dest):
         shutil.move(src, dest)
 
 
-# Using the template to create things
+# Use Python template to get python files
+
+# output location for python-template cookiecutter
+placeholder_repo_name = "placeholder_repo_name_0"
+
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
 extra_context["project_name"] = "{{cookiecutter.repo_name}}"
@@ -50,7 +54,8 @@ setup_py_keyword_args = """entry_points={
     package_data=package_data("{{cookiecutter.package_name}}", ["static", "public"]),
 """
 extra_context["setup_py_keyword_args"] = setup_py_keyword_args
-extra_context["placeholder_repo_name"] = "placeholder_repo_name"
+
+extra_context["placeholder_repo_name"] = placeholder_repo_name
 
 cookiecutter(
     EDX_COOKIECUTTER_ROOTDIR,
@@ -61,7 +66,7 @@ cookiecutter(
 
 # moving templated cookie-cutter output to root
 project_root_dir = os.getcwd()
-python_cookiecutter_output_loc = os.path.join(project_root_dir, extra_context["placeholder_repo_name"])
+python_cookiecutter_output_loc = os.path.join(project_root_dir, placeholder_repo_name)
 files = os.listdir(python_cookiecutter_output_loc)
 
 for f in files:

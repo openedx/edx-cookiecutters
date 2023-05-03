@@ -47,7 +47,7 @@ def remove(path):
 # Use Python template to get python files
 
 # output location for python-template cookiecutter
-python_placeholder_repo_name = "placeholder_repo_name_0"
+placeholder_repo_name = "placeholder_repo_name_0"
 
 extra_context = {}
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
@@ -60,7 +60,7 @@ extra_context["author_email"] = "{{cookiecutter.author_email}}"
 extra_context["open_source_license"] = "{{cookiecutter.open_source_license}}"
 extra_context["if_features_docs"] = "yes"
 
-extra_context["placeholder_repo_name"] = python_placeholder_repo_name
+extra_context["placeholder_repo_name"] = placeholder_repo_name
 
 cookiecutter(
     EDX_COOKIECUTTER_ROOTDIR,
@@ -69,17 +69,20 @@ cookiecutter(
     directory='python-template',
 )
 
+# moving templated cookie-cutter output to root
 project_root_dir = os.getcwd()
-python_template_cookiecutter_output_loc = os.path.join(project_root_dir, python_placeholder_repo_name)
-files = os.listdir(python_template_cookiecutter_output_loc)
+python_cookiecutter_output_loc = os.path.join(project_root_dir, placeholder_repo_name)
+files = os.listdir(python_cookiecutter_output_loc)
 
 for f in files:
-    move(os.path.join(python_template_cookiecutter_output_loc, f), os.path.join(project_root_dir, f))
+    move(os.path.join(python_cookiecutter_output_loc, f), os.path.join(project_root_dir, f))
 
-os.rmdir(python_template_cookiecutter_output_loc)
+# removing temp dir created by templated cookiecutter
+os.rmdir(python_cookiecutter_output_loc)
 
 # Removing unecessary files from python and django templates:
 remove("setup.py")
 remove("MANIFEST.in")
 
+# Post build fixes
 write_main(['pylintrc'])
