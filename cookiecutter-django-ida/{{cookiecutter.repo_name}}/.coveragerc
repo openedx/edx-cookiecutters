@@ -3,10 +3,10 @@ branch = True
 data_file = .coverage
 source={{cookiecutter.project_name}}
 omit =
-    {{cookiecutter.project_name}}/settings*
-    {{cookiecutter.project_name}}/conf*
+    {{cookiecutter.project_name}}/settings/*
+    {{cookiecutter.project_name}}/conf/*
     *wsgi.py
-    *migrations*
+    */migrations/*
     *admin.py
-    *static*
-    *templates*
+    */static/*
+    */templates/*
