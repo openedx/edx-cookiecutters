@@ -174,7 +174,7 @@ Please do not report security issues in public. Please email security@tcril.org.
     :alt: Codecov
 
 .. |doc-badge| image:: https://readthedocs.org/projects/{{ cookiecutter.repo_name }}/badge/?version=latest
-    :target: https://{{ cookiecutter.repo_name }}.readthedocs.io/en/latest/
+    :target: https://docs.openedx.org/projects/{{ cookiecutter.repo_name }}
     :alt: Documentation
 
 .. |pyversions-badge| image:: https://img.shields.io/pypi/pyversions/{{ cookiecutter.repo_name }}.svg
