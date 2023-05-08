@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-05-04
+**********
+
+Fixed
+=====
+
+- Correct .coveragerc ``omit`` file paths to properly specify directories.
+
 2023-05-03
 **********
 

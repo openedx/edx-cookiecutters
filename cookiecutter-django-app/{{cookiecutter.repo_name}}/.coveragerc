@@ -3,8 +3,8 @@ branch = True
 data_file = .coverage
 source={{cookiecutter.app_name}}
 omit =
-    test_settings
-    *migrations*
+    test_settings.py
+    */migrations/*
     *admin.py
-    *static*
-    *templates*
+    */static/*
+    */templates/*
