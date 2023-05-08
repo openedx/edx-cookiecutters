@@ -14,7 +14,7 @@ astroid==2.15.4
     #   pylint-celery
 binaryornot==0.4.4
     # via cookiecutter
-certifi==2022.12.7
+certifi==2023.5.7
     # via requests
 chardet==5.1.0
     # via binaryornot
@@ -57,7 +57,7 @@ pbr==5.11.1
     # via stevedore
 platformdirs==3.5.0
     # via pylint
-pylint==2.17.3
+pylint==2.17.4
     # via
     #   edx-lint
     #   pylint-celery
@@ -81,7 +81,7 @@ pyyaml==6.0
     # via
     #   code-annotations
     #   cookiecutter
-requests==2.29.0
+requests==2.30.0
     # via cookiecutter
 six==1.16.0
     # via
@@ -99,7 +99,7 @@ typing-extensions==4.5.0
     # via
     #   astroid
     #   pylint
-urllib3==1.26.15
+urllib3==2.0.2
     # via requests
 wrapt==1.15.0
     # via astroid
