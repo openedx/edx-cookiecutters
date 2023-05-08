@@ -34,7 +34,7 @@ bleach==6.0.0
     # via readme-renderer
 build==0.10.0
     # via -r requirements/test.in
-certifi==2022.12.7
+certifi==2023.5.7
     # via
     #   -r requirements/base.txt
     #   requests
@@ -75,7 +75,7 @@ dill==0.3.6
     #   pylint
 distlib==0.3.6
     # via virtualenv
-django==3.2.18
+django==3.2.19
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -194,7 +194,7 @@ pygments==2.15.1
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==2.17.3
+pylint==2.17.4
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -240,14 +240,14 @@ pyyaml==6.0
     #   cookiecutter
 readme-renderer==37.3
     # via twine
-requests==2.29.0
+requests==2.30.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
     #   requests-toolbelt
     #   sphinx
     #   twine
-requests-toolbelt==0.10.1
+requests-toolbelt==1.0.0
     # via twine
 restructuredtext-lint==1.4.0
     # via doc8
@@ -328,7 +328,7 @@ typing-extensions==4.5.0
     #   pydata-sphinx-theme
     #   pylint
     #   rich
-urllib3==1.26.15
+urllib3==2.0.2
     # via
     #   -r requirements/base.txt
     #   requests
