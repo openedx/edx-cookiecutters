@@ -125,7 +125,7 @@ dummy_translations: ## generate dummy translation (.po) files
 compile_translations: # compile translation files, outputting .po files for each supported language
 	python manage.py compilemessages
 
-fake_translations: ## generate and compile dummy translation files
+fake_translations: extract_translations dummy_translations compile_translations ## generate and compile dummy translation files
 
 pull_translations: ## pull translations from Transifex
 	tx pull -af -t --mode reviewed
