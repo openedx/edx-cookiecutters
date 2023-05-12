@@ -84,13 +84,13 @@ jobs:
       working-directory: repo_name
       run: |
         source .venv/bin/activate
-        make validation_requirements
         make validate
 
     - name: "Ensure translations can be compiled"
       working-directory: repo_name
       run: |
         source .venv/bin/activate
+        sudo apt install gettext # required for msguniq, called by makemessages management command
         make fake_translations
 
     - name: "Ensure docker can build a container"
