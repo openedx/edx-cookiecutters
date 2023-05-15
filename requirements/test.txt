@@ -15,7 +15,7 @@ arrow==0.13.2
     #   jinja2-time
 asgiref==3.6.0
     # via django
-astroid==2.15.4
+astroid==2.15.5
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -171,7 +171,7 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==3.5.0
+platformdirs==3.5.1
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -209,7 +209,7 @@ pylint-django==2.5.3
     # via
     #   -r requirements/base.txt
     #   edx-lint
-pylint-plugin-utils==0.7
+pylint-plugin-utils==0.8.1
     # via
     #   -r requirements/base.txt
     #   pylint-celery
