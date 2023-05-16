@@ -10,6 +10,9 @@ on:
     branches:
     - '**'
 
+defaults:
+  run:
+    shell: bash # opts into error checking
 
 jobs:
   run_tests:
@@ -38,3 +41,60 @@ jobs:
       env:
         TOXENV: ${{ matrix.toxenv }}
       run: tox
+
+  # Tests that used to be in the cookiecutter-django-ida Makefile but
+  # that have not yet been moved into the regular unit tests (which
+  # would require some more work.)
+  run_ida_tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+        python-version: ['3.8']
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Generate demo project
+      run: |
+        make requirements
+        cookiecutter cookiecutter-django-ida --no-input
+
+    - name: "Post-gen: Virtualenv, and set up requirements"
+      working-directory: repo_name
+      run: |
+        virtualenv .venv
+        source .venv/bin/activate
+
+        make upgrade # TODO should be part of initial cookiecutter setup
+        make requirements
+
+    - name: "Post-gen: Migrations"
+      working-directory: repo_name
+      run: |
+        source .venv/bin/activate
+        python manage.py makemigrations
+        make migrate
+
+    - name: "Quality checks"
+      working-directory: repo_name
+      run: |
+        source .venv/bin/activate
+        make validate
+
+    - name: "Ensure translations can be compiled"
+      working-directory: repo_name
+      run: |
+        source .venv/bin/activate
+        sudo apt install gettext # required for msguniq, called by makemessages management command
+        make fake_translations
+
+    - name: "Ensure docker can build a container"
+      working-directory: repo_name
+      run: |
+        source .venv/bin/activate
+        docker build . --target app

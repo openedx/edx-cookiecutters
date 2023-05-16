@@ -1,7 +1,5 @@
 .PHONY: help quality requirements test upgrade validate
 
-BAKE_OPTIONS=--no-input
-
 help: ## display this help message
 	@echo "Please use \`make <target>' where <target> is one of"
 	@awk -F ':.*?## ' '/^[a-zA-Z]/ && NF==2 {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
@@ -46,10 +44,12 @@ quality: ## check coding style with pycodestyle and pylint
 	pydocstyle tests
 	isort --check-only --diff */hooks tests
 
-requirements: ## install development environment requirements
-	pip install -qr requirements/pip.txt
-	pip install -qr requirements/pip-tools.txt
-	pip install -r requirements/dev.txt
+piptools: ## install pinned version of pip-compile and pip-sync
+	pip install -r requirements/pip.txt
+	pip install -r requirements/pip-tools.txt
+
+requirements: piptools ## install development environment requirements
+	pip-sync requirements/dev.txt
 
 test: ## run tests on every supported Python version
 	tox
