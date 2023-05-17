@@ -55,7 +55,8 @@ Enter the project and take a look around::
 Generate a virtualenv and generate requirements files with dependencies
 pinned to current versions (make sure you're using pip 9.0.2+ and Python 3.8)::
 
-    $ mkvirtualenv Blogging-for-humans
+    $ python3.8 -m venv venv
+    $ . venv/bin/activate
     $ make upgrade
 
 Create a GitHub repo and push it there::
@@ -92,9 +93,11 @@ Code has been written, but does it actually work? Let's find out!
 
 ::
 
-    workon <YOURVIRTUALENV>
-    (myenv) $ make requirements
-    (myenv) $ make test-all
+    
+    python3.8 -m venv venv  # Make a virtual env, if you haven't already.
+    . venv/bin/activate     # Active it.
+    make requirements       # Install Python dependencies.
+    make test-all           # Run tests.
 
 
 Github Checks

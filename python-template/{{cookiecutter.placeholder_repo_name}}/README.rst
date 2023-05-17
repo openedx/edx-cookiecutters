@@ -36,8 +36,8 @@ One Time Setup
   git clone git@github.com:openedx/{{ cookiecutter.repo_name }}.git
   cd {{ cookiecutter.repo_name }}
 
-  # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
-  mkvirtualenv -p python3.8 {{ cookiecutter.repo_name }}
+  # Set up a virtualenv
+  python3.8 -m venv venv
 
 
 Every time you develop something in this repo
@@ -45,7 +45,7 @@ Every time you develop something in this repo
 .. code-block::
 
   # Activate the virtualenv
-  workon {{ cookiecutter.repo_name }}
+  . venv/bin/activate
 
   # Grab the latest code
   git checkout main
