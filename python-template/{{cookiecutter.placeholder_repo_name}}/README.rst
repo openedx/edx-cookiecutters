@@ -36,7 +36,8 @@ One Time Setup
   git clone git@github.com:openedx/{{ cookiecutter.repo_name }}.git
   cd {{ cookiecutter.repo_name }}
 
-  # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
+  # Set up a virtualenv with the same name as the repo and activate it
+  # Here's how you might do that if you have virtualenvwrapper setup.
   mkvirtualenv -p python3.8 {{ cookiecutter.repo_name }}
 
 
@@ -45,6 +46,7 @@ Every time you develop something in this repo
 .. code-block::
 
   # Activate the virtualenv
+  # Here's how you might do that if you're using virtualenvwrapper.
   workon {{ cookiecutter.repo_name }}
 
   # Grab the latest code
@@ -154,7 +156,7 @@ The assigned maintainers for this component and other project details may be
 found in `Backstage`_. Backstage pulls this data from the ``catalog-info.yaml``
 file in this repo.
 
-.. _Backstage: https://open-edx-backstage.herokuapp.com/catalog/default/component/{{ cookiecutter.repo_name }}
+.. _Backstage: https://backstage.openedx.org/catalog/default/component/{{ cookiecutter.repo_name }}
 
 Reporting Security Issues
 *************************
