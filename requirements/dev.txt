@@ -17,11 +17,11 @@ arrow==0.13.2
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
-asgiref==3.6.0
+asgiref==3.7.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.15.4
+astroid==2.15.5
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -224,7 +224,7 @@ pkginfo==1.9.6
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==3.5.0
+platformdirs==3.5.1
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -276,7 +276,7 @@ pylint-django==2.5.3
     # via
     #   -r requirements/test.txt
     #   edx-lint
-pylint-plugin-utils==0.7
+pylint-plugin-utils==0.8.2
     # via
     #   -r requirements/test.txt
     #   pylint-celery
@@ -315,7 +315,7 @@ readme-renderer==37.3
     # via
     #   -r requirements/test.txt
     #   twine
-requests==2.30.0
+requests==2.31.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
@@ -342,7 +342,7 @@ secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==2.0.3
+sh==2.0.4
     # via -r requirements/test.txt
 six==1.16.0
     # via
@@ -371,7 +371,7 @@ sphinx==5.3.0
     #   sphinxcontrib-jquery
 sphinx-book-theme==1.0.1
     # via -r requirements/test.txt
-sphinx-rtd-theme==1.2.0
+sphinx-rtd-theme==1.2.1
     # via -r requirements/test.txt
 sphinxcontrib-applehelp==1.0.4
     # via
@@ -405,7 +405,7 @@ sqlparse==0.4.4
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==5.0.0
+stevedore==5.1.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -437,9 +437,10 @@ tox-battery==0.6.1
     # via -r requirements/dev.in
 twine==4.0.2
     # via -r requirements/test.txt
-typing-extensions==4.5.0
+typing-extensions==4.6.2
     # via
     #   -r requirements/test.txt
+    #   asgiref
     #   astroid
     #   pydata-sphinx-theme
     #   pylint
