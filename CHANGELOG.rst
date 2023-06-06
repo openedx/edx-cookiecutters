@@ -11,7 +11,7 @@ Change Log
 Fixed
 =====
 
-- Corrected all security email address to security@openedx.org.
+- Corrected all security email addresses to security@openedx.org.
 
 
 2023-05-16
