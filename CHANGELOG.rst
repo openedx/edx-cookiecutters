@@ -5,6 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-06-06
+**********
+
+Fixed
+=====
+
+- Corrected all security email addresses to security@openedx.org.
+
+
 2023-05-16
 **********
 
