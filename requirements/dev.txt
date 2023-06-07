@@ -12,9 +12,8 @@ alabaster==0.7.13
     # via
     #   -r requirements/test.txt
     #   sphinx
-arrow==0.13.2
+arrow==1.2.3
     # via
-    #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   jinja2-time
 asgiref==3.7.2
@@ -52,10 +51,6 @@ certifi==2023.5.7
     # via
     #   -r requirements/test.txt
     #   requests
-cffi==1.15.1
-    # via
-    #   -r requirements/test.txt
-    #   cryptography
 chardet==5.1.0
     # via
     #   -r requirements/test.txt
@@ -85,10 +80,6 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==41.0.1
-    # via
-    #   -r requirements/test.txt
-    #   secretstorage
 dill==0.3.6
     # via
     #   -r requirements/test.txt
@@ -160,11 +151,6 @@ jaraco-classes==3.2.3
     # via
     #   -r requirements/test.txt
     #   keyring
-jeepney==0.8.0
-    # via
-    #   -r requirements/test.txt
-    #   keyring
-    #   secretstorage
 jinja2==3.1.2
     # via
     #   -r requirements/test.txt
@@ -242,10 +228,6 @@ py==1.11.0
     #   tox
 pycodestyle==2.10.0
     # via -r requirements/test.txt
-pycparser==2.21
-    # via
-    #   -r requirements/test.txt
-    #   cffi
 pydata-sphinx-theme==0.13.3
     # via
     #   -r requirements/test.txt
@@ -338,10 +320,6 @@ rich==13.4.1
     # via
     #   -r requirements/test.txt
     #   twine
-secretstorage==3.3.3
-    # via
-    #   -r requirements/test.txt
-    #   keyring
 sh==2.0.4
     # via -r requirements/test.txt
 six==1.16.0

@@ -11,9 +11,6 @@
 # Common constraints for edx repos
 -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
  
-# Imposed by pytest-cookies 0.5.1 to continue supporting Python 3.4
-arrow<0.14.0
-
 # doc8==1.0.0 requires docutils>=0.19 but sphinx_rtd_theme latest version requires <0.18
 doc8<1.0.0
 

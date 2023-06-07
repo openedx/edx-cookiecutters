@@ -8,9 +8,8 @@ accessible-pygments==0.0.4
     # via pydata-sphinx-theme
 alabaster==0.7.13
     # via sphinx
-arrow==0.13.2
+arrow==1.2.3
     # via
-    #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   jinja2-time
 asgiref==3.7.2
@@ -38,8 +37,6 @@ certifi==2023.5.7
     # via
     #   -r requirements/base.txt
     #   requests
-cffi==1.15.1
-    # via cryptography
 chardet==5.1.0
     # via
     #   -r requirements/base.txt
@@ -67,8 +64,6 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==41.0.1
-    # via secretstorage
 dill==0.3.6
     # via
     #   -r requirements/base.txt
@@ -124,10 +119,6 @@ isort==5.12.0
     #   pylint
 jaraco-classes==3.2.3
     # via keyring
-jeepney==0.8.0
-    # via
-    #   keyring
-    #   secretstorage
 jinja2==3.1.2
     # via
     #   -r requirements/base.txt
@@ -180,8 +171,6 @@ pluggy==1.0.0
     # via pytest
 pycodestyle==2.10.0
     # via -r requirements/test.in
-pycparser==2.21
-    # via cffi
 pydata-sphinx-theme==0.13.3
     # via sphinx-book-theme
 pydocstyle==6.3.0
@@ -255,8 +244,6 @@ rfc3986==2.0.0
     # via twine
 rich==13.4.1
     # via twine
-secretstorage==3.3.3
-    # via keyring
 sh==2.0.4
     # via -r requirements/test.in
 six==1.16.0

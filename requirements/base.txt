@@ -4,10 +4,8 @@
 #
 #    make upgrade
 #
-arrow==0.13.2
-    # via
-    #   -c requirements/constraints.txt
-    #   jinja2-time
+arrow==1.2.3
+    # via jinja2-time
 astroid==2.15.5
     # via
     #   pylint
