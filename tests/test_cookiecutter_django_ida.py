@@ -11,8 +11,8 @@ from pathlib import Path
 import pytest
 import sh
 
-from test_utils.bake import bake_in_temp_dir
-from test_utils.venv import run_in_virtualenv
+from .bake import bake_in_temp_dir
+from .venv import run_in_virtualenv
 
 LOGGING_CONFIG = {
     'version': 1,
