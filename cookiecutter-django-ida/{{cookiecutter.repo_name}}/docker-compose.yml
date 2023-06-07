@@ -19,10 +19,14 @@ services:
     # Uncomment this line to use the official {{cookiecutter.project_name}} base image
     image: openedx/{{cookiecutter.project_name}}
 
+    build:
+      context: .
+      dockerfile: Dockerfile
+
     container_name: {{cookiecutter.project_name}}.app
     volumes:
-      - .:/edx/app/{{cookiecutter.project_name}}/
-    command: bash -c 'while true; do python /edx/app/{{cookiecutter.project_name}}/manage.py runserver 0.0.0.0:{{cookiecutter.port}}; sleep 2; done'
+      - .:/edx/app/{{cookiecutter.placeholder_repo_name}}/
+    command: bash -c 'while true; do python /edx/app/{{cookiecutter.placeholder_repo_name}}/manage.py runserver 0.0.0.0:{{cookiecutter.port}}; sleep 2; done'
     environment:
       DJANGO_SETTINGS_MODULE: {{cookiecutter.project_name}}.settings.devstack
     ports:
