@@ -107,10 +107,7 @@ def test_setup_py(options_baked):
 
 def test_upgrade(options_baked):
     """Make sure the upgrade target works"""
-    try:
-        run_in_virtualenv('make upgrade')
-    except sh.ErrorReturnCode as exc:
-        pytest.fail(str(exc.stderr))
+    run_in_virtualenv('make upgrade')
 
 
 def test_quality(options_baked):
@@ -120,19 +117,13 @@ def test_quality(options_baked):
             name = os.path.join(dirpath, filename)
             if not name.endswith('.py'):
                 continue
-            try:
-                sh.pylint(name)
-                sh.pycodestyle(name)
-                sh.pydocstyle(name)
-                sh.isort(name, check_only=True, diff=True)
-            except sh.ErrorReturnCode as exc:
-                pytest.fail(str(exc))
+            sh.pylint(name)
+            sh.pycodestyle(name)
+            sh.pydocstyle(name)
+            sh.isort(name, check_only=True, diff=True)
 
-    try:
-        # Sanity check the generated Makefile
-        sh.make('help')
-        # quality check docs
-        sh.doc8("README.rst", ignore_path="docs/_build")
-        sh.doc8("docs", ignore_path="docs/_build")
-    except sh.ErrorReturnCode as exc:
-        pytest.fail(str(exc))
+    # Sanity check the generated Makefile
+    sh.make('help')
+    # quality check docs
+    sh.doc8("README.rst", ignore_path="docs/_build")
+    sh.doc8("docs", ignore_path="docs/_build")
