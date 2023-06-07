@@ -5,7 +5,6 @@ Tests of the project generation output.
 import logging
 import logging.config
 import os
-from contextlib import contextmanager
 from pathlib import Path
 
 import pytest
@@ -44,13 +43,13 @@ configurations = [
 ]
 
 
-@pytest.fixture(name='custom_template')
-def fixture_custom_template(cookies_session, scope="module"):
+@pytest.fixture(name='custom_template', scope="module")
+def fixture_custom_template(cookies_session):
     template = cookies_session._default_template + "/cookiecutter-django-app"  # pylint: disable=protected-access
     return template
 
 
-@pytest.fixture(params=configurations, name='options_baked')
+@pytest.fixture(params=configurations, name='options_baked', scope="module")
 def fixture_options_baked(cookies_session, request, custom_template):
     """
     Bake a cookie cutter, parameterized by configurations.
@@ -78,8 +77,7 @@ def test_bake_selecting_license(cookies, license_name, target_string, custom_tem
 
 def test_readme(options_baked, custom_template):
     """The generated README.rst file should pass some sanity checks and validate as a PyPI long description."""
-    readme_file = Path('README.rst')
-    readme_lines = [x.strip() for x in readme_file.open()]
+    readme_lines = [rl.strip() for rl in Path('README.rst').read_text().splitlines()]
     assert "cookie_repo" == readme_lines[0]
     assert ':target: https://pypi.python.org/pypi/cookie_repo/' in readme_lines
     sh.python("-m", "build", "--wheel")

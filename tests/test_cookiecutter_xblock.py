@@ -5,8 +5,6 @@ Tests of the project generation output.
 import logging
 import logging.config
 import os
-import re
-from contextlib import contextmanager
 from pathlib import Path
 
 import pytest
@@ -78,8 +76,7 @@ def test_bake_selecting_license(cookies, license_name, target_string, custom_tem
 
 def test_readme(options_baked, custom_template):
     """The generated README.rst file should pass some sanity checks and validate as a PyPI long description."""
-    readme_file = Path('README.rst')
-    readme_lines = [x.strip() for x in readme_file.open()]
+    readme_lines = [rl.strip() for rl in Path('README.rst').read_text().splitlines()]
     assert "My First XBlock" == readme_lines[0]
     assert 'Testing with Docker' in readme_lines
     sh.python("-m", "build", "--wheel")
