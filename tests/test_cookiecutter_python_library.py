@@ -82,11 +82,8 @@ def test_readme(options_baked, custom_template):
     readme_lines = [x.strip() for x in readme_file.open()]
     assert "cookie_repo" == readme_lines[0]
     assert ':target: https://pypi.python.org/pypi/cookie_repo/' in readme_lines
-    try:
-        os.system("python -m build --wheel")
-        os.system("twine check dist/*")
-    except os.ErrorReturnCode as exc:
-        pytest.fail(str(exc))
+    sh.python("-m", "build", "--wheel")
+    sh.twine("check", "dist/*")
 
 
 def test_github_actions_ci(options_baked):
