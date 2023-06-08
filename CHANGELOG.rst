@@ -11,7 +11,11 @@ Change Log
 Fixed
 =====
 
-- Test directories are no longer omitted from coverage measurement.
+- Test directories in generated repos are no longer omitted from coverage measurement.
+
+- The author name and author email information requested by the cookiecutter is
+  now used in the generated setup.py.  The defaults have also changed from
+  edX-centric to ones centered in the Open edX world.
 
 
 2023-06-06

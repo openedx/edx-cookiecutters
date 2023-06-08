@@ -124,8 +124,8 @@ setup(
     version=VERSION,
     description="""{{ cookiecutter.project_short_description }}""",
     long_description=README + '\n\n' + CHANGELOG,
-    author='edX',
-    author_email='oscm@edx.org',
+    author='{{ cookiecutter.author_name }}',
+    author_email='{{ cookiecutter.author_email }}',
     url='https://github.com/openedx/{{ cookiecutter.repo_name }}',
     packages=find_packages(
         include=['{{ cookiecutter.sub_dir_name }}', '{{ cookiecutter.sub_dir_name }}.*'],
