@@ -5,10 +5,10 @@
   "tag_name": "myxblock",
   "version": "0.1.0",
   "class_name": "MyXBlock",
-  "author_name": "edX",
-  "author_email": "you@edx.org",
+  "author_name": "Open edX Project",
+  "author_email": "oscm@openedx.org",
   "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"],
   "_copy_without_render": [
     ".github/workflows/*.yml"
-  ]  
+  ]
 }

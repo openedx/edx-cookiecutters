@@ -29,6 +29,8 @@ logging.config.dictConfig(LOGGING_CONFIG)
 
 
 common = {
+    "author_email": "cookie@monster.org",
+    "author_name": "Cookie Monster",
     "library_name": "cookie_lover",
     "repo_name": "cookie_repo",
 }
@@ -99,7 +101,8 @@ def test_setup_py(options_baked):
     """The generated setup.py should pass a sanity check."""
     setup_text = Path("setup.py").read_text()
     assert "VERSION = get_version('cookie_lover', '__init__.py')" in setup_text
-    assert "    author='edX'," in setup_text
+    assert "    author='Cookie Monster'," in setup_text
+    assert "    author_email='cookie@monster.org'," in setup_text
 
 
 def test_upgrade(options_baked):
