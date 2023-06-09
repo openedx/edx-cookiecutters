@@ -5,8 +5,13 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2023-06-12
+2023-06-13
 **********
+
+Added
+=====
+
+- The user is prompted for the GitHub organization that will host the repo.
 
 Fixed
 =====

@@ -126,7 +126,7 @@ setup(
     long_description=README + '\n\n' + CHANGELOG,
     author='{{ cookiecutter.author_name }}',
     author_email='{{ cookiecutter.author_email }}',
-    url='https://github.com/openedx/{{ cookiecutter.repo_name }}',
+    url='https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}',
     packages=find_packages(
         include=['{{ cookiecutter.sub_dir_name }}', '{{ cookiecutter.sub_dir_name }}.*'],
         exclude=["*tests"],

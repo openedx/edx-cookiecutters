@@ -37,6 +37,7 @@ def move(src, dest):
 placeholder_repo_name = "placeholder_repo_name_0"
 
 extra_context = {}
+extra_context["github_org"] = "{{cookiecutter.github_org}}"
 extra_context["repo_name"] = "{{cookiecutter.repo_name}}"
 extra_context["project_name"] = "{{cookiecutter.project_name}}"
 extra_context["sub_dir_name"] = "{{cookiecutter.library_name}}"

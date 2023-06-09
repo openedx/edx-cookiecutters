@@ -33,7 +33,7 @@ One Time Setup
 .. code-block::
 
   # Clone the repository
-  git clone git@github.com:openedx/{{ cookiecutter.repo_name }}.git
+  git clone git@github.com:{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}.git
   cd {{ cookiecutter.repo_name }}
 
   # Set up a virtualenv with the same name as the repo and activate it
@@ -113,7 +113,7 @@ For anything non-trivial, the best path is to open an issue in this
 repository with as many details about the issue you are facing as you
 can provide.
 
-https://github.com/openedx/{{ cookiecutter.repo_name }}/issues
+https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/issues
 
 For more information about these options, see the `Getting Help`_ page.
 
@@ -167,12 +167,12 @@ Please do not report security issues in public. Please email security@openedx.or
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
     :alt: PyPI
 
-.. |ci-badge| image:: https://github.com/openedx/{{ cookiecutter.repo_name }}/workflows/Python%20CI/badge.svg?branch=main
-    :target: https://github.com/openedx/{{ cookiecutter.repo_name }}/actions
+.. |ci-badge| image:: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/workflows/Python%20CI/badge.svg?branch=main
+    :target: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/actions
     :alt: CI
 
-.. |codecov-badge| image:: https://codecov.io/github/openedx/{{ cookiecutter.repo_name }}/coverage.svg?branch=main
-    :target: https://codecov.io/github/openedx/{{ cookiecutter.repo_name }}?branch=main
+.. |codecov-badge| image:: https://codecov.io/github/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/coverage.svg?branch=main
+    :target: https://codecov.io/github/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}?branch=main
     :alt: Codecov
 
 .. |doc-badge| image:: https://readthedocs.org/projects/{{ cookiecutter.repo_name }}/badge/?version=latest
@@ -183,8 +183,8 @@ Please do not report security issues in public. Please email security@openedx.or
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
     :alt: Supported Python versions
 
-.. |license-badge| image:: https://img.shields.io/github/license/openedx/{{ cookiecutter.repo_name }}.svg
-    :target: https://github.com/openedx/{{ cookiecutter.repo_name }}/blob/main/LICENSE.txt
+.. |license-badge| image:: https://img.shields.io/github/license/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}.svg
+    :target: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/blob/main/LICENSE.txt
     :alt: License
 
 .. TODO: Choose one of the statuses below and remove the other status-badge lines.

@@ -1,4 +1,5 @@
 {
+  "github_org": "openedx",
   "repo_name": "repo_name",
   "library_name": "{{ cookiecutter.repo_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_') }}",
   "project_name": "{{ cookiecutter.repo_name }}",

@@ -192,7 +192,7 @@ html_theme = 'sphinx_book_theme'
 # documentation.
 #
 html_theme_options = {
-    "repository_url": "https://github.com/openedx/{{ cookiecutter.repo_name }}",
+    "repository_url": "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}",
     "repository_branch": 'main',
     "path_to_docs": "docs/",
     "logo_only": True,

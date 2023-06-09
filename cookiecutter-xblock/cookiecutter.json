@@ -1,6 +1,7 @@
 {
   "project_desc": "My First XBlock",
   "package_name": "myxblock",
+  "github_org": "openedx",
   "repo_name": "{{cookiecutter.package_name}}-xblock",
   "tag_name": "myxblock",
   "version": "0.1.0",

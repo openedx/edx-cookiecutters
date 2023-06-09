@@ -11,6 +11,7 @@ import pytest
 import sh
 
 from .bake import bake_in_temp_dir
+from .common_tests import *  # pylint: disable=wildcard-import
 from .venv import all_files, run_in_virtualenv
 
 LOGGING_CONFIG = {
@@ -32,6 +33,7 @@ common = {
     "app_name": "cookie_lover",
     "author_email": "cookie@monster.org",
     "author_name": "Cookie Monster",
+    "github_org": "bakery_org",
     "repo_name": "cookie_repo",
 }
 
