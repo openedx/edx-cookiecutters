@@ -4,14 +4,13 @@ Tests of the project generation output.
 
 import logging
 import logging.config
-import os
 from pathlib import Path
 
 import pytest
 import sh
 
 from .bake import bake_in_temp_dir
-from .venv import run_in_virtualenv
+from .venv import all_files, run_in_virtualenv
 
 LOGGING_CONFIG = {
     'version': 1,
@@ -108,11 +107,8 @@ def test_quality(options_baked):
     """Run quality tests on the given generated output."""
     sh.make('upgrade')
     sh.pip('install', '-r', 'requirements/base.txt')
-    for dirpath, _dirnames, filenames in os.walk("."):
-        for filename in filenames:
-            name = os.path.join(dirpath, filename)
-            if not name.endswith('.py'):
-                continue
+    for name in all_files():
+        if name.endswith('.py'):
             sh.pylint(name)
             sh.pycodestyle(name)
             # sh.pydocstyle(name)  Not running for now because there are too many violations.
