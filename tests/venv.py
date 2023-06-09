@@ -2,6 +2,7 @@
 Utilities for managing virtualenvs in tests.
 """
 
+import os
 import shutil
 import subprocess
 import sys
@@ -29,3 +30,11 @@ def run_in_virtualenv(shell_script):
         finally:
             if shutil.rmtree.avoids_symlink_attacks:
                 shutil.rmtree(venv_path, ignore_errors=True)
+
+
+def all_files():
+    """Yield all the file names in the current tree."""
+    for dirpath, _dirnames, filenames in os.walk("."):
+        for filename in filenames:
+            name = os.path.join(dirpath, filename)
+            yield name
