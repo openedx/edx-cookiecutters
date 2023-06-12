@@ -22,11 +22,9 @@ def run_in_virtualenv(shell_script):
     the script runs.
     """
     with TemporaryDirectory() as parent_dir:
-        pip_txt = shutil.move("requirements/pip.txt", parent_dir)
         venv_path = str(Path(parent_dir) / 'venv')
         try:
             subprocess.check_call(['virtualenv', '-p', sys.executable, '--clear', venv_path])
-            _use_virtualenv(venv_path, f'pip install -qr {pip_txt}')
             _use_virtualenv(venv_path, shell_script)
         finally:
             if shutil.rmtree.avoids_symlink_attacks:
