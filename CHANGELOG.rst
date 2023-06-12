@@ -8,6 +8,11 @@ Change Log
 2023-06-13
 **********
 
+Fixed
+=====
+
+- Fix and unit-test ``make test-all`` for library cookiecutter (remove explicit ``manage.py`` reference from base template)
+
 Added
 =====
 

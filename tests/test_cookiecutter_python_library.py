@@ -106,22 +106,10 @@ def test_setup_py(options_baked):
     assert "    author_email='cookie@monster.org'," in setup_text
 
 
-def test_upgrade(options_baked):
-    """Make sure the upgrade target works"""
-    run_in_virtualenv('make upgrade')
+def test_tests_and_quality(options_baked):
+    """
+    Run generated tests and quality checks.
 
-
-def test_quality(options_baked):
-    """Run quality tests on the given generated output."""
-    for name in all_files():
-        if name.endswith('.py'):
-            sh.pylint(name)
-            sh.pycodestyle(name)
-            sh.pydocstyle(name)
-            sh.isort(name, check_only=True, diff=True)
-
-    # Sanity check the generated Makefile
-    sh.make('help')
-    # quality check docs
-    sh.doc8("README.rst", ignore_path="docs/_build")
-    sh.doc8("docs", ignore_path="docs/_build")
+    This also tests `make upgrade` by necessity, since it needs the requirements files.
+    """
+    run_in_virtualenv('make upgrade requirements test-all')

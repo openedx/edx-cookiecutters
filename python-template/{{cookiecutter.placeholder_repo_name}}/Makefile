@@ -48,7 +48,7 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 
 quality: ## check coding style with pycodestyle and pylint
 	touch tests/__init__.py
-	pylint {{ cookiecutter.sub_dir_name }} tests test_utils manage.py *.py
+	pylint {{ cookiecutter.sub_dir_name }} tests test_utils *.py
 	rm tests/__init__.py
 	pycodestyle {{ cookiecutter.sub_dir_name }} tests  *.py
 	pydocstyle {{ cookiecutter.sub_dir_name }} tests *.py
