@@ -51,6 +51,10 @@ certifi==2023.5.7
     # via
     #   -r requirements/test.txt
     #   requests
+cffi==1.15.1
+    # via
+    #   -r requirements/test.txt
+    #   cryptography
 chardet==5.1.0
     # via
     #   -r requirements/test.txt
@@ -80,6 +84,10 @@ cookiecutter==2.1.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
+cryptography==41.0.1
+    # via
+    #   -r requirements/test.txt
+    #   secretstorage
 dill==0.3.6
     # via
     #   -r requirements/test.txt
@@ -115,7 +123,7 @@ exceptiongroup==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-filelock==3.12.0
+filelock==3.12.1
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -151,6 +159,11 @@ jaraco-classes==3.2.3
     # via
     #   -r requirements/test.txt
     #   keyring
+jeepney==0.8.0
+    # via
+    #   -r requirements/test.txt
+    #   keyring
+    #   secretstorage
 jinja2==3.1.2
     # via
     #   -r requirements/test.txt
@@ -210,7 +223,7 @@ pkginfo==1.9.6
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==3.5.1
+platformdirs==3.5.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -228,6 +241,10 @@ py==1.11.0
     #   tox
 pycodestyle==2.10.0
     # via -r requirements/test.txt
+pycparser==2.21
+    # via
+    #   -r requirements/test.txt
+    #   cffi
 pydata-sphinx-theme==0.13.3
     # via
     #   -r requirements/test.txt
@@ -268,7 +285,7 @@ pyproject-hooks==1.0.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pytest==7.3.1
+pytest==7.3.2
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -320,6 +337,10 @@ rich==13.4.1
     # via
     #   -r requirements/test.txt
     #   twine
+secretstorage==3.3.3
+    # via
+    #   -r requirements/test.txt
+    #   keyring
 sh==2.0.4
     # via -r requirements/test.txt
 six==1.16.0
@@ -349,7 +370,7 @@ sphinx==5.3.0
     #   sphinxcontrib-jquery
 sphinx-book-theme==1.0.1
     # via -r requirements/test.txt
-sphinx-rtd-theme==1.2.1
+sphinx-rtd-theme==1.2.2
     # via -r requirements/test.txt
 sphinxcontrib-applehelp==1.0.4
     # via
@@ -423,7 +444,7 @@ typing-extensions==4.6.3
     #   pydata-sphinx-theme
     #   pylint
     #   rich
-urllib3==2.0.2
+urllib3==2.0.3
     # via
     #   -r requirements/test.txt
     #   requests
