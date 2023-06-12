@@ -1,6 +1,3 @@
 [run]
 branch = True
-data_file = .coverage
-source={{cookiecutter.sub_dir_name}}
-omit =
-    tests
+source = {{cookiecutter.sub_dir_name}}

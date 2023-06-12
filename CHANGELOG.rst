@@ -5,6 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-06-12
+**********
+
+Fixed
+=====
+
+- Test directories are no longer omitted from coverage measurement.
+
+
 2023-06-06
 **********
 
