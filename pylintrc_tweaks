@@ -2,3 +2,7 @@
 [MESSAGES CONTROL]
 disable+=
     django-not-configured,
+
+[TYPECHECK]
+generated-members+=
+    sh.*,
