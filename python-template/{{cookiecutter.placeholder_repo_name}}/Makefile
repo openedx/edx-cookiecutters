@@ -52,7 +52,7 @@ quality: ## check coding style with pycodestyle and pylint
 	rm tests/__init__.py
 	pycodestyle {{ cookiecutter.sub_dir_name }} tests  *.py
 	pydocstyle {{ cookiecutter.sub_dir_name }} tests *.py
-	isort --check-only --diff --recursive tests test_utils {{ cookiecutter.sub_dir_name }} *.py test_settings.py
+	isort --check-only --diff tests test_utils {{ cookiecutter.sub_dir_name }} *.py test_settings.py
 	python setup.py bdist_wheel
 	twine check dist/*
 	make selfcheck
