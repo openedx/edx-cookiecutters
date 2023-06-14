@@ -5,6 +5,16 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-06-14
+**********
+
+Added
+=====
+
+- Ensure tox runs locally with new requirements by deleting .tox folder before
+  running ``make requirements`` or ``make dev_requirements``.
+
+
 2023-06-13
 **********
 
