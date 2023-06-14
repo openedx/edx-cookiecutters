@@ -72,6 +72,7 @@ diff_cover: test ## find diff lines that need test coverage
 
 test-all: quality ## run tests on every supported Python/Django combination
 	tox
+	tox -e docs
 
 validate: quality test ## run tests and quality checks
 
