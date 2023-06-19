@@ -123,7 +123,7 @@ exceptiongroup==1.1.1
     # via
     #   -r requirements/test.txt
     #   pytest
-filelock==3.12.1
+filelock==3.12.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -137,7 +137,7 @@ imagesize==1.4.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-importlib-metadata==6.6.0
+importlib-metadata==6.7.0
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -183,7 +183,7 @@ lazy-object-proxy==1.9.0
     # via
     #   -r requirements/test.txt
     #   astroid
-markdown-it-py==2.2.0
+markdown-it-py==3.0.0
     # via
     #   -r requirements/test.txt
     #   rich
@@ -223,7 +223,7 @@ pkginfo==1.9.6
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==3.5.3
+platformdirs==3.6.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -333,7 +333,7 @@ rfc3986==2.0.0
     # via
     #   -r requirements/test.txt
     #   twine
-rich==13.4.1
+rich==13.4.2
     # via
     #   -r requirements/test.txt
     #   twine
@@ -449,7 +449,7 @@ urllib3==2.0.3
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.23.0
+virtualenv==20.23.1
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
