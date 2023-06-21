@@ -5,13 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2023-06-13
+2023-06-21
 **********
 
 Fixed
 =====
 
-- Fix and unit-test ``make test-all`` for library cookiecutter (remove explicit ``manage.py`` reference from base template)
+- Fix various quality, doc build, and test failures in the python-library cookiecutter
+- Reduce the change of regressions by ensuring that ``make test-all`` is run on the python-library output as part of the cookiecutter repo's own unit tests
 
 Added
 =====
