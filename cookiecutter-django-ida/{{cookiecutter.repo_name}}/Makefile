@@ -65,7 +65,7 @@ isort_check: ## check that isort has been run
 	isort --check-only {{cookiecutter.project_name}}/
 
 isort: ## run isort to sort imports in all Python files
-	isort --recursive --atomic {{cookiecutter.project_name}}/
+	isort --atomic {{cookiecutter.project_name}}/
 
 style: ## run Python style checker
 	pylint --rcfile=pylintrc {{cookiecutter.project_name}} *.py
