@@ -175,7 +175,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-keyring==23.13.1
+keyring==24.2.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -223,13 +223,13 @@ pkginfo==1.9.6
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==3.6.0
+platformdirs==3.8.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   pylint
     #   virtualenv
-pluggy==1.0.0
+pluggy==1.2.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -285,7 +285,7 @@ pyproject-hooks==1.0.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pytest==7.3.2
+pytest==7.4.0
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -310,7 +310,7 @@ pyyaml==6.0
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==37.3
+readme-renderer==40.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -360,9 +360,8 @@ soupsieve==2.4.1
     # via
     #   -r requirements/test.txt
     #   beautifulsoup4
-sphinx==5.3.0
+sphinx==6.2.1
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
     #   sphinx-book-theme
