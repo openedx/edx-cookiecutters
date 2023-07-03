@@ -138,7 +138,7 @@ jinja2-time==0.2.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-keyring==23.13.1
+keyring==24.2.0
     # via twine
 lazy-object-proxy==1.9.0
     # via
@@ -170,12 +170,12 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==3.6.0
+platformdirs==3.8.0
     # via
     #   -r requirements/base.txt
     #   pylint
     #   virtualenv
-pluggy==1.0.0
+pluggy==1.2.0
     # via pytest
 pycodestyle==2.10.0
     # via -r requirements/test.in
@@ -215,7 +215,7 @@ pylint-plugin-utils==0.8.2
     #   pylint-django
 pyproject-hooks==1.0.0
     # via build
-pytest==7.3.2
+pytest==7.4.0
     # via pytest-cookies
 pytest-cookies==0.7.0
     # via -r requirements/test.in
@@ -237,7 +237,7 @@ pyyaml==6.0
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==37.3
+readme-renderer==40.0
     # via twine
 requests==2.31.0
     # via
@@ -270,9 +270,8 @@ snowballstemmer==2.2.0
     #   sphinx
 soupsieve==2.4.1
     # via beautifulsoup4
-sphinx==5.3.0
+sphinx==6.2.1
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
     #   pydata-sphinx-theme
     #   sphinx-book-theme
@@ -320,7 +319,7 @@ tomlkit==0.11.8
     #   pylint
 twine==4.0.2
     # via -r requirements/test.in
-typing-extensions==4.6.3
+typing-extensions==4.7.1
     # via
     #   -r requirements/base.txt
     #   asgiref
