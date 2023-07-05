@@ -223,7 +223,6 @@ JWT_AUTH = {
     'JWT_AUTH_COOKIE': 'edx-jwt-cookie',
     'JWT_AUTH_COOKIE_HEADER_PAYLOAD': 'edx-jwt-cookie-header-payload',
     'JWT_AUTH_COOKIE_SIGNATURE': 'edx-jwt-cookie-signature',
-    'JWT_AUTH_REFRESH_COOKIE': 'edx-jwt-refresh-cookie',
 }
 
 # Request the user's permissions in the ID token
