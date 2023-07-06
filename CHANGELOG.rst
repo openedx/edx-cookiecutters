@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-07-07
+**********
+
+Fixed
+=====
+
+- Include ``pkg-config`` in apt-installed packages in IDA Dockerfile, allowing upgrade to mysqlclient 2.2.0
+
 2023-06-21
 **********
 
