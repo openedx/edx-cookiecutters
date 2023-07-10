@@ -11,10 +11,10 @@ alabaster==0.7.13
 arrow==1.2.3
     # via
     #   -r requirements/base.txt
-    #   jinja2-time
+    #   cookiecutter
 asgiref==3.7.2
     # via django
-astroid==2.15.5
+astroid==2.15.6
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -43,11 +43,11 @@ chardet==5.1.0
     # via
     #   -r requirements/base.txt
     #   binaryornot
-charset-normalizer==3.1.0
+charset-normalizer==3.2.0
     # via
     #   -r requirements/base.txt
     #   requests
-click==8.1.3
+click==8.1.4
     # via
     #   -r requirements/base.txt
     #   click-log
@@ -62,7 +62,7 @@ code-annotations==1.3.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-cookiecutter==2.1.1
+cookiecutter==2.2.0
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
@@ -74,7 +74,7 @@ dill==0.3.6
     #   pylint
 distlib==0.3.6
     # via virtualenv
-django==3.2.19
+django==3.2.20
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -97,7 +97,7 @@ edx-lint==5.3.4
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
-exceptiongroup==1.1.1
+exceptiongroup==1.1.2
     # via pytest
 filelock==3.12.2
     # via virtualenv
@@ -107,12 +107,12 @@ idna==3.4
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==6.7.0
+importlib-metadata==6.8.0
     # via
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==5.12.0
+importlib-resources==6.0.0
     # via keyring
 iniconfig==2.0.0
     # via pytest
@@ -121,7 +121,7 @@ isort==5.12.0
     #   -r requirements/base.txt
     #   -r requirements/test.in
     #   pylint
-jaraco-classes==3.2.3
+jaraco-classes==3.3.0
     # via keyring
 jeepney==0.8.0
     # via
@@ -132,13 +132,8 @@ jinja2==3.1.2
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-    #   jinja2-time
     #   sphinx
-jinja2-time==0.2.0
-    # via
-    #   -r requirements/base.txt
-    #   cookiecutter
-keyring==23.13.1
+keyring==24.2.0
     # via twine
 lazy-object-proxy==1.9.0
     # via
@@ -170,12 +165,12 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==3.6.0
+platformdirs==3.8.1
     # via
     #   -r requirements/base.txt
     #   pylint
     #   virtualenv
-pluggy==1.0.0
+pluggy==1.2.0
     # via pytest
 pycodestyle==2.10.0
     # via -r requirements/test.in
@@ -215,7 +210,7 @@ pylint-plugin-utils==0.8.2
     #   pylint-django
 pyproject-hooks==1.0.0
     # via build
-pytest==7.3.2
+pytest==7.4.0
     # via pytest-cookies
 pytest-cookies==0.7.0
     # via -r requirements/test.in
@@ -237,7 +232,7 @@ pyyaml==6.0
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==37.3
+readme-renderer==40.0
     # via twine
 requests==2.31.0
     # via
@@ -270,9 +265,8 @@ snowballstemmer==2.2.0
     #   sphinx
 soupsieve==2.4.1
     # via beautifulsoup4
-sphinx==5.3.0
+sphinx==6.2.1
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
     #   pydata-sphinx-theme
     #   sphinx-book-theme
@@ -320,7 +314,7 @@ tomlkit==0.11.8
     #   pylint
 twine==4.0.2
     # via -r requirements/test.in
-typing-extensions==4.6.3
+typing-extensions==4.7.1
     # via
     #   -r requirements/base.txt
     #   asgiref
@@ -341,7 +335,7 @@ wrapt==1.15.0
     # via
     #   -r requirements/base.txt
     #   astroid
-zipp==3.15.0
+zipp==3.16.0
     # via
     #   importlib-metadata
     #   importlib-resources
