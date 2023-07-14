@@ -15,12 +15,12 @@ alabaster==0.7.13
 arrow==1.2.3
     # via
     #   -r requirements/test.txt
-    #   jinja2-time
+    #   cookiecutter
 asgiref==3.7.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==2.15.5
+astroid==2.15.6
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -59,11 +59,11 @@ chardet==5.1.0
     # via
     #   -r requirements/test.txt
     #   binaryornot
-charset-normalizer==3.1.0
+charset-normalizer==3.2.0
     # via
     #   -r requirements/test.txt
     #   requests
-click==8.1.3
+click==8.1.4
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -80,11 +80,11 @@ code-annotations==1.3.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
-cookiecutter==2.1.1
+cookiecutter==2.2.3
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==41.0.1
+cryptography==41.0.2
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -97,7 +97,7 @@ distlib==0.3.6
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==3.2.19
+django==3.2.20
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -119,7 +119,7 @@ docutils==0.18.1
     #   sphinx-rtd-theme
 edx-lint==5.3.4
     # via -r requirements/test.txt
-exceptiongroup==1.1.1
+exceptiongroup==1.1.2
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -137,13 +137,13 @@ imagesize==1.4.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-importlib-metadata==6.7.0
+importlib-metadata==6.8.0
     # via
     #   -r requirements/test.txt
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==5.12.0
+importlib-resources==6.0.0
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -155,7 +155,7 @@ isort==5.12.0
     # via
     #   -r requirements/test.txt
     #   pylint
-jaraco-classes==3.2.3
+jaraco-classes==3.3.0
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -169,13 +169,8 @@ jinja2==3.1.2
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-    #   jinja2-time
     #   sphinx
-jinja2-time==0.2.0
-    # via
-    #   -r requirements/test.txt
-    #   cookiecutter
-keyring==23.13.1
+keyring==24.2.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -217,19 +212,19 @@ pbr==5.11.1
     # via
     #   -r requirements/test.txt
     #   stevedore
-pip-tools==6.13.0
+pip-tools==6.14.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.9.6
     # via
     #   -r requirements/test.txt
     #   twine
-platformdirs==3.6.0
+platformdirs==3.8.1
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   pylint
     #   virtualenv
-pluggy==1.0.0
+pluggy==1.2.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -310,7 +305,7 @@ pyyaml==6.0
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==37.3
+readme-renderer==40.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -360,9 +355,8 @@ soupsieve==2.4.1
     # via
     #   -r requirements/test.txt
     #   beautifulsoup4
-sphinx==5.3.0
+sphinx==6.2.1
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
     #   sphinx-book-theme
@@ -419,6 +413,7 @@ tomli==2.0.1
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
+    #   pip-tools
     #   pylint
     #   pyproject-hooks
     #   pytest
@@ -436,7 +431,7 @@ tox-battery==0.6.1
     # via -r requirements/dev.in
 twine==4.0.2
     # via -r requirements/test.txt
-typing-extensions==4.6.3
+typing-extensions==4.7.1
     # via
     #   -r requirements/test.txt
     #   asgiref
@@ -466,7 +461,7 @@ wrapt==1.15.0
     # via
     #   -r requirements/test.txt
     #   astroid
-zipp==3.15.0
+zipp==3.16.1
     # via
     #   -r requirements/test.txt
     #   importlib-metadata
