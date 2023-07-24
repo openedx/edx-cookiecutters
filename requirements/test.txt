@@ -33,7 +33,7 @@ bleach==6.0.0
     # via readme-renderer
 build==0.10.0
     # via -r requirements/test.in
-certifi==2023.5.7
+certifi==2023.7.22
     # via
     #   -r requirements/base.txt
     #   requests
@@ -47,7 +47,7 @@ charset-normalizer==3.2.0
     # via
     #   -r requirements/base.txt
     #   requests
-click==8.1.4
+click==8.1.6
     # via
     #   -r requirements/base.txt
     #   click-log
@@ -58,7 +58,7 @@ click-log==0.4.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==1.3.0
+code-annotations==1.5.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -68,11 +68,11 @@ cookiecutter==2.2.3
     #   pytest-cookies
 cryptography==41.0.2
     # via secretstorage
-dill==0.3.6
+dill==0.3.7
     # via
     #   -r requirements/base.txt
     #   pylint
-distlib==0.3.6
+distlib==0.3.7
     # via virtualenv
 django==3.2.20
     # via
@@ -165,7 +165,7 @@ pbr==5.11.1
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==3.8.1
+platformdirs==3.9.1
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -210,7 +210,7 @@ pylint-plugin-utils==0.8.2
     #   pylint-django
 pyproject-hooks==1.0.0
     # via build
-pytest==7.3.2
+pytest==7.4.0
     # via pytest-cookies
 pytest-cookies==0.7.0
     # via -r requirements/test.in
@@ -227,7 +227,7 @@ pytz==2023.3
     # via
     #   babel
     #   django
-pyyaml==6.0
+pyyaml==6.0.1
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -322,12 +322,12 @@ typing-extensions==4.7.1
     #   pydata-sphinx-theme
     #   pylint
     #   rich
-urllib3==2.0.3
+urllib3==2.0.4
     # via
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.23.1
+virtualenv==20.24.1
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
@@ -335,7 +335,7 @@ wrapt==1.15.0
     # via
     #   -r requirements/base.txt
     #   astroid
-zipp==3.16.1
+zipp==3.16.2
     # via
     #   importlib-metadata
     #   importlib-resources
