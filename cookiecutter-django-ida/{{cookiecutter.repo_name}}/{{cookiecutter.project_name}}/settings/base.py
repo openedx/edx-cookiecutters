@@ -1,3 +1,5 @@
+"""Settings common to all configurations."""
+
 import os
 from os.path import abspath, dirname, join
 
