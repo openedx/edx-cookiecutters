@@ -1,4 +1,6 @@
-from {{cookiecutter.project_name}}.settings.local import *
+"""Settings for devstack use."""
+
+from {{cookiecutter.project_name}}.settings.local import *  # pylint: disable=wildcard-import
 
 DATABASES = {
     'default': {
@@ -28,7 +30,10 @@ SOCIAL_AUTH_EDX_OAUTH2_PUBLIC_URL_ROOT = os.environ.get(
 
 # OAuth2 variables specific to backend service API calls.
 BACKEND_SERVICE_EDX_OAUTH2_KEY = os.environ.get('BACKEND_SERVICE_EDX_OAUTH2_KEY', '{{cookiecutter.project_name}}-backend-service-key')
-BACKEND_SERVICE_EDX_OAUTH2_SECRET = os.environ.get('BACKEND_SERVICE_EDX_OAUTH2_SECRET', '{{cookiecutter.project_name}}-backend-service-secret')  # noqa: E501
+BACKEND_SERVICE_EDX_OAUTH2_SECRET = os.environ.get(
+    'BACKEND_SERVICE_EDX_OAUTH2_SECRET',
+    '{{cookiecutter.project_name}}-backend-service-secret'
+)  # noqa: E501
 
 JWT_AUTH.update({
     'JWT_SECRET_KEY': 'lms-secret',
