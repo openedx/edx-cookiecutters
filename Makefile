@@ -4,6 +4,10 @@ help: ## display this help message
 	@echo "Please use \`make <target>' where <target> is one of"
 	@awk -F ':.*?## ' '/^[a-zA-Z]/ && NF==2 {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
 
+clean: ## remove unneeded build artifacts, etc
+	rm -rf __pycache__
+	rm -rf lib/build
+
 # Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
 PIP_COMPILE = pip-compile --upgrade $(PIP_COMPILE_OPTS)
 
@@ -36,14 +40,13 @@ upgrade_template: ## update the requirements/pip-tools.txt files within our cook
 	$(PIP_COMPILE) --rebuild -o "$(REQ_PATH)/pip-tools.txt" "$(REQ_PATH)/pip-tools.in"
 	$(PIP_COMPILE) --allow-unsafe --rebuild -o "$(REQ_PATH)/pip.txt" "$(REQ_PATH)/pip.in"
 
+PY_FILES = tests */hooks/*.py lib/src/*/*.py
+
 quality: ## check coding style with pycodestyle and pylint
-	pylint */hooks/pre_gen_project.py */hooks/post_gen_project.py
-	pycodestyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
-	pydocstyle */hooks/pre_gen_project.py */hooks/post_gen_project.py
-	pylint tests
-	pycodestyle tests
-	pydocstyle tests
-	isort --check-only --diff */hooks tests
+	pylint $(PY_FILES)
+	pycodestyle $(PY_FILES)
+	pydocstyle $(PY_FILES)
+	isort --check-only --diff $(PY_FILES)
 
 piptools: ## install pinned version of pip-compile and pip-sync
 	pip install -r requirements/pip.txt
@@ -51,6 +54,7 @@ piptools: ## install pinned version of pip-compile and pip-sync
 
 requirements: piptools ## install development environment requirements
 	pip-sync requirements/dev.txt
+	pip install -e lib
 
 test: ## run tests on every supported Python version
 	tox
