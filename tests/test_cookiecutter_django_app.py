@@ -69,6 +69,9 @@ def fixture_options_baked(cookies_session, request, custom_template):
     baked result.
     """
     with bake_in_temp_dir(cookies_session, extra_context=request.param, template=custom_template):
+        sh.make('upgrade')
+        sh.pip('install', '-r', 'requirements/test.txt')
+
         yield request.param
 
 
@@ -144,11 +147,6 @@ def test_setup_py(options_baked):
     assert "VERSION = get_version('cookie_lover', '__init__.py')" in setup_text
     assert "    author='Cookie Monster'," in setup_text
     assert "    author_email='cookie@monster.org'," in setup_text
-
-
-def test_upgrade(options_baked):
-    """Make sure the upgrade target works"""
-    run_in_virtualenv('make upgrade')
 
 
 def test_quality(options_baked):

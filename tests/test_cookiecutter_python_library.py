@@ -60,6 +60,9 @@ def fixture_options_baked(cookies_session, request, custom_template):
     baked result.
     """
     with bake_in_temp_dir(cookies_session, extra_context=request.param, template=custom_template):
+        sh.make('upgrade')
+        sh.pip('install', '-r', 'requirements/test.txt')
+
         yield request.param
 
 
@@ -109,7 +112,5 @@ def test_setup_py(options_baked):
 def test_tests_and_quality(options_baked):
     """
     Run generated tests and quality checks.
-
-    This also tests `make upgrade` by necessity, since it needs the requirements files.
     """
-    run_in_virtualenv('make upgrade requirements test-all')
+    run_in_virtualenv('make requirements test-all')
