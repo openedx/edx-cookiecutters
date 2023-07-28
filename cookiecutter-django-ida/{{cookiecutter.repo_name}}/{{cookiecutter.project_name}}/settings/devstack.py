@@ -33,7 +33,7 @@ BACKEND_SERVICE_EDX_OAUTH2_KEY = os.environ.get('BACKEND_SERVICE_EDX_OAUTH2_KEY'
 BACKEND_SERVICE_EDX_OAUTH2_SECRET = os.environ.get(
     'BACKEND_SERVICE_EDX_OAUTH2_SECRET',
     '{{cookiecutter.project_name}}-backend-service-secret'
-)  # noqa: E501
+)
 
 JWT_AUTH.update({
     'JWT_SECRET_KEY': 'lms-secret',

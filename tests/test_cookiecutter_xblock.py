@@ -11,7 +11,7 @@ import sh
 
 from .bake import bake_in_temp_dir
 from .common_tests import *  # pylint: disable=wildcard-import
-from .venv import all_files, run_in_virtualenv
+from .venv import all_files
 
 LOGGING_CONFIG = {
     'version': 1,
@@ -60,6 +60,8 @@ def fixture_options_baked(cookies_session, request, custom_template):
     baked result.
     """
     with bake_in_temp_dir(cookies_session, extra_context=request.param, template=custom_template):
+        sh.make('upgrade')
+        sh.pip('install', '-r', 'requirements/test.txt')
         yield request.param
 
 
@@ -100,16 +102,8 @@ def test_setup_py(options_baked):
     assert "    author_email='cookie@monster.org'," in setup_text
 
 
-def test_upgrade(options_baked):
-    """Make sure the upgrade target works"""
-    run_in_virtualenv('make upgrade')
-
-
 def test_quality(options_baked):
     """Run quality tests on the given generated output."""
-    sh.make('upgrade')
-    sh.pip('install', '-r', 'requirements/base.txt')
-
     py_files = [name for name in all_files() if name.endswith(".py")]
     sh.pylint(*py_files)
     sh.pycodestyle(*py_files)
