@@ -95,15 +95,14 @@ def test_upgrade(options_baked):
 
 def test_quality(options_baked):
     """Run quality tests on the given generated output."""
-    for name in all_files():
-        if name.endswith('.py'):
-            sh.pylint(name)
-            sh.pycodestyle(name)
-            # sh.pydocstyle(name)  Not running for now because there are too many violations.
-            sh.isort(name, check_only=True, diff=True)
     sh.make('upgrade')
     sh.pip('install', '-r', 'requirements/test.txt')
 
+    py_files = [name for name in all_files() if name.endswith(".py")]
+    sh.pylint(*py_files)
+    sh.pycodestyle(*py_files)
+    # sh.pydocstyle(*py_files)  Not running for now because there are too many violations.
+    sh.isort(*py_files, check_only=True, diff=True)
 
     # Sanity check the generated Makefile
     sh.make('help')
