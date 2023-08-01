@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-08-01
+**********
+
+Changed
+=======
+
+- Update mysql docker image from 5.6 to 8.0 to use the newest LTS version of the mysql server
+
 2023-07-07
 **********
 
