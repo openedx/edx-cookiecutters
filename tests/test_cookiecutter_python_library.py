@@ -45,25 +45,14 @@ configurations = [
 ]
 
 
-@pytest.fixture(name='custom_template', scope="module")
-def fixture_custom_template(cookies_session):
-    template = cookies_session._default_template + "/cookiecutter-python-library"  # pylint: disable=protected-access
-    return template
+@pytest.fixture(name="configuration", params=configurations, scope="module")
+def fixture_configuration(request):
+    return request.param
 
 
-@pytest.fixture(params=configurations, name='options_baked', scope="module")
-def fixture_options_baked(cookies_session, request, custom_template):
-    """
-    Bake a cookie cutter, parameterized by configurations.
-
-    Provides the configuration dict, and changes into the directory with the
-    baked result.
-    """
-    with bake_in_temp_dir(cookies_session, extra_context=request.param, template=custom_template):
-        sh.make('upgrade')
-        sh.pip('install', '-r', 'requirements/test.txt')
-
-        yield request.param
+@pytest.fixture(name="custom_template_name", scope="module")
+def fixture_custom_template_name():
+    return "cookiecutter-python-library"
 
 
 # Fixture names aren't always used in test functions. Disable completely.
