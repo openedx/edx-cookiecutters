@@ -12,13 +12,13 @@ astroid==2.15.6
     #   pylint-celery
 binaryornot==0.4.4
     # via cookiecutter
-certifi==2023.5.7
+certifi==2023.7.22
     # via requests
-chardet==5.1.0
+chardet==5.2.0
     # via binaryornot
 charset-normalizer==3.2.0
     # via requests
-click==8.1.4
+click==8.1.6
     # via
     #   click-log
     #   code-annotations
@@ -26,11 +26,11 @@ click==8.1.4
     #   edx-lint
 click-log==0.4.0
     # via edx-lint
-code-annotations==1.3.0
+code-annotations==1.5.0
     # via edx-lint
-cookiecutter==2.2.3
+cookiecutter==2.3.0
     # via -r requirements/base.in
-dill==0.3.6
+dill==0.3.7
     # via pylint
 edx-lint==5.3.4
     # via -r requirements/base.in
@@ -44,15 +44,21 @@ jinja2==3.1.2
     #   cookiecutter
 lazy-object-proxy==1.9.0
     # via astroid
+markdown-it-py==3.0.0
+    # via rich
 markupsafe==2.1.3
     # via jinja2
 mccabe==0.7.0
     # via pylint
+mdurl==0.1.2
+    # via markdown-it-py
 pbr==5.11.1
     # via stevedore
-platformdirs==3.8.1
+platformdirs==3.10.0
     # via pylint
-pylint==2.17.4
+pygments==2.15.1
+    # via rich
+pylint==2.17.5
     # via
     #   edx-lint
     #   pylint-celery
@@ -72,11 +78,13 @@ python-slugify==8.0.1
     # via
     #   code-annotations
     #   cookiecutter
-pyyaml==6.0
+pyyaml==6.0.1
     # via
     #   code-annotations
     #   cookiecutter
 requests==2.31.0
+    # via cookiecutter
+rich==13.5.2
     # via cookiecutter
 six==1.16.0
     # via
@@ -88,13 +96,14 @@ text-unidecode==1.3
     # via python-slugify
 tomli==2.0.1
     # via pylint
-tomlkit==0.11.8
+tomlkit==0.12.1
     # via pylint
 typing-extensions==4.7.1
     # via
     #   astroid
     #   pylint
-urllib3==2.0.3
+    #   rich
+urllib3==2.0.4
     # via requests
 wrapt==1.15.0
     # via astroid
