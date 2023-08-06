@@ -34,4 +34,4 @@ def options_baked(cookies_session, configuration, custom_template):
     with bake_in_temp_dir(cookies_session, extra_context=configuration, template=custom_template):
         sh.make('upgrade')
         sh.pip('install', '-r', 'requirements/test.txt')
-        yield configuration
+        yield
