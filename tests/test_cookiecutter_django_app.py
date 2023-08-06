@@ -87,12 +87,12 @@ def test_readme(options_baked, custom_template):
     sh.twine("check", "dist/*")
 
 
-def test_models(options_baked):
+def test_models(options_baked, configuration):
     """The generated models.py file should pass a sanity check."""
-    if "models" not in options_baked:
+    if "models" not in configuration:
         pytest.skip("No models to check")
     model_txt = Path("cookie_lover/models.py").read_text()
-    for model_name in options_baked.get("models").split(","):
+    for model_name in configuration.get("models").split(","):
         pattern = fr'^class {model_name}\(TimeStampedModel\):$'
         assert re.search(pattern, model_txt, re.MULTILINE)
 
