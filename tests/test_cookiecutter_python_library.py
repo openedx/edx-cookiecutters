@@ -32,7 +32,7 @@ common = {
     "author_email": "cookie@monster.org",
     "author_name": "Cookie Monster",
     "library_name": "cookie_lover",
-    "github_org": "bakery_org",
+    "github_org": "openedx",
     "repo_name": "cookie_repo",
 }
 
