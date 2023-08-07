@@ -37,6 +37,8 @@ certifi==2023.7.22
     # via
     #   -r requirements/base.txt
     #   requests
+cffi==1.15.1
+    # via cryptography
 chardet==5.2.0
     # via
     #   -r requirements/base.txt
@@ -64,6 +66,8 @@ cookiecutter==2.3.0
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
+cryptography==41.0.3
+    # via secretstorage
 dill==0.3.7
     # via
     #   -r requirements/base.txt
@@ -119,6 +123,10 @@ isort==5.12.0
     #   pylint
 jaraco-classes==3.3.0
     # via keyring
+jeepney==0.8.0
+    # via
+    #   keyring
+    #   secretstorage
 jinja2==3.1.2
     # via
     #   -r requirements/base.txt
@@ -170,11 +178,13 @@ pluggy==1.2.0
     # via pytest
 pycodestyle==2.11.0
     # via -r requirements/test.in
+pycparser==2.21
+    # via cffi
 pydata-sphinx-theme==0.13.3
     # via sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.in
-pygments==2.15.1
+pygments==2.16.1
     # via
     #   -r requirements/base.txt
     #   accessible-pygments
@@ -247,6 +257,8 @@ rich==13.5.2
     #   -r requirements/base.txt
     #   cookiecutter
     #   twine
+secretstorage==3.3.3
+    # via keyring
 sh==2.0.4
     # via -r requirements/test.in
 six==1.16.0
