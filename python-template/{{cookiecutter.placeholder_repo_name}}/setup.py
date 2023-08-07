@@ -40,7 +40,7 @@ def load_requirements(*requirements_paths):
     constraint_files = set()
 
     # groups "pkg<=x.y.z,..." into ("pkg", "<=x.y.z,...")
-    requirement_line_regex = re.compile(r"([a-zA-Z0-9-_.]+)([<>=][^#\s]+)?")
+    requirement_line_regex = re.compile(r"([a-zA-Z0-9-_.\[\]]+)([<>=][^#\s]+)?")
 
     def add_version_constraint_or_raise(current_line, current_requirements, add_if_not_present):
         regex_match = requirement_line_regex.match(current_line)
