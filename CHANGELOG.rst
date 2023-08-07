@@ -5,6 +5,12 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-08-11
+**********
+
+- Added: When a repo is made outside of the openedx GitHub organization, the
+  post hook tells the user to go find changes that need to be made.
+
 2023-08-01
 **********
 

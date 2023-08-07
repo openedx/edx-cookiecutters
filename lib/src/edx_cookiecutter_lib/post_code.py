@@ -62,3 +62,12 @@ def post_gen_project(extra_context):
 
     # Post build fixes
     write_main(['pylintrc'])
+
+    # Cookiecutters are right for the openedx organization. Other orgs might need
+    # adjustments.
+    org = extra_context["github_org"]
+    if org != "openedx":
+        print("*" * 78)
+        print(f"Since your repo will be in the {org} organization, you may need")
+        print("to adjust the contents of the repo, such as licenses, email addresses,")
+        print("and contribution details. Check with your organization.")
