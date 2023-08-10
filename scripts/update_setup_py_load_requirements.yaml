@@ -21,7 +21,7 @@ rules:
         requirements = {}
         constraint_files = set()
 
-        # groups "my-package-name<=x.y.z,..." into ("my-package-name", "<=x.y.z,...")
+        # groups "pkg<=x.y.z,..." into ("pkg", "<=x.y.z,...")
         requirement_line_regex = re.compile(r"([a-zA-Z0-9-_.\[\]]+)([<>=][^#\s]+)?")
 
         def add_version_constraint_or_raise(current_line, current_requirements, add_if_not_present):
@@ -30,8 +30,8 @@ rules:
                 package = regex_match.group(1)
                 version_constraints = regex_match.group(2)
                 existing_version_constraints = current_requirements.get(package, None)
-                # it's fine to add constraints to an unconstrained package, but raise an error if there are already
-                # constraints in place
+                # It's fine to add constraints to an unconstrained package,
+                # but raise an error if there are already constraints in place.
                 if existing_version_constraints and existing_version_constraints != version_constraints:
                     raise BaseException(f'Multiple constraint definitions found for {package}:'
                                         f' "{existing_version_constraints}" and "{version_constraints}".'
@@ -40,7 +40,8 @@ rules:
                 if add_if_not_present or package in current_requirements:
                     current_requirements[package] = version_constraints
 
-        # process .in files and store the path to any constraint files that are pulled in
+        # Read requirements from .in files and store the path to any
+        # constraint files that are pulled in.
         for path in requirements_paths:
             with open(path) as reqs:
                 for line in reqs:
@@ -49,7 +50,7 @@ rules:
                     if line and line.startswith('-c') and not line.startswith('-c http'):
                         constraint_files.add(os.path.dirname(path) + '/' + line.split('#')[0].replace('-c', '').strip())
 
-        # process constraint files and add any new constraints found to existing requirements
+        # process constraint files: add constraints to existing requirements
         for constraint_file in constraint_files:
             with open(constraint_file) as reader:
                 for line in reader:

@@ -48,8 +48,8 @@ def load_requirements(*requirements_paths):
             package = regex_match.group(1)
             version_constraints = regex_match.group(2)
             existing_version_constraints = current_requirements.get(package, None)
-            # fine to add constraints to an unconstrained package,
-            # raise an error if there are already constraints in place
+            # It's fine to add constraints to an unconstrained package,
+            # but raise an error if there are already constraints in place.
             if existing_version_constraints and existing_version_constraints != version_constraints:
                 raise BaseException(f'Multiple constraint definitions found for {package}:'
                                     f' "{existing_version_constraints}" and "{version_constraints}".'
@@ -58,8 +58,8 @@ def load_requirements(*requirements_paths):
             if add_if_not_present or package in current_requirements:
                 current_requirements[package] = version_constraints
 
-    # read requirements from .in
-    # store the path to any constraint files that are pulled in
+    # Read requirements from .in files and store the path to any
+    # constraint files that are pulled in.
     for path in requirements_paths:
         with open(path) as reqs:
             for line in reqs:
