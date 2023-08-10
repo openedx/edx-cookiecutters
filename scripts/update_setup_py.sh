@@ -7,9 +7,15 @@
 # message for complying with conventional commit guidelines.
 # Date: 11/01/2021
 
+set -eu -o pipefail
+
 script_home=$(dirname -- "${BASH_SOURCE[0]}")
 
-mkdir update-setup-tmp
+# Need semgrep, and also want to ensure we're only installing it into
+# a virtualenv and not unexpectedly into the user's home dir.
+"$VIRTUAL_ENV"/bin/pip install semgrep
+
+mkdir -p update-setup-tmp
 
 # generate and store requires.txt file for future comparison
 python setup.py bdist_wheel
