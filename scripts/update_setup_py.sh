@@ -9,24 +9,24 @@
 
 script_home=$(dirname -- "${BASH_SOURCE[0]}")
 
-mkdir update-setup-tmp;
+mkdir update-setup-tmp
 
 # generate and store requires.txt file for future comparison
-python setup.py bdist_wheel;
-wheel_dir=$(find . -name *.egg-info | xargs basename);
-cp "$(pwd)/$wheel_dir/requires.txt" ./update-setup-tmp/old_requires.txt;
+python setup.py bdist_wheel
+wheel_dir=$(find . -name *.egg-info | xargs basename)
+cp "$(pwd)/$wheel_dir/requires.txt" ./update-setup-tmp/old_requires.txt
 
 # make sure os and re are imported in setup.py, and remove any direct imports of os.path.dirname to avoid conflict
-isort --rm "import os.path.dirname" -a "import os re" setup.py;
+isort --rm "import os.path.dirname" -a "import os re" setup.py
 
 # Need two separate config files, one for each method being overriden,
 # in order to avoid collisions when doing code replacement
 # --debug will provide additional logging in case things fail
-semgrep -a --config="$script_home"/update_setup_py_load_requirements.yaml --debug setup.py;
-semgrep -a --config="$script_home"/update_setup_py_is_requirement.yaml --debug setup.py;
+semgrep -a --config="$script_home"/update_setup_py_load_requirements.yaml --debug setup.py
+semgrep -a --config="$script_home"/update_setup_py_is_requirement.yaml --debug setup.py
 
 # rerun packaging command to generate new requires.txt file
-python setup.py bdist_wheel;
+python setup.py bdist_wheel
 
 # add constraints file to manifest so python tests pass
 # note: this will not work for repositories where the constraints file has been changed from requirements/constraints.txt
@@ -43,9 +43,9 @@ fi
 # Create PR description for use by cleanup-python-code jenkins job
 echo -e "[ARCHBOM-1772](https://openedx.atlassian.net/browse/ARCHBOM-1772)
  Update setup.py to use constraint files when generating requirements files for packaging and distribution.
- PR generated automatically with Jenkins job cleanup-python-code. " > .git/cleanup-python-code-description;
-echo -e "\nResult of running \`python setup.py bdist_wheel\` before applying fix (in .egg-info/requires.txt)\: \n" >> .git/cleanup-python-code-description;
-cat ./update-setup-tmp/old_requires.txt >> .git/cleanup-python-code-description;
-echo -e "\nResult of running \`python setup.py bdist_wheel\` after applying fix (in .egg-info/requires.txt)\: \n" >> .git/cleanup-python-code-description;
-cat "$(pwd)/$wheel_dir/requires.txt" >> .git/cleanup-python-code-description;
+ PR generated automatically with Jenkins job cleanup-python-code. " > .git/cleanup-python-code-description
+echo -e "\nResult of running \`python setup.py bdist_wheel\` before applying fix (in .egg-info/requires.txt)\: \n" >> .git/cleanup-python-code-description
+cat ./update-setup-tmp/old_requires.txt >> .git/cleanup-python-code-description
+echo -e "\nResult of running \`python setup.py bdist_wheel\` after applying fix (in .egg-info/requires.txt)\: \n" >> .git/cleanup-python-code-description
+cat "$(pwd)/$wheel_dir/requires.txt" >> .git/cleanup-python-code-description
 rm -rf update-setup-tmp
