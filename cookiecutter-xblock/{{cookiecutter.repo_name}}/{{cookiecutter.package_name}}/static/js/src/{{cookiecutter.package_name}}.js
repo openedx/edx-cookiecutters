@@ -24,5 +24,10 @@ function {{cookiecutter.class_name}}(runtime, element) {
         */
 
         /* Here's where you'd do things on page load. */
+
+        // dummy_text is to have at least one string to translate in JS files. If you remove this line,
+        // and you don't have any other string to translate in JS files; then you must remove the (--merge-po-files)
+        // option from the "extract_translations" command in the Makefile
+        const dummy_text = gettext("Hello World");
     });
 }
