@@ -112,7 +112,7 @@ importlib-metadata==6.8.0
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==6.0.0
+importlib-resources==6.0.1
     # via keyring
 iniconfig==2.0.0
     # via pytest
@@ -259,7 +259,7 @@ rich==13.5.2
     #   twine
 secretstorage==3.3.3
     # via keyring
-sh==2.0.4
+sh==2.0.6
     # via -r requirements/test.in
 six==1.16.0
     # via
@@ -335,7 +335,7 @@ urllib3==2.0.4
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.24.2
+virtualenv==20.24.3
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach

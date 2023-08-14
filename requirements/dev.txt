@@ -143,7 +143,7 @@ importlib-metadata==6.8.0
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==6.0.0
+importlib-resources==6.0.1
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -212,7 +212,7 @@ pbr==5.11.1
     # via
     #   -r requirements/test.txt
     #   stevedore
-pip-tools==7.2.0
+pip-tools==7.3.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.9.6
     # via
@@ -337,7 +337,7 @@ secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==2.0.4
+sh==2.0.6
     # via -r requirements/test.txt
 six==1.16.0
     # via
@@ -445,7 +445,7 @@ urllib3==2.0.4
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.24.2
+virtualenv==20.24.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
