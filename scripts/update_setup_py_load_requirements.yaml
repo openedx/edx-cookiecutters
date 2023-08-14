@@ -29,7 +29,7 @@ rules:
             that too would interfere with matching constraints.)
             """
             canonical = package.lower().replace('_', '-').split('[')[0]
-            seen_spelling = by_canonical_name[canonical]
+            seen_spelling = by_canonical_name.get(canonical)
             if seen_spelling is None:
                 by_canonical_name[canonical] = package
             elif seen_spelling != package:
