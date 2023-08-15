@@ -36,7 +36,7 @@ def load_requirements(*requirements_paths):
     with -c in the requirements files.
     Returns a list of requirement strings.
     """
-    # e.g. {"django": "Django", "openedx-events": "openedx_events"}
+    # e.g. {"django": "Django", "confluent-kafka": "confluent_kafka[avro]"}
     by_canonical_name = {}
 
     def check_name_consistent(package):

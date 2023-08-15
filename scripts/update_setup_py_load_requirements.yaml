@@ -18,7 +18,7 @@ rules:
         """
         # UPDATED VIA SEMGREP - if you need to remove/modify this method remove this line and add a comment specifying why.
 
-        # e.g. {"django": "Django", "openedx-events": "openedx_events"}
+        # e.g. {"django": "Django", "confluent-kafka": "confluent_kafka[avro]"}
         by_canonical_name = {}
 
         def check_name_consistent(package):
