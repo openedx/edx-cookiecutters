@@ -63,8 +63,9 @@ def load_requirements(*requirements_paths):
 
     # groups "pkg<=x.y.z,..." into ("pkg", "<=x.y.z,...")
     re_package_name_base_chars = r"a-zA-Z0-9\-_."  # chars allowed in base package name
+    # Two groups: name[maybe,extras], and optionally a constraint
     requirement_line_regex = re.compile(
-        r"([%s]+(?:\[[%s,\s]+\])?)([<>=][^#\s]+)?"  # name[maybe,extras] and maybe constraint
+        r"([%s]+(?:\[[%s,\s]+\])?)([<>=][^#\s]+)?"
         % (re_package_name_base_chars, re_package_name_base_chars)
     )
 
