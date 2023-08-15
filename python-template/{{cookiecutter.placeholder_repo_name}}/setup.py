@@ -36,13 +36,14 @@ def load_requirements(*requirements_paths):
     with -c in the requirements files.
     Returns a list of requirement strings.
     """
+    # e.g. {"django": "Django", "openedx-events": "openedx_events"}
     by_canonical_name = {}
 
     def check_name_consistent(package):
         """
-        Raise exception if package is spelled different ways.
+        Raise exception if package is named different ways.
 
-        This ensures that packages are spelled consistently so we can match
+        This ensures that packages are named consistently so we can match
         constraints to packages. It also ensures that if we require a package
         with extras we don't constrain it without mentioning the extras (since
         that too would interfere with matching constraints.)
@@ -63,7 +64,7 @@ def load_requirements(*requirements_paths):
     # groups "pkg<=x.y.z,..." into ("pkg", "<=x.y.z,...")
     re_package_name_base_chars = r"a-zA-Z0-9\-_."  # chars allowed in base package name
     requirement_line_regex = re.compile(
-        r"([%s]+(?:\[[%s,\s]+\])?)([<>=][^#\s]+)?"
+        r"([%s]+(?:\[[%s,\s]+\])?)([<>=][^#\s]+)?"  # name[maybe,extras] and maybe constraint
         % (re_package_name_base_chars, re_package_name_base_chars)
     )
 

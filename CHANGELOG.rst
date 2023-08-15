@@ -12,7 +12,7 @@ Changed
 =======
 
 - In setup.py, support advertising constraints on packages with multiple extras
-- Fail packaging if requirements are spelled differently in different places
+- Fail packaging if requirements are named differently in different places or have different extras listed
 
 2023-08-11
 **********
