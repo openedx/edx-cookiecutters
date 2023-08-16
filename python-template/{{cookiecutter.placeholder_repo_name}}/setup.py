@@ -36,17 +36,45 @@ def load_requirements(*requirements_paths):
     with -c in the requirements files.
     Returns a list of requirement strings.
     """
+    # e.g. {"django": "Django", "confluent-kafka": "confluent_kafka[avro]"}
+    by_canonical_name = {}
+
+    def check_name_consistent(package):
+        """
+        Raise exception if package is named different ways.
+
+        This ensures that packages are named consistently so we can match
+        constraints to packages. It also ensures that if we require a package
+        with extras we don't constrain it without mentioning the extras (since
+        that too would interfere with matching constraints.)
+        """
+        canonical = package.lower().replace('_', '-').split('[')[0]
+        seen_spelling = by_canonical_name.get(canonical)
+        if seen_spelling is None:
+            by_canonical_name[canonical] = package
+        elif seen_spelling != package:
+            raise Exception(
+                f'Encountered both "{seen_spelling}" and "{package}" in requirements '
+                'and constraints files; please use just one or the other.'
+            )
+
     requirements = {}
     constraint_files = set()
 
     # groups "pkg<=x.y.z,..." into ("pkg", "<=x.y.z,...")
-    requirement_line_regex = re.compile(r"([a-zA-Z0-9-_.\[\]]+)([<>=][^#\s]+)?")
+    re_package_name_base_chars = r"a-zA-Z0-9\-_."  # chars allowed in base package name
+    # Two groups: name[maybe,extras], and optionally a constraint
+    requirement_line_regex = re.compile(
+        r"([%s]+(?:\[[%s,\s]+\])?)([<>=][^#\s]+)?"
+        % (re_package_name_base_chars, re_package_name_base_chars)
+    )
 
     def add_version_constraint_or_raise(current_line, current_requirements, add_if_not_present):
         regex_match = requirement_line_regex.match(current_line)
         if regex_match:
             package = regex_match.group(1)
             version_constraints = regex_match.group(2)
+            check_name_consistent(package)
             existing_version_constraints = current_requirements.get(package, None)
             # It's fine to add constraints to an unconstrained package,
             # but raise an error if there are already constraints in place.

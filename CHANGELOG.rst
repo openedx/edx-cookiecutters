@@ -5,6 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-08-16
+**********
+
+Changed
+=======
+
+- In setup.py, support advertising constraints on packages with multiple extras
+- Fail packaging if requirements are named differently in different places or have different extras listed
+
 2023-08-11
 **********
 

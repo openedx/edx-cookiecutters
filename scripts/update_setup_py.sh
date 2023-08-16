@@ -50,8 +50,8 @@ fi
 echo -e "[ARCHBOM-1772](https://openedx.atlassian.net/browse/ARCHBOM-1772)
  Update setup.py to use constraint files when generating requirements files for packaging and distribution.
  PR generated automatically with Jenkins job cleanup-python-code. " > .git/cleanup-python-code-description
-echo -e "\nResult of running \`python setup.py bdist_wheel\` before applying fix (in .egg-info/requires.txt)\: \n" >> .git/cleanup-python-code-description
+echo -e "\nResult of running \`python setup.py bdist_wheel\` before applying fix (in .egg-info/requires.txt): \n" >> .git/cleanup-python-code-description
 cat ./update-setup-tmp/old_requires.txt >> .git/cleanup-python-code-description
-echo -e "\nResult of running \`python setup.py bdist_wheel\` after applying fix (in .egg-info/requires.txt)\: \n" >> .git/cleanup-python-code-description
+echo -e "\nResult of running \`python setup.py bdist_wheel\` after applying fix (in .egg-info/requires.txt): \n" >> .git/cleanup-python-code-description
 cat "$(pwd)/$wheel_dir/requires.txt" >> .git/cleanup-python-code-description
 rm -rf update-setup-tmp
