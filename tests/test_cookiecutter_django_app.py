@@ -54,22 +54,14 @@ configurations = [
 ]
 
 
-@pytest.fixture(name='custom_template', scope="module")
-def fixture_custom_template(cookies_session):
-    template = cookies_session._default_template + "/cookiecutter-django-app"  # pylint: disable=protected-access
-    return template
+@pytest.fixture(name="configuration", params=configurations, scope="module")
+def fixture_configuration(request):
+    return request.param
 
 
-@pytest.fixture(params=configurations, name='options_baked', scope="module")
-def fixture_options_baked(cookies_session, request, custom_template):
-    """
-    Bake a cookie cutter, parameterized by configurations.
-
-    Provides the configuration dict, and changes into the directory with the
-    baked result.
-    """
-    with bake_in_temp_dir(cookies_session, extra_context=request.param, template=custom_template):
-        yield request.param
+@pytest.fixture(name="custom_template_name", scope="module")
+def fixture_custom_template_name():
+    return "cookiecutter-django-app"
 
 
 # Fixture names aren't always used in test functions. Disable completely.
@@ -95,12 +87,12 @@ def test_readme(options_baked, custom_template):
     sh.twine("check", "dist/*")
 
 
-def test_models(options_baked):
+def test_models(options_baked, configuration):
     """The generated models.py file should pass a sanity check."""
-    if "models" not in options_baked:
+    if "models" not in configuration:
         pytest.skip("No models to check")
     model_txt = Path("cookie_lover/models.py").read_text()
-    for model_name in options_baked.get("models").split(","):
+    for model_name in configuration.get("models").split(","):
         pattern = fr'^class {model_name}\(TimeStampedModel\):$'
         assert re.search(pattern, model_txt, re.MULTILINE)
 
@@ -146,19 +138,13 @@ def test_setup_py(options_baked):
     assert "    author_email='cookie@monster.org'," in setup_text
 
 
-def test_upgrade(options_baked):
-    """Make sure the upgrade target works"""
-    run_in_virtualenv('make upgrade')
-
-
 def test_quality(options_baked):
     """Run quality tests on the given generated output."""
-    for name in all_files():
-        if name.endswith('.py'):
-            sh.pylint(name)
-            sh.pycodestyle(name)
-            sh.pydocstyle(name)
-            sh.isort(name, check_only=True, diff=True)
+    py_files = [name for name in all_files() if name.endswith(".py")]
+    sh.pylint(*py_files)
+    sh.pycodestyle(*py_files)
+    sh.pydocstyle(*py_files)
+    sh.isort(*py_files, check_only=True, diff=True)
 
     # Sanity check the generated Makefile
     sh.make('help')

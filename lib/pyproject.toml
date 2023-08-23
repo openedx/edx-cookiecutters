@@ -1,0 +1,11 @@
+[project]
+name = "edx_cookiecutter_lib"
+description = "Helper code for our cookiecutters"
+
+# Since this library is only used when we are running the cookiecutters,
+# we don't need to increment the version number.
+version = "1.0.0"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

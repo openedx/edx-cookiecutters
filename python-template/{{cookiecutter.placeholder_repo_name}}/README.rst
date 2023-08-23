@@ -115,11 +115,10 @@ can provide.
 
 https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/issues
 
-For more information about these options, see the `Getting Help`_ page.
+For more information about these options, see the `Getting Help <https://openedx.org/getting-help>`__ page.
 
 .. _Slack invitation: https://openedx.org/slack
 .. _community Slack workspace: https://openedx.slack.com/
-.. _Getting Help: https://openedx.org/getting-help
 
 License
 *******

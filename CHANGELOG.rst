@@ -5,7 +5,7 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
-2023-06-14
+2023-08-23
 **********
 
 Added
@@ -13,10 +13,46 @@ Added
 
 - Ensure tox runs locally with new requirements by deleting .tox folder before
   running ``make requirements`` or ``make dev_requirements``.
-
-
-2023-06-13
+  
+2023-08-16
 **********
+
+Changed
+=======
+
+- In setup.py, support advertising constraints on packages with multiple extras
+- Fail packaging if requirements are named differently in different places or have different extras listed
+
+2023-08-11
+**********
+
+- Added: When a repo is made outside of the openedx GitHub organization, the
+  post hook tells the user to go find changes that need to be made.
+
+2023-08-01
+**********
+
+Changed
+=======
+
+- Update mysql docker image from 5.6 to 8.0 to use the newest LTS version of the mysql server
+
+2023-07-07
+**********
+
+Fixed
+=====
+
+- Include ``pkg-config`` in apt-installed packages in IDA Dockerfile, allowing upgrade to mysqlclient 2.2.0
+
+2023-06-21
+**********
+
+Fixed
+=====
+
+- Fix various quality, doc build, and test failures in the python-library cookiecutter
+- Reduce the change of regressions by ensuring that ``make test-all`` is run on the python-library output as part of the cookiecutter repo's own unit tests
 
 Added
 =====

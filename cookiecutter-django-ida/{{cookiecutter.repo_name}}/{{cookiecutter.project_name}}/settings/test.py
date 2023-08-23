@@ -1,6 +1,6 @@
-import os
+"""Settings for use during testing."""
 
-from {{cookiecutter.project_name}}.settings.base import *
+from {{cookiecutter.project_name}}.settings.base import *  # pylint: disable=wildcard-import
 
 # IN-MEMORY TEST DATABASE
 DATABASES = {

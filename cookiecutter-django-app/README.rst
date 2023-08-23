@@ -1,8 +1,6 @@
 Cookiecutter Django Package
 ###########################
 
-|ci-badge| |license-badge|
-
 A cookiecutter_ template for creating reusable Django packages (installable apps) quickly.
 If you're creating a standalone Django service, you should probably use
 `cookiecutter-django-ida`_ instead.
@@ -141,43 +139,3 @@ Add to Django Packages
 ======================
 
 Once you have a release, and assuming you have an account there, just go to https://www.djangopackages.com/packages/add/ and add it there.
-
-
-License
-*******
-
-The code in this repository is licensed under the Apache License, Version 2.0,
-unless otherwise noted.
-
-Please see ``LICENSE.txt`` for details.
-
-
-How to Contribute
-*****************
-
-Contributions are very welcome.
-Please read `How To Contribute <https://github.com/openedx/.github/blob/master/CONTRIBUTING.md>`_ for details.
-should be followed for all Open edX projects.
-
-
-Reporting Security Issues
-*************************
-
-Please do not report security issues in public. Please email security@openedx.org
-
-Getting Help
-************
-
-Have a question about this repository, or about the Open edX project in general?  Please
-refer to this `list of resources`_ if you need any assistance.
-
-.. _list of resources: https://open.edx.org/getting-help
-
-
-.. |ci-badge| image:: https://github.com/openedx/edx-django-utils/workflows/Python%20CI/badge.svg?branch=master
-    :target: https://github.com/openedx/edx-django-utils/actions
-    :alt: CI
-
-.. |license-badge| image:: https://img.shields.io/github/license/edx/cookiecutter-django-app.svg
-    :target: https://github.com/openedx/cookiecutter-django-app/blob/master/LICENSE.txt
-    :alt: License

@@ -11,7 +11,7 @@ import sh
 
 from .bake import bake_in_temp_dir
 from .common_tests import *  # pylint: disable=wildcard-import
-from .venv import all_files, run_in_virtualenv
+from .venv import all_files
 
 LOGGING_CONFIG = {
     'version': 1,
@@ -45,22 +45,14 @@ configurations = [
 ]
 
 
-@pytest.fixture(name='custom_template', scope="module")
-def fixture_custom_template(cookies_session):
-    template = cookies_session._default_template + "/cookiecutter-xblock"  # pylint: disable=protected-access
-    return template
+@pytest.fixture(name="configuration", params=configurations, scope="module")
+def fixture_configuration(request):
+    return request.param
 
 
-@pytest.fixture(params=configurations, name='options_baked', scope="module")
-def fixture_options_baked(cookies_session, request, custom_template):
-    """
-    Bake a cookie cutter, parameterized by configurations.
-
-    Provides the configuration dict, and changes into the directory with the
-    baked result.
-    """
-    with bake_in_temp_dir(cookies_session, extra_context=request.param, template=custom_template):
-        yield request.param
+@pytest.fixture(name="custom_template_name", scope="module")
+def fixture_custom_template_name():
+    return "cookiecutter-xblock"
 
 
 # Fixture names aren't always used in test functions. Disable completely.
@@ -100,21 +92,13 @@ def test_setup_py(options_baked):
     assert "    author_email='cookie@monster.org'," in setup_text
 
 
-def test_upgrade(options_baked):
-    """Make sure the upgrade target works"""
-    run_in_virtualenv('make upgrade')
-
-
 def test_quality(options_baked):
     """Run quality tests on the given generated output."""
-    sh.make('upgrade')
-    sh.pip('install', '-r', 'requirements/base.txt')
-    for name in all_files():
-        if name.endswith('.py'):
-            sh.pylint(name)
-            sh.pycodestyle(name)
-            # sh.pydocstyle(name)  Not running for now because there are too many violations.
-            sh.isort(name, check_only=True, diff=True)
+    py_files = [name for name in all_files() if name.endswith(".py")]
+    sh.pylint(*py_files)
+    sh.pycodestyle(*py_files)
+    # sh.pydocstyle(*py_files)  Not running for now because there are too many violations.
+    sh.isort(*py_files, check_only=True, diff=True)
 
     # Sanity check the generated Makefile
     sh.make('help')

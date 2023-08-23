@@ -51,11 +51,11 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 
 quality: ## check coding style with pycodestyle and pylint
 	touch tests/__init__.py
-	pylint {{ cookiecutter.sub_dir_name }} tests test_utils manage.py *.py
+	pylint {{ cookiecutter.sub_dir_name }} tests test_utils *.py
 	rm tests/__init__.py
 	pycodestyle {{ cookiecutter.sub_dir_name }} tests  *.py
 	pydocstyle {{ cookiecutter.sub_dir_name }} tests *.py
-	isort --check-only --diff --recursive tests test_utils {{ cookiecutter.sub_dir_name }} *.py test_settings.py
+	isort --check-only --diff tests test_utils {{ cookiecutter.sub_dir_name }} *.py test_settings.py
 	python setup.py bdist_wheel
 	twine check dist/*
 	make selfcheck
@@ -75,6 +75,7 @@ diff_cover: test ## find diff lines that need test coverage
 
 test-all: quality ## run tests on every supported Python/Django combination
 	tox
+	tox -e docs
 
 validate: quality test ## run tests and quality checks
 

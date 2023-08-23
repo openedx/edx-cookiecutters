@@ -1,3 +1,5 @@
+"""Utilities for settings."""
+
 import platform
 import sys
 from os import environ
@@ -6,20 +8,23 @@ from django.core.exceptions import ImproperlyConfigured
 
 
 def get_env_setting(setting):
-    """ Get the environment setting or raise exception """
+    """Get the environment setting or raise exception."""
     try:
         return environ[setting]
-    except KeyError:
+    except KeyError as exc:
         error_msg = "Set the [%s] env variable!" % setting
-        raise ImproperlyConfigured(error_msg)
+        raise ImproperlyConfigured(error_msg) from exc
 
 
-def get_logger_config(logging_env="no_env",
-                      debug=False,
-                      service_variant='{{cookiecutter.repo_name}}'):
+def get_logger_config(
+    logging_env="no_env",
+    debug=False,
+    service_variant='{{cookiecutter.repo_name}}',
+):
     """
-    Return the appropriate logging config dictionary. You should assign the
-    result of this to the LOGGING var in your settings.
+    Return the appropriate logging config dictionary.
+
+    You should assign the result of this to the LOGGING var in your settings.
     """
     hostname = platform.node().split(".")[0]
     syslog_format = (

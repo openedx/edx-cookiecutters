@@ -32,7 +32,7 @@ common = {
     "author_email": "cookie@monster.org",
     "author_name": "Cookie Monster",
     "library_name": "cookie_lover",
-    "github_org": "bakery_org",
+    "github_org": "openedx",
     "repo_name": "cookie_repo",
 }
 
@@ -45,22 +45,14 @@ configurations = [
 ]
 
 
-@pytest.fixture(name='custom_template', scope="module")
-def fixture_custom_template(cookies_session):
-    template = cookies_session._default_template + "/cookiecutter-python-library"  # pylint: disable=protected-access
-    return template
+@pytest.fixture(name="configuration", params=configurations, scope="module")
+def fixture_configuration(request):
+    return request.param
 
 
-@pytest.fixture(params=configurations, name='options_baked', scope="module")
-def fixture_options_baked(cookies_session, request, custom_template):
-    """
-    Bake a cookie cutter, parameterized by configurations.
-
-    Provides the configuration dict, and changes into the directory with the
-    baked result.
-    """
-    with bake_in_temp_dir(cookies_session, extra_context=request.param, template=custom_template):
-        yield request.param
+@pytest.fixture(name="custom_template_name", scope="module")
+def fixture_custom_template_name():
+    return "cookiecutter-python-library"
 
 
 # Fixture names aren't always used in test functions. Disable completely.
@@ -106,22 +98,8 @@ def test_setup_py(options_baked):
     assert "    author_email='cookie@monster.org'," in setup_text
 
 
-def test_upgrade(options_baked):
-    """Make sure the upgrade target works"""
-    run_in_virtualenv('make upgrade')
-
-
-def test_quality(options_baked):
-    """Run quality tests on the given generated output."""
-    for name in all_files():
-        if name.endswith('.py'):
-            sh.pylint(name)
-            sh.pycodestyle(name)
-            sh.pydocstyle(name)
-            sh.isort(name, check_only=True, diff=True)
-
-    # Sanity check the generated Makefile
-    sh.make('help')
-    # quality check docs
-    sh.doc8("README.rst", ignore_path="docs/_build")
-    sh.doc8("docs", ignore_path="docs/_build")
+def test_tests_and_quality(options_baked):
+    """
+    Run generated tests and quality checks.
+    """
+    run_in_virtualenv('make requirements test-all')

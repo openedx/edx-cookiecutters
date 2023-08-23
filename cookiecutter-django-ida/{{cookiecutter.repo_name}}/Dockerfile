@@ -21,14 +21,11 @@ MAINTAINER sre@edx.org
 # gcc; for compiling python extensions distributed with python packages like mysql-client
 
 # If you add a package here please include a comment above describing what it is used for
-RUN apt-get update && apt-get -qy install --no-install-recommends \
- language-pack-en \
- locales \
- python3.8 \
- python3-pip \
- libmysqlclient-dev \
- libssl-dev \
- python3-dev \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -qy install --no-install-recommends \
+ language-pack-en locales \
+ python3.8 python3-dev python3-pip \
+ # The mysqlclient Python package has install-time dependencies
+ libmysqlclient-dev libssl-dev pkg-config \
  gcc
 
 
