@@ -47,7 +47,7 @@ charset-normalizer==3.2.0
     # via
     #   -r requirements/base.txt
     #   requests
-click==8.1.6
+click==8.1.7
     # via
     #   -r requirements/base.txt
     #   click-log
@@ -97,7 +97,7 @@ edx-lint==5.3.4
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
-exceptiongroup==1.1.2
+exceptiongroup==1.1.3
     # via pytest
 filelock==3.12.2
     # via virtualenv
@@ -112,7 +112,7 @@ importlib-metadata==6.8.0
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==6.0.0
+importlib-resources==6.0.1
     # via keyring
 iniconfig==2.0.0
     # via pytest
@@ -174,7 +174,7 @@ platformdirs==3.10.0
     #   -r requirements/base.txt
     #   pylint
     #   virtualenv
-pluggy==1.2.0
+pluggy==1.3.0
     # via pytest
 pycodestyle==2.11.0
     # via -r requirements/test.in
@@ -237,7 +237,7 @@ pyyaml==6.0.1
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==40.0
+readme-renderer==41.0
     # via twine
 requests==2.31.0
     # via
@@ -259,7 +259,7 @@ rich==13.5.2
     #   twine
 secretstorage==3.3.3
     # via keyring
-sh==2.0.4
+sh==2.0.6
     # via -r requirements/test.in
 six==1.16.0
     # via
@@ -282,7 +282,7 @@ sphinx==6.2.1
     #   sphinxcontrib-jquery
 sphinx-book-theme==1.0.1
     # via -r requirements/test.in
-sphinx-rtd-theme==1.2.2
+sphinx-rtd-theme==1.3.0
     # via -r requirements/test.in
 sphinxcontrib-applehelp==1.0.4
     # via sphinx
@@ -335,7 +335,7 @@ urllib3==2.0.4
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.24.2
+virtualenv==20.24.3
     # via -r requirements/test.in
 webencodings==0.5.1
     # via bleach
