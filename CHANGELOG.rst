@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-08-30
+**********
+
+Changed
+=======
+
+- Renamed ``prod_requirements`` Maketarget in new IDAs to ``production-requirements``.
+
 2023-08-23
 **********
 
