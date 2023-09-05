@@ -42,7 +42,7 @@ bleach==6.0.0
     # via
     #   -r requirements/test.txt
     #   readme-renderer
-build==0.10.0
+build==1.0.0
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -63,7 +63,7 @@ charset-normalizer==3.2.0
     # via
     #   -r requirements/test.txt
     #   requests
-click==8.1.6
+click==8.1.7
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -119,11 +119,11 @@ docutils==0.18.1
     #   sphinx-rtd-theme
 edx-lint==5.3.4
     # via -r requirements/test.txt
-exceptiongroup==1.1.2
+exceptiongroup==1.1.3
     # via
     #   -r requirements/test.txt
     #   pytest
-filelock==3.12.2
+filelock==3.12.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -139,11 +139,13 @@ imagesize==1.4.1
     #   sphinx
 importlib-metadata==6.8.0
     # via
+    #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
+    #   build
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==6.0.0
+importlib-resources==6.0.1
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -212,7 +214,7 @@ pbr==5.11.1
     # via
     #   -r requirements/test.txt
     #   stevedore
-pip-tools==7.2.0
+pip-tools==7.3.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.9.6
     # via
@@ -224,7 +226,7 @@ platformdirs==3.10.0
     #   -r requirements/test.txt
     #   pylint
     #   virtualenv
-pluggy==1.2.0
+pluggy==1.3.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -280,7 +282,7 @@ pyproject-hooks==1.0.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pytest==7.4.0
+pytest==7.4.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -305,7 +307,7 @@ pyyaml==6.0.1
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==40.0
+readme-renderer==41.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -337,7 +339,7 @@ secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==2.0.4
+sh==2.0.6
     # via -r requirements/test.txt
 six==1.16.0
     # via
@@ -352,7 +354,7 @@ snowballstemmer==2.2.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-soupsieve==2.4.1
+soupsieve==2.5
     # via
     #   -r requirements/test.txt
     #   beautifulsoup4
@@ -365,7 +367,7 @@ sphinx==6.2.1
     #   sphinxcontrib-jquery
 sphinx-book-theme==1.0.1
     # via -r requirements/test.txt
-sphinx-rtd-theme==1.2.2
+sphinx-rtd-theme==1.3.0
     # via -r requirements/test.txt
 sphinxcontrib-applehelp==1.0.4
     # via
@@ -428,15 +430,17 @@ tox==3.28.0
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/ci.txt
     #   tox-battery
-tox-battery==0.6.1
+tox-battery==0.6.2
     # via -r requirements/dev.in
 twine==4.0.2
     # via -r requirements/test.txt
 typing-extensions==4.7.1
     # via
+    #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   asgiref
     #   astroid
+    #   filelock
     #   pydata-sphinx-theme
     #   pylint
     #   rich
@@ -445,7 +449,7 @@ urllib3==2.0.4
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.24.2
+virtualenv==20.24.4
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -454,7 +458,7 @@ webencodings==0.5.1
     # via
     #   -r requirements/test.txt
     #   bleach
-wheel==0.41.1
+wheel==0.41.2
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
@@ -464,6 +468,7 @@ wrapt==1.15.0
     #   astroid
 zipp==3.16.2
     # via
+    #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   importlib-metadata
     #   importlib-resources
