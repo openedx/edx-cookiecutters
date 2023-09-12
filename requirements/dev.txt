@@ -38,11 +38,7 @@ binaryornot==0.4.4
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-bleach==6.0.0
-    # via
-    #   -r requirements/test.txt
-    #   readme-renderer
-build==1.0.0
+build==1.0.3
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -97,7 +93,7 @@ distlib==0.3.7
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==3.2.20
+django==3.2.21
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -200,6 +196,10 @@ more-itertools==10.1.0
     # via
     #   -r requirements/test.txt
     #   jaraco-classes
+nh3==0.2.14
+    # via
+    #   -r requirements/test.txt
+    #   readme-renderer
 packaging==23.1
     # via
     #   -r requirements/ci.txt
@@ -282,7 +282,7 @@ pyproject-hooks==1.0.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pytest==7.4.1
+pytest==7.4.2
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -297,7 +297,7 @@ python-slugify==8.0.1
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-pytz==2023.3
+pytz==2023.3.post1
     # via
     #   -r requirements/test.txt
     #   babel
@@ -307,7 +307,7 @@ pyyaml==6.0.1
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==41.0
+readme-renderer==42.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -345,7 +345,6 @@ six==1.16.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
-    #   bleach
     #   edx-lint
     #   python-dateutil
     #   tox
@@ -449,15 +448,11 @@ urllib3==2.0.4
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.24.4
+virtualenv==20.24.5
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   tox
-webencodings==0.5.1
-    # via
-    #   -r requirements/test.txt
-    #   bleach
 wheel==0.41.2
     # via
     #   -r requirements/pip-tools.txt
