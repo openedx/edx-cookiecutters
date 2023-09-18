@@ -119,7 +119,7 @@ exceptiongroup==1.1.3
     # via
     #   -r requirements/test.txt
     #   pytest
-filelock==3.12.3
+filelock==3.12.4
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -242,7 +242,7 @@ pycparser==2.21
     # via
     #   -r requirements/test.txt
     #   cffi
-pydata-sphinx-theme==0.13.3
+pydata-sphinx-theme==0.14.0
     # via
     #   -r requirements/test.txt
     #   sphinx-book-theme
@@ -330,7 +330,7 @@ rfc3986==2.0.0
     # via
     #   -r requirements/test.txt
     #   twine
-rich==13.5.2
+rich==13.5.3
     # via
     #   -r requirements/test.txt
     #   cookiecutter
@@ -435,11 +435,9 @@ twine==4.0.2
     # via -r requirements/test.txt
 typing-extensions==4.7.1
     # via
-    #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   asgiref
     #   astroid
-    #   filelock
     #   pydata-sphinx-theme
     #   pylint
     #   rich

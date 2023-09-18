@@ -84,7 +84,7 @@ pyyaml==6.0.1
     #   cookiecutter
 requests==2.31.0
     # via cookiecutter
-rich==13.5.2
+rich==13.5.3
     # via cookiecutter
 six==1.16.0
     # via
