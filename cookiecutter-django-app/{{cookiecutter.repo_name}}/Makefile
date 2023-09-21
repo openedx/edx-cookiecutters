@@ -85,17 +85,26 @@ selfcheck: ## check that the Makefile is well-formed
 
 extract_translations: ## extract strings to be translated, outputting .mo files
 	rm -rf docs/_build
-	cd {{cookiecutter.app_name}} && ../manage.py makemessages -l en -v1 -d django
-	cd {{cookiecutter.app_name}} && ../manage.py makemessages -l en -v1 -d djangojs
+	cd {{cookiecutter.app_name}} && i18n_tool extract --no-segment
 
 compile_translations: ## compile translation files, outputting .po files for each supported language
-	cd {{cookiecutter.app_name}} && ../manage.py compilemessages
+	cd {{cookiecutter.app_name}} && i18n_tool generate
 
 detect_changed_source_translations:
 	cd {{cookiecutter.app_name}} && i18n_tool changed
 
-pull_translations: ## pull translations from Transifex
-	tx pull -af -t --mode reviewed
+ifeq ($(OPENEDX_ATLAS_PULL),)
+pull_translations: ## Pull translations from Transifex
+	tx pull -t -a -f --mode reviewed --minimum-perc=1
+else
+# Experimental: OEP-58 Pulls translations using atlas
+pull_translations:
+	find {{cookiecutter.app_name}}/conf/locale -mindepth 1 -maxdepth 1 -type d -exec rm -r {} \;
+	atlas pull $(OPENEDX_ATLAS_ARGS) translations/{{cookiecutter.repo_name}}/{{cookiecutter.app_name}}/conf/locale:{{cookiecutter.app_name}}/conf/locale
+	python manage.py compilemessages
+
+	@echo "Translations have been pulled via Atlas and compiled."
+endif
 
 push_translations: ## push source translation files (.po) from Transifex
 	tx push -s
