@@ -182,10 +182,16 @@ db-shell: # Run the app shell as root, enter the app's database
 	docker attach {{cookiecutter.project_name}}.$*
 
 github_docker_build:
-	docker build . -f Dockerfile --target app -t openedx/{{cookiecutter.repo_name}}
+	docker build . -f Dockerfile --target prod -t openedx/{{cookiecutter.repo_name}}
+
+github_docker_build_dev:
+	docker build . -f Dockerfile --target dev -t openedx/{{cookiecutter.repo_name}}-dev
 
 github_docker_tag: github_docker_build
 	docker tag openedx/{{cookiecutter.repo_name}} openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA}
+
+github_docker_tag_dev: github_docker_build_dev
+	docker tag openedx/{{cookiecutter.repo_name}}-dev openedx/{{cookiecutter.repo_name}}-dev:${GITHUB_SHA}
 
 github_docker_auth:
 	echo "$$DOCKERHUB_PASSWORD" | docker login -u "$$DOCKERHUB_USERNAME" --password-stdin
@@ -193,6 +199,10 @@ github_docker_auth:
 github_docker_push: github_docker_tag github_docker_auth ## push to docker hub
 	docker push 'openedx/{{cookiecutter.repo_name}}:latest'
 	docker push "openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA}"
+
+github_docker_push_dev: github_docker_tag_dev github_docker_auth ## push to docker hub
+	docker push 'openedx/{{cookiecutter.repo_name}}-dev:latest'
+	docker push "openedx/{{cookiecutter.repo_name}}-dev:${GITHUB_SHA}"
 
 selfcheck: ## check that the Makefile is well-formed
 	@echo "The Makefile is well-formed."

@@ -15,8 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build and Push docker image
+      - name: Build and Push prod docker image
         env:
           DOCKERHUB_PASSWORD: ${% raw %}{{ secrets.DOCKERHUB_PASSWORD }}{% endraw %}
           DOCKERHUB_USERNAME: ${% raw %}{{ secrets.DOCKERHUB_USERNAME }}{% endraw %}
         run : make github_docker_push
+
+      - name: Build and Push dev docker image
+        env:
+          DOCKERHUB_PASSWORD: ${% raw %}{{ secrets.DOCKERHUB_PASSWORD }}{% endraw %}
+          DOCKERHUB_USERNAME: ${% raw %}{{ secrets.DOCKERHUB_USERNAME }}{% endraw %}
+        run : make github_docker_push_dev
