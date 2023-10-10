@@ -11,12 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
 
-    strategy:
-      matrix:
-        variant:
-          - "cc"
-          - "cc_dev"
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -24,8 +18,14 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build and push coockie-cutter base docker image
+      - name: Build and push coockie-cutter production docker image
         env:
           DOCKERHUB_PASSWORD: ${% raw %}{{ secrets.DOCKERHUB_PASSWORD }}{% endraw %}
           DOCKERHUB_USERNAME: ${% raw %}{{ secrets.DOCKERHUB_USERNAME }}{% endraw %}
-        run : make docker_tag_build_push_${{matrix.variant}}
+        run : make docker_tag_build_push
+
+      - name: Build and push coockie-cutter development docker image
+        env:
+          DOCKERHUB_PASSWORD: ${% raw %}{{ secrets.DOCKERHUB_PASSWORD }}{% endraw %}
+          DOCKERHUB_USERNAME: ${% raw %}{{ secrets.DOCKERHUB_USERNAME }}{% endraw %}
+        run : make docker_tag_build_push_dev

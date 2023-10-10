@@ -184,10 +184,10 @@ db-shell: # Run the app shell as root, enter the app's database
 docker_auth:
 	echo "$$DOCKERHUB_PASSWORD" | docker login -u "$$DOCKERHUB_USERNAME" --password-stdin
 
-docker_tag_build_push_cc: docker_auth
+docker_tag_build_push: docker_auth
 	docker buildx build -t openedx/{{cookiecutter.repo_name}}:latest -t openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA} --platform linux/amd64,linux/arm64 --build-arg SERVICE_VARIANT={{cookiecutter.repo_name}} --build-arg SERVICE_PORT={{cookiecutter.port}} --target production --push .
 
-docker_tag_build_push_cc_dev: docker_auth
+docker_tag_build_push_dev: docker_auth
 	docker buildx build -t openedx/{{cookiecutter.repo_name}}-dev:latest -t openedx/{{cookiecutter.repo_name}}-dev:${GITHUB_SHA} --platform linux/amd64,linux/arm64 --build-arg SERVICE_VARIANT={{cookiecutter.repo_name}} --build-arg SERVICE_PORT={{cookiecutter.port}} --target development --push .
 
 selfcheck: ## check that the Makefile is well-formed
