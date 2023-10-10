@@ -181,28 +181,14 @@ db-shell: # Run the app shell as root, enter the app's database
 %-attach:
 	docker attach {{cookiecutter.project_name}}.$*
 
-github_docker_build:
-	docker build . -f Dockerfile --target prod -t openedx/{{cookiecutter.repo_name}}
-
-github_docker_build_dev:
-	docker build . -f Dockerfile --target dev -t openedx/{{cookiecutter.repo_name}}-dev
-
-github_docker_tag: github_docker_build
-	docker tag openedx/{{cookiecutter.repo_name}} openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA}
-
-github_docker_tag_dev: github_docker_build_dev
-	docker tag openedx/{{cookiecutter.repo_name}}-dev openedx/{{cookiecutter.repo_name}}-dev:${GITHUB_SHA}
-
-github_docker_auth:
+docker_auth:
 	echo "$$DOCKERHUB_PASSWORD" | docker login -u "$$DOCKERHUB_USERNAME" --password-stdin
 
-github_docker_push: github_docker_tag github_docker_auth ## push to docker hub
-	docker push 'openedx/{{cookiecutter.repo_name}}:latest'
-	docker push "openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA}"
+docker_tag_build_push_cc: docker_auth
+	docker buildx build -t openedx/{{cookiecutter.repo_name}}:latest -t openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA} --platform linux/amd64,linux/arm64 --build-arg SERVICE_VARIANT={{cookiecutter.repo_name}} --build-arg SERVICE_PORT={{cookiecutter.port}} --target production --push .
 
-github_docker_push_dev: github_docker_tag_dev github_docker_auth ## push to docker hub
-	docker push 'openedx/{{cookiecutter.repo_name}}-dev:latest'
-	docker push "openedx/{{cookiecutter.repo_name}}-dev:${GITHUB_SHA}"
+docker_tag_build_push_cc_dev: docker_auth
+	docker buildx build -t openedx/{{cookiecutter.repo_name}}-dev:latest -t openedx/{{cookiecutter.repo_name}}-dev:${GITHUB_SHA} --platform linux/amd64,linux/arm64 --build-arg SERVICE_VARIANT={{cookiecutter.repo_name}} --build-arg SERVICE_PORT={{cookiecutter.port}} --target development --push .
 
 selfcheck: ## check that the Makefile is well-formed
 	@echo "The Makefile is well-formed."
