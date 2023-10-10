@@ -73,7 +73,14 @@ FROM app as dev
 
 ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.devstack
 
+# Copy the requirements explicitly even though we copy everything below
+# this prevents the image cache from busting unless the dependencies have changed.
+COPY requirements/dev.txt /edx/app/{{cookiecutter.repo_name}}/requirements/dev.txt
+
 RUN pip install -r requirements/dev.txt
+
+# After the requirements so changes to the code will not bust the image cache
+COPY . /edx/app/{{cookiecutter.repo_name}}
 
 # Devstack related step for backwards compatibility
 RUN touch {{cookiecutter.project_name}}/{{cookiecutter.project_name}}_env
