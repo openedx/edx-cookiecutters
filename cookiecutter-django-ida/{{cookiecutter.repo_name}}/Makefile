@@ -185,10 +185,10 @@ docker_auth:
 	echo "$$DOCKERHUB_PASSWORD" | docker login -u "$$DOCKERHUB_USERNAME" --password-stdin
 
 docker_tag_build_push: docker_auth
-	docker buildx build -t openedx/{{cookiecutter.repo_name}}:latest -t openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA} --platform linux/amd64,linux/arm64 --build-arg SERVICE_VARIANT={{cookiecutter.repo_name}} --build-arg SERVICE_PORT={{cookiecutter.port}} --target production --push .
+	docker buildx build -t openedx/{{cookiecutter.repo_name}}:latest -t openedx/{{cookiecutter.repo_name}}:${GITHUB_SHA} --platform linux/amd64,linux/arm64 --target production --push .
 
 docker_tag_build_push_dev: docker_auth
-	docker buildx build -t openedx/{{cookiecutter.repo_name}}-dev:latest -t openedx/{{cookiecutter.repo_name}}-dev:${GITHUB_SHA} --platform linux/amd64,linux/arm64 --build-arg SERVICE_VARIANT={{cookiecutter.repo_name}} --build-arg SERVICE_PORT={{cookiecutter.port}} --target development --push .
+	docker buildx build -t openedx/{{cookiecutter.repo_name}}-dev:latest -t openedx/{{cookiecutter.repo_name}}-dev:${GITHUB_SHA} --platform linux/amd64,linux/arm64 --target development --push .
 
 selfcheck: ## check that the Makefile is well-formed
 	@echo "The Makefile is well-formed."
