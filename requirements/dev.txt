@@ -236,7 +236,7 @@ py==1.11.0
     # via
     #   -r requirements/ci.txt
     #   tox
-pycodestyle==2.11.0
+pycodestyle==2.11.1
     # via -r requirements/test.txt
 pycparser==2.21
     # via
