@@ -31,7 +31,7 @@ def move(src, dest):
 EDX_COOKIECUTTER_ROOTDIR = os.getenv('EDX_COOKIECUTTER_ROOTDIR') or 'https://github.com/openedx/edx-cookiecutters.git'
 
 
-def post_gen_project(extra_context):
+def post_gen_project(extra_context, symlink_translation=False):
     """
     Most of what's needed after generating a project.
 
@@ -71,3 +71,10 @@ def post_gen_project(extra_context):
         print(f"Since your repo will be in the {org} organization, you may need")
         print("to adjust the contents of the repo, such as licenses, email addresses,")
         print("and contribution details. Check with your organization.")
+
+    if symlink_translation:
+        package_name = extra_context["sub_dir_name"]
+        source_path = os.path.join(project_root_dir, package_name, "conf", "locale")
+        target_path = os.path.join(project_root_dir, package_name, "translation")
+
+        os.symlink(source_path, target_path)

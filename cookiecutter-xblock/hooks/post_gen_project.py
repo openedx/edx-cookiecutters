@@ -28,4 +28,5 @@ post_gen_project(
         "setup_py_loading_pkg_data": "yes",
         "setup_py_keyword_args": setup_py_keyword_args,
     },
+    symlink_translation=True,
 )

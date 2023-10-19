@@ -3,16 +3,12 @@
 .PHONY: dev.clean dev.build dev.run upgrade help requirements
 .PHONY: extract_translations compile_translations
 .PHONY: detect_changed_source_translations dummy_translations build_dummy_translations
-.PHONY: validate_translations pull_translations push_translations symlink_translations install_transifex_clients
+.PHONY: validate_translations pull_translations push_translations install_transifex_clients
 
 REPO_NAME := {{cookiecutter.repo_name}}
 PACKAGE_NAME := {{cookiecutter.package_name}}
-EXTRACT_DIR := $(PACKAGE_NAME)/locale/en/LC_MESSAGES
-EXTRACTED_DJANGO := $(EXTRACT_DIR)/django-partial.po
-EXTRACTED_DJANGOJS := $(EXTRACT_DIR)/djangojs-partial.po
-EXTRACTED_TEXT := $(EXTRACT_DIR)/text.po
-JS_TARGET := public/js/translations
-TRANSLATIONS_DIR := $(PACKAGE_NAME)/translations
+EXTRACT_DIR := $(PACKAGE_NAME)/conf/locale/en/LC_MESSAGES
+JS_TARGET := $(PACKAGE_NAME)/public/js/translations
 
 help:
 	@perl -nle'print $& if m{^[\.a-zA-Z_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}'
@@ -57,14 +53,13 @@ dev.run: dev.clean dev.build ## Clean, build and run test image
 
 ## Localization targets
 
-extract_translations: symlink_translations ## extract strings to be translated, outputting .po files
-	cd $(PACKAGE_NAME) && i18n_tool extract
-	mv $(EXTRACTED_DJANGO) $(EXTRACTED_TEXT)
-	if [ -f "$(EXTRACTED_DJANGOJS)" ]; then cat $(EXTRACTED_DJANGOJS) >> $(EXTRACTED_TEXT); rm $(EXTRACTED_DJANGOJS); fi
+extract_translations: ## extract strings to be translated, outputting .po files
+	cd $(PACKAGE_NAME) && i18n_tool extract --no-segment --merge-po-files
+	mv $(EXTRACT_DIR)/django.po $(EXTRACT_DIR)/text.po
 
-compile_translations: symlink_translations ## compile translation files, outputting .mo files for each supported language
+compile_translations: ## compile translation files, outputting .mo files for each supported language
 	cd $(PACKAGE_NAME) && i18n_tool generate
-	python manage.py compilejsi18n --namespace $(PACKAGE_NAME)i18n --output $(JS_TARGET)
+	python manage.py compilejsi18n --namespace {{cookiecutter.i18n_namespace}} --output $(JS_TARGET)
 
 detect_changed_source_translations:
 	cd $(PACKAGE_NAME) && i18n_tool changed
@@ -81,9 +76,6 @@ pull_translations: ## pull translations from transifex
 
 push_translations: extract_translations ## push translations to transifex
 	cd $(PACKAGE_NAME) && i18n_tool transifex push
-
-symlink_translations:
-	if [ ! -d "$(TRANSLATIONS_DIR)" ]; then ln -s locale/ $(TRANSLATIONS_DIR); fi
 
 install_transifex_client: ## Install the Transifex client
 	# Instaling client will skip CHANGELOG and LICENSE files from git changes

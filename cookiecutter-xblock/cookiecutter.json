@@ -1,9 +1,10 @@
 {
   "project_desc": "My First XBlock",
-  "package_name": "myxblock",
+  "package_name": "my_xblock",
+  "i18n_namespace": "{{cookiecutter.package_name.split('_')|map('capitalize')|join('')}}I18n",
   "github_org": "openedx",
-  "repo_name": "{{cookiecutter.package_name}}-xblock",
-  "tag_name": "myxblock",
+  "repo_name": "{{cookiecutter.package_name.replace('_', '-')}}",
+  "tag_name": "{{cookiecutter.package_name|lower}}",
   "version": "0.1.0",
   "class_name": "MyXBlock",
   "author_name": "Open edX Project",

@@ -81,15 +81,16 @@ def test_readme(options_baked, custom_template):
 def test_manifest(options_baked):
     """The generated MANIFEST.in should pass a sanity check."""
     manifest_text = Path("MANIFEST.in").read_text()
-    assert 'recursive-include myxblock *.html' in manifest_text
+    assert 'recursive-include my_xblock *.html' in manifest_text
 
 
 def test_setup_py(options_baked):
     """The generated setup.py should pass a sanity check."""
     setup_text = Path("setup.py").read_text()
-    assert "VERSION = get_version('myxblock', '__init__.py')" in setup_text
+    assert "VERSION = get_version('my_xblock', '__init__.py')" in setup_text
     assert "    author='Cookie Monster'," in setup_text
     assert "    author_email='cookie@monster.org'," in setup_text
+    assert "            'my_xblock = my_xblock:MyXBlock'," in setup_text
 
 
 def test_quality(options_baked):
