@@ -5,4 +5,3 @@
 -r test.txt               # Dependencies for testing and quality checks
 -r ci.txt             # tox and associated dependencies
 
-tox-battery               # Makes tox aware of requirements file changes
