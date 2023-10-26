@@ -6,4 +6,3 @@
 -r ci.txt             # dependencies needed to setup testing environment on CI
 
 diff-cover                # Changeset diff test coverage
-tox-battery               # Makes tox aware of requirements file changes
