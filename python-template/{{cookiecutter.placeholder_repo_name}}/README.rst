@@ -25,60 +25,10 @@ project.
 Getting Started
 ***************
 
-Developing
-==========
-
-One Time Setup
---------------
-.. code-block::
-
-  # Clone the repository
-  git clone git@github.com:{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}.git
-  cd {{ cookiecutter.repo_name }}
-
-  # Set up a virtualenv with the same name as the repo and activate it
-  # Here's how you might do that if you have virtualenvwrapper setup.
-  mkvirtualenv -p python3.8 {{ cookiecutter.repo_name }}
-
-
-Every time you develop something in this repo
----------------------------------------------
-.. code-block::
-
-  # Activate the virtualenv
-  # Here's how you might do that if you're using virtualenvwrapper.
-  workon {{ cookiecutter.repo_name }}
-
-  # Grab the latest code
-  git checkout main
-  git pull
-
-  # Install/update the dev requirements
-  make requirements
-
-  # Run the tests and quality checks (to verify the status before you make any changes)
-  make validate
-
-  # Make a new branch for your changes
-  git checkout -b <your_github_username>/<short_description>
-
-  # Using your favorite editor, edit the code to make your change.
-  vim ...
-
-  # Run your new tests
-  pytest ./path/to/new/tests
-
-  # Run all the tests and quality checks
-  make validate
-
-  # Commit all your changes
-  git commit ...
-  git push
-
-  # Open a PR and ask for review.
+Please see the Open edX documentation for `guidance on Python development <https://docs.openedx.org/en/latest/developers/how-tos/get-ready-for-python-dev.html>`_ in this repo.
 
 Deploying
-=========
+*********
 
 TODO: How can a new user go about deploying this component? Is it just a few
 commands? Is there a larger how-to that should be linked here?
