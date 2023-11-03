@@ -39,12 +39,15 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.production
 
 EXPOSE {{cookiecutter.port}}
 RUN useradd -m --shell /bin/false app
 
 WORKDIR /edx/app/{{cookiecutter.repo_name}}
+
+FROM app as prod
+
+ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.production
 
 # Copy the requirements explicitly even though we copy everything below
 # this prevents the image cache from busting unless the dependencies have changed.
@@ -65,3 +68,21 @@ CMD gunicorn --workers=2 --name {{cookiecutter.repo_name}} -c /edx/app/{{cookiec
 # This line is after the requirements so that changes to the code will not
 # bust the image cache
 COPY . /edx/app/{{cookiecutter.repo_name}}
+
+FROM app as dev
+
+ENV DJANGO_SETTINGS_MODULE {{cookiecutter.project_name}}.settings.devstack
+
+# Copy the requirements explicitly even though we copy everything below
+# this prevents the image cache from busting unless the dependencies have changed.
+COPY requirements/dev.txt /edx/app/{{cookiecutter.repo_name}}/requirements/dev.txt
+
+RUN pip install -r requirements/dev.txt
+
+# After the requirements so changes to the code will not bust the image cache
+COPY . /edx/app/{{cookiecutter.repo_name}}
+
+# Devstack related step for backwards compatibility
+RUN touch {{cookiecutter.project_name}}/{{cookiecutter.project_name}}_env
+
+CMD while true; do python ./manage.py runserver 0.0.0.0:{{cookiecutter.port}}; sleep 2; done
