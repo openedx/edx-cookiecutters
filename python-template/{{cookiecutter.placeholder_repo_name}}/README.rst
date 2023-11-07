@@ -22,8 +22,8 @@ organization. It should make clear where this fits in to the overall Open edX
 codebase and should be oriented towards people who are new to the Open edX
 project.
 
-Getting Started
-***************
+Getting Started with Development
+********************************
 
 Please see the Open edX documentation for `guidance on Python development <https://docs.openedx.org/en/latest/developers/how-tos/get-ready-for-python-dev.html>`_ in this repo.
 
