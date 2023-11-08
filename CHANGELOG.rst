@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-11-08
+**********
+
+Changed
+=======
+
+- Changed "Getting Started" section in templated README to link to new Open edX documentation page, and renamed to "Getting Started with Development" to clarify purpose.
+
 2023-08-30
 **********
 
