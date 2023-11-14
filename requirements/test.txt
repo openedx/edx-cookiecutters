@@ -111,7 +111,7 @@ importlib-metadata==6.8.0
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==6.1.0
+importlib-resources==6.1.1
     # via keyring
 iniconfig==2.0.0
     # via pytest
@@ -132,7 +132,7 @@ jinja2==3.1.2
     #   code-annotations
     #   cookiecutter
     #   sphinx
-keyring==24.2.0
+keyring==24.3.0
     # via twine
 markdown-it-py==3.0.0
     # via
@@ -160,7 +160,7 @@ packaging==23.2
     #   pydata-sphinx-theme
     #   pytest
     #   sphinx
-pbr==5.11.1
+pbr==6.0.0
     # via
     #   -r requirements/base.txt
     #   stevedore
@@ -168,6 +168,7 @@ pkginfo==1.9.6
     # via twine
 platformdirs==3.11.0
     # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.txt
     #   pylint
     #   virtualenv
@@ -330,7 +331,7 @@ typing-extensions==4.8.0
     #   pydata-sphinx-theme
     #   pylint
     #   rich
-urllib3==2.0.7
+urllib3==2.1.0
     # via
     #   -r requirements/base.txt
     #   requests
