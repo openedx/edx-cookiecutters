@@ -47,7 +47,7 @@ cachetools==5.3.2
     # via
     #   -r requirements/ci.txt
     #   tox
-certifi==2023.7.22
+certifi==2023.11.17
     # via
     #   -r requirements/test.txt
     #   requests
@@ -253,7 +253,7 @@ pydata-sphinx-theme==0.14.3
     #   sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.txt
-pygments==2.16.1
+pygments==2.17.1
     # via
     #   -r requirements/test.txt
     #   accessible-pygments
@@ -339,7 +339,7 @@ rfc3986==2.0.0
     # via
     #   -r requirements/test.txt
     #   twine
-rich==13.6.0
+rich==13.7.0
     # via
     #   -r requirements/test.txt
     #   cookiecutter
@@ -428,7 +428,7 @@ tomli==2.0.1
     #   pyproject-hooks
     #   pytest
     #   tox
-tomlkit==0.12.2
+tomlkit==0.12.3
     # via
     #   -r requirements/test.txt
     #   pylint
