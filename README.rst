@@ -55,6 +55,7 @@ Commands::
 - Modify project docs/decisions/0001-purpose-of-this-repo.rst ADR
 - Commit and push to GitHub
 - On GitHub, update repo's "About" description
+- If you are on a 2U team, review `this_page`_.
 
 Updating cookiecutters
 **********************
@@ -174,3 +175,4 @@ For more information about these options, see the `Getting Help <https://openedx
 .. _Slack invitation: https://openedx.org/slack
 .. _community Slack workspace: https://openedx.slack.com/
 .. _tox: https://tox.readthedocs.io/en/latest/
+.. _this page: https://2u-internal.atlassian.net/wiki/spaces/SRE/pages/19237450/Creating+A+New+Kubernetes+Django+Service
