@@ -28,13 +28,13 @@ click-log==0.4.0
     # via edx-lint
 code-annotations==1.5.0
     # via edx-lint
-cookiecutter==2.4.0
+cookiecutter==2.5.0
     # via -r requirements/base.in
 dill==0.3.7
     # via pylint
 edx-lint==5.3.6
     # via -r requirements/base.in
-idna==3.4
+idna==3.6
     # via requests
 isort==5.12.0
     # via pylint
@@ -56,7 +56,7 @@ platformdirs==3.11.0
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   pylint
-pygments==2.17.1
+pygments==2.17.2
     # via rich
 pylint==3.0.2
     # via
