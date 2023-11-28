@@ -30,11 +30,12 @@ class {{cookiecutter.class_name}}(XBlock):
     # TO-DO: change this view to display your data your own way.
     def student_view(self, context=None):
         """
-        The primary view of the {{cookiecutter.class_name}}, shown to students
+        Display the primary view of the {{cookiecutter.class_name}}, shown to students
         when viewing courses.
         """
         if context:
             pass  # TO-DO: do something based on the context.
+
         html = self.resource_string("static/html/{{cookiecutter.package_name}}.html")
         frag = Fragment(html.format(self=self))
         frag.add_css(self.resource_string("static/css/{{cookiecutter.package_name}}.css"))
@@ -90,13 +91,16 @@ class {{cookiecutter.class_name}}(XBlock):
         locale_code = translation.get_language()
         if locale_code is None:
             return None
+
         text_js = 'public/js/translations/{locale_code}/text.js'
         lang_code = locale_code.split('-')[0]
+
         for code in (locale_code, lang_code, 'en'):
             loader = ResourceLoader(__name__)
             if pkg_resources.resource_exists(
                     loader.module_name, text_js.format(locale_code=code)):
                 return text_js.format(locale_code=code)
+
         return None
 
     @staticmethod

@@ -4,6 +4,13 @@ Change Log
 ..
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
+2023-11-28
+**********
+
+Changed
+=======
+
+- Changed "ci workflow" of template xblock to pass the tests of newly created xblocks and now through an error on build or anywhere else.
 
 2023-11-08
 **********

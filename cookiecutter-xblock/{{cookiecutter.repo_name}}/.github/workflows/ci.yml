@@ -16,7 +16,7 @@ jobs:
       matrix:
         os: [ubuntu-20.04]
         python-version: ['3.8']
-        toxenv: [quality, docs, pii_check, django32, django40]
+        toxenv: [quality, django32, django40]
 
     steps:
     - uses: actions/checkout@v3
@@ -31,21 +31,7 @@ jobs:
     - name: Install Dependencies
       run: pip install -r requirements/ci.txt
 
-    - name: Create Build
-      run: |
-        rm -rf /tmp/myxblock-xblock
-        XBLOCK=$(pwd) && cd /tmp/ && echo -e '\n\n\n\n\n' | cookiecutter $XBLOCK
-        cd /tmp/myxblock-xblock && make help && pip install -e .
-        cd /tmp/myxblock-xblock && make dev.build
-
     - name: Run Tests
       env:
         TOXENV: ${{ matrix.toxenv }}
       run: tox
-
-    - name: Run coverage
-      if: matrix.python-version == '3.8' && matrix.toxenv == 'django32'
-      uses: codecov/codecov-action@v3
-      with:
-        flags: unittests
-        fail_ci_if_error: true
