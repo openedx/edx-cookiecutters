@@ -90,7 +90,7 @@ cookiecutter==2.5.0
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==41.0.5
+cryptography==41.0.7
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -114,7 +114,7 @@ doc8==0.11.2
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
-docutils==0.18.1
+docutils==0.19
     # via
     #   -r requirements/test.txt
     #   doc8
@@ -143,7 +143,7 @@ imagesize==1.4.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-importlib-metadata==6.8.0
+importlib-metadata==7.0.0
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -247,7 +247,7 @@ pycparser==2.21
     # via
     #   -r requirements/test.txt
     #   cffi
-pydata-sphinx-theme==0.14.3
+pydata-sphinx-theme==0.14.4
     # via
     #   -r requirements/test.txt
     #   sphinx-book-theme
@@ -373,7 +373,7 @@ sphinx==6.2.1
     #   sphinxcontrib-jquery
 sphinx-book-theme==1.0.1
     # via -r requirements/test.txt
-sphinx-rtd-theme==1.3.0
+sphinx-rtd-theme==2.0.0
     # via -r requirements/test.txt
 sphinxcontrib-applehelp==1.0.4
     # via
@@ -432,7 +432,7 @@ tomlkit==0.12.3
     # via
     #   -r requirements/test.txt
     #   pylint
-tox==4.11.3
+tox==4.11.4
     # via -r requirements/ci.txt
 twine==4.0.2
     # via -r requirements/test.txt
@@ -453,7 +453,7 @@ urllib3==2.1.0
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.24.7
+virtualenv==20.25.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
