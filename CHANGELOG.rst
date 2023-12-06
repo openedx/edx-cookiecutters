@@ -5,6 +5,18 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-12-06
+**********
+
+Changed
+=======
+
+- Move the ``.readthedocs.yml`` file to ``.readthedocs.yaml``
+
+- Update ``.readthedocs.yaml`` with new config settings and removed older settings that are no longer supported.
+
+- Update ``.readthedocs.yaml`` so that by default we fail on Sphinx warnings. These warnings generally point out important documentation functionality issues like missing docs or broken links.
+
 2023-11-08
 **********
 
@@ -29,7 +41,7 @@ Added
 
 - Ensure tox runs locally with new requirements by deleting .tox folder before
   running ``make requirements`` or ``make dev_requirements``.
-  
+
 2023-08-16
 **********
 
