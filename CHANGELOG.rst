@@ -5,6 +5,15 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-12-06
+**********
+
+Changed
+=======
+
+- Updated the RTD config to match their new format.
+
+
 2023-11-08
 **********
 
