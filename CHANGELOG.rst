@@ -5,6 +5,13 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-12-13
+**********
+
+Changed
+=======
+- Remove pii_check from xblock cookiecutter
+
 2023-12-06
 **********
 
