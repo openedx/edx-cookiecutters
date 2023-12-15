@@ -31,13 +31,6 @@ jobs:
     - name: Install Dependencies
       run: pip install -r requirements/ci.txt
 
-    - name: Create Build
-      run: |
-        rm -rf /tmp/myxblock-xblock
-        XBLOCK=$(pwd) && cd /tmp/ && echo -e '\n\n\n\n\n' | cookiecutter $XBLOCK
-        cd /tmp/myxblock-xblock && make help && pip install -e .
-        cd /tmp/myxblock-xblock && make dev.build
-
     - name: Run Tests
       env:
         TOXENV: ${{ matrix.toxenv }}
