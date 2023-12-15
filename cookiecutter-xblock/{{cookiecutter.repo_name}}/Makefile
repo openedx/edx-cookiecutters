@@ -83,3 +83,6 @@ install_transifex_client: ## Install the Transifex client
 	git diff -s --exit-code HEAD || { echo "Please commit changes first."; exit 1; }
 	curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
 	git checkout -- LICENSE README.md ## overwritten by Transifex installer
+
+selfcheck: ## check that the Makefile is well-formed
+	@echo "The Makefile is well-formed."
