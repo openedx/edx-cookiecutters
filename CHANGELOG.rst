@@ -5,6 +5,13 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-12-15
+**********
+
+Changed
+=======
+- Remove incorrect build step from xblock ci template
+
 2023-12-13
 **********
 
