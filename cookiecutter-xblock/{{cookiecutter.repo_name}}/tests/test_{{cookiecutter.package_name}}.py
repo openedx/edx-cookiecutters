@@ -1,14 +1,16 @@
 """
-Tests for pipeline.py
+Tests for {{cookiecutter.class_name}}
 """
 
 from django.test import TestCase
-from my_xblock import MyXBlock
-from xblock.test.toy_runtime import ToyRuntime
 from xblock.fields import ScopeIds
+from xblock.test.toy_runtime import ToyRuntime
+from my_xblock import MyXBlock
 
 class Test{{cookiecutter.class_name}}(TestCase):
+    """Tests for {{cookiecutter.class_name}}"""
     def test_my_student_view(self):
+        """Test the basic view loads."""
         scope_ids = ScopeIds('1','2','3','4')
         block = MyXBlock(ToyRuntime(), scope_ids=scope_ids)
         frag = block.student_view()
