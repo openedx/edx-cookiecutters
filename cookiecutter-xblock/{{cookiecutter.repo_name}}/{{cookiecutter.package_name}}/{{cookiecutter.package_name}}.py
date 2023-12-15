@@ -84,6 +84,7 @@ class {{cookiecutter.class_name}}(XBlock):
     def _get_statici18n_js_url():
         """
         Return the Javascript translation file for the currently selected language, if any.
+
         Defaults to English if available.
         """
         locale_code = translation.get_language()
@@ -101,6 +102,6 @@ class {{cookiecutter.class_name}}(XBlock):
     @staticmethod
     def get_dummy():
         """
-        Generate initial i18n with dummy method
+        Generate initial i18n with dummy method.
         """
         return translation.gettext_noop('Dummy')
