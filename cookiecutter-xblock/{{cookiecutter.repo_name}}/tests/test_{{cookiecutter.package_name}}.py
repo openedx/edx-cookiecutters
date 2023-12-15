@@ -5,6 +5,7 @@ Tests for {{cookiecutter.class_name}}
 from django.test import TestCase
 from xblock.fields import ScopeIds
 from xblock.test.toy_runtime import ToyRuntime
+
 from my_xblock import MyXBlock
 
 
