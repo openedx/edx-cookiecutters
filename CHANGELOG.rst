@@ -18,6 +18,8 @@ Changed
 Changed
 =======
 - Remove incorrect build step from xblock ci template
+- Fix docstrings
+- Add a unit test so coverage can run
 
 2023-12-13
 **********
