@@ -4,18 +4,14 @@
 #
 #    make upgrade
 #
-annotated-types==0.6.0
-    # via pydantic
 arrow==1.3.0
     # via cookiecutter
-astroid==3.0.1
+astroid==3.0.2
     # via
     #   pylint
     #   pylint-celery
 binaryornot==0.4.4
     # via cookiecutter
-cerberus==1.3.5
-    # via plette
 certifi==2023.11.17
     # via requests
 chardet==5.2.0
@@ -36,15 +32,11 @@ cookiecutter==2.5.0
     # via -r requirements/base.in
 dill==0.3.7
     # via pylint
-distlib==0.3.7
-    # via requirementslib
-docopt==0.6.2
-    # via pipreqs
 edx-lint==5.3.6
     # via -r requirements/base.in
 idna==3.6
     # via requests
-isort==5.13.0
+isort==5.13.2
     # via pylint
 jinja2==3.1.2
     # via
@@ -60,25 +52,11 @@ mdurl==0.1.2
     # via markdown-it-py
 pbr==6.0.0
     # via stevedore
-pep517==0.13.1
-    # via requirementslib
-pip-api==0.0.30
-    # via isort
-pipreqs==0.4.13
-    # via isort
 platformdirs==4.1.0
-    # via
-    #   pylint
-    #   requirementslib
-plette[validation]==0.4.4
-    # via requirementslib
-pydantic==2.5.2
-    # via requirementslib
-pydantic-core==2.14.5
-    # via pydantic
+    # via pylint
 pygments==2.17.2
     # via rich
-pylint==3.0.2
+pylint==3.0.3
     # via
     #   edx-lint
     #   pylint-celery
@@ -103,12 +81,7 @@ pyyaml==6.0.1
     #   code-annotations
     #   cookiecutter
 requests==2.31.0
-    # via
-    #   cookiecutter
-    #   requirementslib
-    #   yarg
-requirementslib==3.0.0
-    # via isort
+    # via cookiecutter
 rich==13.7.0
     # via cookiecutter
 six==1.16.0
@@ -120,29 +93,15 @@ stevedore==5.1.0
 text-unidecode==1.3
     # via python-slugify
 tomli==2.0.1
-    # via
-    #   pep517
-    #   pylint
+    # via pylint
 tomlkit==0.12.3
-    # via
-    #   plette
-    #   pylint
-    #   requirementslib
+    # via pylint
 types-python-dateutil==2.8.19.14
     # via arrow
 typing-extensions==4.9.0
     # via
-    #   annotated-types
     #   astroid
-    #   pydantic
-    #   pydantic-core
     #   pylint
     #   rich
 urllib3==2.1.0
     # via requests
-yarg==0.1.9
-    # via pipreqs
-
-# The following packages are considered to be unsafe in a requirements file:
-# pip
-# setuptools
