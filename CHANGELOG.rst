@@ -5,6 +5,13 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2023-12-18
+**********
+
+Changed
+=======
+- Add selfcheck target to Makefile
+
 2023-12-15
 **********
 
