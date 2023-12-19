@@ -12,10 +12,6 @@ alabaster==0.7.13
     # via
     #   -r requirements/test.txt
     #   sphinx
-annotated-types==0.6.0
-    # via
-    #   -r requirements/test.txt
-    #   pydantic
 arrow==1.3.0
     # via
     #   -r requirements/test.txt
@@ -24,12 +20,12 @@ asgiref==3.7.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==3.0.1
+astroid==3.0.2
     # via
     #   -r requirements/test.txt
     #   pylint
     #   pylint-celery
-babel==2.13.1
+babel==2.14.0
     # via
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
@@ -51,10 +47,6 @@ cachetools==5.3.2
     # via
     #   -r requirements/ci.txt
     #   tox
-cerberus==1.3.5
-    # via
-    #   -r requirements/test.txt
-    #   plette
 certifi==2023.11.17
     # via
     #   -r requirements/test.txt
@@ -106,11 +98,10 @@ dill==0.3.7
     # via
     #   -r requirements/test.txt
     #   pylint
-distlib==0.3.7
+distlib==0.3.8
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
-    #   requirementslib
     #   virtualenv
 django==3.2.23
     # via
@@ -123,10 +114,6 @@ doc8==0.11.2
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
-docopt==0.6.2
-    # via
-    #   -r requirements/test.txt
-    #   pipreqs
 docutils==0.19
     # via
     #   -r requirements/test.txt
@@ -172,7 +159,7 @@ iniconfig==2.0.0
     # via
     #   -r requirements/test.txt
     #   pytest
-isort==5.13.0
+isort==5.13.2
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -234,20 +221,8 @@ pbr==6.0.0
     # via
     #   -r requirements/test.txt
     #   stevedore
-pep517==0.13.1
-    # via
-    #   -r requirements/test.txt
-    #   requirementslib
-pip-api==0.0.30
-    # via
-    #   -r requirements/test.txt
-    #   isort
 pip-tools==7.3.0
     # via -r requirements/pip-tools.txt
-pipreqs==0.4.13
-    # via
-    #   -r requirements/test.txt
-    #   isort
 pkginfo==1.9.6
     # via
     #   -r requirements/test.txt
@@ -257,14 +232,8 @@ platformdirs==4.1.0
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   pylint
-    #   requirementslib
     #   tox
     #   virtualenv
-plette[validation]==0.4.4
-    # via
-    #   -r requirements/test.txt
-    #   plette
-    #   requirementslib
 pluggy==1.3.0
     # via
     #   -r requirements/ci.txt
@@ -277,14 +246,6 @@ pycparser==2.21
     # via
     #   -r requirements/test.txt
     #   cffi
-pydantic==2.5.2
-    # via
-    #   -r requirements/test.txt
-    #   requirementslib
-pydantic-core==2.14.5
-    # via
-    #   -r requirements/test.txt
-    #   pydantic
 pydata-sphinx-theme==0.14.4
     # via
     #   -r requirements/test.txt
@@ -300,7 +261,7 @@ pygments==2.17.2
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.0.2
+pylint==3.0.3
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -363,18 +324,12 @@ requests==2.31.0
     #   -r requirements/test.txt
     #   cookiecutter
     #   requests-toolbelt
-    #   requirementslib
     #   sphinx
     #   twine
-    #   yarg
 requests-toolbelt==1.0.0
     # via
     #   -r requirements/test.txt
     #   twine
-requirementslib==3.0.0
-    # via
-    #   -r requirements/test.txt
-    #   isort
 restructuredtext-lint==1.4.0
     # via
     #   -r requirements/test.txt
@@ -466,7 +421,6 @@ tomli==2.0.1
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-    #   pep517
     #   pip-tools
     #   pylint
     #   pyproject-api
@@ -476,9 +430,7 @@ tomli==2.0.1
 tomlkit==0.12.3
     # via
     #   -r requirements/test.txt
-    #   plette
     #   pylint
-    #   requirementslib
 tox==4.11.4
     # via -r requirements/ci.txt
 twine==4.0.2
@@ -490,11 +442,8 @@ types-python-dateutil==2.8.19.14
 typing-extensions==4.9.0
     # via
     #   -r requirements/test.txt
-    #   annotated-types
     #   asgiref
     #   astroid
-    #   pydantic
-    #   pydantic-core
     #   pydata-sphinx-theme
     #   pylint
     #   rich
@@ -512,10 +461,6 @@ wheel==0.42.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
-yarg==0.1.9
-    # via
-    #   -r requirements/test.txt
-    #   pipreqs
 zipp==3.17.0
     # via
     #   -r requirements/pip-tools.txt
