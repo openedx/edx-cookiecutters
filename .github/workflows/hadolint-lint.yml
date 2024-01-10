@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2 
-      - uses: hadolint/hadolint-action@v2.0.0
+      - uses: hadolint/hadolint-action@f988afea3da57ee48710a9795b6bb677cc901183 # v2.1.0
         with:
           dockerfile: "cookiecutter-django-ida/\{\{cookiecutter.repo_name\}\}/Dockerfile"
