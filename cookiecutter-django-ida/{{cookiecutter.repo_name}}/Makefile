@@ -77,7 +77,7 @@ lint: ## run Python code linting
 	pylint --rcfile=pylintrc {{cookiecutter.project_name}} *.py
 
 quality:
-	tox -e quality 
+	tox -e quality
 
 pii_check: ## check for PII annotations on all Django models
 	DJANGO_SETTINGS_MODULE={{cookiecutter.project_name}}.settings.test \
@@ -119,8 +119,7 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	mv requirements/test.tmp requirements/test.txt
 
 extract_translations: ## extract strings to be translated, outputting .mo files
-	python manage.py makemessages -l en -v1 -d django
-	python manage.py makemessages -l en -v1 -d djangojs
+	cd {{cookiecutter.project_name}} && i18n_tool extract --no-segment
 
 dummy_translations: ## generate dummy translation (.po) files
 	cd {{cookiecutter.project_name}} && i18n_tool dummy
@@ -130,8 +129,18 @@ compile_translations: # compile translation files, outputting .po files for each
 
 fake_translations: extract_translations dummy_translations compile_translations ## generate and compile dummy translation files
 
+ifeq ($(OPENEDX_ATLAS_PULL),)
 pull_translations: ## pull translations from Transifex
 	tx pull -af -t --mode reviewed
+else
+# Experimental: OEP-58 Pulls translations using atlas
+pull_translations:
+	find {{cookiecutter.project_name}}/conf/locale -mindepth 1 -maxdepth 1 -type d -exec rm -r {} \;
+	atlas pull $(OPENEDX_ATLAS_ARGS) translations/{{cookiecutter.repo_name}}/{{cookiecutter.project_name}}/conf/locale:{{cookiecutter.project_name}}/conf/locale
+	python manage.py compilemessages
+
+	@echo "Translations have been pulled via Atlas and compiled."
+endif
 
 push_translations: ## push source translation files (.po) from Transifex
 	tx push -s

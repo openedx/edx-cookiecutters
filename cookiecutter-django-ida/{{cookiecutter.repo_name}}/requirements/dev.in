@@ -4,5 +4,4 @@
 -r validation.txt         # Core, testing, and quality check dependencies
 
 diff-cover                # Changeset diff test coverage
-edx-i18n-tools            # For i18n_tool dummy
 django-debug-toolbar      # For debugging Django

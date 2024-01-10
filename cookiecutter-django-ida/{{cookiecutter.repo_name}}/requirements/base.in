@@ -11,6 +11,8 @@ edx-auth-backends
 edx-django-utils
 edx-django-release-util
 edx-drf-extensions
+edx-i18n-tools
 edx-rest-api-client
 mysqlclient
+openedx-atlas
 pytz
