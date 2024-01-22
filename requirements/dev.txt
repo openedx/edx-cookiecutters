@@ -30,7 +30,7 @@ babel==2.14.0
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
     #   sphinx
-beautifulsoup4==4.12.2
+beautifulsoup4==4.12.3
     # via
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
@@ -143,7 +143,7 @@ imagesize==1.4.1
     # via
     #   -r requirements/test.txt
     #   sphinx
-importlib-metadata==7.0.0
+importlib-metadata==7.0.1
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -172,7 +172,7 @@ jeepney==0.8.0
     #   -r requirements/test.txt
     #   keyring
     #   secretstorage
-jinja2==3.1.2
+jinja2==3.1.3
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -186,7 +186,7 @@ markdown-it-py==3.0.0
     # via
     #   -r requirements/test.txt
     #   rich
-markupsafe==2.1.3
+markupsafe==2.1.4
     # via
     #   -r requirements/test.txt
     #   jinja2
@@ -198,7 +198,7 @@ mdurl==0.1.2
     # via
     #   -r requirements/test.txt
     #   markdown-it-py
-more-itertools==10.1.0
+more-itertools==10.2.0
     # via
     #   -r requirements/test.txt
     #   jaraco-classes
@@ -290,7 +290,7 @@ pyproject-hooks==1.0.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pytest==7.4.3
+pytest==7.4.4
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -431,11 +431,11 @@ tomlkit==0.12.3
     # via
     #   -r requirements/test.txt
     #   pylint
-tox==4.11.4
+tox==4.12.1
     # via -r requirements/ci.txt
 twine==4.0.2
     # via -r requirements/test.txt
-types-python-dateutil==2.8.19.14
+types-python-dateutil==2.8.19.20240106
     # via
     #   -r requirements/test.txt
     #   arrow
