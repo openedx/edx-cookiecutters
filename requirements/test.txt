@@ -14,7 +14,7 @@ arrow==1.3.0
     #   cookiecutter
 asgiref==3.7.2
     # via django
-astroid==3.0.2
+astroid==3.0.3
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -31,7 +31,7 @@ binaryornot==0.4.4
     #   cookiecutter
 build==1.0.3
     # via -r requirements/test.in
-certifi==2023.11.17
+certifi==2024.2.2
     # via
     #   -r requirements/base.txt
     #   requests
@@ -56,7 +56,7 @@ click-log==0.4.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==1.5.0
+code-annotations==1.6.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -64,7 +64,7 @@ cookiecutter==2.5.0
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==42.0.1
+cryptography==42.0.2
     # via secretstorage
 dill==0.3.8
     # via
@@ -138,7 +138,7 @@ markdown-it-py==3.0.0
     # via
     #   -r requirements/base.txt
     #   rich
-markupsafe==2.1.4
+markupsafe==2.1.5
     # via
     #   -r requirements/base.txt
     #   jinja2
@@ -166,7 +166,7 @@ pbr==6.0.0
     #   stevedore
 pkginfo==1.9.6
     # via twine
-platformdirs==4.1.0
+platformdirs==4.2.0
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -220,12 +220,12 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/base.txt
     #   arrow
-python-slugify==8.0.2
+python-slugify==8.0.3
     # via
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-pytz==2023.3.post1
+pytz==2024.1
     # via
     #   babel
     #   django
@@ -330,7 +330,7 @@ typing-extensions==4.9.0
     #   pydata-sphinx-theme
     #   pylint
     #   rich
-urllib3==2.1.0
+urllib3==2.2.0
     # via
     #   -r requirements/base.txt
     #   requests
