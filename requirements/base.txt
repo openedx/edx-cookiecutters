@@ -72,7 +72,7 @@ pylint-plugin-utils==0.8.2
     #   pylint-django
 python-dateutil==2.8.2
     # via arrow
-python-slugify==8.0.3
+python-slugify==8.0.4
     # via
     #   code-annotations
     #   cookiecutter
