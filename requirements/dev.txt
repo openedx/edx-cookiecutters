@@ -103,12 +103,12 @@ distlib==0.3.8
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==3.2.23
+django==3.2.24
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   django-model-utils
-django-model-utils==4.3.1
+django-model-utils==4.4.0
     # via -r requirements/test.txt
 doc8==0.11.2
     # via
@@ -163,7 +163,7 @@ isort==5.13.2
     # via
     #   -r requirements/test.txt
     #   pylint
-jaraco-classes==3.3.0
+jaraco-classes==3.3.1
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -300,7 +300,7 @@ python-dateutil==2.8.2
     # via
     #   -r requirements/test.txt
     #   arrow
-python-slugify==8.0.3
+python-slugify==8.0.4
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -433,7 +433,7 @@ tomlkit==0.12.3
     #   pylint
 tox==4.12.1
     # via -r requirements/ci.txt
-twine==4.0.2
+twine==5.0.0
     # via -r requirements/test.txt
 types-python-dateutil==2.8.19.20240106
     # via
