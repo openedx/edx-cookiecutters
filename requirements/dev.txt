@@ -90,7 +90,7 @@ cookiecutter==2.5.0
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==42.0.2
+cryptography==42.0.3
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -221,7 +221,7 @@ pbr==6.0.0
     # via
     #   -r requirements/test.txt
     #   stevedore
-pip-tools==7.3.0
+pip-tools==7.4.0
     # via -r requirements/pip-tools.txt
 pkginfo==1.9.6
     # via
@@ -290,7 +290,8 @@ pyproject-hooks==1.0.0
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   build
-pytest==8.0.0
+    #   pip-tools
+pytest==8.0.1
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -431,7 +432,7 @@ tomlkit==0.12.3
     # via
     #   -r requirements/test.txt
     #   pylint
-tox==4.12.1
+tox==4.13.0
     # via -r requirements/ci.txt
 twine==5.0.0
     # via -r requirements/test.txt
@@ -447,7 +448,7 @@ typing-extensions==4.9.0
     #   pydata-sphinx-theme
     #   pylint
     #   rich
-urllib3==2.2.0
+urllib3==2.2.1
     # via
     #   -r requirements/test.txt
     #   requests
