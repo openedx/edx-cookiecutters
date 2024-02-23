@@ -2,9 +2,9 @@
 
 import pkg_resources
 from django.utils import translation
+from web_fragments.fragment import Fragment
 from xblock.core import XBlock
 from xblock.fields import Integer, Scope
-from xblock.fragment import Fragment
 from xblockutils.resources import ResourceLoader
 
 

@@ -8,6 +8,10 @@ Change Log
 2023-12-18
 **********
 
+Added
+=======
+- Added python3.11 support. Removed django32 support.
+
 Changed
 =======
 - Add selfcheck target to Makefile
