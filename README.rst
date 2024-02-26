@@ -26,7 +26,7 @@ Using the cookiecutters
 
 1. One Time Setup
 =================
-.. code-block::
+.. code-block:: bash
 
   # Clone the repository
   git clone git@github.com:openedx/edx-cookiecutters.git
@@ -40,7 +40,7 @@ Using the cookiecutters
 
 These instructions assume you have cloned this repository and are currently in its head dir. You will need a virtualenv for running the cookiecutter. You can discard it once the cookiecutter has made your new repo.
 
-Commands::
+.. code-block:: bash
 
     $ make requirements  # from inside edx-cookiecutter repo
     # Replace <OUTPUT-DIRECTORY> with the base directory; your new directory will go inside.
@@ -50,11 +50,11 @@ Commands::
 3. TODOs after running cookiecutter
 ===================================
 
-- Modify project README
-- Modify the "requirements upgrade workflow" at ".github/workflows/upgrade-python-requirements.yml" and add "team_reviewers" and the "email_address" of the team/person
-- Modify project docs/decisions/0001-purpose-of-this-repo.rst ADR
-- Commit and push to GitHub
-- On GitHub, update repo's "About" description
+- Modify project ``README``.
+- Modify the ``requirements upgrade workflow`` at ``.github/workflows/upgrade-python-requirements.yml`` and add ``team_reviewers`` and the ``email_address`` of the team/person.
+- Modify project ``docs/decisions/0001-purpose-of-this-repo.rst`` ADR.
+- Commit and push to GitHub.
+- On GitHub, update repo's ``About`` description.
 
 Updating cookiecutters
 **********************
@@ -62,12 +62,14 @@ Updating cookiecutters
 If you find anything that is outdated in the cookiecutters in this repository, please create a PR with updates.
 
 
-.. Note:: Some of the cookiecutters in this repository use the layered cookiecutter approach. If you are modifying these, please see "Local Debugging of the layered cookiecutters" section below.
+.. Note::
+
+    Some of the cookiecutters in this repository use the layered cookiecutter approach. If you are modifying these, please see "Local Debugging of the layered cookiecutters" section below.
 
 
 Directions for contributing to this repository
 ==============================================
-.. code-block::
+.. code-block:: bash
 
   # Clone the repository
   git clone git@github.com:openedx/edx-cookiecutters.git
@@ -151,7 +153,7 @@ Contributions are very welcome. Tests can be run with `tox`_. Please ensure the 
 License
 =======
 
-The code in this repository is licensed under the Apache Software License 2.0 unless
+The code in this repository is licensed under the ``Apache Software License 2.0`` unless
 otherwise noted.
 
 Please see ``LICENSE.txt`` for details.

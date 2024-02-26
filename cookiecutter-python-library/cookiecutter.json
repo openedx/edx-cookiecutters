@@ -5,7 +5,18 @@
   "project_name": "{{ cookiecutter.repo_name }}",
   "project_short_description": "One-line description for README and other doc files.",
   "version": "0.1.0",
-  "author_name": "Open edX Project",
-  "author_email": "oscm@openedx.org",
-  "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"]
+  "author_name": "John Doe",
+  "author_email": "john.doe@example.com",
+  "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"],
+  "__prompts__": {
+    "github_org": "GitHub organization",
+    "repo_name": "Repository name",
+    "library_name": "Library name",
+    "project_name": "Project name",
+    "project_short_description": "Short description of the project",
+    "version": "Version",
+    "author_name": "Author's name",
+    "author_email": "Author's email",
+    "open_source_license": "Package license"
+  }
 }
