@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2024-02-268
+**********
+
+Changed
+=======
+- Add prompt message to all cookiecutters
+- Fix various typos
+
 2023-12-18
 **********
 
