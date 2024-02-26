@@ -20,7 +20,7 @@ asgiref==3.7.2
     # via
     #   -r requirements/test.txt
     #   django
-astroid==3.0.3
+astroid==3.1.0
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -86,11 +86,11 @@ colorama==0.4.6
     # via
     #   -r requirements/ci.txt
     #   tox
-cookiecutter==2.5.0
+cookiecutter==2.6.0
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==42.0.3
+cryptography==42.0.5
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -151,7 +151,7 @@ importlib-metadata==7.0.1
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==6.1.1
+importlib-resources==6.1.2
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -261,7 +261,7 @@ pygments==2.17.2
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.0.3
+pylint==3.1.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -291,7 +291,7 @@ pyproject-hooks==1.0.0
     #   -r requirements/test.txt
     #   build
     #   pip-tools
-pytest==8.0.1
+pytest==8.0.2
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
@@ -407,7 +407,7 @@ sqlparse==0.4.4
     # via
     #   -r requirements/test.txt
     #   django
-stevedore==5.1.0
+stevedore==5.2.0
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -440,7 +440,7 @@ types-python-dateutil==2.8.19.20240106
     # via
     #   -r requirements/test.txt
     #   arrow
-typing-extensions==4.9.0
+typing-extensions==4.10.0
     # via
     #   -r requirements/test.txt
     #   asgiref
@@ -453,7 +453,7 @@ urllib3==2.2.1
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.25.0
+virtualenv==20.25.1
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
