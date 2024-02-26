@@ -24,7 +24,7 @@ Decision
 
 edx-cookiecutter should be the central point for public edx cookiecutters. Most Open edx public cookiecutters should be placed in this repository.
 
-If there is a complelling case why a cookiecutter should be elsewhere, a link to it should be added the edx-cookiecutter/README.rst.
+If there is a compelling case why a cookiecutter should be elsewhere, a link to it should be added the edx-cookiecutter/README.rst.
 
 
 Consequences
@@ -35,7 +35,7 @@ All edx cookiecutters should be moved to this repository.
 Rejected Alternatives
 *********************
 
-Seperate Repos for frontend and backend cookiecutters
+Separate Repos for frontend and backend cookiecutters
 =====================================================
 
-Rejected because of the very real possiblity of creating a cookiecutter that deals with both frontend and backend.
+Rejected because of the very real possibility of creating a cookiecutter that deals with both frontend and backend.

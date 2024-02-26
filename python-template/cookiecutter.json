@@ -9,18 +9,9 @@
   "author_email": "john.doe@example.com",
   "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"],
   "setup_py_keyword_args": "None",
-  "setup_py_loading_pkg_data": [
-    "no",
-    "yes"
-  ],
-  "requires_django": [
-    "no",
-    "yes"
-  ],
-  "if_features_docs": [
-    "no",
-    "yes"
-  ],
+  "setup_py_loading_pkg_data": ["no", "yes"],
+  "requires_django": ["no", "yes"],
+  "if_features_docs": ["no", "yes"],
   "placeholder_repo_name": "placeholder_repo_name",
   "_copy_without_render": [".github/workflows/*.yml"],
   "__prompts__": {
