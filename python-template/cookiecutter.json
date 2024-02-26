@@ -5,13 +5,9 @@
   "project_name": "{{ cookiecutter.repo_name }}",
   "project_short_description": "One-line description for README and other doc files.",
   "version": "0.1.0",
-  "author_name": "Open edX Project",
-  "author_email": "oscm@openedx.org",
-  "open_source_license": [
-    "AGPL 3.0",
-    "Apache Software License 2.0",
-    "Not open source"
-  ],
+  "author_name": "John Doe",
+  "author_email": "john.doe@example.com",
+  "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"],
   "setup_py_keyword_args": "None",
   "setup_py_loading_pkg_data": [
     "no",
