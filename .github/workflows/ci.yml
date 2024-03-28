@@ -23,7 +23,7 @@ jobs:
         os: [ubuntu-20.04]
         python-version:
         - '3.8'
-        - '3.12'
+        - '3.11'
         toxenv: [py, quality, django42]
 
     steps:
