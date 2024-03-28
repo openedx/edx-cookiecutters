@@ -6,7 +6,7 @@
 #
 arrow==1.3.0
     # via cookiecutter
-astroid==3.0.3
+astroid==3.1.0
     # via
     #   pylint
     #   pylint-celery
@@ -26,9 +26,9 @@ click==8.1.7
     #   edx-lint
 click-log==0.4.0
     # via edx-lint
-code-annotations==1.6.0
+code-annotations==1.7.0
     # via edx-lint
-cookiecutter==2.5.0
+cookiecutter==2.6.0
     # via -r requirements/base.in
 dill==0.3.8
     # via pylint
@@ -56,7 +56,7 @@ platformdirs==4.2.0
     # via pylint
 pygments==2.17.2
     # via rich
-pylint==3.0.3
+pylint==3.1.0
     # via
     #   edx-lint
     #   pylint-celery
@@ -70,7 +70,7 @@ pylint-plugin-utils==0.8.2
     # via
     #   pylint-celery
     #   pylint-django
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via arrow
 python-slugify==8.0.4
     # via
@@ -82,23 +82,23 @@ pyyaml==6.0.1
     #   cookiecutter
 requests==2.31.0
     # via cookiecutter
-rich==13.7.0
+rich==13.7.1
     # via cookiecutter
 six==1.16.0
     # via
     #   edx-lint
     #   python-dateutil
-stevedore==5.1.0
+stevedore==5.2.0
     # via code-annotations
 text-unidecode==1.3
     # via python-slugify
 tomli==2.0.1
     # via pylint
-tomlkit==0.12.3
+tomlkit==0.12.4
     # via pylint
-types-python-dateutil==2.8.19.20240106
+types-python-dateutil==2.9.0.20240316
     # via arrow
-typing-extensions==4.9.0
+typing-extensions==4.10.0
     # via
     #   astroid
     #   pylint
