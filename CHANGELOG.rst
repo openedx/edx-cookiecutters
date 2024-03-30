@@ -10,7 +10,7 @@ Change Log
 
 Added
 =======
-- Added python3.11 support. Removed django32 support.
+- Added python3.11 support.
 
 Changed
 =======
