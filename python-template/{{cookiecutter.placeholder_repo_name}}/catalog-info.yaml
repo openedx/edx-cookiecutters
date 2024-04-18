@@ -11,6 +11,7 @@ metadata:
     # We use it in Open edX repos to have a comma-separated list of GitHub user
     # names that might be interested in changes to the architecture of this
     # component.
+    openedx.org/release: "main"
     openedx.org/arch-interest-groups: ""
 spec:
 
