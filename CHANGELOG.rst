@@ -5,6 +5,14 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2024-04-30
+**********
+
+Changed
+=======
+- added new catalog-info field ``openedx.org/release``
+- removed openedx.yaml file
+
 2023-12-18
 **********
 
