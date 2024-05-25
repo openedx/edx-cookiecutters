@@ -3,8 +3,6 @@ edx-cookiecutters
 
 This repository holds most of the Open edX public cookiecutters.
 
-
-
 Available cookiecutters
 ***********************
 
@@ -18,7 +16,7 @@ cookiecutter-python-library
     for creating a Python package that follows Open edX standards.
 
 cookiecutter-xblock
-    for creating a XBlock repository as well as a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
+    for creating an XBlock repository and a Dockerfile for building and running your XBlock in the xblock-sdk workbench.
 
 
 Using the cookiecutters
@@ -26,7 +24,8 @@ Using the cookiecutters
 
 1. One Time Setup
 =================
-.. code-block::
+
+.. code-block:: bash
 
   # Clone the repository
   git clone git@github.com:openedx/edx-cookiecutters.git
@@ -40,19 +39,20 @@ Using the cookiecutters
 
 These instructions assume you have cloned this repository and are currently in its head dir. You will need a virtualenv for running the cookiecutter. You can discard it once the cookiecutter has made your new repo.
 
-Commands::
+.. code-block:: bash
 
-    $ make requirements  # from inside edx-cookiecutter repo
+    make requirements  # from inside edx-cookiecutter repo
+
     # Replace <OUTPUT-DIRECTORY> with the base directory; your new directory will go inside.
     # Replace <COOKIECUTTER-NAME> with one of the available cookiecutters documented above.
-    $ cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
+    cookiecutter -o <OUTPUT-DIRECTORY> <COOKIECUTTER-NAME>
 
 3. TODOs after running cookiecutter
 ===================================
 
-- Modify project README
-- Modify the "requirements upgrade workflow" at ".github/workflows/upgrade-python-requirements.yml" and add "team_reviewers" and the "email_address" of the team/person
-- Modify project docs/decisions/0001-purpose-of-this-repo.rst ADR
+- Modify project ``README.rst``.
+- Modify the "requirements upgrade workflow" at ``.github/workflows/upgrade-python-requirements.yml`` and add ``team_reviewers`` and the ``email_address`` of the team/person.
+- Modify project ``docs/decisions/0001-purpose-of-this-repo.rst`` ADR.
 - Commit and push to GitHub
 - On GitHub, update repo's "About" description
 
@@ -62,12 +62,15 @@ Updating cookiecutters
 If you find anything that is outdated in the cookiecutters in this repository, please create a PR with updates.
 
 
-.. Note:: Some of the cookiecutters in this repository use the layered cookiecutter approach. If you are modifying these, please see "Local Debugging of the layered cookiecutters" section below.
+**Note:** Some of the cookiecutters in this repository use the layered cookiecutter approach. If you are modifying these, please see `Local Debugging of the layered cookiecutters`_ section below.
+
+.. _Local Debugging of the layered cookiecutters: #local-debugging-of-the-layered-cookiecutters
 
 
 Directions for contributing to this repository
 ==============================================
-.. code-block::
+
+.. code-block:: bash
 
   # Clone the repository
   git clone git@github.com:openedx/edx-cookiecutters.git
@@ -123,16 +126,20 @@ Local Debugging of the layered cookiecutters
 --------------------------------------------
 
 To ensure that the layered cookiecutters pull from your local code,
-instead of GitHub, run cookiecutter like::
+instead of GitHub, run cookiecutter like:
 
-    $ make cookiecutter-<TEMPLATE-NAME>
+.. code-block:: bash
 
-eg::
+    make cookiecutter-<TEMPLATE-NAME>
 
-    $ make cookiecutter-django-app
-    $ make cookiecutter-django-ida
-    $ make cookiecutter-python-library
-    $ make cookiecutter-xblock
+eg:
+
+.. code-block:: bash
+
+    make cookiecutter-django-app
+    make cookiecutter-django-ida
+    make cookiecutter-python-library
+    make cookiecutter-xblock
 
 
 Decisions
@@ -152,9 +159,7 @@ License
 =======
 
 The code in this repository is licensed under the Apache Software License 2.0 unless
-otherwise noted.
-
-Please see ``LICENSE.txt`` for details.
+otherwise noted. Please see `LICENSE.txt`_ for details.
 
 
 Reporting Security Issues
