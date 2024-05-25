@@ -1,7 +1,7 @@
 """
 Database models for {{cookiecutter.app_name}}.
 """
-{%- if cookiecutter.models != "Comma-separated list of models" %}
+{%- if cookiecutter.models != "No Model" %}
 # from django.db import models
 from model_utils.models import TimeStampedModel
 {%- for model in cookiecutter.models.replace(' ', '').split(',') %}
