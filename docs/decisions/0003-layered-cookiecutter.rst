@@ -15,7 +15,7 @@ Context
 Decision
 ********
 
-We will layer cookiecutters in order to share boilerpate code. This approach requires two categories of cookiecutters:
+We will layer cookiecutters in order to share boilerplate code. This approach requires two categories of cookiecutters:
 
 * *template-only*: These cookiecutters contain files used as boilerplate across other cookiecutters, but do not result in a workable repository output.
 * *final-output*: These cookiecutters produce the final output, resulting in a working directory.
@@ -62,8 +62,8 @@ Additionally, the decision to not allow partial file overwrites should help some
 Rejected Alternatives
 *********************
 
-No sharing of boilerpate code
-=============================
+No sharing of boilerplate code
+==============================
 
 As noted in the `Context`_, we had a maintenance problem when not sharing boilerplate code. It remains to be seen if the potential drawbacks of this approach will outweigh the drawbacks of the original maintenance problem.
 
