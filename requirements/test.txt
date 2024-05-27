@@ -12,24 +12,30 @@ arrow==1.3.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-asgiref==3.7.2
+asgiref==3.8.1
     # via django
-astroid==3.1.0
+astroid==3.2.2
     # via
     #   -r requirements/base.txt
     #   pylint
     #   pylint-celery
-babel==2.14.0
+babel==2.15.0
     # via
     #   pydata-sphinx-theme
     #   sphinx
+backports-tarfile==1.1.1
+    # via jaraco-context
+backports-zoneinfo==0.2.1 ; python_version < "3.9"
+    # via
+    #   -c requirements/constraints.txt
+    #   django
 beautifulsoup4==4.12.3
     # via pydata-sphinx-theme
 binaryornot==0.4.4
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-build==1.0.3
+build==1.2.1
     # via -r requirements/test.in
 certifi==2024.2.2
     # via
@@ -56,7 +62,7 @@ click-log==0.4.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==1.6.0
+code-annotations==1.8.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -64,7 +70,7 @@ cookiecutter==2.6.0
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==42.0.5
+cryptography==42.0.7
     # via secretstorage
 dill==0.3.8
     # via
@@ -72,12 +78,12 @@ dill==0.3.8
     #   pylint
 distlib==0.3.8
     # via virtualenv
-django==3.2.24
+django==4.2.13
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
     #   django-model-utils
-django-model-utils==4.4.0
+django-model-utils==4.5.1
     # via -r requirements/test.in
 doc8==0.11.2
     # via
@@ -95,23 +101,24 @@ edx-lint==5.3.6
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
-exceptiongroup==1.2.0
+exceptiongroup==1.2.1
     # via pytest
-filelock==3.13.1
+filelock==3.14.0
     # via virtualenv
-idna==3.6
+idna==3.7
     # via
     #   -r requirements/base.txt
     #   requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==7.0.1
+importlib-metadata==6.11.0
     # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   build
     #   keyring
     #   sphinx
     #   twine
-importlib-resources==6.1.2
+importlib-resources==6.4.0
     # via keyring
 iniconfig==2.0.0
     # via pytest
@@ -120,19 +127,23 @@ isort==5.13.2
     #   -r requirements/base.txt
     #   -r requirements/test.in
     #   pylint
-jaraco-classes==3.3.1
+jaraco-classes==3.4.0
+    # via keyring
+jaraco-context==5.3.0
+    # via keyring
+jaraco-functools==4.0.1
     # via keyring
 jeepney==0.8.0
     # via
     #   keyring
     #   secretstorage
-jinja2==3.1.3
+jinja2==3.1.4
     # via
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
     #   sphinx
-keyring==24.3.0
+keyring==25.2.1
     # via twine
 markdown-it-py==3.0.0
     # via
@@ -151,10 +162,12 @@ mdurl==0.1.2
     #   -r requirements/base.txt
     #   markdown-it-py
 more-itertools==10.2.0
-    # via jaraco-classes
-nh3==0.2.15
+    # via
+    #   jaraco-classes
+    #   jaraco-functools
+nh3==0.2.17
     # via readme-renderer
-packaging==23.2
+packaging==24.0
     # via
     #   build
     #   pydata-sphinx-theme
@@ -164,24 +177,24 @@ pbr==6.0.0
     # via
     #   -r requirements/base.txt
     #   stevedore
-pkginfo==1.9.6
+pkginfo==1.10.0
     # via twine
-platformdirs==4.2.0
+platformdirs==4.2.2
     # via
     #   -r requirements/base.txt
     #   pylint
     #   virtualenv
-pluggy==1.4.0
+pluggy==1.5.0
     # via pytest
 pycodestyle==2.11.1
     # via -r requirements/test.in
-pycparser==2.21
+pycparser==2.22
     # via cffi
 pydata-sphinx-theme==0.14.4
     # via sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.in
-pygments==2.17.2
+pygments==2.18.0
     # via
     #   -r requirements/base.txt
     #   accessible-pygments
@@ -190,7 +203,7 @@ pygments==2.17.2
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.1.0
+pylint==3.2.2
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -210,13 +223,13 @@ pylint-plugin-utils==0.8.2
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pyproject-hooks==1.0.0
+pyproject-hooks==1.1.0
     # via build
-pytest==8.0.2
+pytest==8.2.1
     # via pytest-cookies
 pytest-cookies==0.7.0
     # via -r requirements/test.in
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via
     #   -r requirements/base.txt
     #   arrow
@@ -226,17 +239,15 @@ python-slugify==8.0.4
     #   code-annotations
     #   cookiecutter
 pytz==2024.1
-    # via
-    #   babel
-    #   django
+    # via babel
 pyyaml==6.0.1
     # via
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==42.0
+readme-renderer==43.0
     # via twine
-requests==2.31.0
+requests==2.32.2
     # via
     #   -r requirements/base.txt
     #   cookiecutter
@@ -249,7 +260,7 @@ restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==13.7.0
+rich==13.7.1
     # via
     #   -r requirements/base.txt
     #   cookiecutter
@@ -294,7 +305,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sqlparse==0.4.4
+sqlparse==0.5.0
     # via django
 stevedore==5.2.0
     # via
@@ -310,19 +321,18 @@ tomli==2.0.1
     #   -r requirements/base.txt
     #   build
     #   pylint
-    #   pyproject-hooks
     #   pytest
-tomlkit==0.12.3
+tomlkit==0.12.5
     # via
     #   -r requirements/base.txt
     #   pylint
-twine==5.0.0
+twine==5.1.0
     # via -r requirements/test.in
-types-python-dateutil==2.8.19.20240106
+types-python-dateutil==2.9.0.20240316
     # via
     #   -r requirements/base.txt
     #   arrow
-typing-extensions==4.10.0
+typing-extensions==4.12.0
     # via
     #   -r requirements/base.txt
     #   asgiref
@@ -335,9 +345,9 @@ urllib3==2.2.1
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.25.1
+virtualenv==20.26.2
     # via -r requirements/test.in
-zipp==3.17.0
+zipp==3.19.0
     # via
     #   importlib-metadata
     #   importlib-resources
