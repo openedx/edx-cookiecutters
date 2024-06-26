@@ -1,7 +1,7 @@
 cookiecutter-django-ida
 #######################
 
-A cookiecutter_ template for edX Django projects.
+A cookiecutter_ template for Open edX Django projects.
 
 .. _cookiecutter: https://cookiecutter.readthedocs.org/en/latest/index.html
 
@@ -27,16 +27,14 @@ The necessary configuration is also in place to support:
 Usage
 *****
 
-
 To create a project using this cookiecutter, follow the instructions found in edx-cookiecutter's `readme`_.
 
 .. _readme: https://github.com/openedx/edx-cookiecutters/blob/master/README.rst
 
-
 After the new folder is created, you will need to:
 
 1. ``cd <new_repo_folder>``
-2. Create a python 3 virtual environment and activate it
+2. Create a Python 3 virtual environment and activate it
 3. ``make upgrade``
 4. ``make docker_build``
 5. ``docker-compose up``
@@ -69,7 +67,7 @@ The project includes a custom Django user model in ``core/models.py``. You must 
 
 .. code-block:: bash
 
-    $ python manage.py makemigrations
+    python manage.py makemigrations
 
 Documentation
 =============
@@ -86,16 +84,16 @@ Contributions are welcome. Please read `How To Contribute <https://github.com/op
 Testing
 =======
 
-The ``Makefile`` includes a ``test`` target that runs basic validation on this template. This validation includes::
+The ``Makefile`` includes a ``test`` target that runs basic validation on this template. This validation includes:
 
-    * Create a new project using the template.
-    * Generate and install pinned requirements
-    * Run the project's migrations and validations.
-    * Extract and compile translations.
-    * Compile documentation.
+* Create a new project using the template.
+* Generate and install pinned requirements
+* Run the project's migrations and validations.
+* Extract and compile translations.
+* Compile documentation.
 
 Run this validation using the command below.
 
 .. code-block:: bash
 
-    $ make test
+    make test
