@@ -5,6 +5,13 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2024-05-25
+**********
+
+- Prompts added to all cookiecutters.
+- "models" default value in django-app cookiecutter changed to "No Model"
+- All README files updated.
+
 2024-04-30
 **********
 

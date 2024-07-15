@@ -23,6 +23,6 @@ post_gen_project(
     }
 )
 
-# Removing unecessary files from python and django templates:
+# Removing unnecessary files from python and django templates:
 os.remove("setup.py")
 os.remove("MANIFEST.in")

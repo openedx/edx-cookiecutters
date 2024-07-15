@@ -2,7 +2,7 @@
 -c constraints.txt
 
 Django             # Web application framework
-{% if cookiecutter.models != "Comma-separated list of models" -%}
+{% if cookiecutter.models != "No Model" -%}
 django-model-utils        # Provides TimeStampedModel abstract base class
 {%- endif %}
 

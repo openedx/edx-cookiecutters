@@ -7,26 +7,26 @@
   "version": "0.1.0",
   "author_name": "Open edX Project",
   "author_email": "oscm@openedx.org",
-  "open_source_license": [
-    "AGPL 3.0",
-    "Apache Software License 2.0",
-    "Not open source"
-  ],
+  "open_source_license": ["AGPL 3.0", "Apache Software License 2.0", "Not open source"],
   "setup_py_keyword_args": "None",
-  "setup_py_loading_pkg_data": [
-    "no",
-    "yes"
-  ],
-  "requires_django": [
-    "no",
-    "yes"
-  ],
-  "if_features_docs": [
-    "no",
-    "yes"
-  ],
+  "setup_py_loading_pkg_data": ["no", "yes"],
+  "requires_django": ["no", "yes"],
+  "if_features_docs": ["no", "yes"],
   "placeholder_repo_name": "placeholder_repo_name",
-  "_copy_without_render": [
-    ".github/workflows/*.yml"
-  ]
+  "_copy_without_render": [".github/workflows/*.yml"],
+  "__prompts__": {
+    "github_org": "GitHub organization",
+    "repo_name": "Repository name",
+    "sub_dir_name": "Sub-directory name",
+    "project_name": "Project name",
+    "project_short_description": "Short description of the project",
+    "version": "Version",
+    "author_name": "Author's name",
+    "author_email": "Author's email",
+    "open_source_license": "Package license",
+    "setup_py_keyword_args": "Keyword arguments for setup.py",
+    "setup_py_loading_pkg_data": "Load package data in setup.py (yes/no)",
+    "requires_django": "Requires Django (yes/no)",
+    "if_features_docs": "Add features documentation (yes/no)"
+  }
 }

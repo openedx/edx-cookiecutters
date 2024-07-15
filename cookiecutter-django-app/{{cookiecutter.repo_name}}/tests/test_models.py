@@ -4,7 +4,7 @@ Tests for the `{{ cookiecutter.repo_name }}` models module.
 """
 
 import pytest
-{%- if cookiecutter.models != "Comma-separated list of models" -%}
+{%- if cookiecutter.models != "No Model" -%}
 {%- for model in cookiecutter.models.replace(' ', '').split(',') %}
 
 

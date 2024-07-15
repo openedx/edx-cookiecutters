@@ -18,14 +18,16 @@ Purpose
 
 TODO: The ``README.rst`` file should start with a brief description of the repository and its purpose.
 It should be described in the context of other repositories under the ``openedx``
-organization. It should make clear where this fits in to the overall Open edX
+organization. It should make clear where this fits into the overall Open edX
 codebase and should be oriented towards people who are new to the Open edX
 project.
 
 Getting Started with Development
 ********************************
 
-Please see the Open edX documentation for `guidance on Python development <https://docs.openedx.org/en/latest/developers/how-tos/get-ready-for-python-dev.html>`_ in this repo.
+Please see the Open edX documentation for `guidance on Python development`_ in this repo.
+
+.. _guidance on Python development: https://docs.openedx.org/en/latest/developers/how-tos/get-ready-for-python-dev.html
 
 Deploying
 *********
@@ -33,7 +35,7 @@ Deploying
 TODO: How can a new user go about deploying this component? Is it just a few
 commands? Is there a larger how-to that should be linked here?
 
-PLACEHOLDER: For details on how to deploy this component, see the `deployment how-to`_
+PLACEHOLDER: For details on how to deploy this component, see the `deployment how-to`_.
 
 .. _deployment how-to: https://docs.openedx.org/projects/{{ cookiecutter.repo_name }}/how-tos/how-to-deploy-this-component.html
 
@@ -86,8 +88,8 @@ Please read `How To Contribute <https://openedx.org/r/how-to-contribute>`_ for d
 
 This project is currently accepting all types of contributions, bug fixes,
 security fixes, maintenance work, or new features.  However, please make sure
-to have a discussion about your new feature idea with the maintainers prior to
-beginning development to maximize the chances of your change being accepted.
+to discuss your new feature idea with the maintainers before beginning development
+to maximize the chances of your change being accepted.
 You can start a conversation by creating a new issue on this repo summarizing
 your idea.
 
