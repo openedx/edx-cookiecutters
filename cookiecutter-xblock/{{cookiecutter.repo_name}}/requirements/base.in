@@ -1,7 +1,9 @@
 # Core requirements for using this application
+
 -c constraints.txt
 
 django-statici18n
 edx-i18n-tools
 Mako
-XBlock 
+XBlock
+xblock-utils
