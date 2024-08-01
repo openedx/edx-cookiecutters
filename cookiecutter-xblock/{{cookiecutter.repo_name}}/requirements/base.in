@@ -5,4 +5,4 @@ django-statici18n
 edx-i18n-tools
 Mako
 XBlock 
-xblock-utils
+importlib-resources>=6.1.1
