@@ -5,9 +5,12 @@
 Testing with Docker
 *******************
 
-This XBlock comes with a Docker test environment ready to build, based on the xblock-sdk workbench. To build and run it::
+This XBlock comes with a Docker test environment ready to build, based on the xblock-sdk workbench.
+To build and run it:
 
-    $ make dev.run
+.. code-block:: bash
+
+    make dev.run
 
 The XBlock SDK Workbench, including this XBlock, will be available on the list of XBlocks at http://localhost:8000
 
@@ -35,8 +38,9 @@ The general steps to provide multilingual messages for a Python program (or an X
 1. Mark translatable strings
 ============================
 
-Mark translatable strings in python::
+Mark translatable strings in python:
 
+.. code-block:: python
 
     from django.utils.translation import ugettext as _
 
@@ -46,8 +50,9 @@ Mark translatable strings in python::
 See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#python-source-code>`__
 for more information.
 
-You can also use ``gettext`` to mark strings in javascript::
+You can also use ``gettext`` to mark strings in javascript:
 
+.. code-block:: javascript
 
     // Translators: This comment will appear in the `.po` file.
     var message = gettext("Custom message.");
@@ -64,10 +69,11 @@ use `edx-i18n-tools <https://github.com/openedx/i18n-tools>`_.
 After marking strings as translatable we have to create the raw message catalogs.
 These catalogs are created in ``.po`` files. For more information see
 `GNU PO file documentation <https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html>`_.
-These catalogs can be created by running::
+These catalogs can be created by running:
 
+.. code-block:: bash
 
-    $ make extract_translations
+    make extract_translations
 
 The previous command will create the necessary ``.po`` files under
 ``{{cookiecutter.repo_name}}/{{cookiecutter.package_name}}/conf/locale/en/LC_MESSAGES/text.po``.
@@ -110,9 +116,11 @@ django with transiflex.
 ------------------------
 
 Once translations are in place, use the following Make target to compile the translation catalogs ``.po`` into
-``.mo`` message files::
+``.mo`` message files:
 
-    $ make compile_translations
+.. code-block:: bash
+
+    make compile_translations
 
 The previous command will compile ``.po`` files using
 ``django-admin compilemessages`` (`compilemessages documentation <https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#compiling-message-files>`_).
@@ -121,7 +129,9 @@ After compiling the ``.po`` file(s), ``django-statici18n`` is used to create lan
 
 To upload translations to transiflex use the follow Make target::
 
-    $ make push_translations
+.. code-block:: bash
+
+    make push_translations
 
 See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
 transifex credentials.
@@ -131,9 +141,11 @@ django with transiflex.
 
  **Note:** The ``dev.run`` make target will automatically compile any translations.
 
- **Note:** To check if the source translation files (``.po``) are up-to-date run::
+ **Note:** To check if the source translation files (``.po``) are up-to-date run:
 
-     $ make detect_changed_source_translations
+.. code-block:: bash
+
+    make detect_changed_source_translations
 
 4. Use ``gettext`` to translate strings
 =======================================
@@ -143,9 +155,11 @@ Django will automatically use ``gettext`` and the compiled translations to trans
 Troubleshooting
 ***************
 
-If there are any errors compiling ``.po`` files run the following command to validate your ``.po`` files::
+If there are any errors compiling ``.po`` files run the following command to validate your ``.po`` files:
 
-    $ make validate
+.. code-block:: bash
+
+    make validate
 
 See `django's i18n troubleshooting documentation
 <https://docs.djangoproject.com/en/3.2/topics/i18n/translation/#troubleshooting-gettext-incorrectly-detects-python-format-in-strings-with-percent-signs>`_
