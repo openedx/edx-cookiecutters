@@ -5,8 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches:
-    - '**'
-
+      - "**"
 
 jobs:
   run_tests:
@@ -15,31 +14,30 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: ['3.8']
-        toxenv: [quality, docs, django32, django40]
-
+        python-version: ["3.12"]
+        toxenv: [quality, docs, django42]
     steps:
-    - uses: actions/checkout@v3
-    - name: setup python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - uses: actions/checkout@v4
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - name: Install pip
-      run: pip install -r requirements/pip.txt
+      - name: Install pip
+        run: pip install -r requirements/pip.txt
 
-    - name: Install Dependencies
-      run: pip install -r requirements/ci.txt
+      - name: Install Dependencies
+        run: pip install -r requirements/ci.txt
 
-    - name: Run Tests
-      env:
-        TOXENV: ${{ matrix.toxenv }}
-      run: tox
+      - name: Run Tests
+        env:
+          TOXENV: ${{ matrix.toxenv }}
+        run: tox
 
-    - name: Run coverage
-      if: matrix.python-version == '3.8' && matrix.toxenv == 'django32'
-      uses: codecov/codecov-action@v4
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        flags: unittests
-        fail_ci_if_error: true
+      - name: Run coverage
+        if: matrix.python-version == '3.12' && matrix.toxenv == 'django42'
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          fail_ci_if_error: true

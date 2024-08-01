@@ -1,14 +1,13 @@
 """TO-DO: Write a description of what this XBlock is."""
 
 import os
+from importlib import resources
+
 from django.utils import translation
 from web_fragments.fragment import Fragment
 from xblock.core import XBlock
 from xblock.fields import Integer, Scope
-try:
-    from xblock.utils.resources import ResourceLoader
-except ModuleNotFoundError:
-    from xblockutils.resources import ResourceLoader
+from xblock.utils.resources import ResourceLoader
 
 resource_loader = ResourceLoader(__name__)
 
@@ -27,7 +26,7 @@ class {{cookiecutter.class_name}}(XBlock):
         help="A simple counter, to show something happening",
     )
 
-    def get_resource_string(self, path):
+    def resource_string(self, path):
         """
         Retrieve string contents for the file path
         """
@@ -100,10 +99,8 @@ class {{cookiecutter.class_name}}(XBlock):
         text_js = 'static/js/translations/{locale_code}/text.js'
         lang_code = locale_code.split('-')[0]
         for code in (locale_code, lang_code, 'en'):
-            import importlib.resources as resources
-
             text_js_path = text_js.format(locale_code=code)
-            if resources.is_resource(resource_loader.module_name, text_js_path):
+            if resources.files(resource_loader.module_name).joinpath(text_js_path).is_file():
                 return text_js_path
         return None
 
