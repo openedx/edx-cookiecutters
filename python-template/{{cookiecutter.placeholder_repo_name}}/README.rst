@@ -1,5 +1,6 @@
 {{cookiecutter.project_name}}
-#############################
+{%- set heading_underline_length = (cookiecutter.project_name | length) %}
+{{ '#' * heading_underline_length }}
 
 .. note::
 
