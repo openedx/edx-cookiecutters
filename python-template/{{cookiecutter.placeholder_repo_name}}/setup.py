@@ -162,7 +162,7 @@ setup(
 
     include_package_data=True,
     install_requires=load_requirements('requirements/base.in'),
-    python_requires=">=3.8",
+    python_requires=">=3.12",
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
@@ -172,7 +172,7 @@ setup(
         'Development Status :: 3 - Alpha',
         {%- if cookiecutter.requires_django == "yes" %}
         'Framework :: Django',
-        'Framework :: Django :: 3.2',
+        'Framework :: Django :: 4.2',
         {%- endif %}
         'Intended Audience :: Developers',
         {%- if cookiecutter.open_source_license == "AGPL 3.0" %}
@@ -184,7 +184,7 @@ setup(
         {%- endif %}
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.12',
     ],
 {%- if cookiecutter.setup_py_keyword_args != "None" %}
     {{ cookiecutter.setup_py_keyword_args }}
