@@ -3,7 +3,7 @@
 {{ '#' * heading_underline_length }}
 
 Testing with Docker
-********************
+*******************
 
 This XBlock comes with a Docker test environment ready to build, based on the xblock-sdk workbench. To build and run it::
 
@@ -12,7 +12,7 @@ This XBlock comes with a Docker test environment ready to build, based on the xb
 The XBlock SDK Workbench, including this XBlock, will be available on the list of XBlocks at http://localhost:8000
 
 Translating
-*************
+***********
 
 Internationalization (i18n) is when a program is made aware of multiple languages.
 Localization (l10n) is adapting a program to local language and cultural habits.
@@ -33,7 +33,7 @@ The general steps to provide multilingual messages for a Python program (or an X
 4. Use ``gettext`` to translate strings.
 
 1. Mark translatable strings
-=============================
+============================
 
 Mark translatable strings in python::
 
@@ -56,7 +56,7 @@ See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guid
 for more information.
 
 2. Run i18n tools to create Raw message catalogs
-=================================================
+================================================
 
 This cookiecutter template offers multiple make targets which are shortcuts to
 use `edx-i18n-tools <https://github.com/openedx/i18n-tools>`_.
@@ -76,10 +76,10 @@ The ``text.po`` file is created from the ``django-partial.po`` file created by
 this is why you will not see a ``django-partial.po`` file.
 
 3. Create language specific translations
-==============================================
+========================================
 
 3.1 Add translated strings
----------------------------
+--------------------------
 
 After creating the raw message catalogs, all translations should be filled out by the translator.
 One or more translators must edit the entries created in the message catalog, i.e. the ``.po`` file(s).
@@ -107,7 +107,7 @@ See `transifex documentation <https://docs.transifex.com/integrations/django>`_ 
 django with transiflex.
 
 3.2 Compile translations
--------------------------
+------------------------
 
 Once translations are in place, use the following Make target to compile the translation catalogs ``.po`` into
 ``.mo`` message files::
@@ -136,12 +136,12 @@ django with transiflex.
      $ make detect_changed_source_translations
 
 4. Use ``gettext`` to translate strings
-========================================
+=======================================
 
 Django will automatically use ``gettext`` and the compiled translations to translate strings.
 
 Troubleshooting
-****************
+***************
 
 If there are any errors compiling ``.po`` files run the following command to validate your ``.po`` files::
 
