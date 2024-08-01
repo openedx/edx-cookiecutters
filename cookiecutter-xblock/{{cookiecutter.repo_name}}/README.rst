@@ -1,5 +1,6 @@
 {{cookiecutter.project_desc}}
-#############################
+{%- set heading_underline_length = (cookiecutter.project_desc | length) %}
+{{ '#' * heading_underline_length }}
 
 Testing with Docker
 ********************
