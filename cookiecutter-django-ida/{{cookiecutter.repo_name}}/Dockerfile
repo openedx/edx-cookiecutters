@@ -21,7 +21,7 @@ FROM ubuntu:focal as app
 # If you add a package here please include a comment above describing what it is used for
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -qy install --no-install-recommends \
  language-pack-en locales \
- python3.8 python3-dev python3-pip \
+ python3.12 python3-dev python3-pip \
  # The mysqlclient Python package has install-time dependencies
  libmysqlclient-dev libssl-dev pkg-config \
  gcc
