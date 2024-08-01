@@ -110,7 +110,7 @@ See `config instructions <https://github.com/openedx/i18n-tools#transifex-comman
 transifex credentials.
 
 See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
-django with transiflex.
+django with transifex.
 
 3.2 Compile translations
 ------------------------
@@ -127,7 +127,7 @@ The previous command will compile ``.po`` files using
 After compiling the ``.po`` file(s), ``django-statici18n`` is used to create language specific catalogs. See
 ``django-statici18n`` `documentation <https://django-statici18n.readthedocs.io/en/latest/>`_ for more information.
 
-To upload translations to transiflex use the follow Make target::
+To upload translations to transifex use the follow Make target:
 
 .. code-block:: bash
 
@@ -137,7 +137,7 @@ See `config instructions <https://github.com/openedx/i18n-tools#transifex-comman
 transifex credentials.
 
 See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
-django with transiflex.
+django with transifex.
 
  **Note:** The ``dev.run`` make target will automatically compile any translations.
 
