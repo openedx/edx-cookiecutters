@@ -1,6 +1,6 @@
 """TO-DO: Write a description of what this XBlock is."""
 
-import pkg_resources
+import importlib_resources as resources
 from django.utils import translation
 from web_fragments.fragment import Fragment
 from xblock.core import XBlock
@@ -24,7 +24,7 @@ class {{cookiecutter.class_name}}(XBlock):
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
-        data = pkg_resources.resource_string(__name__, path)
+        data = resources.files(__package__).joinpath(path).read_bytes()
         return data.decode("utf8")
 
     # TO-DO: change this view to display your data your own way.
@@ -93,10 +93,11 @@ class {{cookiecutter.class_name}}(XBlock):
         text_js = 'public/js/translations/{locale_code}/text.js'
         lang_code = locale_code.split('-')[0]
         for code in (locale_code, lang_code, 'en'):
-            loader = ResourceLoader(__name__)
-            if pkg_resources.resource_exists(
-                    loader.module_name, text_js.format(locale_code=code)):
+            try:
+                resources.files(__package__).joinpath(text_js.format(locale_code=code)).read_bytes()
                 return text_js.format(locale_code=code)
+            except FileNotFoundError:
+                continue
         return None
 
     @staticmethod
