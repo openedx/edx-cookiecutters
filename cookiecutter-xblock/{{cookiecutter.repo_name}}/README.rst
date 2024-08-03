@@ -22,9 +22,9 @@ Localization (l10n) is adapting a program to local language and cultural habits.
 
 Use the locale directory to provide internationalized strings for your XBlock project.
 For more information on how to enable translations, visit the
-`Open edX XBlock tutorial on Internationalization <https://edx.readthedocs.org/projects/xblock-tutorial/en/latest/edx_platform/edx_lms.html>`_.
+`Enabling Translations on a New Repo <https://docs.openedx.org/en/latest/developers/how-tos/enable-translations-new-repo.html>`_.
 
-This cookiecutter template uses `django-statici18n <https://django-statici18n.readthedocs.io/en/latest/>`_
+This cookiecutter template uses `django-statici18n <https://django-statici18n.readthedocs.io/>`_
 to provide translations to static javascript using ``gettext``.
 
 The included Makefile contains targets for extracting, compiling and validating translatable strings.
@@ -109,8 +109,8 @@ To use translations from transifex use the follow Make target to pull translatio
 See `config instructions <https://github.com/openedx/i18n-tools#transifex-commands>`_ for information on how to set up your
 transifex credentials.
 
-See `transifex documentation <https://docs.transifex.com/integrations/django>`_ for more details about integrating
-django with transifex.
+See `Enabling Translations on a New Repo <https://docs.openedx.org/en/latest/developers/how-tos/enable-translations-new-repo.html>`_
+for more details about integrating django with transifex.
 
 3.2 Compile translations
 ------------------------
