@@ -60,4 +60,4 @@ test: ## run tests on every supported Python version
 	tox
 
 validate: ## run tests and quality checks
-	tox -e quality,py38
+	tox -e quality,py

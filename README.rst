@@ -32,7 +32,7 @@ Using the cookiecutters
   cd edx-cookiecutters
 
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
-  mkvirtualenv -p python3.8 edx-cookiecutters
+  mkvirtualenv -p python3.12 edx-cookiecutters
 
 2. Create a cookiecutter Repository
 ===================================
@@ -77,7 +77,7 @@ Directions for contributing to this repository
   cd edx-cookiecutters
 
   # Set up a virtualenv using virtualenvwrapper with the same name as the repo and activate it
-  mkvirtualenv -p python3.8 edx-cookiecutters
+  mkvirtualenv -p python3.12 edx-cookiecutters
   # Activate the virtualenv
   workon edx-cookiecutters
 
