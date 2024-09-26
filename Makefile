@@ -25,10 +25,10 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
 	pip install -qr requirements/pip.txt
 	pip install -qr requirements/pip-tools.txt
-	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
-	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
-	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
-	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
+	$(PIP_COMPILE) --allow-unsafe -o requirements/base.txt requirements/base.in
+	$(PIP_COMPILE) --allow-unsafe -o requirements/test.txt requirements/test.in
+	$(PIP_COMPILE) --allow-unsafe -o requirements/ci.txt requirements/ci.in
+	$(PIP_COMPILE) --allow-unsafe -o requirements/dev.txt requirements/dev.in
 
 	make upgrade_template
 
