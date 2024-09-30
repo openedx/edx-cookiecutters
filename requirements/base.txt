@@ -30,7 +30,7 @@ code-annotations==1.8.0
     # via edx-lint
 cookiecutter==2.6.0
     # via -r requirements/base.in
-dill==0.3.8
+dill==0.3.9
     # via pylint
 edx-lint==5.4.0
     # via -r requirements/base.in

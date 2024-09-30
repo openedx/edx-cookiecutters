@@ -94,7 +94,7 @@ cryptography==43.0.1
     # via
     #   -r requirements/test.txt
     #   secretstorage
-dill==0.3.8
+dill==0.3.9
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -159,7 +159,7 @@ jaraco-context==6.0.1
     # via
     #   -r requirements/test.txt
     #   keyring
-jaraco-functools==4.0.2
+jaraco-functools==4.1.0
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -282,7 +282,7 @@ pyproject-api==1.8.0
     # via
     #   -r requirements/ci.txt
     #   tox
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -429,7 +429,7 @@ urllib3==2.2.3
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.26.5
+virtualenv==20.26.6
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt

@@ -66,7 +66,7 @@ cookiecutter==2.6.0
     #   pytest-cookies
 cryptography==43.0.1
     # via secretstorage
-dill==0.3.8
+dill==0.3.9
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -116,7 +116,7 @@ jaraco-classes==3.4.0
     # via keyring
 jaraco-context==6.0.1
     # via keyring
-jaraco-functools==4.0.2
+jaraco-functools==4.1.0
     # via keyring
 jeepney==0.8.0
     # via
@@ -208,7 +208,7 @@ pylint-plugin-utils==0.8.2
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via build
 pytest==8.3.3
     # via pytest-cookies
@@ -316,7 +316,7 @@ urllib3==2.2.3
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.26.5
+virtualenv==20.26.6
     # via -r requirements/test.in
 zipp==3.20.2
     # via importlib-metadata
