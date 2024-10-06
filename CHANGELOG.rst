@@ -5,6 +5,11 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2024-08-03
+**********
+
+- Dropped support for Python 3.8 and Django 3.2
+
 2024-05-25
 **********
 
