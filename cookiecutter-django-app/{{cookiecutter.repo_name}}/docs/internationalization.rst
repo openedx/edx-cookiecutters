@@ -34,8 +34,6 @@ The `make` targets listed below can be used to push or pull translations.
       - Description
     * - pull_translations
       - Pull translations from Transifex
-    * - push_translations
-      - Push source translation files to Transifex
 
 Fake Translations
 *****************
