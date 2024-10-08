@@ -51,6 +51,18 @@ dev.build:
 dev.run: dev.clean dev.build ## Clean, build and run test image
 	docker run -p 8000:8000 -v $(CURDIR):/usr/local/src/$(REPO_NAME) --name $(REPO_NAME)-dev $(REPO_NAME)-dev
 
+dev.stop: ## Stop the running container
+	docker stop $(REPO_NAME)-dev
+
+dev.migrate: ## Run migrations in the container
+	docker exec -it $(REPO_NAME)-dev python manage.py migrate
+
+dev.logs: ## View logs from the container
+	docker logs -f $(REPO_NAME)-dev
+
+dev.exec: ## Execute to the dev container
+	docker exec -it $(REPO_NAME)-dev /bin/bash
+
 ## Localization targets
 
 extract_translations: ## extract strings to be translated, outputting .po files
