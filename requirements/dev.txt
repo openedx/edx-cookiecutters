@@ -8,7 +8,7 @@ accessible-pygments==0.0.5
     # via
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
-alabaster==0.7.16
+alabaster==1.0.0
     # via
     #   -r requirements/test.txt
     #   sphinx
@@ -20,7 +20,7 @@ asgiref==3.8.1
     # via
     #   -r requirements/test.txt
     #   django
-astroid==3.3.4
+astroid==3.3.5
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -38,7 +38,7 @@ binaryornot==0.4.4
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-build==1.2.2
+build==1.2.2.post1
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -61,7 +61,7 @@ chardet==5.2.0
     #   -r requirements/test.txt
     #   binaryornot
     #   tox
-charset-normalizer==3.3.2
+charset-normalizer==3.4.0
     # via
     #   -r requirements/test.txt
     #   requests
@@ -90,15 +90,15 @@ cookiecutter==2.6.0
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==43.0.1
+cryptography==43.0.3
     # via
     #   -r requirements/test.txt
     #   secretstorage
-dill==0.3.8
+dill==0.3.9
     # via
     #   -r requirements/test.txt
     #   pylint
-distlib==0.3.8
+distlib==0.3.9
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -114,7 +114,7 @@ doc8==0.11.2
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
-docutils==0.20.1
+docutils==0.21.2
     # via
     #   -r requirements/test.txt
     #   doc8
@@ -159,7 +159,7 @@ jaraco-context==6.0.1
     # via
     #   -r requirements/test.txt
     #   keyring
-jaraco-functools==4.0.2
+jaraco-functools==4.1.0
     # via
     #   -r requirements/test.txt
     #   keyring
@@ -182,7 +182,7 @@ markdown-it-py==3.0.0
     # via
     #   -r requirements/test.txt
     #   rich
-markupsafe==2.1.5
+markupsafe==3.0.2
     # via
     #   -r requirements/test.txt
     #   jinja2
@@ -269,7 +269,7 @@ pylint-celery==0.3
     # via
     #   -r requirements/test.txt
     #   edx-lint
-pylint-django==2.5.5
+pylint-django==2.6.1
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -282,7 +282,7 @@ pyproject-api==1.8.0
     # via
     #   -r requirements/ci.txt
     #   tox
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -308,7 +308,7 @@ pyyaml==6.0.2
     #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
-readme-renderer==43.0
+readme-renderer==44.0
     # via
     #   -r requirements/test.txt
     #   twine
@@ -331,7 +331,7 @@ rfc3986==2.0.0
     # via
     #   -r requirements/test.txt
     #   twine
-rich==13.8.1
+rich==13.9.2
     # via
     #   -r requirements/test.txt
     #   cookiecutter
@@ -340,7 +340,7 @@ secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==2.0.7
+sh==2.1.0
     # via -r requirements/test.txt
 six==1.16.0
     # via
@@ -356,7 +356,7 @@ soupsieve==2.6
     # via
     #   -r requirements/test.txt
     #   beautifulsoup4
-sphinx==7.4.7
+sphinx==8.1.3
     # via
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
@@ -365,7 +365,7 @@ sphinx==7.4.7
     #   sphinxcontrib-jquery
 sphinx-book-theme==1.1.3
     # via -r requirements/test.txt
-sphinx-rtd-theme==2.0.0
+sphinx-rtd-theme==3.0.1
     # via -r requirements/test.txt
 sphinxcontrib-applehelp==2.0.0
     # via
@@ -412,11 +412,11 @@ tomlkit==0.13.2
     # via
     #   -r requirements/test.txt
     #   pylint
-tox==4.20.0
+tox==4.23.0
     # via -r requirements/ci.txt
 twine==5.1.1
     # via -r requirements/test.txt
-types-python-dateutil==2.9.0.20240906
+types-python-dateutil==2.9.0.20241003
     # via
     #   -r requirements/test.txt
     #   arrow
@@ -429,7 +429,7 @@ urllib3==2.2.3
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.26.5
+virtualenv==20.27.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -446,5 +446,5 @@ zipp==3.20.2
 # The following packages are considered to be unsafe in a requirements file:
 pip==24.2
     # via pip-tools
-setuptools==75.1.0
+setuptools==75.2.0
     # via pip-tools
