@@ -3,7 +3,7 @@
 .PHONY: dev.clean dev.build dev.run upgrade help requirements
 .PHONY: extract_translations compile_translations
 .PHONY: detect_changed_source_translations dummy_translations build_dummy_translations
-.PHONY: validate_translations pull_translations push_translations install_transifex_clients
+.PHONY: validate_translations pull_translations install_transifex_clients
 
 REPO_NAME := {{cookiecutter.repo_name}}
 PACKAGE_NAME := {{cookiecutter.package_name}}
@@ -85,9 +85,6 @@ validate_translations: build_dummy_translations detect_changed_source_translatio
 
 pull_translations: ## pull translations from transifex
 	cd $(PACKAGE_NAME) && i18n_tool transifex pull
-
-push_translations: extract_translations ## push translations to transifex
-	cd $(PACKAGE_NAME) && i18n_tool transifex push
 
 install_transifex_client: ## Install the Transifex client
 	# Instaling client will skip CHANGELOG and LICENSE files from git changes
