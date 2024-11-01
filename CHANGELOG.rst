@@ -22,18 +22,21 @@ Change Log
 
 Changed
 =======
-- added new catalog-info field ``openedx.org/release``
-- removed openedx.yaml file
+
+- Added new catalog-info field ``openedx.org/release``
+- Removed ``openedx.yaml`` file
 
 2023-12-18
 **********
 
 Added
 =======
+
 - Added python3.11 support.
 
 Changed
 =======
+
 - Add selfcheck target to Makefile
 
 2023-12-15
@@ -41,6 +44,7 @@ Changed
 
 Changed
 =======
+
 - Remove incorrect build step from xblock ci template
 - Fix docstrings
 - Add a unit test so coverage can run
@@ -50,6 +54,7 @@ Changed
 
 Changed
 =======
+
 - Remove pii_check from xblock cookiecutter
 
 2023-12-06
@@ -95,7 +100,7 @@ Added
 Changed
 =======
 
-- In setup.py, support advertising constraints on packages with multiple extras
+- In ``setup.py``, support advertising constraints on packages with multiple extras
 - Fail packaging if requirements are named differently in different places or have different extras listed
 
 2023-08-11
@@ -229,9 +234,9 @@ Fixed
 Changed
 =======
 
-- Updated upgrade-python-requirements.yml GitHub Action to latest from `upgrade-python-requirements.yml template`_.
-- Remove deprecated codecov CI package in requirements/ci.in
-- Added linebreaks to root urls.py docstring for cookiecutter-django-ida to squash Sphinx error.
+- Updated ``upgrade-python-requirements.yml`` GitHub Action to latest from `upgrade-python-requirements.yml template`_.
+- Remove deprecated codecov CI package in ``requirements/ci.in``
+- Added line breaks to root ``urls.py`` docstring for ``cookiecutter-django-ida`` to squash Sphinx error.
 - Fixed cookiecutter-django-ida .coveragerc file so it references project_name, not source_name.
 - Fixed .github/workflow/ci.yml so it uploads coverage reports in the tox env that the coverage files are generated in.
 
@@ -304,7 +309,7 @@ Removed
 Fixed
 =====
 
-- Fix or remove ``tags`` repo metadata in several templates; remove deprecated ``nick`` from openedx.yaml (see OEP-2)
+- Fix or remove ``tags`` repo metadata in several templates; remove deprecated ``nick`` from ``openedx.yaml`` (see OEP-2)
 - Remove extraneous period after short description
 - Move short description to top of readme
 - Use project name, not repo name, for package name in setup.py

@@ -7,7 +7,7 @@ A cookiecutter_ template for edX python projects. For django-related cookiecutte
 
 **This template produces a Python 3.12 project.**
 
-This cookiecutter template is intended for new edX python libraries.
+This cookiecutter template is intended for new Open edX python libraries.
 
 Usage
 *****
