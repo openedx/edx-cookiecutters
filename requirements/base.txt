@@ -32,7 +32,7 @@ cookiecutter==2.6.0
     # via -r requirements/base.in
 dill==0.3.9
     # via pylint
-edx-lint==5.4.0
+edx-lint==5.4.1
     # via -r requirements/base.in
 idna==3.10
     # via requests
@@ -82,7 +82,7 @@ pyyaml==6.0.2
     #   cookiecutter
 requests==2.32.3
     # via cookiecutter
-rich==13.9.3
+rich==13.9.4
     # via cookiecutter
 six==1.16.0
     # via
