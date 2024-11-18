@@ -6,69 +6,69 @@
 #
 accessible-pygments==0.0.5
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pydata-sphinx-theme
 alabaster==1.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx
 arrow==1.3.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   cookiecutter
 asgiref==3.8.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   django
 astroid==3.3.5
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pylint
     #   pylint-celery
 babel==2.16.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pydata-sphinx-theme
     #   sphinx
 beautifulsoup4==4.12.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pydata-sphinx-theme
 binaryornot==0.4.4
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   cookiecutter
 build==1.2.2.post1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/pip-tools.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/pip-tools.txt
+    #   -r requirements/test.txt
     #   pip-tools
 cachetools==5.5.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
+    #   -r requirements/ci.txt
     #   tox
 certifi==2024.8.30
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   requests
 cffi==1.17.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   cryptography
 chardet==5.2.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/ci.txt
+    #   -r requirements/test.txt
     #   binaryornot
     #   tox
 charset-normalizer==3.4.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   requests
 click==8.1.7
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/pip-tools.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/pip-tools.txt
+    #   -r requirements/test.txt
     #   click-log
     #   code-annotations
     #   cookiecutter
@@ -76,138 +76,138 @@ click==8.1.7
     #   pip-tools
 click-log==0.4.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   edx-lint
-code-annotations==1.8.0
+code-annotations==1.8.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   edx-lint
 colorama==0.4.6
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
+    #   -r requirements/ci.txt
     #   tox
 cookiecutter==2.6.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pytest-cookies
 cryptography==43.0.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   secretstorage
 dill==0.3.9
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pylint
 distlib==0.3.9
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/ci.txt
+    #   -r requirements/test.txt
     #   virtualenv
 django==4.2.16
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   django-model-utils
 django-model-utils==5.0.0
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    # via -r requirements/test.txt
 doc8==0.11.2
     # via
-    #   -c /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/constraints.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -c requirements/constraints.txt
+    #   -r requirements/test.txt
 docutils==0.21.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   doc8
     #   pydata-sphinx-theme
     #   readme-renderer
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.4.0
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+edx-lint==5.4.1
+    # via -r requirements/test.txt
 filelock==3.16.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/ci.txt
+    #   -r requirements/test.txt
     #   tox
     #   virtualenv
 idna==3.10
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   requests
 imagesize==1.4.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx
 importlib-metadata==8.5.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   twine
 iniconfig==2.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pytest
 isort==5.13.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pylint
 jaraco-classes==3.4.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   keyring
 jaraco-context==6.0.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   keyring
 jaraco-functools==4.1.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   keyring
 jeepney==0.8.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   keyring
     #   secretstorage
 jinja2==3.1.4
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
     #   sphinx
 keyring==25.5.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   twine
 markdown-it-py==3.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   rich
 markupsafe==3.0.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   jinja2
 mccabe==0.7.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pylint
 mdurl==0.1.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   markdown-it-py
 more-itertools==10.5.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   jaraco-classes
     #   jaraco-functools
 nh3==0.2.18
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   readme-renderer
-packaging==24.1
+packaging==24.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/pip-tools.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/ci.txt
+    #   -r requirements/pip-tools.txt
+    #   -r requirements/test.txt
     #   build
     #   pyproject-api
     #   pytest
@@ -215,42 +215,42 @@ packaging==24.1
     #   tox
 pbr==6.1.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   stevedore
 pip-tools==7.4.1
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/pip-tools.txt
+    # via -r requirements/pip-tools.txt
 pkginfo==1.10.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   twine
 platformdirs==4.3.6
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/ci.txt
+    #   -r requirements/test.txt
     #   pylint
     #   tox
     #   virtualenv
 pluggy==1.5.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/ci.txt
+    #   -r requirements/test.txt
     #   pytest
     #   tox
 pycodestyle==2.12.1
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    # via -r requirements/test.txt
 pycparser==2.22
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   cffi
 pydata-sphinx-theme==0.16.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx-book-theme
 pydocstyle==6.3.0
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    # via -r requirements/test.txt
 pygments==2.18.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   accessible-pygments
     #   doc8
     #   pydata-sphinx-theme
@@ -259,191 +259,193 @@ pygments==2.18.0
     #   sphinx
 pylint==3.3.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   edx-lint
     #   pylint-celery
     #   pylint-django
     #   pylint-plugin-utils
 pylint-celery==0.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   edx-lint
 pylint-django==2.6.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   edx-lint
 pylint-plugin-utils==0.8.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pylint-celery
     #   pylint-django
 pyproject-api==1.8.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
+    #   -r requirements/ci.txt
     #   tox
 pyproject-hooks==1.2.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/pip-tools.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/pip-tools.txt
+    #   -r requirements/test.txt
     #   build
     #   pip-tools
 pytest==8.3.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pytest-cookies
 pytest-cookies==0.7.0
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    # via -r requirements/test.txt
 python-dateutil==2.9.0.post0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   arrow
 python-slugify==8.0.4
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
 pyyaml==6.0.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   code-annotations
     #   cookiecutter
 readme-renderer==44.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   twine
 requests==2.32.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   cookiecutter
     #   requests-toolbelt
     #   sphinx
     #   twine
 requests-toolbelt==1.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   twine
 restructuredtext-lint==1.4.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   doc8
 rfc3986==2.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   twine
-rich==13.9.3
+rich==13.9.4
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   cookiecutter
     #   twine
 secretstorage==3.3.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   keyring
 sh==2.1.0
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    # via -r requirements/test.txt
 six==1.16.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   edx-lint
     #   python-dateutil
 snowballstemmer==2.2.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
 soupsieve==2.6
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   beautifulsoup4
 sphinx==8.1.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pydata-sphinx-theme
     #   sphinx-book-theme
     #   sphinx-rtd-theme
     #   sphinxcontrib-jquery
 sphinx-book-theme==1.1.3
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
-sphinx-rtd-theme==3.0.1
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    # via -r requirements/test.txt
+sphinx-rtd-theme==3.0.2
+    # via -r requirements/test.txt
 sphinxcontrib-applehelp==2.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx
 sphinxcontrib-devhelp==2.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx
 sphinxcontrib-htmlhelp==2.1.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx
 sphinxcontrib-jquery==4.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx-rtd-theme
 sphinxcontrib-jsmath==1.0.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx
 sphinxcontrib-qthelp==2.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx
 sphinxcontrib-serializinghtml==2.0.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   sphinx
-sqlparse==0.5.1
+sqlparse==0.5.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   django
 stevedore==5.3.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   code-annotations
     #   doc8
 text-unidecode==1.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   python-slugify
 tomlkit==0.13.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pylint
 tox==4.23.2
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
+    # via -r requirements/ci.txt
 twine==5.1.1
-    # via -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    # via -r requirements/test.txt
 types-python-dateutil==2.9.0.20241003
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   arrow
 typing-extensions==4.12.2
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   pydata-sphinx-theme
 urllib3==2.2.3
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.27.0
+virtualenv==20.27.1
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/ci.txt
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/ci.txt
+    #   -r requirements/test.txt
     #   tox
-wheel==0.44.0
+wheel==0.45.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/pip-tools.txt
+    #   -r requirements/pip-tools.txt
     #   pip-tools
-zipp==3.20.2
+zipp==3.21.0
     # via
-    #   -r /home/runner/work/edx-cookiecutters/edx-cookiecutters/requirements/test.txt
+    #   -r requirements/test.txt
     #   importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==24.3.1
-    # via pip-tools
-setuptools==75.2.0
+pip==24.2
+    # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   pip-tools
+setuptools==75.5.0
     # via pip-tools
