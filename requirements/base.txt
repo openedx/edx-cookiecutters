@@ -26,13 +26,13 @@ click==8.1.7
     #   edx-lint
 click-log==0.4.0
     # via edx-lint
-code-annotations==1.8.0
+code-annotations==1.8.2
     # via edx-lint
 cookiecutter==2.6.0
     # via -r requirements/base.in
 dill==0.3.9
     # via pylint
-edx-lint==5.4.0
+edx-lint==5.4.1
     # via -r requirements/base.in
 idna==3.10
     # via requests
@@ -82,13 +82,13 @@ pyyaml==6.0.2
     #   cookiecutter
 requests==2.32.3
     # via cookiecutter
-rich==13.9.3
+rich==13.9.4
     # via cookiecutter
 six==1.16.0
     # via
     #   edx-lint
     #   python-dateutil
-stevedore==5.3.0
+stevedore==5.4.0
     # via code-annotations
 text-unidecode==1.3
     # via python-slugify
