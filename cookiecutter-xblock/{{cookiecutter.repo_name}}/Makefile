@@ -87,7 +87,7 @@ pull_translations: ## pull translations from transifex
 	cd $(PACKAGE_NAME) && i18n_tool transifex pull
 
 install_transifex_client: ## Install the Transifex client
-	# Instaling client will skip CHANGELOG and LICENSE files from git changes
+	# Installing client will skip CHANGELOG and LICENSE files from git changes
 	# so remind the user to commit the change first before installing client.
 	git diff -s --exit-code HEAD || { echo "Please commit changes first."; exit 1; }
 	curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
