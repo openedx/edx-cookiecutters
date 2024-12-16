@@ -31,7 +31,7 @@ binaryornot==0.4.4
     #   cookiecutter
 build==1.2.2.post1
     # via -r requirements/test.in
-certifi==2024.8.30
+certifi==2024.12.14
     # via
     #   -r requirements/base.txt
     #   requests
@@ -56,7 +56,7 @@ click-log==0.4.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==2.0.0
+code-annotations==2.1.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -286,7 +286,7 @@ sphinxcontrib-qthelp==2.0.0
     # via sphinx
 sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
-sqlparse==0.5.2
+sqlparse==0.5.3
     # via django
 stevedore==5.4.0
     # via

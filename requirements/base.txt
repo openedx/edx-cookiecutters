@@ -12,7 +12,7 @@ astroid==3.3.6
     #   pylint-celery
 binaryornot==0.4.4
     # via cookiecutter
-certifi==2024.8.30
+certifi==2024.12.14
     # via requests
 chardet==5.2.0
     # via binaryornot
@@ -26,7 +26,7 @@ click==8.1.7
     #   edx-lint
 click-log==0.4.0
     # via edx-lint
-code-annotations==2.0.0
+code-annotations==2.1.0
     # via edx-lint
 cookiecutter==2.6.0
     # via -r requirements/base.in

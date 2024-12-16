@@ -47,7 +47,7 @@ cachetools==5.5.0
     # via
     #   -r requirements/ci.txt
     #   tox
-certifi==2024.8.30
+certifi==2024.12.14
     # via
     #   -r requirements/test.txt
     #   requests
@@ -78,7 +78,7 @@ click-log==0.4.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
-code-annotations==2.0.0
+code-annotations==2.1.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -391,7 +391,7 @@ sphinxcontrib-serializinghtml==2.0.0
     # via
     #   -r requirements/test.txt
     #   sphinx
-sqlparse==0.5.2
+sqlparse==0.5.3
     # via
     #   -r requirements/test.txt
     #   django
