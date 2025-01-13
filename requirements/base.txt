@@ -54,7 +54,7 @@ pbr==6.1.0
     # via stevedore
 platformdirs==4.3.6
     # via pylint
-pygments==2.19.0
+pygments==2.19.1
     # via rich
 pylint==3.3.3
     # via
@@ -96,5 +96,7 @@ tomlkit==0.13.2
     # via pylint
 types-python-dateutil==2.9.0.20241206
     # via arrow
-urllib3==2.3.0
-    # via requests
+urllib3==2.2.3
+    # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   requests

@@ -177,7 +177,7 @@ pydata-sphinx-theme==0.16.1
     # via sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.in
-pygments==2.19.0
+pygments==2.19.1
     # via
     #   -r requirements/base.txt
     #   accessible-pygments
@@ -248,7 +248,7 @@ rich==13.9.4
     #   twine
 secretstorage==3.3.3
     # via keyring
-sh==2.1.0
+sh==2.2.1
     # via -r requirements/test.in
 six==1.17.0
     # via
@@ -309,8 +309,9 @@ types-python-dateutil==2.9.0.20241206
     #   arrow
 typing-extensions==4.12.2
     # via pydata-sphinx-theme
-urllib3==2.3.0
+urllib3==2.2.3
     # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.txt
     #   requests
     #   twine

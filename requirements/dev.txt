@@ -245,7 +245,7 @@ pydata-sphinx-theme==0.16.1
     #   sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.txt
-pygments==2.19.0
+pygments==2.19.1
     # via
     #   -r requirements/test.txt
     #   accessible-pygments
@@ -336,7 +336,7 @@ secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==2.1.0
+sh==2.2.1
     # via -r requirements/test.txt
 six==1.17.0
     # via
@@ -420,8 +420,9 @@ typing-extensions==4.12.2
     # via
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
-urllib3==2.3.0
+urllib3==2.2.3
     # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   requests
     #   twine
@@ -440,5 +441,5 @@ pip==24.2
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   pip-tools
-setuptools==75.7.0
+setuptools==75.8.0
     # via pip-tools
