@@ -56,7 +56,7 @@ click-log==0.4.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==2.1.0
+code-annotations==2.2.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -72,7 +72,7 @@ dill==0.3.9
     #   pylint
 distlib==0.3.9
     # via virtualenv
-django==4.2.17
+django==4.2.18
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -144,7 +144,7 @@ mdurl==0.1.2
     # via
     #   -r requirements/base.txt
     #   markdown-it-py
-more-itertools==10.5.0
+more-itertools==10.6.0
     # via
     #   jaraco-classes
     #   jaraco-functools
@@ -177,7 +177,7 @@ pydata-sphinx-theme==0.16.1
     # via sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.in
-pygments==2.19.0
+pygments==2.19.1
     # via
     #   -r requirements/base.txt
     #   accessible-pygments
@@ -248,7 +248,7 @@ rich==13.9.4
     #   twine
 secretstorage==3.3.3
     # via keyring
-sh==2.1.0
+sh==2.2.1
     # via -r requirements/test.in
 six==1.17.0
     # via
@@ -309,10 +309,11 @@ types-python-dateutil==2.9.0.20241206
     #   arrow
 typing-extensions==4.12.2
     # via pydata-sphinx-theme
-urllib3==2.3.0
+urllib3==2.2.3
     # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.28.1
+virtualenv==20.29.1
     # via -r requirements/test.in
