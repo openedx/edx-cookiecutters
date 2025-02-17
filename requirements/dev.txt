@@ -25,12 +25,12 @@ astroid==3.3.8
     #   -r requirements/test.txt
     #   pylint
     #   pylint-celery
-babel==2.16.0
+babel==2.17.0
     # via
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
     #   sphinx
-beautifulsoup4==4.12.3
+beautifulsoup4==4.13.3
     # via
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
@@ -43,11 +43,11 @@ build==1.2.2.post1
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   pip-tools
-cachetools==5.5.0
+cachetools==5.5.1
     # via
     #   -r requirements/ci.txt
     #   tox
-certifi==2024.12.14
+certifi==2025.1.31
     # via
     #   -r requirements/test.txt
     #   requests
@@ -78,7 +78,7 @@ click-log==0.4.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
-code-annotations==2.1.0
+code-annotations==2.2.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -90,7 +90,7 @@ cookiecutter==2.6.0
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==44.0.0
+cryptography==44.0.1
     # via
     #   -r requirements/test.txt
     #   secretstorage
@@ -103,7 +103,7 @@ distlib==0.3.9
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   virtualenv
-django==4.2.17
+django==4.2.19
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
@@ -123,14 +123,18 @@ docutils==0.21.2
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.4.1
+edx-lint==5.6.0
     # via -r requirements/test.txt
-filelock==3.16.1
+filelock==3.17.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   tox
     #   virtualenv
+id==1.5.0
+    # via
+    #   -r requirements/test.txt
+    #   twine
 idna==3.10
     # via
     #   -r requirements/test.txt
@@ -143,7 +147,7 @@ iniconfig==2.0.0
     # via
     #   -r requirements/test.txt
     #   pytest
-isort==5.13.2
+isort==6.0.0
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -190,7 +194,7 @@ mdurl==0.1.2
     # via
     #   -r requirements/test.txt
     #   markdown-it-py
-more-itertools==10.5.0
+more-itertools==10.6.0
     # via
     #   -r requirements/test.txt
     #   jaraco-classes
@@ -210,16 +214,12 @@ packaging==24.2
     #   sphinx
     #   tox
     #   twine
-pbr==6.1.0
+pbr==6.1.1
     # via
     #   -r requirements/test.txt
     #   stevedore
 pip-tools==7.4.1
     # via -r requirements/pip-tools.txt
-pkginfo==1.12.0
-    # via
-    #   -r requirements/test.txt
-    #   twine
 platformdirs==4.3.6
     # via
     #   -r requirements/ci.txt
@@ -245,7 +245,7 @@ pydata-sphinx-theme==0.16.1
     #   sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.txt
-pygments==2.19.0
+pygments==2.19.1
     # via
     #   -r requirements/test.txt
     #   accessible-pygments
@@ -254,7 +254,7 @@ pygments==2.19.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.3.3
+pylint==3.3.4
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -274,7 +274,7 @@ pylint-plugin-utils==0.8.2
     #   -r requirements/test.txt
     #   pylint-celery
     #   pylint-django
-pyproject-api==1.8.0
+pyproject-api==1.9.0
     # via
     #   -r requirements/ci.txt
     #   tox
@@ -312,6 +312,7 @@ requests==2.32.3
     # via
     #   -r requirements/test.txt
     #   cookiecutter
+    #   id
     #   requests-toolbelt
     #   sphinx
     #   twine
@@ -336,7 +337,7 @@ secretstorage==3.3.3
     # via
     #   -r requirements/test.txt
     #   keyring
-sh==2.1.0
+sh==2.2.1
     # via -r requirements/test.txt
 six==1.17.0
     # via
@@ -408,9 +409,9 @@ tomlkit==0.13.2
     # via
     #   -r requirements/test.txt
     #   pylint
-tox==4.23.2
+tox==4.24.1
     # via -r requirements/ci.txt
-twine==6.0.1
+twine==6.1.0
     # via -r requirements/test.txt
 types-python-dateutil==2.9.0.20241206
     # via
@@ -419,13 +420,15 @@ types-python-dateutil==2.9.0.20241206
 typing-extensions==4.12.2
     # via
     #   -r requirements/test.txt
+    #   beautifulsoup4
     #   pydata-sphinx-theme
-urllib3==2.3.0
+urllib3==2.2.3
     # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.28.1
+virtualenv==20.29.2
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -440,5 +443,8 @@ pip==24.2
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   pip-tools
-setuptools==75.7.0
-    # via pip-tools
+setuptools==75.8.0
+    # via
+    #   -r requirements/test.txt
+    #   pbr
+    #   pip-tools

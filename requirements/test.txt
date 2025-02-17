@@ -19,11 +19,11 @@ astroid==3.3.8
     #   -r requirements/base.txt
     #   pylint
     #   pylint-celery
-babel==2.16.0
+babel==2.17.0
     # via
     #   pydata-sphinx-theme
     #   sphinx
-beautifulsoup4==4.12.3
+beautifulsoup4==4.13.3
     # via pydata-sphinx-theme
 binaryornot==0.4.4
     # via
@@ -31,7 +31,7 @@ binaryornot==0.4.4
     #   cookiecutter
 build==1.2.2.post1
     # via -r requirements/test.in
-certifi==2024.12.14
+certifi==2025.1.31
     # via
     #   -r requirements/base.txt
     #   requests
@@ -56,7 +56,7 @@ click-log==0.4.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==2.1.0
+code-annotations==2.2.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -64,7 +64,7 @@ cookiecutter==2.6.0
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==44.0.0
+cryptography==44.0.1
     # via secretstorage
 dill==0.3.9
     # via
@@ -72,7 +72,7 @@ dill==0.3.9
     #   pylint
 distlib==0.3.9
     # via virtualenv
-django==4.2.17
+django==4.2.19
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -91,12 +91,14 @@ docutils==0.21.2
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-rtd-theme
-edx-lint==5.4.1
+edx-lint==5.6.0
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
-filelock==3.16.1
+filelock==3.17.0
     # via virtualenv
+id==1.5.0
+    # via twine
 idna==3.10
     # via
     #   -r requirements/base.txt
@@ -105,7 +107,7 @@ imagesize==1.4.1
     # via sphinx
 iniconfig==2.0.0
     # via pytest
-isort==5.13.2
+isort==6.0.0
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -144,7 +146,7 @@ mdurl==0.1.2
     # via
     #   -r requirements/base.txt
     #   markdown-it-py
-more-itertools==10.5.0
+more-itertools==10.6.0
     # via
     #   jaraco-classes
     #   jaraco-functools
@@ -156,12 +158,10 @@ packaging==24.2
     #   pytest
     #   sphinx
     #   twine
-pbr==6.1.0
+pbr==6.1.1
     # via
     #   -r requirements/base.txt
     #   stevedore
-pkginfo==1.12.0
-    # via twine
 platformdirs==4.3.6
     # via
     #   -r requirements/base.txt
@@ -177,7 +177,7 @@ pydata-sphinx-theme==0.16.1
     # via sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.in
-pygments==2.19.0
+pygments==2.19.1
     # via
     #   -r requirements/base.txt
     #   accessible-pygments
@@ -186,7 +186,7 @@ pygments==2.19.0
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.3.3
+pylint==3.3.4
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -232,6 +232,7 @@ requests==2.32.3
     # via
     #   -r requirements/base.txt
     #   cookiecutter
+    #   id
     #   requests-toolbelt
     #   sphinx
     #   twine
@@ -248,7 +249,7 @@ rich==13.9.4
     #   twine
 secretstorage==3.3.3
     # via keyring
-sh==2.1.0
+sh==2.2.1
     # via -r requirements/test.in
 six==1.17.0
     # via
@@ -301,18 +302,27 @@ tomlkit==0.13.2
     # via
     #   -r requirements/base.txt
     #   pylint
-twine==6.0.1
+twine==6.1.0
     # via -r requirements/test.in
 types-python-dateutil==2.9.0.20241206
     # via
     #   -r requirements/base.txt
     #   arrow
 typing-extensions==4.12.2
-    # via pydata-sphinx-theme
-urllib3==2.3.0
     # via
+    #   beautifulsoup4
+    #   pydata-sphinx-theme
+urllib3==2.2.3
+    # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.28.1
+virtualenv==20.29.2
     # via -r requirements/test.in
+
+# The following packages are considered to be unsafe in a requirements file:
+setuptools==75.8.0
+    # via
+    #   -r requirements/base.txt
+    #   pbr
