@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: dev.clean dev.build dev.run upgrade compile help requirements
+.PHONY: dev.clean dev.build dev.run upgrade compile-requirements help requirements
 .PHONY: extract_translations compile_translations
 .PHONY: detect_changed_source_translations dummy_translations build_dummy_translations
 .PHONY: validate_translations pull_translations install_transifex_clients
@@ -14,42 +14,28 @@ help:
 	@perl -nle'print $& if m{^[\.a-zA-Z_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}'
 
 # Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile --upgrade $(PIP_COMPILE_OPTS)
+PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
 
-upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
-upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	# Make sure to compile files after any other files they include!
-	$(PIP_COMPILE) --allow-unsafe -o requirements/pip.txt requirements/pip.in
-	$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
+compile-requirements: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
+	pip-compile -v ${COMPILE_OPTS} --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
+	pip-compile -v ${COMPILE_OPTS} -o requirements/pip-tools.txt requirements/pip-tools.in
 	pip install -qr requirements/pip.txt
 	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
 	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
 	$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
 	$(PIP_COMPILE) -o requirements/quality.txt requirements/quality.in
+	$(PIP_COMPILE) -o requirements/validation.txt requirements/validation.in
 	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
 	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
+	$(PIP_COMPILE) -o requirements/production.txt requirements/production.in
 	# Let tox control the Django version for tests
+	grep -e "^django==" requirements/base.txt > requirements/django.txt
 	sed '/^[dD]jango==/d' requirements/test.txt > requirements/test.tmp
 	mv requirements/test.tmp requirements/test.txt
 
-PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
-compile: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
-		pip install -qr requirements/pip-tools.txt
-		# Make sure to compile files after any other files they include!
-		$(PIP_COMPILE) --allow-unsafe -o requirements/pip.txt requirements/pip.in
-		$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
-		$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
-		$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
-		$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
-		$(PIP_COMPILE) -o requirements/quality.txt requirements/quality.in
-		$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
-		$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
-		$(PIP_COMPILE) -o requirements/production.txt requirements/production.in
-		# Let tox control the Django version for tests
-		sed '/^[dD]ango==/d' requirements/test.txt > requirements/test.tmp
-		mv requirements/test.tmp requirements/test.txt
+upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
+	$(MAKE) compile-requirements COMPILE_OPTS="--upgrade"
 
 piptools: ## install pinned version of pip-compile and pip-sync
 	pip install -r requirements/pip.txt

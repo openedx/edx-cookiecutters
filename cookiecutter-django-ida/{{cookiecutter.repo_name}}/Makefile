@@ -3,7 +3,7 @@
 .PHONY: help clean clean_tox docs requirements ci_requirements dev_requirements \
         validation_requirements doc_requirements production-requirements static shell \
         test coverage isort_check isort style lint quality pii_check validate \
-        migrate html_coverage upgrade compile extract_translation dummy_translations \
+        migrate html_coverage upgrade compile-requirements extract_translation dummy_translations \
         compile_translations fake_translations pull_translations \
         start-devstack open-devstack pkg-devstack \
         detect_changed_source_translations validate_translations check_keywords \
@@ -95,14 +95,11 @@ html_coverage: ## generate and view HTML coverage report
 	coverage html && open htmlcov/index.html
 
 # Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile --upgrade $(PIP_COMPILE_OPTS)
+PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
 
-upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
-upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	# Make sure to compile files after any other files they include!
-	$(PIP_COMPILE) --allow-unsafe -o requirements/pip.txt requirements/pip.in
-	$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
+compile-requirements: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
+	pip-compile -v ${COMPILE_OPTS} --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
+	pip-compile -v ${COMPILE_OPTS} -o requirements/pip-tools.txt requirements/pip-tools.in
 	pip install -qr requirements/pip.txt
 	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
@@ -118,22 +115,8 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	sed '/^[dD]jango==/d' requirements/test.txt > requirements/test.tmp
 	mv requirements/test.tmp requirements/test.txt
 
-PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
-compile: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	# Make sure to compile files after any other files they include!
-	$(PIP_COMPILE) --allow-unsafe -o requirements/pip.txt requirements/pip.in
-	$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
-	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
-	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
-	$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
-	$(PIP_COMPILE) -o requirements/quality.txt requirements/quality.in
-	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
-	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
-	$(PIP_COMPILE) -o requirements/production.txt requirements/production.in
-	# Let tox control the Django version for tests
-	sed '/^[dD]ango==/d' requirements/test.txt > requirements/test.tmp
-	mv requirements/test.tmp requirements/test.txt
+upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
+	$(MAKE) compile-requirements COMPILE_OPTS="--upgrade"
 
 extract_translations: ## extract strings to be translated, outputting .mo files
 	cd {{cookiecutter.project_name}} && i18n_tool extract --no-segment
