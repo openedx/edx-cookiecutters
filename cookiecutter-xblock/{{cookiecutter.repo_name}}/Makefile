@@ -32,6 +32,7 @@ compile-requirements: ## compile the requirements/*.txt files with the latest pa
 	mv requirements/test.tmp requirements/test.txt
 
 upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
+	pip install -qr requirements/pip-tools.txt
 	$(MAKE) compile-requirements COMPILE_OPTS="--upgrade"
 
 piptools: ## install pinned version of pip-compile and pip-sync
