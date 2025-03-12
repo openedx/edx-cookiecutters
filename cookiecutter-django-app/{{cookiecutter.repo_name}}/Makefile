@@ -1,6 +1,6 @@
 .PHONY: clean clean_tox compile_translations coverage diff_cover docs dummy_translations \
         extract_translations fake_translations help pii_check pull_translations \
-        quality requirements selfcheck test test-all upgrade validate install_transifex_client
+        quality requirements selfcheck test test-all upgrade compile-requirements validate install_transifex_client
 
 .DEFAULT_GOAL := help
 
@@ -33,14 +33,12 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	$(BROWSER)docs/_build/html/index.html
 
 # Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile --upgrade $(PIP_COMPILE_OPTS)
+PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
 
-upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
-upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
+compile-requirements: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
 	pip install -qr requirements/pip-tools.txt
-	# Make sure to compile files after any other files they include!
-	$(PIP_COMPILE) --allow-unsafe -o requirements/pip.txt requirements/pip.in
-	$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
+	pip-compile -v ${COMPILE_OPTS} --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
+	pip-compile -v ${COMPILE_OPTS} -o requirements/pip-tools.txt requirements/pip-tools.in
 	pip install -qr requirements/pip.txt
 	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
@@ -52,6 +50,10 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	# Let tox control the Django version for tests
 	sed '/^[dD]jango==/d' requirements/test.txt > requirements/test.tmp
 	mv requirements/test.tmp requirements/test.txt
+
+upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
+	pip install -qr requirements/pip-tools.txt
+	$(MAKE) compile-requirements COMPILE_OPTS="--upgrade"
 
 quality: ## check coding style with pycodestyle and pylint
 	tox -e quality
