@@ -98,6 +98,7 @@ html_coverage: ## generate and view HTML coverage report
 PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
 
 compile-requirements: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
+	pip install -qr requirements/pip-tools.txt
 	pip-compile -v ${COMPILE_OPTS} --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
 	pip-compile -v ${COMPILE_OPTS} -o requirements/pip-tools.txt requirements/pip-tools.in
 	pip install -qr requirements/pip.txt
