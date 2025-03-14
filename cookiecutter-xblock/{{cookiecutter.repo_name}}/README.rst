@@ -47,7 +47,7 @@ Mark translatable strings in python:
     # Translators: This comment will appear in the `.po` file.
     message = _("This will be marked.")
 
-See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#python-source-code>`__
+See `edx-developer-guide <https://docs.openedx.org/en/latest/developers/references/developer_guide/internationalization/i18n.html#python-source-code>`__
 for more information.
 
 You can also use ``gettext`` to mark strings in javascript:
@@ -57,7 +57,7 @@ You can also use ``gettext`` to mark strings in javascript:
     // Translators: This comment will appear in the `.po` file.
     var message = gettext("Custom message.");
 
-See `edx-developer-guide <https://edx.readthedocs.io/projects/edx-developer-guide/en/latest/internationalization/i18n.html#javascript-files>`__
+See `edx-developer-guide <https://docs.openedx.org/en/latest/developers/references/developer_guide/internationalization/i18n.html#javascript-files>`__
 for more information.
 
 2. Run i18n tools to create Raw message catalogs
