@@ -105,7 +105,7 @@ idna==3.10
     #   requests
 imagesize==1.4.1
     # via sphinx
-iniconfig==2.0.0
+iniconfig==2.1.0
     # via pytest
 isort==6.0.1
     # via
@@ -163,7 +163,7 @@ pbr==6.1.1
     # via
     #   -r requirements/base.txt
     #   stevedore
-platformdirs==4.3.6
+platformdirs==4.3.7
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -187,7 +187,7 @@ pygments==2.19.1
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.3.5
+pylint==3.3.6
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -325,7 +325,7 @@ virtualenv==20.29.3
     # via -r requirements/test.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==76.0.0
+setuptools==77.0.3
     # via
     #   -r requirements/base.txt
     #   pbr
