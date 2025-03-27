@@ -119,8 +119,8 @@ Please do not report security issues in public. Please email security@openedx.or
     :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}/
     :alt: PyPI
 
-.. |ci-badge| image:: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/workflows/Python%20CI/badge.svg?branch=main
-    :target: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/actions
+.. |ci-badge| image:: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/actions/workflows/ci.yml/badge.svg?branch=main
+    :target: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/actions/workflows/ci.yml
     :alt: CI
 
 .. |codecov-badge| image:: https://codecov.io/github/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}/coverage.svg?branch=main
