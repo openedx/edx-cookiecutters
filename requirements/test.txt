@@ -105,7 +105,7 @@ idna==3.10
     #   requests
 imagesize==1.4.1
     # via sphinx
-iniconfig==2.0.0
+iniconfig==2.1.0
     # via pytest
 isort==6.0.1
     # via
@@ -163,14 +163,14 @@ pbr==6.1.1
     # via
     #   -r requirements/base.txt
     #   stevedore
-platformdirs==4.3.6
+platformdirs==4.3.7
     # via
     #   -r requirements/base.txt
     #   pylint
     #   virtualenv
 pluggy==1.5.0
     # via pytest
-pycodestyle==2.12.1
+pycodestyle==2.13.0
     # via -r requirements/test.in
 pycparser==2.22
     # via cffi
@@ -187,7 +187,7 @@ pygments==2.19.1
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.3.5
+pylint==3.3.6
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -243,7 +243,7 @@ restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==13.9.4
+rich==14.0.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
@@ -311,7 +311,7 @@ types-python-dateutil==2.9.0.20241206
     # via
     #   -r requirements/base.txt
     #   arrow
-typing-extensions==4.12.2
+typing-extensions==4.13.0
     # via
     #   beautifulsoup4
     #   pydata-sphinx-theme
@@ -325,7 +325,7 @@ virtualenv==20.29.3
     # via -r requirements/test.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==76.0.0
+setuptools==78.1.0
     # via
     #   -r requirements/base.txt
     #   pbr
