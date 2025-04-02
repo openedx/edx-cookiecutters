@@ -52,11 +52,11 @@ mdurl==0.1.2
     # via markdown-it-py
 pbr==6.1.1
     # via stevedore
-platformdirs==4.3.6
+platformdirs==4.3.7
     # via pylint
 pygments==2.19.1
     # via rich
-pylint==3.3.5
+pylint==3.3.6
     # via
     #   edx-lint
     #   pylint-celery
@@ -82,7 +82,7 @@ pyyaml==6.0.2
     #   cookiecutter
 requests==2.32.3
     # via cookiecutter
-rich==13.9.4
+rich==14.0.0
     # via cookiecutter
 six==1.17.0
     # via
@@ -102,5 +102,5 @@ urllib3==2.2.3
     #   requests
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==76.0.0
+setuptools==78.1.0
     # via pbr
