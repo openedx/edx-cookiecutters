@@ -422,7 +422,7 @@ types-python-dateutil==2.9.0.20241206
     # via
     #   -r requirements/test.txt
     #   arrow
-typing-extensions==4.13.0
+typing-extensions==4.13.1
     # via
     #   -r requirements/test.txt
     #   beautifulsoup4
@@ -433,7 +433,7 @@ urllib3==2.2.3
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.29.3
+virtualenv==20.30.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
