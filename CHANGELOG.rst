@@ -5,6 +5,11 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2025-04-14
+**********
+
+- feat: [django-ida] allow logging format to be overridden
+
 2024-08-03
 **********
 
