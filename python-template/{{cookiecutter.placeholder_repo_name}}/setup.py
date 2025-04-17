@@ -173,6 +173,7 @@ setup(
         {%- if cookiecutter.requires_django == "yes" %}
         'Framework :: Django',
         'Framework :: Django :: 4.2',
+        'Framework :: Django :: 5.2',
         {%- endif %}
         'Intended Audience :: Developers',
         {%- if cookiecutter.open_source_license == "AGPL 3.0" %}
