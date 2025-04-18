@@ -13,7 +13,7 @@ services:
       - {{cookiecutter.project_name}}_mysql:/var/lib/mysql
 
   memcache:
-    image: memcached:1.4.24
+    image: memcached:1.5.10-alpine
     container_name: {{cookiecutter.project_name}}.memcache
 
   app:
