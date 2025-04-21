@@ -23,7 +23,7 @@ babel==2.17.0
     # via
     #   pydata-sphinx-theme
     #   sphinx
-beautifulsoup4==4.13.3
+beautifulsoup4==4.13.4
     # via pydata-sphinx-theme
 binaryornot==0.4.4
     # via
@@ -56,7 +56,7 @@ click-log==0.4.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==2.2.0
+code-annotations==2.3.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -66,7 +66,7 @@ cookiecutter==2.6.0
     #   pytest-cookies
 cryptography==44.0.2
     # via secretstorage
-dill==0.3.9
+dill==0.4.0
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -152,7 +152,7 @@ more-itertools==10.6.0
     #   jaraco-functools
 nh3==0.2.21
     # via readme-renderer
-packaging==24.2
+packaging==25.0
     # via
     #   build
     #   pydata-sphinx-theme
@@ -263,7 +263,7 @@ snowballstemmer==2.2.0
     # via
     #   pydocstyle
     #   sphinx
-soupsieve==2.6
+soupsieve==2.7
     # via beautifulsoup4
 sphinx==8.2.3
     # via
@@ -311,7 +311,7 @@ types-python-dateutil==2.9.0.20241206
     # via
     #   -r requirements/base.txt
     #   arrow
-typing-extensions==4.13.0
+typing-extensions==4.13.2
     # via
     #   beautifulsoup4
     #   pydata-sphinx-theme
@@ -321,11 +321,11 @@ urllib3==2.2.3
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.29.3
+virtualenv==20.30.0
     # via -r requirements/test.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==78.1.0
+setuptools==79.0.0
     # via
     #   -r requirements/base.txt
     #   pbr
