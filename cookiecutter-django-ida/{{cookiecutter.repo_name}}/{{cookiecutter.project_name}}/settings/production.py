@@ -12,8 +12,6 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
 
-LOGGING = get_logger_config()
-
 # Keep track of the names of settings that represent dicts. Instead of overriding the values in base.py,
 # the values read from disk should UPDATE the pre-configured dicts.
 DICT_UPDATE_KEYS = ('JWT_AUTH',)
@@ -43,6 +41,9 @@ if '{{cookiecutter.project_name|upper}}_CFG' in environ:
         # of Django settings.
         vars().update(FILE_STORAGE_BACKEND)
         vars().update(MEDIA_STORAGE_BACKEND)
+
+# Must be generated after loading config YAML because LOGGING_FORMAT_STRING might be overridden.
+LOGGING = get_logger_config(format_string=LOGGING_FORMAT_STRING)
 
 DB_OVERRIDES = {
     "PASSWORD": environ.get('DB_MIGRATION_PASS', DATABASES['default']['PASSWORD']),
