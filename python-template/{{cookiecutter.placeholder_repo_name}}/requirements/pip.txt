@@ -8,7 +8,7 @@ wheel==0.45.1
     # via -r python-template/{{cookiecutter.placeholder_repo_name}}/requirements/pip.in
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==25.0.1
+pip==25.1
     # via -r python-template/{{cookiecutter.placeholder_repo_name}}/requirements/pip.in
-setuptools==78.1.0
+setuptools==80.0.0
     # via -r python-template/{{cookiecutter.placeholder_repo_name}}/requirements/pip.in
