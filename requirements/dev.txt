@@ -30,7 +30,7 @@ babel==2.17.0
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
     #   sphinx
-beautifulsoup4==4.13.3
+beautifulsoup4==4.13.4
     # via
     #   -r requirements/test.txt
     #   pydata-sphinx-theme
@@ -47,7 +47,7 @@ cachetools==5.5.2
     # via
     #   -r requirements/ci.txt
     #   tox
-certifi==2025.1.31
+certifi==2025.4.26
     # via
     #   -r requirements/test.txt
     #   requests
@@ -61,7 +61,7 @@ chardet==5.2.0
     #   -r requirements/test.txt
     #   binaryornot
     #   tox
-charset-normalizer==3.4.1
+charset-normalizer==3.4.2
     # via
     #   -r requirements/test.txt
     #   requests
@@ -78,7 +78,7 @@ click-log==0.4.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
-code-annotations==2.2.0
+code-annotations==2.3.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -90,11 +90,11 @@ cookiecutter==2.6.0
     # via
     #   -r requirements/test.txt
     #   pytest-cookies
-cryptography==44.0.2
+cryptography==44.0.3
     # via
     #   -r requirements/test.txt
     #   secretstorage
-dill==0.3.9
+dill==0.4.0
     # via
     #   -r requirements/test.txt
     #   pylint
@@ -194,7 +194,7 @@ mdurl==0.1.2
     # via
     #   -r requirements/test.txt
     #   markdown-it-py
-more-itertools==10.6.0
+more-itertools==10.7.0
     # via
     #   -r requirements/test.txt
     #   jaraco-classes
@@ -203,7 +203,7 @@ nh3==0.2.21
     # via
     #   -r requirements/test.txt
     #   readme-renderer
-packaging==24.2
+packaging==25.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/pip-tools.txt
@@ -255,7 +255,7 @@ pygments==2.19.1
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.3.6
+pylint==3.3.7
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -354,7 +354,7 @@ snowballstemmer==2.2.0
     #   -r requirements/test.txt
     #   pydocstyle
     #   sphinx
-soupsieve==2.6
+soupsieve==2.7
     # via
     #   -r requirements/test.txt
     #   beautifulsoup4
@@ -422,7 +422,7 @@ types-python-dateutil==2.9.0.20241206
     # via
     #   -r requirements/test.txt
     #   arrow
-typing-extensions==4.13.0
+typing-extensions==4.13.2
     # via
     #   -r requirements/test.txt
     #   beautifulsoup4
@@ -433,7 +433,7 @@ urllib3==2.2.3
     #   -r requirements/test.txt
     #   requests
     #   twine
-virtualenv==20.29.3
+virtualenv==20.30.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
@@ -448,7 +448,7 @@ pip==24.2
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   pip-tools
-setuptools==78.1.0
+setuptools==80.3.1
     # via
     #   -r requirements/test.txt
     #   pbr
