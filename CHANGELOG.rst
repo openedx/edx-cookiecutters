@@ -5,6 +5,11 @@ Change Log
    This file loosely adheres to the structure of https://keepachangelog.com/,
    but in reStructuredText instead of Markdown.
 
+2025-04-18
+**********
+
+- Added support for Django 5.2
+
 2025-04-14
 **********
 
