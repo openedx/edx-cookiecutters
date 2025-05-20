@@ -38,7 +38,7 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
 
 # create our Python virtual env
-ENV VIRTUAL_ENV=/openedx/venvs/{{cookiecutter.project_name}}
+ENV VIRTUAL_ENV=/edx/venvs/{{cookiecutter.project_name}}
 RUN pip install virtualenv
 RUN virtualenv -p python${PYTHON_VERSION} ${VIRTUAL_ENV}
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
