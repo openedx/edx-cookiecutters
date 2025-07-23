@@ -45,8 +45,7 @@ Rejected Alternatives
 Keep template private
 =====================================================
 
-* Since the Kafka implementation of the EventBus is part of Openedx, we should also
-  make the cookiecutter template available to the Open edX community.
+Since the Kafka implementation of the EventBus is part of Openedx, we should also make the cookiecutter template available to the Open edX community.
 
 Supporting other Event Bus implementations
 =====================================================
