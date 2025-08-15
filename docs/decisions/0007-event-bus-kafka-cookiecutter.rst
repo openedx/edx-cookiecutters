@@ -23,7 +23,7 @@ into multiple existing repositories.
 Decision
 ********
 
-* We will add a new folder `cookiecutter/new-event-bus-kafka-event` to the edx-cookiecutters repository.
+* We will add a new folder `cookiecutter-event-bus-kafka-event` to the edx-cookiecutters repository.
 
 * This folder will contain subfolders for each of the following:
   - `openedx-events`: Contains the Open edX event definitions to be copied to the `openedx-events` repository.
