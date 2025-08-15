@@ -1,5 +1,5 @@
-7. Adding Cookiecutter for new Event Bus events and their kafka setup
-#####################################################################
+7. Adding Cookiecutter for Event Bus events and their kafka setup
+#################################################################
 
 Status
 ******
