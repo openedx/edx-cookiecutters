@@ -8,13 +8,13 @@ accessible-pygments==0.0.5
     # via pydata-sphinx-theme
 alabaster==1.0.0
     # via sphinx
-arrow==1.3.0
+arrow==1.4.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-asgiref==3.8.1
+asgiref==3.10.0
     # via django
-astroid==3.3.9
+astroid==3.3.11
     # via
     #   -r requirements/base.txt
     #   pylint
@@ -23,29 +23,29 @@ babel==2.17.0
     # via
     #   pydata-sphinx-theme
     #   sphinx
-beautifulsoup4==4.13.3
+beautifulsoup4==4.14.2
     # via pydata-sphinx-theme
 binaryornot==0.4.4
     # via
     #   -r requirements/base.txt
     #   cookiecutter
-build==1.2.2.post1
+build==1.3.0
     # via -r requirements/test.in
-certifi==2025.1.31
+certifi==2025.10.5
     # via
     #   -r requirements/base.txt
     #   requests
-cffi==1.17.1
+cffi==2.0.0
     # via cryptography
 chardet==5.2.0
     # via
     #   -r requirements/base.txt
     #   binaryornot
-charset-normalizer==3.4.1
+charset-normalizer==3.4.4
     # via
     #   -r requirements/base.txt
     #   requests
-click==8.1.8
+click==8.3.0
     # via
     #   -r requirements/base.txt
     #   click-log
@@ -56,7 +56,7 @@ click-log==0.4.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
-code-annotations==2.2.0
+code-annotations==2.3.0
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -64,15 +64,15 @@ cookiecutter==2.6.0
     # via
     #   -r requirements/base.txt
     #   pytest-cookies
-cryptography==44.0.2
+cryptography==46.0.3
     # via secretstorage
-dill==0.3.9
+dill==0.4.0
     # via
     #   -r requirements/base.txt
     #   pylint
-distlib==0.3.9
+distlib==0.4.0
     # via virtualenv
-django==4.2.20
+django==4.2.25
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.in
@@ -95,19 +95,19 @@ edx-lint==5.6.0
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
-filelock==3.18.0
+filelock==3.20.0
     # via virtualenv
 id==1.5.0
     # via twine
-idna==3.10
+idna==3.11
     # via
     #   -r requirements/base.txt
     #   requests
 imagesize==1.4.1
     # via sphinx
-iniconfig==2.1.0
+iniconfig==2.3.0
     # via pytest
-isort==6.0.1
+isort==6.1.0
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.in
@@ -116,7 +116,7 @@ jaraco-classes==3.4.0
     # via keyring
 jaraco-context==6.0.1
     # via keyring
-jaraco-functools==4.1.0
+jaraco-functools==4.3.0
     # via keyring
 jeepney==0.9.0
     # via
@@ -130,11 +130,11 @@ jinja2==3.1.6
     #   sphinx
 keyring==25.6.0
     # via twine
-markdown-it-py==3.0.0
+markdown-it-py==4.0.0
     # via
     #   -r requirements/base.txt
     #   rich
-markupsafe==3.0.2
+markupsafe==3.0.3
     # via
     #   -r requirements/base.txt
     #   jinja2
@@ -146,48 +146,45 @@ mdurl==0.1.2
     # via
     #   -r requirements/base.txt
     #   markdown-it-py
-more-itertools==10.6.0
+more-itertools==10.8.0
     # via
     #   jaraco-classes
     #   jaraco-functools
-nh3==0.2.21
+nh3==0.3.1
     # via readme-renderer
-packaging==24.2
+packaging==25.0
     # via
     #   build
     #   pydata-sphinx-theme
     #   pytest
     #   sphinx
     #   twine
-pbr==6.1.1
-    # via
-    #   -r requirements/base.txt
-    #   stevedore
-platformdirs==4.3.7
+platformdirs==4.5.0
     # via
     #   -r requirements/base.txt
     #   pylint
     #   virtualenv
-pluggy==1.5.0
+pluggy==1.6.0
     # via pytest
-pycodestyle==2.13.0
+pycodestyle==2.14.0
     # via -r requirements/test.in
-pycparser==2.22
+pycparser==2.23
     # via cffi
 pydata-sphinx-theme==0.15.4
     # via sphinx-book-theme
 pydocstyle==6.3.0
     # via -r requirements/test.in
-pygments==2.19.1
+pygments==2.19.2
     # via
     #   -r requirements/base.txt
     #   accessible-pygments
     #   doc8
     #   pydata-sphinx-theme
+    #   pytest
     #   readme-renderer
     #   rich
     #   sphinx
-pylint==3.3.6
+pylint==3.3.9
     # via
     #   -r requirements/base.txt
     #   edx-lint
@@ -202,14 +199,14 @@ pylint-django==2.6.1
     # via
     #   -r requirements/base.txt
     #   edx-lint
-pylint-plugin-utils==0.8.2
+pylint-plugin-utils==0.9.0
     # via
     #   -r requirements/base.txt
     #   pylint-celery
     #   pylint-django
 pyproject-hooks==1.2.0
     # via build
-pytest==8.3.5
+pytest==8.4.2
     # via pytest-cookies
 pytest-cookies==0.7.0
     # via -r requirements/test.in
@@ -222,14 +219,14 @@ python-slugify==8.0.4
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
-pyyaml==6.0.2
+pyyaml==6.0.3
     # via
     #   -r requirements/base.txt
     #   code-annotations
     #   cookiecutter
 readme-renderer==44.0
     # via twine
-requests==2.32.3
+requests==2.32.5
     # via
     #   -r requirements/base.txt
     #   cookiecutter
@@ -243,14 +240,14 @@ restructuredtext-lint==1.4.0
     # via doc8
 rfc3986==2.0.0
     # via twine
-rich==14.0.0
+rich==14.2.0
     # via
     #   -r requirements/base.txt
     #   cookiecutter
     #   twine
 roman-numerals-py==3.1.0
     # via sphinx
-secretstorage==3.3.3
+secretstorage==3.4.0
     # via keyring
 sh==2.2.2
     # via -r requirements/test.in
@@ -259,11 +256,11 @@ six==1.17.0
     #   -r requirements/base.txt
     #   edx-lint
     #   python-dateutil
-snowballstemmer==2.2.0
+snowballstemmer==3.0.1
     # via
     #   pydocstyle
     #   sphinx
-soupsieve==2.6
+soupsieve==2.8
     # via beautifulsoup4
 sphinx==8.2.3
     # via
@@ -292,7 +289,7 @@ sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
 sqlparse==0.5.3
     # via django
-stevedore==5.4.1
+stevedore==5.5.0
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -301,31 +298,24 @@ text-unidecode==1.3
     # via
     #   -r requirements/base.txt
     #   python-slugify
-tomlkit==0.13.2
+tomlkit==0.13.3
     # via
     #   -r requirements/base.txt
     #   pylint
-twine==6.1.0
+twine==6.2.0
     # via -r requirements/test.in
-types-python-dateutil==2.9.0.20241206
-    # via
-    #   -r requirements/base.txt
-    #   arrow
-typing-extensions==4.13.0
+typing-extensions==4.15.0
     # via
     #   beautifulsoup4
     #   pydata-sphinx-theme
-urllib3==2.2.3
+tzdata==2025.2
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -r requirements/base.txt
+    #   arrow
+urllib3==2.5.0
+    # via
     #   -r requirements/base.txt
     #   requests
     #   twine
-virtualenv==20.29.3
+virtualenv==20.35.3
     # via -r requirements/test.in
-
-# The following packages are considered to be unsafe in a requirements file:
-setuptools==78.1.0
-    # via
-    #   -r requirements/base.txt
-    #   pbr
