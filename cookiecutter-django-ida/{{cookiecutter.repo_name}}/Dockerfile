@@ -1,14 +1,9 @@
-FROM ubuntu:focal AS app
+FROM ubuntu:noble AS app
 
 ARG PYTHON_VERSION=3.12
 ENV TZ=UTC
 ENV TERM=xterm-256color
 ENV DEBIAN_FRONTEND=noninteractive
-
-# software-properties-common is needed to setup our Python 3.12 env
-RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    apt-add-repository -y ppa:deadsnakes/ppa
 
 # Packages installed:
 # curl; used to install pip
@@ -21,6 +16,7 @@ RUN apt-get update && \
 #
 # If you add a package here please include a comment above describing what it is used for
 RUN apt-get update && apt-get -qy install --no-install-recommends \
+        ca-certificates \
         curl \
         gcc \
         language-pack-en \
@@ -29,25 +25,19 @@ RUN apt-get update && apt-get -qy install --no-install-recommends \
         locales \
         pkg-config \
         python${PYTHON_VERSION} \
-        python${PYTHON_VERSION}-dev
+        python${PYTHON_VERSION}-dev \
+        python${PYTHON_VERSION}-venv
 
 # delete apt package lists because we do not need them inflating our image
 RUN rm -rf /var/lib/apt/lists/*
 
-# Install pip for our version of Python
-RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
-
 # create our Python virtual env
 ENV VIRTUAL_ENV=/edx/venvs/{{cookiecutter.project_name}}
-RUN pip install virtualenv
-RUN virtualenv -p python${PYTHON_VERSION} ${VIRTUAL_ENV}
+RUN python${PYTHON_VERSION} -m venv ${VIRTUAL_ENV}
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Python is Python3
 RUN ln -s /usr/bin/python3 /usr/bin/python
-
-# Setup zoneinfo for Python 3.12
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Use UTF-8
 RUN locale-gen en_US.UTF-8
