@@ -18,6 +18,3 @@ doc8<1.0.0
 pyobjc-core; sys_platform == 'darwin'
 pyobjc-framework-cocoa; sys_platform == 'darwin'
 pyobjc-framework-fsevents; sys_platform == 'darwin'
-
-# Temporary to Support the python 3.11 Upgrade
-backports.zoneinfo;python_version<"3.9"  # Newer versions have zoneinfo available in the standard library
