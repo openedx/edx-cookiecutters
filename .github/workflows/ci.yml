@@ -20,26 +20,20 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version:
-          - "3.12"
+          - "3.14"
         toxenv: [py, quality]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: setup python
-        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+      - name: Install uv
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Install pip
-        run: pip install -r requirements/pip.txt
-
-      - name: Install Dependencies
-        run: pip install -r requirements/ci.txt
 
       - name: Run Tests
         env:
           TOXENV: ${{ matrix.toxenv }}
-        run: tox
+        run: uv run --group ci tox
 
   # Tests that used to be in the cookiecutter-django-ida Makefile but
   # that have not yet been moved into the regular unit tests (which
@@ -50,18 +44,19 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version:
-          - "3.12"
+          - "3.14"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+      - name: Install uv
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Generate demo project
         run: |
           make requirements
-          cookiecutter cookiecutter-django-ida --no-input
+          uv run cookiecutter cookiecutter-django-ida --no-input
 
       - name: "Post-gen: Virtualenv, and set up requirements"
         working-directory: repo_name

@@ -1,0 +1,46 @@
+[project]
+name = "edx-cookiecutters"
+version = "0.1.0"
+description = "Cookiecutter templates for creating new Open edX repositories"
+readme = "README.rst"
+requires-python = ">=3.14"
+dependencies = [
+    "cookiecutter>=2.7.1",
+    "edx-lint>=6.2.0",
+    "edx-cookiecutter-lib",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+edx-cookiecutter-lib = { path = "lib", editable = true }
+
+[dependency-groups]
+# Requirements for test runs (mirrors the old requirements/test.in)
+test = [
+    "Django",
+    "django-model-utils",
+    "sphinx-book-theme",
+    "isort",
+    "pycodestyle",
+    "pydocstyle",
+    "pytest-cookies",
+    "twine",
+    "build",
+    "sh",
+    "Sphinx",
+    "sphinx_rtd_theme",
+    "doc8",
+    "virtualenv",
+]
+# Requirements for running tests in CI (mirrors the old requirements/ci.in)
+ci = [
+    "tox>=4.60.0",
+    "tox-uv>=1.13.0",
+]
+# Everything needed for local development (mirrors the old requirements/dev.in)
+dev = [
+    { include-group = "test" },
+    { include-group = "ci" },
+]
