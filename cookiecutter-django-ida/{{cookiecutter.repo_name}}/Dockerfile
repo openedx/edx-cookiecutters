@@ -11,7 +11,6 @@ RUN apt-get update && \
     apt-add-repository -y ppa:deadsnakes/ppa
 
 # Packages installed:
-# curl; used to install pip
 # gcc; for compiling python extensions distributed with python packages like mysql-client
 # language-pack-en & locales; Ubuntu locale support so that system utilities have a consistent language and time zone.
 # libmysqlclient-dev; to install header files needed to use native C implementation for MySQL-python for performance gains.
@@ -21,7 +20,6 @@ RUN apt-get update && \
 #
 # If you add a package here please include a comment above describing what it is used for
 RUN apt-get update && apt-get -qy install --no-install-recommends \
-        curl \
         gcc \
         language-pack-en \
         libmysqlclient-dev \
@@ -34,13 +32,12 @@ RUN apt-get update && apt-get -qy install --no-install-recommends \
 # delete apt package lists because we do not need them inflating our image
 RUN rm -rf /var/lib/apt/lists/*
 
-# Install pip for our version of Python
-RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
+# Install uv (a static binary, no need for pip to bootstrap it)
+COPY --from=ghcr.io/astral-sh/uv:0.12.5 /uv /usr/local/bin/uv
 
 # create our Python virtual env
 ENV VIRTUAL_ENV=/edx/venvs/{{cookiecutter.project_name}}
-RUN pip install virtualenv
-RUN virtualenv -p python${PYTHON_VERSION} ${VIRTUAL_ENV}
+RUN uv venv -p python${PYTHON_VERSION} ${VIRTUAL_ENV}
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Python is Python3
@@ -64,12 +61,12 @@ FROM app AS prod
 
 ENV DJANGO_SETTINGS_MODULE={{cookiecutter.project_name}}.settings.production
 
-# Copy the requirements explicitly even though we copy everything below
+# Copy the dependency files explicitly even though we copy everything below
 # this prevents the image cache from busting unless the dependencies have changed.
-COPY requirements/production.txt /edx/app/{{cookiecutter.repo_name}}/requirements/production.txt
+COPY pyproject.toml uv.lock /edx/app/{{cookiecutter.repo_name}}/
 
 # Dependencies are installed as root so they cannot be modified by the application user.
-RUN pip install -r requirements/production.txt
+RUN uv sync --locked --no-install-project --group production
 
 RUN mkdir -p /edx/var/log
 
@@ -87,11 +84,11 @@ FROM app AS dev
 
 ENV DJANGO_SETTINGS_MODULE={{cookiecutter.project_name}}.settings.devstack
 
-# Copy the requirements explicitly even though we copy everything below
+# Copy the dependency files explicitly even though we copy everything below
 # this prevents the image cache from busting unless the dependencies have changed.
-COPY requirements/dev.txt /edx/app/{{cookiecutter.repo_name}}/requirements/dev.txt
+COPY pyproject.toml uv.lock /edx/app/{{cookiecutter.repo_name}}/
 
-RUN pip install -r requirements/dev.txt
+RUN uv sync --locked --no-install-project --group dev
 
 # After the requirements so changes to the code will not bust the image cache
 COPY . /edx/app/{{cookiecutter.repo_name}}

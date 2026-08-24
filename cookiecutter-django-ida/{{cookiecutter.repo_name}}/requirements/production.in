@@ -1,8 +1,0 @@
-# Packages required in a production environment
--r base.txt
-
-gevent
-gunicorn
-mysqlclient
-python-memcached
-PyYAML>=5.1

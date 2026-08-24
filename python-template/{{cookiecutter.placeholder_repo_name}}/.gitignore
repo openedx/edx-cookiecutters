@@ -59,7 +59,3 @@ docs/_build
 docs/modules.rst
 docs/{{ cookiecutter.sub_dir_name }}.rst
 docs/{{ cookiecutter.sub_dir_name }}.*.rst
-
-# Private requirements
-requirements/private.in
-requirements/private.txt

@@ -7,6 +7,12 @@
 # For opening files in a browser. Use like: $(BROWSER)relative/path/to/file.html
 BROWSER := python -m webbrowser file://$(CURDIR)/
 
+# Common constraints for edx repos. When pinning something here, please provide
+# an explanation of why. Ideally, link to other information that will help
+# people in the future to remove the pin when possible. Writing an issue
+# against the offending project and linking to it here is good.
+export UV_CONSTRAINT = https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+
 help: ## display this help message
 	@echo "Please use \`make <target>' where <target> is one of"
 	@awk -F ':.*?## ' '/^[a-zA-Z]/ && NF==2 {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
@@ -32,40 +38,22 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	tox -e docs
 	$(BROWSER)docs/_build/html/index.html
 
-# Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile --upgrade $(PIP_COMPILE_OPTS)
-
-upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
-upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -r requirements/pip-tools.txt
-	# Make sure to compile files after any other files they include!
-	$(PIP_COMPILE) --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
-	$(PIP_COMPILE) --allow-unsafe -o requirements/pip-tools.txt requirements/pip-tools.in
-	pip install -r requirements/pip-tools.txt
-	$(PIP_COMPILE) --allow-unsafe -o requirements/base.txt requirements/base.in
-	$(PIP_COMPILE) --allow-unsafe -o requirements/test.txt requirements/test.in
-	$(PIP_COMPILE) --allow-unsafe -o requirements/doc.txt requirements/doc.in
-	$(PIP_COMPILE) --allow-unsafe -o requirements/quality.txt requirements/quality.in
-	$(PIP_COMPILE) --allow-unsafe -o requirements/ci.txt requirements/ci.in
-	$(PIP_COMPILE) --allow-unsafe -o requirements/dev.txt requirements/dev.in
+upgrade: ## update the uv.lock file with the latest packages satisfying pyproject.toml
+	uv lock --upgrade
 
 quality: ## check coding style with pycodestyle and pylint
 	touch tests/__init__.py
-	pylint {{ cookiecutter.sub_dir_name }} tests test_utils *.py
+	pylint {{ cookiecutter.sub_dir_name }} tests test_utils
 	rm tests/__init__.py
-	pycodestyle {{ cookiecutter.sub_dir_name }} tests  *.py
-	pydocstyle {{ cookiecutter.sub_dir_name }} tests *.py
-	isort --check-only --diff tests test_utils {{ cookiecutter.sub_dir_name }} *.py test_settings.py
-	python setup.py bdist_wheel
+	pycodestyle {{ cookiecutter.sub_dir_name }} tests
+	pydocstyle {{ cookiecutter.sub_dir_name }} tests
+	isort --check-only --diff tests test_utils {{ cookiecutter.sub_dir_name }}
+	uv build --wheel
 	twine check dist/*
 	make selfcheck
 
-piptools: ## install pinned version of pip-compile and pip-sync
-	pip install -r requirements/pip.txt
-	pip install -r requirements/pip-tools.txt
-
-requirements: clean_tox piptools ## install development environment requirements
-	pip-sync requirements/dev.txt requirements/private.*
+requirements: clean_tox ## install development environment requirements
+	uv sync --group dev
 
 test: clean ## run tests in the current virtualenv
 	pytest

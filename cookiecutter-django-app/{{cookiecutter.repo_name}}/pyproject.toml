@@ -1,0 +1,101 @@
+{%- set license_classifiers = ['AGPL 3.0', 'Apache Software License 2.0'] %}
+[project]
+name = "{{ cookiecutter.repo_name }}"
+description = "{{ cookiecutter.project_short_description }}"
+dynamic = ["version", "readme"]
+authors = [
+    {name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}"},
+]
+{%- if cookiecutter.open_source_license == "AGPL 3.0" %}
+license = "AGPL-3.0-or-later"
+{%- elif cookiecutter.open_source_license == "Apache Software License 2.0" %}
+license = "Apache-2.0"
+{%- endif %}
+requires-python = ">=3.12"
+dependencies = [
+    "Django",
+{%- if cookiecutter.models != "No Model" %}
+    "django-model-utils",
+{%- endif %}
+    "openedx-atlas",
+]
+keywords = ["Python", "edx"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    {%- if cookiecutter.open_source_license not in license_classifiers %}
+    "License :: Other/Proprietary License",
+    {%- endif %}
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}"
+
+[project.optional-dependencies]
+docs = [
+    "doc8",
+    "sphinx-book-theme",
+    "twine",
+    "build",
+    "Sphinx",
+]
+# These let tox pin the Django version under test (see the [testenv] factors
+# in tox.ini) without needing a separate ad-hoc dependency outside the lockfile.
+django42 = ["Django>=4.0,<5.0"]
+django52 = ["Django>=5.0,<5.3"]
+
+[dependency-groups]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+    "code-annotations",
+]
+quality = [
+    {include-group = "test"},
+    "edx-lint",
+    "isort",
+    "pycodestyle",
+    "pydocstyle",
+]
+ci = [
+    "tox",
+    "tox-uv",
+]
+dev = [
+    {include-group = "quality"},
+    {include-group = "ci"},
+    "diff-cover",
+    "edx-i18n-tools",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["{{ cookiecutter.app_name }}", "{{ cookiecutter.app_name }}.*"]
+exclude = ["*tests"]
+
+[tool.setuptools.dynamic]
+version = {attr = "{{ cookiecutter.app_name }}.__version__"}
+readme = {file = ["README.rst", "CHANGELOG.rst"], content-type = "text/x-rst"}
+
+[tool.uv]
+# django42 and django52 pin conflicting Django ranges and are never installed
+# together, so tell uv's resolver not to look for one solution that satisfies both.
+conflicts = [
+    [
+        {extra = "django42"},
+        {extra = "django52"},
+    ],
+]

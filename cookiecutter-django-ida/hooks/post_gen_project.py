@@ -23,6 +23,7 @@ post_gen_project(
     }
 )
 
-# Removing unnecessary files from python and django templates:
-os.remove("setup.py")
+# Removing unnecessary files from python and django templates. This IDA
+# provides its own pyproject.toml (package = false), so python-template's
+# packaging-only files don't apply here.
 os.remove("MANIFEST.in")

@@ -13,7 +13,7 @@ If you're creating a standalone Django service, you should probably use
 Features
 ********
 
-* Sane setup.py for easy PyPI registration/distribution
+* Sane pyproject.toml for easy PyPI registration/distribution
 * Github Actions for CI configuration
 * Codecov configuration
 * Tox configuration
@@ -138,7 +138,8 @@ module's ``__init__.py`` file, update ``CHANGELOG.rst`` accordingly, and run:
 
 .. code-block:: bash
 
-    python setup.py tag
+    git tag -a $VERSION -m "version $VERSION"
+    git push --tags
 
 and create a Github release with a new tag, your GitHub workflow should automatically run once a new release is
 created and should publish the package to PyPi.

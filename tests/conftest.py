@@ -33,5 +33,9 @@ def options_baked(cookies_session, configuration, custom_template):
     """
     with bake_in_temp_dir(cookies_session, extra_context=configuration, template=custom_template):
         sh.make('upgrade')
-        sh.pip('install', '-r', 'requirements/test.txt')
+        # Additive install (unlike `uv sync`, which would remove whatever this
+        # outer environment already has installed that isn't also a dependency
+        # of the baked project) of the baked project's own base dependencies
+        # plus its "test" group.
+        sh.uv('pip', 'install', '-r', 'pyproject.toml', '--group', 'test')
         yield

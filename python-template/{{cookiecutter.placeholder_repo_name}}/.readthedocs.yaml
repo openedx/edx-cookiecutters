@@ -18,10 +18,10 @@ build:
 
 python:
   install:
-    - requirements: requirements/doc.txt
-
-    # This will pip install this repo into the python environment
-    # if you are using this in a repo that is not pip installable
-    # then you should remove the following two lines.
+    # This will pip install this repo (with its "docs" extra) into the python
+    # environment. If you are using this in a repo that is not pip installable
+    # then you should remove this and add an explicit requirements install instead.
     - method: pip
       path: .
+      extra_requirements:
+        - docs

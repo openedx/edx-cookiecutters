@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: dev.clean dev.build dev.run upgrade compile-requirements help requirements
+.PHONY: dev.clean dev.build dev.run upgrade help requirements
 .PHONY: extract_translations compile_translations
 .PHONY: detect_changed_source_translations dummy_translations build_dummy_translations
 .PHONY: validate_translations pull_translations install_transifex_clients
@@ -13,35 +13,17 @@ JS_TARGET := $(PACKAGE_NAME)/public/js/translations
 help:
 	@perl -nle'print $& if m{^[\.a-zA-Z_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}'
 
-# Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
+# Common constraints for edx repos. When pinning something here, please provide
+# an explanation of why. Ideally, link to other information that will help
+# people in the future to remove the pin when possible. Writing an issue
+# against the offending project and linking to it here is good.
+export UV_CONSTRAINT = https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
 
-compile-requirements: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	pip-compile -v ${COMPILE_OPTS} --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
-	pip-compile -v ${COMPILE_OPTS} -o requirements/pip-tools.txt requirements/pip-tools.in
-	pip install -qr requirements/pip.txt
-	pip install -qr requirements/pip-tools.txt
-	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
-	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
-	$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
-	$(PIP_COMPILE) -o requirements/quality.txt requirements/quality.in
-	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
-	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
-	# Let tox control the Django version for tests
-	sed '/^[dD]jango==/d' requirements/test.txt > requirements/test.tmp
-	mv requirements/test.tmp requirements/test.txt
+upgrade: ## update the uv.lock file with the latest packages satisfying pyproject.toml
+	uv lock --upgrade
 
-upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	$(MAKE) compile-requirements COMPILE_OPTS="--upgrade"
-
-piptools: ## install pinned version of pip-compile and pip-sync
-	pip install -r requirements/pip.txt
-	pip install -r requirements/pip-tools.txt
-
-requirements: piptools ## install development environment requirements
-	pip-sync -q requirements/dev.txt requirements/private.*
+requirements: ## install development environment requirements
+	uv sync --group dev
 
 dev.clean:
 	-docker rm $(REPO_NAME)-dev

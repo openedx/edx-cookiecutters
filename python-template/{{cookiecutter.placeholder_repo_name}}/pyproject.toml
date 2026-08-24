@@ -1,0 +1,83 @@
+{%- set license_classifiers = ['AGPL 3.0', 'Apache Software License 2.0'] %}
+[project]
+name = "{{ cookiecutter.project_name }}"
+description = "{{ cookiecutter.project_short_description }}"
+dynamic = ["version", "readme"]
+authors = [
+    {name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}"},
+]
+{%- if cookiecutter.open_source_license == "AGPL 3.0" %}
+license = "AGPL-3.0-or-later"
+{%- elif cookiecutter.open_source_license == "Apache Software License 2.0" %}
+license = "Apache-2.0"
+{%- endif %}
+requires-python = ">=3.12"
+dependencies = [
+    "setuptools",
+]
+keywords = ["Python", "edx"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    {%- if cookiecutter.requires_django == "yes" %}
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.2",
+    {%- endif %}
+    "Intended Audience :: Developers",
+    {%- if cookiecutter.open_source_license not in license_classifiers %}
+    "License :: Other/Proprietary License",
+    {%- endif %}
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}"
+
+[project.optional-dependencies]
+docs = [
+    "doc8",
+    "sphinx-book-theme",
+    "twine",
+    "build",
+    "Sphinx",
+]
+
+[dependency-groups]
+test = [
+    "pytest",
+    "pytest-cov",
+]
+quality = [
+    {include-group = "test"},
+    "edx-lint",
+    "isort",
+    "pycodestyle",
+    "pydocstyle",
+    "twine",
+]
+ci = [
+    "tox",
+    "tox-uv",
+]
+dev = [
+    {include-group = "quality"},
+    {include-group = "ci"},
+    "diff-cover",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["{{ cookiecutter.sub_dir_name }}", "{{ cookiecutter.sub_dir_name }}.*"]
+exclude = ["*tests"]
+
+[tool.setuptools.dynamic]
+version = {attr = "{{ cookiecutter.sub_dir_name }}.__version__"}
+readme = {file = ["README.rst", "CHANGELOG.rst"], content-type = "text/x-rst"}

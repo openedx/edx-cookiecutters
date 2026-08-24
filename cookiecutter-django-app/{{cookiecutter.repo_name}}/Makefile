@@ -1,6 +1,6 @@
 .PHONY: clean clean_tox compile_translations coverage diff_cover docs dummy_translations \
         extract_translations fake_translations help pii_check pull_translations \
-        quality requirements selfcheck test test-all upgrade compile-requirements validate install_transifex_client
+        quality requirements selfcheck test test-all upgrade validate install_transifex_client
 
 .DEFAULT_GOAL := help
 
@@ -32,28 +32,14 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	tox -e docs
 	$(BROWSER)docs/_build/html/index.html
 
-# Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
+# Common constraints for edx repos. When pinning something here, please provide
+# an explanation of why. Ideally, link to other information that will help
+# people in the future to remove the pin when possible. Writing an issue
+# against the offending project and linking to it here is good.
+export UV_CONSTRAINT = https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
 
-compile-requirements: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	pip-compile -v ${COMPILE_OPTS} --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
-	pip-compile -v ${COMPILE_OPTS} -o requirements/pip-tools.txt requirements/pip-tools.in
-	pip install -qr requirements/pip.txt
-	pip install -qr requirements/pip-tools.txt
-	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
-	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
-	$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
-	$(PIP_COMPILE) -o requirements/quality.txt requirements/quality.in
-	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
-	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
-	# Let tox control the Django version for tests
-	sed '/^[dD]jango==/d' requirements/test.txt > requirements/test.tmp
-	mv requirements/test.tmp requirements/test.txt
-
-upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	$(MAKE) compile-requirements COMPILE_OPTS="--upgrade"
+upgrade: ## update the uv.lock file with the latest packages satisfying pyproject.toml
+	uv lock --upgrade
 
 quality: ## check coding style with pycodestyle and pylint
 	tox -e quality
@@ -61,12 +47,8 @@ quality: ## check coding style with pycodestyle and pylint
 pii_check: ## check for PII annotations on all Django models
 	tox -e pii_check
 
-piptools: ## install pinned version of pip-compile and pip-sync
-	pip install -r requirements/pip.txt
-	pip install -r requirements/pip-tools.txt
-
-requirements: clean_tox piptools ## install development environment requirements
-	pip-sync -q requirements/dev.txt requirements/private.*
+requirements: clean_tox ## install development environment requirements
+	uv sync --group dev
 
 test: clean ## run tests in the current virtualenv
 	pytest

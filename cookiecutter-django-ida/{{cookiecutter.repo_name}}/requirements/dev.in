@@ -1,7 +1,0 @@
-# Additional requirements for development of this application
-
--r pip-tools.txt          # pip-tools and its deps, for managing requirements files
--r validation.txt         # Core, testing, and quality check dependencies
-
-diff-cover                # Changeset diff test coverage
-django-debug-toolbar      # For debugging Django

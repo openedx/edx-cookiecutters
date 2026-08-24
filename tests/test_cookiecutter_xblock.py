@@ -58,15 +58,15 @@ def fixture_custom_template_name():
 # Fixture names aren't always used in test functions. Disable completely.
 # pylint: disable=unused-argument
 
-@pytest.mark.parametrize("license_name, target_string", [
-    ('AGPL 3.0', 'GNU AFFERO GENERAL PUBLIC LICENSE'),
-    ('Apache Software License 2.0', 'Apache'),
+@pytest.mark.parametrize("license_name, target_string, spdx_id", [
+    ('AGPL 3.0', 'GNU AFFERO GENERAL PUBLIC LICENSE', 'AGPL-3.0-or-later'),
+    ('Apache Software License 2.0', 'Apache', 'Apache-2.0'),
 ])
-def test_bake_selecting_license(cookies, license_name, target_string, custom_template):
-    """Test to check if LICENSE.txt gets the correct license selected."""
+def test_bake_selecting_license(cookies, license_name, target_string, spdx_id, custom_template):
+    """Test to check if LICENSE.txt and pyproject.toml get the correct license selected."""
     with bake_in_temp_dir(cookies, extra_context={'open_source_license': license_name}, template=custom_template):
         assert target_string in Path("LICENSE.txt").read_text()
-        assert license_name in Path("setup.py").read_text()
+        assert f'license = "{spdx_id}"' in Path("pyproject.toml").read_text()
 
 
 def test_readme(options_baked, custom_template):
@@ -84,13 +84,12 @@ def test_manifest(options_baked):
     assert 'recursive-include my_xblock *.html' in manifest_text
 
 
-def test_setup_py(options_baked):
-    """The generated setup.py should pass a sanity check."""
-    setup_text = Path("setup.py").read_text()
-    assert "VERSION = get_version('my_xblock', '__init__.py')" in setup_text
-    assert "    author='Cookie Monster'," in setup_text
-    assert "    author_email='cookie@monster.org'," in setup_text
-    assert "            'my_xblock = my_xblock:MyXBlock'," in setup_text
+def test_pyproject_toml(options_baked):
+    """The generated pyproject.toml should pass a sanity check."""
+    pyproject_text = Path("pyproject.toml").read_text()
+    assert 'version = {attr = "my_xblock.__version__"}' in pyproject_text
+    assert '{name = "Cookie Monster", email = "cookie@monster.org"}' in pyproject_text
+    assert 'my_xblock = "my_xblock:MyXBlock"' in pyproject_text
 
 
 def test_quality(options_baked):

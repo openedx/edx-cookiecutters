@@ -1,0 +1,91 @@
+[project]
+name = "{{ cookiecutter.repo_name }}"
+version = "0.1.0"
+description = "{{ cookiecutter.project_short_description }}"
+requires-python = ">=3.12"
+dependencies = [
+    "Django",
+    "django-cors-headers",
+    "django-extensions",
+    "drf-spectacular",
+    "django-waffle",
+    "djangorestframework",
+    "edx-auth-backends",
+    "edx-django-utils",
+    "edx-django-release-util",
+    "edx-drf-extensions",
+    "edx-i18n-tools",
+    "edx-rest-api-client",
+    "mysqlclient",
+    "openedx-atlas",
+    "pytz",
+]
+
+[dependency-groups]
+# Packages needed in a production deployment, on top of the base dependencies
+# above. Installed alone (`uv sync --group production`) for the production
+# Docker image, so it must not pull in any dev/test/quality tooling.
+production = [
+    "gevent",
+    "gunicorn",
+    "python-memcached",
+    "PyYAML>=5.1",
+]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+    "code-annotations",
+    "coverage",
+    "django-dynamic-fixture",
+    "edx-lint",
+]
+# These let tox pin the Django version under test (see the [testenv] factors
+# in tox.ini) without needing a separate ad-hoc dependency outside the lockfile.
+django42 = ["Django>=4.0,<5.0"]
+django52 = ["Django>=5.0,<5.3"]
+quality = [
+    {include-group = "test"},
+    "isort",
+    "pycodestyle",
+    "pydocstyle",
+]
+docs = [
+    "doc8",
+    "sphinx-book-theme",
+    "twine",
+    "build",
+    "Sphinx",
+]
+ci = [
+    "tox",
+    "tox-uv",
+]
+# A package a deployer may optionally install (e.g. for New Relic monitoring).
+optional = [
+    "newrelic",
+]
+dev = [
+    {include-group = "quality"},
+    {include-group = "ci"},
+    "diff-cover",
+    "django-debug-toolbar",
+]
+
+[tool.uv]
+package = false
+default-groups = []
+# django42 and django52 pin conflicting Django ranges and are never installed
+# together, so tell uv's resolver not to look for one solution that satisfies both.
+conflicts = [
+    [
+        {group = "django42"},
+        {group = "django52"},
+    ],
+]
+
+[tool.isort]
+indent = "    "
+line_length = 120
+multi_line_output = 3
+skip = ["migrations"]

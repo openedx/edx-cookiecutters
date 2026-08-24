@@ -1,9 +1,0 @@
-# Core requirements for using this application
--c constraints.txt
-
-Django             # Web application framework
-{% if cookiecutter.models != "No Model" -%}
-django-model-utils        # Provides TimeStampedModel abstract base class
-{%- endif %}
-
-openedx-atlas

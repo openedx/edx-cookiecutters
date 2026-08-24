@@ -77,7 +77,7 @@ def test_readme(options_baked, custom_template):
 def test_github_actions_ci(options_baked):
     """The generated ci.yml file should pass a sanity check."""
     ci_text = Path(".github/workflows/ci.yml").read_text()
-    assert 'pip install -r requirements/ci.txt' in ci_text
+    assert 'uv run --group ci tox' in ci_text
 
 
 def test_quality(options_baked):

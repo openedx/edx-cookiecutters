@@ -29,9 +29,8 @@ particularly the Python pieces.
 Requirements
 ============
 
-Once you initialize your project, run ``make upgrade`` to generate
-``.txt`` files in the ``requirements/`` directory,
-which will contain pinned dependency versions.
+Once you initialize your project, run ``make upgrade`` to generate the
+``uv.lock`` file, which will contain pinned dependency versions.
 Regularly re-run this command going forward in order to freshen the version pins.
 Failure to do so could open your IDA to bugs, security vulnerabilities,
 and other issues.

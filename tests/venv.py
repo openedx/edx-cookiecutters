@@ -12,7 +12,14 @@ from tempfile import TemporaryDirectory
 
 def _use_virtualenv(venv_path, shell_script):
     """Run `shell_script` in the already-made virtualenv at `venv_path`."""
-    subprocess.check_call(f'. {venv_path}/bin/activate; {shell_script}', env={}, shell=True)
+    # Pass through PATH/HOME (rather than an empty env) so system-installed
+    # tools invoked directly by Makefiles -- like `uv` itself -- can still be
+    # found, and so uv has somewhere to resolve its cache directory from.
+    env = {
+        "PATH": os.environ.get("PATH", ""),
+        "HOME": os.environ.get("HOME", ""),
+    }
+    subprocess.check_call(f'. {venv_path}/bin/activate; {shell_script}', env=env, shell=True)
 
 
 def run_in_virtualenv(shell_script):

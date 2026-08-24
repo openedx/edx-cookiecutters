@@ -3,7 +3,7 @@
 .PHONY: help clean clean_tox docs requirements ci_requirements dev_requirements \
         validation_requirements doc_requirements production-requirements static shell \
         test coverage isort_check isort style lint quality pii_check validate \
-        migrate html_coverage upgrade compile-requirements extract_translation dummy_translations \
+        migrate html_coverage upgrade extract_translation dummy_translations \
         compile_translations fake_translations pull_translations \
         start-devstack open-devstack pkg-devstack \
         detect_changed_source_translations validate_translations check_keywords \
@@ -30,25 +30,21 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	tox -e docs
 	$(BROWSER)docs/_build/html/index.html
 
-piptools: ## install pinned version of pip-compile and pip-sync
-	pip install -r requirements/pip.txt
-	pip install -r requirements/pip-tools.txt
-
 requirements: dev_requirements ## sync to default requirements
 
 ci_requirements: validation_requirements ## sync to requirements needed for CI checks
 
-dev_requirements: clean_tox piptools ## sync to requirements for local development
-	pip-sync -q requirements/dev.txt requirements/private.*
+dev_requirements: clean_tox ## sync to requirements for local development
+	uv sync --group dev
 
-validation_requirements: piptools ## sync to requirements for testing & code quality checking
-	pip-sync -q requirements/validation.txt
+validation_requirements: ## sync to requirements for testing & code quality checking
+	uv sync --group quality
 
-doc_requirements: piptools
-	pip-sync -q requirements/doc.txt
+doc_requirements:
+	uv sync --group docs
 
-production-requirements: piptools ## install requirements for production
-	pip-sync -q requirements/production.txt
+production-requirements: ## install requirements for production
+	uv sync --group production
 
 static: ## generate static files
 	python manage.py collectstatic --noinput
@@ -94,31 +90,14 @@ migrate: ## apply database migrations
 html_coverage: ## generate and view HTML coverage report
 	coverage html && open htmlcov/index.html
 
-# Define PIP_COMPILE_OPTS=-v to get more information during make upgrade.
-PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
+# Common constraints for edx repos. When pinning something here, please provide
+# an explanation of why. Ideally, link to other information that will help
+# people in the future to remove the pin when possible. Writing an issue
+# against the offending project and linking to it here is good.
+export UV_CONSTRAINT = https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
 
-compile-requirements: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	pip-compile -v ${COMPILE_OPTS} --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
-	pip-compile -v ${COMPILE_OPTS} -o requirements/pip-tools.txt requirements/pip-tools.in
-	pip install -qr requirements/pip.txt
-	pip install -qr requirements/pip-tools.txt
-	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
-	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
-	$(PIP_COMPILE) -o requirements/doc.txt requirements/doc.in
-	$(PIP_COMPILE) -o requirements/quality.txt requirements/quality.in
-	$(PIP_COMPILE) -o requirements/validation.txt requirements/validation.in
-	$(PIP_COMPILE) -o requirements/ci.txt requirements/ci.in
-	$(PIP_COMPILE) -o requirements/dev.txt requirements/dev.in
-	$(PIP_COMPILE) -o requirements/production.txt requirements/production.in
-	# Let tox control the Django version for tests
-	grep -e "^django==" requirements/base.txt > requirements/django.txt
-	sed '/^[dD]jango==/d' requirements/test.txt > requirements/test.tmp
-	mv requirements/test.tmp requirements/test.txt
-
-upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
-	pip install -qr requirements/pip-tools.txt
-	$(MAKE) compile-requirements COMPILE_OPTS="--upgrade"
+upgrade: ## update the uv.lock file with the latest packages satisfying pyproject.toml
+	uv lock --upgrade
 
 extract_translations: ## extract strings to be translated, outputting .mo files
 	cd {{cookiecutter.project_name}} && i18n_tool extract --no-segment
