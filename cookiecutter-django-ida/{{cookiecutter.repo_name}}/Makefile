@@ -31,7 +31,6 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	$(BROWSER)docs/_build/html/index.html
 
 piptools: ## install pinned version of pip-compile and pip-sync
-	pip install -r requirements/pip.txt
 	pip install -r requirements/pip-tools.txt
 
 requirements: dev_requirements ## sync to default requirements
@@ -99,9 +98,7 @@ PIP_COMPILE = pip-compile $(PIP_COMPILE_OPTS)
 
 compile-requirements: ## compile the requirements/*.txt files with the latest packages satisfying requirements/*.in
 	pip install -qr requirements/pip-tools.txt
-	pip-compile -v ${COMPILE_OPTS} --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
-	pip-compile -v ${COMPILE_OPTS} -o requirements/pip-tools.txt requirements/pip-tools.in
-	pip install -qr requirements/pip.txt
+	pip-compile -v ${COMPILE_OPTS} --allow-unsafe -o requirements/pip-tools.txt requirements/pip-tools.in
 	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
 	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
