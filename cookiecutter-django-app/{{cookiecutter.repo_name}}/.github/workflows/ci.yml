@@ -24,7 +24,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install pip
-        run: pip install -r requirements/pip.txt
+        run: pip install -r requirements/pip-tools.txt
 
       - name: Install Dependencies
         run: pip install -r requirements/ci.txt

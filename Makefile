@@ -20,10 +20,10 @@ $(TEMPLATES): requirements ## Create a new repo from the template
 upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
 upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
 	pip install -qr requirements/pip-tools.txt
-	$(PIP_COMPILE) --allow-unsafe --rebuild -o requirements/pip.txt requirements/pip.in
+	# pip-tools.txt also pins pip, and is upgraded before anything else so the
+	# upgrade always runs with a pip that the current pip-tools supports.
 	# Make sure to compile files after any other files they include!
-	$(PIP_COMPILE) -o requirements/pip-tools.txt requirements/pip-tools.in
-	pip install -qr requirements/pip.txt
+	$(PIP_COMPILE) --allow-unsafe -o requirements/pip-tools.txt requirements/pip-tools.in
 	pip install -qr requirements/pip-tools.txt
 	$(PIP_COMPILE) --allow-unsafe -o requirements/base.txt requirements/base.in
 	$(PIP_COMPILE) --allow-unsafe -o requirements/test.txt requirements/test.in
@@ -37,8 +37,7 @@ REQ_PATH = "python-template/{{cookiecutter.placeholder_repo_name}}/requirements"
 upgrade_template: export CUSTOM_COMPILE_COMMAND=make upgrade
 upgrade_template: ## update the requirements/pip-tools.txt files within our cookiecutter template code with the latest packages satisfying requirements
 	pip install -qr requirements/pip-tools.txt
-	$(PIP_COMPILE) --rebuild -o "$(REQ_PATH)/pip-tools.txt" "$(REQ_PATH)/pip-tools.in"
-	$(PIP_COMPILE) --allow-unsafe --rebuild -o "$(REQ_PATH)/pip.txt" "$(REQ_PATH)/pip.in"
+	$(PIP_COMPILE) --allow-unsafe --rebuild -o "$(REQ_PATH)/pip-tools.txt" "$(REQ_PATH)/pip-tools.in"
 
 PY_FILES = tests */hooks/*.py lib/src/*/*.py
 
@@ -49,7 +48,6 @@ quality: ## check coding style with pycodestyle and pylint
 	isort --check-only --diff $(PY_FILES)
 
 piptools: ## install pinned version of pip-compile and pip-sync
-	pip install -r requirements/pip.txt
 	pip install -r requirements/pip-tools.txt
 
 requirements: piptools ## install development environment requirements
