@@ -31,7 +31,7 @@ binaryornot==0.4.4
     #   cookiecutter
 build==1.6.1
     # via -r requirements/test.in
-certifi==2025.1.31
+certifi==2026.10.19
     # via
     #   -r requirements/base.txt
     #   requests
