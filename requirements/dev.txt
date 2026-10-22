@@ -38,7 +38,7 @@ binaryornot==0.4.4
     # via
     #   -r requirements/test.txt
     #   cookiecutter
-build==1.2.2.post1
+build==1.6.1
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -65,7 +65,7 @@ charset-normalizer==3.4.1
     # via
     #   -r requirements/test.txt
     #   requests
-click==8.1.8
+click==8.5.0
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -203,7 +203,7 @@ nh3==0.2.21
     # via
     #   -r requirements/test.txt
     #   readme-renderer
-packaging==24.2
+packaging==26.3
     # via
     #   -r requirements/ci.txt
     #   -r requirements/pip-tools.txt
@@ -215,11 +215,12 @@ packaging==24.2
     #   sphinx
     #   tox
     #   twine
+    #   wheel
 pbr==6.1.1
     # via
     #   -r requirements/test.txt
     #   stevedore
-pip-tools==7.4.1
+pip-tools==7.6.2
     # via -r requirements/pip-tools.txt
 platformdirs==4.3.7
     # via
@@ -279,7 +280,7 @@ pyproject-api==1.9.0
     # via
     #   -r requirements/ci.txt
     #   tox
-pyproject-hooks==1.2.0
+pyproject-hooks==1.3.3
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
@@ -429,7 +430,6 @@ typing-extensions==4.13.0
     #   pydata-sphinx-theme
 urllib3==2.2.3
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
     #   requests
     #   twine
@@ -438,18 +438,20 @@ virtualenv==20.29.3
     #   -r requirements/ci.txt
     #   -r requirements/test.txt
     #   tox
-wheel==0.45.1
+wheel==0.48.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==24.2
+pip==26.2
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -r requirements/pip-tools.txt
     #   pip-tools
-setuptools==78.1.0
+setuptools==84.2.1
     # via
+    #   -r requirements/pip-tools.txt
     #   -r requirements/test.txt
     #   pbr
     #   pip-tools
