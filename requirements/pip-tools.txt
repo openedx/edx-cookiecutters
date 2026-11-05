@@ -26,5 +26,5 @@ pip==26.2
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   pip-tools
-setuptools==84.0.0
+setuptools==84.2.1
     # via pip-tools
